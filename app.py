@@ -24,9 +24,16 @@ logger = logging.getLogger("ArchSynthWeb")
 
 app = Flask(__name__, static_folder="web", static_url_path="")
 BASE_DIR = Path(__file__).parent.resolve()
-WEB_RUNS_DIR = BASE_DIR / "output" / "web_runs"
-WEB_RUNS_DIR.mkdir(parents=True, exist_ok=True)
 OUTPUT_DIR = BASE_DIR / "output"
+if os.environ.get("VERCEL"):
+    WEB_RUNS_DIR = Path("/tmp/archsynth_web_runs")
+else:
+    WEB_RUNS_DIR = OUTPUT_DIR / "web_runs"
+try:
+    WEB_RUNS_DIR.mkdir(parents=True, exist_ok=True)
+except OSError:
+    WEB_RUNS_DIR = Path("/tmp/archsynth_web_runs")
+    WEB_RUNS_DIR.mkdir(parents=True, exist_ok=True)
 
 SUPPORTED_RUN_ALIASES = {
     "nav2": "nav2_pipeline",
@@ -107,7 +114,7 @@ def resolve_run_dir(run_id: str) -> Tuple[Optional[Path], Optional[str]]:
     for dir_path, canon in candidates:
         try:
             resolved = dir_path.resolve()
-            if not resolved.is_relative_to(BASE_DIR):
+            if not (resolved.is_relative_to(BASE_DIR) or resolved.is_relative_to(WEB_RUNS_DIR.resolve())):
                 continue
             if resolved.exists() and resolved.is_dir():
                 return resolved, canon
