@@ -1,0 +1,131 @@
+{
+  "archsynth_version": "2.2",
+  "execution_timestamp": "2026-11-24T21:03:02.366162+00:00",
+  "mode": "deterministic_static_skip_llm_true",
+  "scoring_rules": {
+    "matching": "Canonical basename matching (strip leading '/', split '/'[-1], lowercase) per eval/evaluator.py",
+    "zero_denominator": "0/0 -> 1.0; one-sided empty -> 0.0",
+    "invariants": "TP + FN == ground_truth; TP + FP == predicted",
+    "missing_ground_truth": "Marked N/A (never fabricated)"
+  },
+  "ground_truth_datasets": {
+    "nav2": {
+      "path": "eval\\ground_truth\\nav2\\ground_truth.json",
+      "sha256": "03fccee5646825378ebde6baf4928de08b2fa557d85a89662f109330d1dcf899"
+    },
+    "jaco2_sim_devkit": {
+      "path": "eval\\ground_truth\\jaco2_sim_devkit\\ground_truth.json",
+      "sha256": "24b062c717c690c8ea1ce6b8e7041c451459b51fae5989dec224212c8cc4b7b1"
+    }
+  },
+  "repositories": {
+    "nav2": {
+      "url": "https://github.com/ros-planning/navigation2.git",
+      "branch": "main",
+      "commit_sha": "6dbf4549ae1914188916b06dcc19dd3a8115d0a5",
+      "raw_output_dir": "benchmarks\\results_v2_2_recalculated_2026_11_25\\raw_runs\\nav2",
+      "reconciliation": {
+        "unique_source_nodes": 77,
+        "unique_production_nodes": 30,
+        "unique_test_nodes": 47,
+        "unique_executables": 42,
+        "unique_components": 142,
+        "unique_launch_instances": 120,
+        "launch_instances_resolved_to_source": 35,
+        "launch_instances_unresolved": 0,
+        "runtime_observed_nodes": null,
+        "runtime_observation_available": false
+      }
+    },
+    "slam_toolbox": {
+      "url": "https://github.com/SteveMacenski/slam_toolbox",
+      "branch": "ros2",
+      "commit_sha": "eee0cd5e4a161bb10f8334b5420c93876b31ca99",
+      "raw_output_dir": "benchmarks\\results_v2_2_recalculated_2026_11_25\\raw_runs\\slam_toolbox",
+      "reconciliation": {
+        "unique_source_nodes": 10,
+        "unique_production_nodes": 10,
+        "unique_test_nodes": 0,
+        "unique_executables": 7,
+        "unique_components": 8,
+        "unique_launch_instances": 7,
+        "launch_instances_resolved_to_source": 7,
+        "launch_instances_unresolved": 0,
+        "runtime_observed_nodes": null,
+        "runtime_observation_available": false
+      }
+    },
+    "ros2_control": {
+      "url": "https://github.com/ros-controls/ros2_control",
+      "branch": "master",
+      "commit_sha": "4052b56d53bdcb562653935255d118f203398b22",
+      "raw_output_dir": "benchmarks\\results_v2_2_recalculated_2026_11_25\\raw_runs\\ros2_control",
+      "reconciliation": {
+        "unique_source_nodes": 6,
+        "unique_production_nodes": 1,
+        "unique_test_nodes": 5,
+        "unique_executables": 1,
+        "unique_components": 25,
+        "unique_launch_instances": 1,
+        "launch_instances_resolved_to_source": 0,
+        "launch_instances_unresolved": 0,
+        "runtime_observed_nodes": null,
+        "runtime_observation_available": false
+      }
+    },
+    "jaco2_sim_devkit": {
+      "url": "https://github.com/VibhuSharma19/jaco2_sim_devkit",
+      "branch": "main",
+      "commit_sha": "993a6e3de05e50fec4ce40c65a5b1d3a9d8ca9cc",
+      "raw_output_dir": "benchmarks\\results_v2_2_recalculated_2026_11_25\\raw_runs\\jaco2_sim_devkit",
+      "reconciliation": {
+        "unique_source_nodes": 11,
+        "unique_production_nodes": 11,
+        "unique_test_nodes": 0,
+        "unique_executables": 20,
+        "unique_components": 1,
+        "unique_launch_instances": 38,
+        "launch_instances_resolved_to_source": 4,
+        "launch_instances_unresolved": 0,
+        "runtime_observed_nodes": null,
+        "runtime_observation_available": false
+      }
+    },
+    "behaviortree_cpp": {
+      "url": "https://github.com/BehaviorTree/BehaviorTree.CPP.git",
+      "branch": "master",
+      "commit_sha": "365b2e499d34ba1220588188a7aa045158909b0f",
+      "raw_output_dir": "benchmarks\\results_v2_2_recalculated_2026_11_25\\raw_runs\\behaviortree_cpp",
+      "reconciliation": {
+        "unique_source_nodes": 2,
+        "unique_production_nodes": 2,
+        "unique_test_nodes": 0,
+        "unique_executables": 0,
+        "unique_components": 0,
+        "unique_launch_instances": 0,
+        "launch_instances_resolved_to_source": 0,
+        "launch_instances_unresolved": 0,
+        "runtime_observed_nodes": null,
+        "runtime_observation_available": false
+      }
+    },
+    "express": {
+      "url": "https://github.com/expressjs/express",
+      "branch": "master",
+      "commit_sha": "a3714473feb3d2908add734d340e7755fd85e0a3",
+      "raw_output_dir": "benchmarks\\results_v2_2_recalculated_2026_11_25\\raw_runs\\express",
+      "reconciliation": {
+        "unique_source_nodes": 0,
+        "unique_production_nodes": 0,
+        "unique_test_nodes": 0,
+        "unique_executables": 0,
+        "unique_components": 0,
+        "unique_launch_instances": 0,
+        "launch_instances_resolved_to_source": 0,
+        "launch_instances_unresolved": 0,
+        "runtime_observed_nodes": null,
+        "runtime_observation_available": false
+      }
+    }
+  }
+}

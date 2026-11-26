@@ -1,0 +1,105 @@
+# ArchSynth v2.0 LLM Model Evaluation Registry
+# Exact model identifiers, capabilities, parameters, and pricing metadata
+
+models:
+  - id: "gemini_2_5_flash"
+    display_name: "Google Gemini 2.5 Flash"
+    exact_version: "gemini-2.5-flash"
+    provider: "Google DeepMind"
+    api_endpoint: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash"
+    family: "Gemini"
+    release_date: "2025"
+    context_window_tokens: 1048576
+    max_output_tokens: 8192
+    supports_structured_json: true
+    supports_system_instructions: true
+    pricing:
+      input_per_million_usd: 0.075
+      output_per_million_usd: 0.30
+      cached_input_per_million_usd: 0.01875
+    evaluation_role: "Primary Production Reasoning Engine"
+    hyperparameters:
+      temperature: 0.2
+      top_p: 0.95
+      response_mime_type: "application/json"
+
+  - id: "gemini_1_5_pro"
+    display_name: "Google Gemini 1.5 Pro"
+    exact_version: "gemini-1.5-pro-002"
+    provider: "Google DeepMind"
+    api_endpoint: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-002"
+    family: "Gemini"
+    release_date: "2024"
+    context_window_tokens: 2097152
+    max_output_tokens: 8192
+    supports_structured_json: true
+    supports_system_instructions: true
+    pricing:
+      input_per_million_usd: 1.25
+      output_per_million_usd: 5.00
+      cached_input_per_million_usd: 0.3125
+    evaluation_role: "High-Capacity Ultra-Long Context Baseline"
+    hyperparameters:
+      temperature: 0.2
+      top_p: 0.95
+      response_mime_type: "application/json"
+
+  - id: "gpt_4o"
+    display_name: "OpenAI GPT-4o"
+    exact_version: "gpt-4o-2024-08-06"
+    provider: "OpenAI"
+    api_endpoint: "https://api.openai.com/v1/chat/completions"
+    family: "GPT-4"
+    release_date: "2024-08-06"
+    context_window_tokens: 128000
+    max_output_tokens: 16384
+    supports_structured_json: true
+    supports_system_instructions: true
+    pricing:
+      input_per_million_usd: 2.50
+      output_per_million_usd: 10.00
+      cached_input_per_million_usd: 1.25
+    evaluation_role: "Frontier General Reasoning Baseline"
+    hyperparameters:
+      temperature: 0.2
+      response_format: {"type": "json_object"}
+
+  - id: "claude_3_5_sonnet"
+    display_name: "Anthropic Claude 3.5 Sonnet"
+    exact_version: "claude-3-5-sonnet-20241022"
+    provider: "Anthropic"
+    api_endpoint: "https://api.anthropic.com/v1/messages"
+    family: "Claude"
+    release_date: "2024-10-22"
+    context_window_tokens: 200000
+    max_output_tokens: 8192
+    supports_structured_json: true
+    supports_system_instructions: true
+    pricing:
+      input_per_million_usd: 3.00
+      output_per_million_usd: 15.00
+      cached_input_per_million_usd: 0.30
+    evaluation_role: "Code Comprehension Frontier Baseline"
+    hyperparameters:
+      temperature: 0.2
+      max_tokens: 4096
+
+  - id: "llama_3_1_70b"
+    display_name: "Meta Llama 3.1 70B Instruct"
+    exact_version: "llama-3.1-70b-instruct"
+    provider: "Meta AI / Local Ollama"
+    api_endpoint: "http://localhost:11434/api/generate"
+    family: "Llama"
+    release_date: "2024-07-23"
+    context_window_tokens: 128000
+    max_output_tokens: 4096
+    supports_structured_json: true
+    supports_system_instructions: true
+    pricing:
+      input_per_million_usd: 0.00
+      output_per_million_usd: 0.00
+      infrastructure_cost_note: "Self-hosted GPU server (NVIDIA RTX 4090 / A100)"
+    evaluation_role: "Air-Gapped Defense / Privacy-Preserving Baseline"
+    hyperparameters:
+      temperature: 0.2
+      format: "json"

@@ -1,0 +1,1181 @@
+{
+  "metadata": {
+    "system_name": "Navigation2",
+    "reference_version": "1.5.0 (Jazzy Jalisco)",
+    "pinned_commit": "6dbf4549ae1914188916b06dcc19dd3a8115d0a5",
+    "documentation_reference": "https://navigation.ros.org/concepts/index.html",
+    "verification_method": "Manual expert architectural curation against official Nav2 specs and source headers",
+    "scope_definitions": {
+      "core_scope": "Canonical 13 navigation servers active in standard bringup",
+      "extended_scope": "22 production nodes including auxiliary servers, filter mask managers, simulators, and client APIs"
+    }
+  },
+  "core_nodes": [
+    {
+      "name": "bt_navigator",
+      "class_name": "BtNavigator",
+      "package": "nav2_bt_navigator",
+      "source_header": "nav2_bt_navigator/include/nav2_bt_navigator/bt_navigator.hpp#L60-L80",
+      "architectural_role": "navigation_orchestration"
+    },
+    {
+      "name": "controller_server",
+      "class_name": "ControllerServer",
+      "package": "nav2_controller",
+      "source_header": "nav2_controller/include/nav2_controller/controller_server.hpp#L50-L75",
+      "architectural_role": "trajectory_control"
+    },
+    {
+      "name": "planner_server",
+      "class_name": "PlannerServer",
+      "package": "nav2_planner",
+      "source_header": "nav2_planner/include/nav2_planner/planner_server.hpp#L45-L70",
+      "architectural_role": "global_planning"
+    },
+    {
+      "name": "behavior_server",
+      "class_name": "BehaviorServer",
+      "package": "nav2_behaviors",
+      "source_header": "nav2_behaviors/include/nav2_behaviors/behavior_server.hpp#L40-L65",
+      "architectural_role": "recovery_behaviors"
+    },
+    {
+      "name": "smoother_server",
+      "class_name": "SmootherServer",
+      "package": "nav2_smoother",
+      "source_header": "nav2_smoother/include/nav2_smoother/smoother_server.hpp#L40-L65",
+      "architectural_role": "trajectory_control"
+    },
+    {
+      "name": "velocity_smoother",
+      "class_name": "VelocitySmoother",
+      "package": "nav2_velocity_smoother",
+      "source_header": "nav2_velocity_smoother/include/nav2_velocity_smoother/velocity_smoother.hpp#L45-L70",
+      "architectural_role": "trajectory_control"
+    },
+    {
+      "name": "collision_monitor",
+      "class_name": "CollisionMonitor",
+      "package": "nav2_collision_monitor",
+      "source_header": "nav2_collision_monitor/include/nav2_collision_monitor/collision_monitor_node.hpp#L50-L75",
+      "architectural_role": "perception_costmaps"
+    },
+    {
+      "name": "waypoint_follower",
+      "class_name": "WaypointFollower",
+      "package": "nav2_waypoint_follower",
+      "source_header": "nav2_waypoint_follower/include/nav2_waypoint_follower/waypoint_follower.hpp#L40-L65",
+      "architectural_role": "navigation_orchestration"
+    },
+    {
+      "name": "docking_server",
+      "class_name": "DockingServer",
+      "package": "opennav_docking",
+      "source_header": "nav2_docking/opennav_docking/include/opennav_docking/docking_server.hpp#L50-L75",
+      "architectural_role": "docking_manipulation"
+    },
+    {
+      "name": "route_server",
+      "class_name": "RouteServer",
+      "package": "nav2_route",
+      "source_header": "nav2_route/include/nav2_route/route_server.hpp#L45-L70",
+      "architectural_role": "navigation_orchestration"
+    },
+    {
+      "name": "map_server",
+      "class_name": "MapServer",
+      "package": "nav2_map_server",
+      "source_header": "nav2_map_server/include/nav2_map_server/map_server.hpp#L40-L65",
+      "architectural_role": "localization_state_estimation"
+    },
+    {
+      "name": "amcl",
+      "class_name": "AmclNode",
+      "package": "nav2_amcl",
+      "source_header": "nav2_amcl/include/nav2_amcl/amcl_node.hpp#L45-L70",
+      "architectural_role": "localization_state_estimation"
+    },
+    {
+      "name": "lifecycle_manager",
+      "class_name": "LifecycleManager",
+      "package": "nav2_lifecycle_manager",
+      "source_header": "nav2_lifecycle_manager/include/nav2_lifecycle_manager/lifecycle_manager.hpp#L40-L65",
+      "architectural_role": "system_supervision"
+    }
+  ],
+  "auxiliary_production_nodes": [
+    {
+      "name": "collision_detector",
+      "class_name": "CollisionDetector",
+      "package": "nav2_collision_monitor",
+      "source_header": "nav2_collision_monitor/include/nav2_collision_monitor/collision_detector_node.hpp#L45-L65",
+      "purpose": "Specialized polygon collision detection"
+    },
+    {
+      "name": "costmap_2d_ros",
+      "class_name": "Costmap2DROS",
+      "package": "nav2_costmap_2d",
+      "source_header": "nav2_costmap_2d/include/nav2_costmap_2d/costmap_2d_ros.hpp#L60-L90",
+      "purpose": "Underlying 2D spatial costmap service"
+    },
+    {
+      "name": "costmap_filter_info_server",
+      "class_name": "CostmapFilterInfoServer",
+      "package": "nav2_map_server",
+      "source_header": "nav2_map_server/include/nav2_map_server/costmap_filter_info_server.hpp#L45-L65",
+      "purpose": "Costmap filter mask parameter publisher"
+    },
+    {
+      "name": "map_saver",
+      "class_name": "MapSaver",
+      "package": "nav2_map_server",
+      "source_header": "nav2_map_server/include/nav2_map_server/map_saver.hpp#L40-L60",
+      "purpose": "Map persistence CLI utility"
+    },
+    {
+      "name": "vector_object_server",
+      "class_name": "VectorObjectServer",
+      "package": "nav2_map_server",
+      "source_header": "nav2_map_server/include/nav2_map_server/vector_object_server.hpp#L45-L65",
+      "purpose": "Vector geometric objects service"
+    },
+    {
+      "name": "loopback_simulator",
+      "class_name": "LoopbackSimulator",
+      "package": "nav2_loopback_sim",
+      "source_header": "nav2_loopback_sim/include/nav2_loopback_sim/loopback_simulator.hpp#L40-L60",
+      "purpose": "Headless odometry/scan simulator mock"
+    },
+    {
+      "name": "base_footprint_publisher",
+      "class_name": "BaseFootprintPublisher",
+      "package": "nav2_util",
+      "source_header": "nav2_util/include/nav2_util/base_footprint_publisher.hpp#L40-L60",
+      "purpose": "Robot footprint TF broadcaster"
+    },
+    {
+      "name": "following_server",
+      "class_name": "FollowingServer",
+      "package": "opennav_following",
+      "source_header": "nav2_following/opennav_following/include/opennav_following/following_server.hpp#L45-L65",
+      "purpose": "Target following autonomy server"
+    },
+    {
+      "name": "basic_navigator",
+      "class_name": "BasicNavigator",
+      "package": "nav2_simple_commander",
+      "source_header": "nav2_simple_commander/nav2_simple_commander/robot_navigator.py#L40-L70",
+      "purpose": "Python autonomy client API"
+    }
+  ],
+  "core_topics": [
+    {
+      "name": "/cmd_vel_nav",
+      "type": "geometry_msgs/msg/Twist",
+      "publishers": [
+        "controller_server"
+      ],
+      "subscribers": [
+        "velocity_smoother"
+      ]
+    },
+    {
+      "name": "/cmd_vel_smoothed",
+      "type": "geometry_msgs/msg/Twist",
+      "publishers": [
+        "velocity_smoother"
+      ],
+      "subscribers": [
+        "collision_monitor"
+      ]
+    },
+    {
+      "name": "/cmd_vel",
+      "type": "geometry_msgs/msg/Twist",
+      "publishers": [
+        "collision_monitor"
+      ],
+      "subscribers": [
+        "base_driver"
+      ]
+    },
+    {
+      "name": "/plan",
+      "type": "nav_msgs/msg/Path",
+      "publishers": [
+        "planner_server"
+      ],
+      "subscribers": [
+        "controller_server",
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/transformed_global_plan",
+      "type": "nav_msgs/msg/Path",
+      "publishers": [
+        "controller_server"
+      ],
+      "subscribers": []
+    },
+    {
+      "name": "/map",
+      "type": "nav_msgs/msg/OccupancyGrid",
+      "publishers": [
+        "map_server"
+      ],
+      "subscribers": [
+        "amcl",
+        "planner_server",
+        "controller_server"
+      ]
+    },
+    {
+      "name": "/map_metadata",
+      "type": "nav_msgs/msg/MapMetaData",
+      "publishers": [
+        "map_server"
+      ],
+      "subscribers": []
+    },
+    {
+      "name": "/amcl_pose",
+      "type": "geometry_msgs/msg/PoseWithCovarianceStamped",
+      "publishers": [
+        "amcl"
+      ],
+      "subscribers": []
+    },
+    {
+      "name": "/particlecloud",
+      "type": "nav2_msgs/msg/ParticleCloud",
+      "publishers": [
+        "amcl"
+      ],
+      "subscribers": []
+    },
+    {
+      "name": "/initialpose",
+      "type": "geometry_msgs/msg/PoseWithCovarianceStamped",
+      "publishers": [],
+      "subscribers": [
+        "amcl"
+      ]
+    },
+    {
+      "name": "/scan",
+      "type": "sensor_msgs/msg/LaserScan",
+      "publishers": [],
+      "subscribers": [
+        "collision_monitor",
+        "amcl",
+        "controller_server"
+      ]
+    },
+    {
+      "name": "/odom",
+      "type": "nav_msgs/msg/Odometry",
+      "publishers": [],
+      "subscribers": [
+        "velocity_smoother",
+        "controller_server",
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/tf",
+      "type": "tf2_msgs/msg/TFMessage",
+      "publishers": [
+        "amcl"
+      ],
+      "subscribers": [
+        "controller_server",
+        "planner_server"
+      ]
+    },
+    {
+      "name": "/tf_static",
+      "type": "tf2_msgs/msg/TFMessage",
+      "publishers": [],
+      "subscribers": [
+        "controller_server",
+        "planner_server"
+      ]
+    },
+    {
+      "name": "/speed_limit",
+      "type": "nav2_msgs/msg/SpeedLimit",
+      "publishers": [],
+      "subscribers": [
+        "controller_server"
+      ]
+    }
+  ],
+  "core_actions": [
+    {
+      "name": "/navigate_to_pose",
+      "type": "nav2_msgs/action/NavigateToPose",
+      "server": "bt_navigator",
+      "clients": [
+        "basic_navigator"
+      ]
+    },
+    {
+      "name": "/navigate_through_poses",
+      "type": "nav2_msgs/action/NavigateThroughPoses",
+      "server": "bt_navigator",
+      "clients": [
+        "basic_navigator"
+      ]
+    },
+    {
+      "name": "/follow_path",
+      "type": "nav2_msgs/action/FollowPath",
+      "server": "controller_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/compute_path_to_pose",
+      "type": "nav2_msgs/action/ComputePathToPose",
+      "server": "planner_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/compute_path_through_poses",
+      "type": "nav2_msgs/action/ComputePathThroughPoses",
+      "server": "planner_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/smooth_path",
+      "type": "nav2_msgs/action/SmoothPath",
+      "server": "smoother_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/spin",
+      "type": "nav2_msgs/action/Spin",
+      "server": "behavior_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/wait",
+      "type": "nav2_msgs/action/Wait",
+      "server": "behavior_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/backup",
+      "type": "nav2_msgs/action/BackUp",
+      "server": "behavior_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/drive_on_heading",
+      "type": "nav2_msgs/action/DriveOnHeading",
+      "server": "behavior_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/assisted_teleop",
+      "type": "nav2_msgs/action/AssistedTeleop",
+      "server": "behavior_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/dock_robot",
+      "type": "opennav_docking_msgs/action/DockRobot",
+      "server": "docking_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/undock_robot",
+      "type": "opennav_docking_msgs/action/UndockRobot",
+      "server": "docking_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/follow_waypoints",
+      "type": "nav2_msgs/action/FollowWaypoints",
+      "server": "waypoint_follower",
+      "clients": [
+        "basic_navigator"
+      ]
+    }
+  ],
+  "core_services": [
+    {
+      "name": "/lifecycle_manager_navigation/manage_nodes",
+      "type": "nav2_msgs/srv/ManageLifecycleNodes",
+      "server": "lifecycle_manager_navigation",
+      "clients": []
+    },
+    {
+      "name": "/lifecycle_manager_navigation/is_active",
+      "type": "std_srvs/srv/Trigger",
+      "server": "lifecycle_manager_navigation",
+      "clients": []
+    },
+    {
+      "name": "/lifecycle_manager_localization/manage_nodes",
+      "type": "nav2_msgs/srv/ManageLifecycleNodes",
+      "server": "lifecycle_manager_localization",
+      "clients": []
+    },
+    {
+      "name": "/lifecycle_manager_localization/is_active",
+      "type": "std_srvs/srv/Trigger",
+      "server": "lifecycle_manager_localization",
+      "clients": []
+    },
+    {
+      "name": "/map_server/load_map",
+      "type": "nav2_msgs/srv/LoadMap",
+      "server": "map_server",
+      "clients": [
+        "basic_navigator"
+      ]
+    },
+    {
+      "name": "/map_server/map",
+      "type": "nav_msgs/srv/GetMap",
+      "server": "map_server",
+      "clients": [
+        "loopback_sim"
+      ]
+    },
+    {
+      "name": "/global_costmap/clear_entirely_global_costmap",
+      "type": "nav2_msgs/srv/ClearEntireCostmap",
+      "server": "global_costmap",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/local_costmap/clear_entirely_local_costmap",
+      "type": "nav2_msgs/srv/ClearEntireCostmap",
+      "server": "local_costmap",
+      "clients": [
+        "bt_navigator"
+      ]
+    }
+  ],
+  "selected_plugins": [
+    {
+      "slot": "controller_server.FollowPath",
+      "plugin_class": "nav2_mppi_controller::MPPIController",
+      "base_class": "nav2_core::Controller",
+      "package": "nav2_mppi_controller"
+    },
+    {
+      "slot": "controller_server.progress_checker",
+      "plugin_class": "nav2_controller::SimpleProgressChecker",
+      "base_class": "nav2_core::ProgressChecker",
+      "package": "nav2_controller"
+    },
+    {
+      "slot": "controller_server.general_goal_checker",
+      "plugin_class": "nav2_controller::SimpleGoalChecker",
+      "base_class": "nav2_core::GoalChecker",
+      "package": "nav2_controller"
+    },
+    {
+      "slot": "planner_server.GridBased",
+      "plugin_class": "nav2_navfn_planner::NavfnPlanner",
+      "base_class": "nav2_core::GlobalPlanner",
+      "package": "nav2_navfn_planner"
+    },
+    {
+      "slot": "smoother_server.simple_smoother",
+      "plugin_class": "nav2_smoother::SimpleSmoother",
+      "base_class": "nav2_core::Smoother",
+      "package": "nav2_smoother"
+    },
+    {
+      "slot": "behavior_server.spin",
+      "plugin_class": "nav2_behaviors::Spin",
+      "base_class": "nav2_core::Behavior",
+      "package": "nav2_behaviors"
+    },
+    {
+      "slot": "behavior_server.wait",
+      "plugin_class": "nav2_behaviors::Wait",
+      "base_class": "nav2_core::Behavior",
+      "package": "nav2_behaviors"
+    },
+    {
+      "slot": "behavior_server.backup",
+      "plugin_class": "nav2_behaviors::BackUp",
+      "base_class": "nav2_core::Behavior",
+      "package": "nav2_behaviors"
+    },
+    {
+      "slot": "bt_navigator.navigate_to_pose",
+      "plugin_class": "nav2_bt_navigator::NavigateToPoseNavigator",
+      "base_class": "nav2_core::Navigator",
+      "package": "nav2_bt_navigator"
+    },
+    {
+      "slot": "local_costmap.voxel_layer",
+      "plugin_class": "nav2_costmap_2d::VoxelLayer",
+      "base_class": "nav2_costmap_2d::Layer",
+      "package": "nav2_costmap_2d"
+    },
+    {
+      "slot": "local_costmap.inflation_layer",
+      "plugin_class": "nav2_costmap_2d::InflationLayer",
+      "base_class": "nav2_costmap_2d::Layer",
+      "package": "nav2_costmap_2d"
+    },
+    {
+      "slot": "global_costmap.static_layer",
+      "plugin_class": "nav2_costmap_2d::StaticLayer",
+      "base_class": "nav2_costmap_2d::Layer",
+      "package": "nav2_costmap_2d"
+    },
+    {
+      "slot": "global_costmap.obstacle_layer",
+      "plugin_class": "nav2_costmap_2d::ObstacleLayer",
+      "base_class": "nav2_costmap_2d::Layer",
+      "package": "nav2_costmap_2d"
+    },
+    {
+      "slot": "global_costmap.inflation_layer",
+      "plugin_class": "nav2_costmap_2d::InflationLayer",
+      "base_class": "nav2_costmap_2d::Layer",
+      "package": "nav2_costmap_2d"
+    }
+  ],
+  "behavior_tree": {
+    "default_tree_name": "NavigateToPoseWReplanningAndRecovery",
+    "file": "nav2_bt_navigator/behavior_trees/navigate_to_pose_w_replanning_and_recovery.xml",
+    "root_control_node": "RecoveryNode",
+    "pipeline_control_node": "PipelineSequence",
+    "leaf_action_bindings": [
+      {
+        "bt_node": "ComputePathToPose",
+        "action": "/compute_path_to_pose",
+        "server": "planner_server"
+      },
+      {
+        "bt_node": "FollowPath",
+        "action": "/follow_path",
+        "server": "controller_server"
+      },
+      {
+        "bt_node": "Spin",
+        "action": "/spin",
+        "server": "behavior_server"
+      },
+      {
+        "bt_node": "Wait",
+        "action": "/wait",
+        "server": "behavior_server"
+      },
+      {
+        "bt_node": "BackUp",
+        "action": "/backup",
+        "server": "behavior_server"
+      },
+      {
+        "bt_node": "ClearEntireCostmap",
+        "service": "/global_costmap/clear_entirely_global_costmap",
+        "server": "global_costmap"
+      }
+    ],
+    "blackboard_variables": [
+      "path",
+      "goal",
+      "selected_planner",
+      "selected_controller",
+      "number_of_retries"
+    ]
+  },
+  "nodes": [
+    {
+      "name": "bt_navigator",
+      "class_name": "BtNavigator",
+      "package": "nav2_bt_navigator",
+      "source_header": "nav2_bt_navigator/include/nav2_bt_navigator/bt_navigator.hpp#L60-L80",
+      "architectural_role": "navigation_orchestration"
+    },
+    {
+      "name": "controller_server",
+      "class_name": "ControllerServer",
+      "package": "nav2_controller",
+      "source_header": "nav2_controller/include/nav2_controller/controller_server.hpp#L50-L75",
+      "architectural_role": "trajectory_control"
+    },
+    {
+      "name": "planner_server",
+      "class_name": "PlannerServer",
+      "package": "nav2_planner",
+      "source_header": "nav2_planner/include/nav2_planner/planner_server.hpp#L45-L70",
+      "architectural_role": "global_planning"
+    },
+    {
+      "name": "behavior_server",
+      "class_name": "BehaviorServer",
+      "package": "nav2_behaviors",
+      "source_header": "nav2_behaviors/include/nav2_behaviors/behavior_server.hpp#L40-L65",
+      "architectural_role": "recovery_behaviors"
+    },
+    {
+      "name": "smoother_server",
+      "class_name": "SmootherServer",
+      "package": "nav2_smoother",
+      "source_header": "nav2_smoother/include/nav2_smoother/smoother_server.hpp#L40-L65",
+      "architectural_role": "trajectory_control"
+    },
+    {
+      "name": "velocity_smoother",
+      "class_name": "VelocitySmoother",
+      "package": "nav2_velocity_smoother",
+      "source_header": "nav2_velocity_smoother/include/nav2_velocity_smoother/velocity_smoother.hpp#L45-L70",
+      "architectural_role": "trajectory_control"
+    },
+    {
+      "name": "collision_monitor",
+      "class_name": "CollisionMonitor",
+      "package": "nav2_collision_monitor",
+      "source_header": "nav2_collision_monitor/include/nav2_collision_monitor/collision_monitor_node.hpp#L50-L75",
+      "architectural_role": "perception_costmaps"
+    },
+    {
+      "name": "waypoint_follower",
+      "class_name": "WaypointFollower",
+      "package": "nav2_waypoint_follower",
+      "source_header": "nav2_waypoint_follower/include/nav2_waypoint_follower/waypoint_follower.hpp#L40-L65",
+      "architectural_role": "navigation_orchestration"
+    },
+    {
+      "name": "docking_server",
+      "class_name": "DockingServer",
+      "package": "opennav_docking",
+      "source_header": "nav2_docking/opennav_docking/include/opennav_docking/docking_server.hpp#L50-L75",
+      "architectural_role": "docking_manipulation"
+    },
+    {
+      "name": "route_server",
+      "class_name": "RouteServer",
+      "package": "nav2_route",
+      "source_header": "nav2_route/include/nav2_route/route_server.hpp#L45-L70",
+      "architectural_role": "navigation_orchestration"
+    },
+    {
+      "name": "map_server",
+      "class_name": "MapServer",
+      "package": "nav2_map_server",
+      "source_header": "nav2_map_server/include/nav2_map_server/map_server.hpp#L40-L65",
+      "architectural_role": "localization_state_estimation"
+    },
+    {
+      "name": "amcl",
+      "class_name": "AmclNode",
+      "package": "nav2_amcl",
+      "source_header": "nav2_amcl/include/nav2_amcl/amcl_node.hpp#L45-L70",
+      "architectural_role": "localization_state_estimation"
+    },
+    {
+      "name": "lifecycle_manager",
+      "class_name": "LifecycleManager",
+      "package": "nav2_lifecycle_manager",
+      "source_header": "nav2_lifecycle_manager/include/nav2_lifecycle_manager/lifecycle_manager.hpp#L40-L65",
+      "architectural_role": "system_supervision"
+    }
+  ],
+  "extended_nodes": [
+    {
+      "name": "bt_navigator",
+      "class_name": "BtNavigator",
+      "package": "nav2_bt_navigator",
+      "source_header": "nav2_bt_navigator/include/nav2_bt_navigator/bt_navigator.hpp#L60-L80",
+      "architectural_role": "navigation_orchestration"
+    },
+    {
+      "name": "controller_server",
+      "class_name": "ControllerServer",
+      "package": "nav2_controller",
+      "source_header": "nav2_controller/include/nav2_controller/controller_server.hpp#L50-L75",
+      "architectural_role": "trajectory_control"
+    },
+    {
+      "name": "planner_server",
+      "class_name": "PlannerServer",
+      "package": "nav2_planner",
+      "source_header": "nav2_planner/include/nav2_planner/planner_server.hpp#L45-L70",
+      "architectural_role": "global_planning"
+    },
+    {
+      "name": "behavior_server",
+      "class_name": "BehaviorServer",
+      "package": "nav2_behaviors",
+      "source_header": "nav2_behaviors/include/nav2_behaviors/behavior_server.hpp#L40-L65",
+      "architectural_role": "recovery_behaviors"
+    },
+    {
+      "name": "smoother_server",
+      "class_name": "SmootherServer",
+      "package": "nav2_smoother",
+      "source_header": "nav2_smoother/include/nav2_smoother/smoother_server.hpp#L40-L65",
+      "architectural_role": "trajectory_control"
+    },
+    {
+      "name": "velocity_smoother",
+      "class_name": "VelocitySmoother",
+      "package": "nav2_velocity_smoother",
+      "source_header": "nav2_velocity_smoother/include/nav2_velocity_smoother/velocity_smoother.hpp#L45-L70",
+      "architectural_role": "trajectory_control"
+    },
+    {
+      "name": "collision_monitor",
+      "class_name": "CollisionMonitor",
+      "package": "nav2_collision_monitor",
+      "source_header": "nav2_collision_monitor/include/nav2_collision_monitor/collision_monitor_node.hpp#L50-L75",
+      "architectural_role": "perception_costmaps"
+    },
+    {
+      "name": "waypoint_follower",
+      "class_name": "WaypointFollower",
+      "package": "nav2_waypoint_follower",
+      "source_header": "nav2_waypoint_follower/include/nav2_waypoint_follower/waypoint_follower.hpp#L40-L65",
+      "architectural_role": "navigation_orchestration"
+    },
+    {
+      "name": "docking_server",
+      "class_name": "DockingServer",
+      "package": "opennav_docking",
+      "source_header": "nav2_docking/opennav_docking/include/opennav_docking/docking_server.hpp#L50-L75",
+      "architectural_role": "docking_manipulation"
+    },
+    {
+      "name": "route_server",
+      "class_name": "RouteServer",
+      "package": "nav2_route",
+      "source_header": "nav2_route/include/nav2_route/route_server.hpp#L45-L70",
+      "architectural_role": "navigation_orchestration"
+    },
+    {
+      "name": "map_server",
+      "class_name": "MapServer",
+      "package": "nav2_map_server",
+      "source_header": "nav2_map_server/include/nav2_map_server/map_server.hpp#L40-L65",
+      "architectural_role": "localization_state_estimation"
+    },
+    {
+      "name": "amcl",
+      "class_name": "AmclNode",
+      "package": "nav2_amcl",
+      "source_header": "nav2_amcl/include/nav2_amcl/amcl_node.hpp#L45-L70",
+      "architectural_role": "localization_state_estimation"
+    },
+    {
+      "name": "lifecycle_manager",
+      "class_name": "LifecycleManager",
+      "package": "nav2_lifecycle_manager",
+      "source_header": "nav2_lifecycle_manager/include/nav2_lifecycle_manager/lifecycle_manager.hpp#L40-L65",
+      "architectural_role": "system_supervision"
+    },
+    {
+      "name": "collision_detector",
+      "class_name": "CollisionDetector",
+      "package": "nav2_collision_monitor",
+      "source_header": "nav2_collision_monitor/include/nav2_collision_monitor/collision_detector_node.hpp#L45-L65",
+      "purpose": "Specialized polygon collision detection"
+    },
+    {
+      "name": "costmap_2d_ros",
+      "class_name": "Costmap2DROS",
+      "package": "nav2_costmap_2d",
+      "source_header": "nav2_costmap_2d/include/nav2_costmap_2d/costmap_2d_ros.hpp#L60-L90",
+      "purpose": "Underlying 2D spatial costmap service"
+    },
+    {
+      "name": "costmap_filter_info_server",
+      "class_name": "CostmapFilterInfoServer",
+      "package": "nav2_map_server",
+      "source_header": "nav2_map_server/include/nav2_map_server/costmap_filter_info_server.hpp#L45-L65",
+      "purpose": "Costmap filter mask parameter publisher"
+    },
+    {
+      "name": "map_saver",
+      "class_name": "MapSaver",
+      "package": "nav2_map_server",
+      "source_header": "nav2_map_server/include/nav2_map_server/map_saver.hpp#L40-L60",
+      "purpose": "Map persistence CLI utility"
+    },
+    {
+      "name": "vector_object_server",
+      "class_name": "VectorObjectServer",
+      "package": "nav2_map_server",
+      "source_header": "nav2_map_server/include/nav2_map_server/vector_object_server.hpp#L45-L65",
+      "purpose": "Vector geometric objects service"
+    },
+    {
+      "name": "loopback_simulator",
+      "class_name": "LoopbackSimulator",
+      "package": "nav2_loopback_sim",
+      "source_header": "nav2_loopback_sim/include/nav2_loopback_sim/loopback_simulator.hpp#L40-L60",
+      "purpose": "Headless odometry/scan simulator mock"
+    },
+    {
+      "name": "base_footprint_publisher",
+      "class_name": "BaseFootprintPublisher",
+      "package": "nav2_util",
+      "source_header": "nav2_util/include/nav2_util/base_footprint_publisher.hpp#L40-L60",
+      "purpose": "Robot footprint TF broadcaster"
+    },
+    {
+      "name": "following_server",
+      "class_name": "FollowingServer",
+      "package": "opennav_following",
+      "source_header": "nav2_following/opennav_following/include/opennav_following/following_server.hpp#L45-L65",
+      "purpose": "Target following autonomy server"
+    },
+    {
+      "name": "basic_navigator",
+      "class_name": "BasicNavigator",
+      "package": "nav2_simple_commander",
+      "source_header": "nav2_simple_commander/nav2_simple_commander/robot_navigator.py#L40-L70",
+      "purpose": "Python autonomy client API"
+    }
+  ],
+  "topics": [
+    {
+      "name": "/cmd_vel_nav",
+      "type": "geometry_msgs/msg/Twist",
+      "publishers": [
+        "controller_server"
+      ],
+      "subscribers": [
+        "velocity_smoother"
+      ]
+    },
+    {
+      "name": "/cmd_vel_smoothed",
+      "type": "geometry_msgs/msg/Twist",
+      "publishers": [
+        "velocity_smoother"
+      ],
+      "subscribers": [
+        "collision_monitor"
+      ]
+    },
+    {
+      "name": "/cmd_vel",
+      "type": "geometry_msgs/msg/Twist",
+      "publishers": [
+        "collision_monitor"
+      ],
+      "subscribers": [
+        "base_driver"
+      ]
+    },
+    {
+      "name": "/plan",
+      "type": "nav_msgs/msg/Path",
+      "publishers": [
+        "planner_server"
+      ],
+      "subscribers": [
+        "controller_server",
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/transformed_global_plan",
+      "type": "nav_msgs/msg/Path",
+      "publishers": [
+        "controller_server"
+      ],
+      "subscribers": []
+    },
+    {
+      "name": "/map",
+      "type": "nav_msgs/msg/OccupancyGrid",
+      "publishers": [
+        "map_server"
+      ],
+      "subscribers": [
+        "amcl",
+        "planner_server",
+        "controller_server"
+      ]
+    },
+    {
+      "name": "/map_metadata",
+      "type": "nav_msgs/msg/MapMetaData",
+      "publishers": [
+        "map_server"
+      ],
+      "subscribers": []
+    },
+    {
+      "name": "/amcl_pose",
+      "type": "geometry_msgs/msg/PoseWithCovarianceStamped",
+      "publishers": [
+        "amcl"
+      ],
+      "subscribers": []
+    },
+    {
+      "name": "/particlecloud",
+      "type": "nav2_msgs/msg/ParticleCloud",
+      "publishers": [
+        "amcl"
+      ],
+      "subscribers": []
+    },
+    {
+      "name": "/initialpose",
+      "type": "geometry_msgs/msg/PoseWithCovarianceStamped",
+      "publishers": [],
+      "subscribers": [
+        "amcl"
+      ]
+    },
+    {
+      "name": "/scan",
+      "type": "sensor_msgs/msg/LaserScan",
+      "publishers": [],
+      "subscribers": [
+        "collision_monitor",
+        "amcl",
+        "controller_server"
+      ]
+    },
+    {
+      "name": "/odom",
+      "type": "nav_msgs/msg/Odometry",
+      "publishers": [],
+      "subscribers": [
+        "velocity_smoother",
+        "controller_server",
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/tf",
+      "type": "tf2_msgs/msg/TFMessage",
+      "publishers": [
+        "amcl"
+      ],
+      "subscribers": [
+        "controller_server",
+        "planner_server"
+      ]
+    },
+    {
+      "name": "/tf_static",
+      "type": "tf2_msgs/msg/TFMessage",
+      "publishers": [],
+      "subscribers": [
+        "controller_server",
+        "planner_server"
+      ]
+    },
+    {
+      "name": "/speed_limit",
+      "type": "nav2_msgs/msg/SpeedLimit",
+      "publishers": [],
+      "subscribers": [
+        "controller_server"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "/navigate_to_pose",
+      "type": "nav2_msgs/action/NavigateToPose",
+      "server": "bt_navigator",
+      "clients": [
+        "basic_navigator"
+      ]
+    },
+    {
+      "name": "/navigate_through_poses",
+      "type": "nav2_msgs/action/NavigateThroughPoses",
+      "server": "bt_navigator",
+      "clients": [
+        "basic_navigator"
+      ]
+    },
+    {
+      "name": "/follow_path",
+      "type": "nav2_msgs/action/FollowPath",
+      "server": "controller_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/compute_path_to_pose",
+      "type": "nav2_msgs/action/ComputePathToPose",
+      "server": "planner_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/compute_path_through_poses",
+      "type": "nav2_msgs/action/ComputePathThroughPoses",
+      "server": "planner_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/smooth_path",
+      "type": "nav2_msgs/action/SmoothPath",
+      "server": "smoother_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/spin",
+      "type": "nav2_msgs/action/Spin",
+      "server": "behavior_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/wait",
+      "type": "nav2_msgs/action/Wait",
+      "server": "behavior_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/backup",
+      "type": "nav2_msgs/action/BackUp",
+      "server": "behavior_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/drive_on_heading",
+      "type": "nav2_msgs/action/DriveOnHeading",
+      "server": "behavior_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/assisted_teleop",
+      "type": "nav2_msgs/action/AssistedTeleop",
+      "server": "behavior_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/dock_robot",
+      "type": "opennav_docking_msgs/action/DockRobot",
+      "server": "docking_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/undock_robot",
+      "type": "opennav_docking_msgs/action/UndockRobot",
+      "server": "docking_server",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/follow_waypoints",
+      "type": "nav2_msgs/action/FollowWaypoints",
+      "server": "waypoint_follower",
+      "clients": [
+        "basic_navigator"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "/lifecycle_manager_navigation/manage_nodes",
+      "type": "nav2_msgs/srv/ManageLifecycleNodes",
+      "server": "lifecycle_manager_navigation",
+      "clients": []
+    },
+    {
+      "name": "/lifecycle_manager_navigation/is_active",
+      "type": "std_srvs/srv/Trigger",
+      "server": "lifecycle_manager_navigation",
+      "clients": []
+    },
+    {
+      "name": "/lifecycle_manager_localization/manage_nodes",
+      "type": "nav2_msgs/srv/ManageLifecycleNodes",
+      "server": "lifecycle_manager_localization",
+      "clients": []
+    },
+    {
+      "name": "/lifecycle_manager_localization/is_active",
+      "type": "std_srvs/srv/Trigger",
+      "server": "lifecycle_manager_localization",
+      "clients": []
+    },
+    {
+      "name": "/map_server/load_map",
+      "type": "nav2_msgs/srv/LoadMap",
+      "server": "map_server",
+      "clients": [
+        "basic_navigator"
+      ]
+    },
+    {
+      "name": "/map_server/map",
+      "type": "nav_msgs/srv/GetMap",
+      "server": "map_server",
+      "clients": [
+        "loopback_sim"
+      ]
+    },
+    {
+      "name": "/global_costmap/clear_entirely_global_costmap",
+      "type": "nav2_msgs/srv/ClearEntireCostmap",
+      "server": "global_costmap",
+      "clients": [
+        "bt_navigator"
+      ]
+    },
+    {
+      "name": "/local_costmap/clear_entirely_local_costmap",
+      "type": "nav2_msgs/srv/ClearEntireCostmap",
+      "server": "local_costmap",
+      "clients": [
+        "bt_navigator"
+      ]
+    }
+  ]
+}

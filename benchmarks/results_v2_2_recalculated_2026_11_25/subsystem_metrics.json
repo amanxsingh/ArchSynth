@@ -1,0 +1,33 @@
+{
+  "nav2": {
+    "mean_jaccard_similarity": 0.705,
+    "ari": 0.1984,
+    "nmi": 0.6203,
+    "evaluated_nodes": 13
+  },
+  "slam_toolbox": {
+    "subsystems_count": 3,
+    "ari": "N/A (no ground truth)",
+    "nmi": "N/A (no ground truth)"
+  },
+  "ros2_control": {
+    "subsystems_count": 2,
+    "ari": "N/A (no ground truth)",
+    "nmi": "N/A (no ground truth)"
+  },
+  "jaco2_sim_devkit": {
+    "ari": 1.0,
+    "nmi": 1.0,
+    "evaluated_nodes": 11
+  },
+  "behaviortree_cpp": {
+    "subsystems_count": 1,
+    "ari": "N/A (no ground truth)",
+    "nmi": "N/A (no ground truth)"
+  },
+  "express": {
+    "subsystems_count": 0,
+    "ari": "N/A (no ground truth)",
+    "nmi": "N/A (no ground truth)"
+  }
+}

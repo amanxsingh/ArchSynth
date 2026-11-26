@@ -1,0 +1,12 @@
+[
+  "/map_server/load_map",
+  "/map_server/save_map",
+  "/reinitialize_global_localization",
+  "/set_initial_pose",
+  "/lifecycle_manager_navigation/manage_nodes",
+  "/lifecycle_manager_localization/manage_nodes",
+  "/planner_server/get_costmap",
+  "/controller_server/get_costmap",
+  "/smoother_server/smooth_path",
+  "/velocity_smoother/set_parameters"
+]

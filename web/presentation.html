@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchSynth — M.Tech Dissertation Progress Presentation</title>
+    
+    <!-- Project Favicon (Inline SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Cpath d='M30 70 L50 30 L70 70 Z' fill='none' stroke='%2322d3ee' stroke-width='8'/%3E%3Ccircle cx='50' cy='30' r='10' fill='%23818cf8'/%3E%3Ccircle cx='30' cy='70' r='10' fill='%2334d399'/%3E%3Ccircle cx='70' cy='70' r='10' fill='%23fb7185'/%3E%3C/svg%3E">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-body: #f8fafc;
+            --bg-slide: #ffffff;
+            --border-color: #e2e8f0;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --card-bg: #f8fafc;
+            --card-border: #e2e8f0;
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --primary-border: #bfdbfe;
+            --accent-teal: #0d9488;
+            --accent-purple: #7c3aed;
+            --success-green: #10b981;
+            --alert-red: #e11d48;
+            --slide-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.05);
+        }
+
+        [data-theme="dark"] {
+            --bg-body: #090d16;
+            --bg-slide: #0f172a;
+            --border-color: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --primary: #3b82f6;
+            --primary-light: rgba(59, 130, 246, 0.12);
+            --primary-border: rgba(59, 130, 246, 0.3);
+            --accent-teal: #14b8a6;
+            --accent-purple: #a855f7;
+            --success-green: #34d399;
+            --alert-red: #fb7185;
+            --slide-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            transition: background 0.25s ease, color 0.25s ease;
+        }
+
+        /* Top Toolbar */
+        .toolbar {
+            position: fixed;
+            top: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-slide);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 9999px;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+            z-index: 1000;
+        }
+
+        .toolbar-brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-right: 12px;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .toolbar-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 14px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .toolbar-btn:hover {
+            color: var(--text-primary);
+            background: var(--card-bg);
+        }
+
+        .toolbar-counter {
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+            padding: 0 8px;
+        }
+
+        /* Presentation Container */
+        .presentation-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            padding: 80px 20px 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Slide Card - 16:9 Aspect Ratio */
+        .slide {
+            display: none;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: var(--bg-slide);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 44px 52px;
+            box-shadow: var(--slide-shadow);
+            position: relative;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header Elements */
+        .slide-header {
+            margin-bottom: 24px;
+        }
+
+        .category-tracker {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .slide-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.25;
+            margin-bottom: 4px;
+        }
+
+        .slide-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            flex: 1;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            flex: 1;
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 14px;
+            flex: 1;
+        }
+
+        .grid-4-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Cards */
+        .minimal-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .minimal-card.highlight {
+            background: var(--primary-light);
+            border-color: var(--primary-border);
+        }
+
+        .card-badge {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .card-body {
+            font-size: 12px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .card-footer-badge {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-top: 12px;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            background: var(--card-bg);
+            color: var(--text-primary);
+            font-size: 12px;
+        }
+
+        .comparison-table th.col-highlight,
+        .comparison-table td.col-highlight {
+            background: var(--primary-light);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .comparison-table td {
+            color: var(--text-secondary);
+        }
+
+        /* Metric Box */
+        .metric-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 16px 20px;
+        }
+
+        .metric-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .metric-sub {
+            font-size: 10px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Timeline Items */
+        .timeline-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 18px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-phase {
+            font-size: 12px;
+            font-weight: 700;
+            width: 120px;
+            color: var(--text-primary);
+        }
+
+        .timeline-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            flex: 1;
+            padding: 0 16px;
+        }
+
+        .timeline-status {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .status-done {
+            background: rgba(16, 185, 129, 0.12);
+            color: var(--success-green);
+        }
+
+        .status-progress {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .status-next {
+            background: rgba(124, 58, 237, 0.12);
+            color: var(--accent-purple);
+        }
+
+        /* Slide 1 - Special Title Layout */
+        .title-slide-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .title-accent-bar {
+            width: 80px;
+            height: 5px;
+            background: var(--primary);
+            border-radius: 3px;
+            margin-bottom: 24px;
+        }
+
+        .title-tag {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+
+        .title-main {
+            font-family: 'Outfit', sans-serif;
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .title-sub {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 850px;
+            line-height: 1.5;
+        }
+
+        .title-meta-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 16px 24px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .meta-col-title {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .meta-col-val {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        /* Speaker Notes Panel (collapsible) */
+        .notes-panel {
+            width: 100%;
+            max-width: 1200px;
+            background: var(--bg-slide);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin-top: 16px;
+            box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.04);
+            display: none;
+        }
+
+        .notes-panel.visible {
+            display: block;
+        }
+
+        .notes-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .notes-text {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Keyboard Hints */
+        .keyboard-hints {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 16px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .key-badge {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            font-size: 10px;
+        }
+
+        /* Print styles for PDF export */
+        @media print {
+            .toolbar, .notes-panel, .keyboard-hints {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .presentation-wrapper {
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            .slide {
+                display: flex !important;
+                page-break-after: always;
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <!-- Top Toolbar -->
+    <nav class="toolbar">
+        <div class="toolbar-brand">
+            <i class="fa-solid fa-diagram-project"></i> ArchSynth
+        </div>
+        <button class="toolbar-btn" id="btn-prev" title="Previous Slide (Left Arrow)"><i class="fa-solid fa-chevron-left"></i></button>
+        <span class="toolbar-counter" id="slide-counter">01 / 12</span>
+        <button class="toolbar-btn" id="btn-next" title="Next Slide (Right Arrow)"><i class="fa-solid fa-chevron-right"></i></button>
+        <button class="toolbar-btn" id="btn-notes" title="Toggle Speaker Script (S)"><i class="fa-solid fa-comment-dots"></i> Script</button>
+        <button class="toolbar-btn" id="btn-theme" title="Toggle Theme (T)"><i class="fa-solid fa-moon"></i></button>
+        <button class="toolbar-btn" id="btn-fullscreen" title="Fullscreen (F)"><i class="fa-solid fa-expand"></i></button>
+        <a href="../ArchSynth_Project_Presentation.pptx" download class="toolbar-btn" title="Download PowerPoint PPTX"><i class="fa-solid fa-file-powerpoint" style="color: #ea580c;"></i> .PPTX</a>
+        <a href="/" class="toolbar-btn" title="Back to Web App"><i class="fa-solid fa-house"></i> App</a>
+    </nav>
+
+    <!-- Presentation Viewport -->
+    <div class="presentation-wrapper">
+
+        <!-- SLIDE 1: TITLE SLIDE -->
+        <section class="slide active" data-slide="1" data-notes="Good morning Ma'am. Today I am presenting the progress and research defense for my M.Tech dissertation project, titled 'ArchSynth: Automated ROS2 Software Architecture Recovery and Standards-Based Documentation'. In this presentation, I will walk you through the real problem we are solving, the current 2026 literature, the clear research gaps, what I have built and validated so far on Navigation2, and our next steps for quantitative and human evaluation.">
+            <div class="title-slide-content">
+                <div>
+                    <div class="title-accent-bar"></div>
+                    <div class="title-tag">M.TECH DISSERTATION PROGRESS PRESENTATION • 2026</div>
+                    <h1 class="title-main">ArchSynth: Automated ROS2 Software Architecture Recovery & Standards-Based Documentation</h1>
+                    <p class="title-sub">Synthesizing Hierarchical ROS2 Computation Graphs and ISO/IEC/IEEE 42010 Developer Documentation via Schema-Constrained Large Language Models</p>
+                </div>
+                <div class="title-meta-card">
+                    <div>
+                        <div class="meta-col-title">Candidate</div>
+                        <div class="meta-col-val">Aman<br><span style="font-size: 11px; font-weight: normal; color: var(--text-muted);">M.Tech (Automation & Robotics)</span></div>
+                    </div>
+                    <div>
+                        <div class="meta-col-title">Institution</div>
+                        <div class="meta-col-val">Defence Institute of Advanced Technology (DIAT), Pune<br><span style="font-size: 11px; font-weight: normal; color: var(--text-muted);">Dept. of Automation & Robotics</span></div>
+                    </div>
+                    <div>
+                        <div class="meta-col-title">Review Context</div>
+                        <div class="meta-col-val">Progress Review & Defense<br><span style="font-size: 11px; font-weight: normal; color: var(--primary);">For Respected Supervisor / Guide ("Ma'am")</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: CONTEXT & MOTIVATION -->
+        <section class="slide" data-slide="2" data-notes="Ma'am, to understand why this project is essential: ROS2 has become the global standard in modern robotics. However, ROS2 systems suffer from an acute software engineering problem. Nodes communicate implicitly via DDS topics and actions. Launch files are written in Turing-complete Python code with nested inclusions and remappings. Consequently, developers cannot easily see the whole picture, and documentation gets completely out of sync with code. ArchSynth solves this by turning raw source code directly into structured, verified architecture models and documentation.">
+            <div class="slide-header">
+                <div class="category-tracker">01. Context & Motivation</div>
+                <h2 class="slide-title">The Architecture Decay Problem in ROS2 Robotics</h2>
+                <p class="slide-subtitle">Why modern robotics software systems urgently require automated static architecture recovery</p>
+            </div>
+            <div class="grid-3">
+                <div class="minimal-card">
+                    <div class="card-badge">DDS Topology Blindspot</div>
+                    <h3 class="card-title">01. Implicit DDS Communication</h3>
+                    <p class="card-body">ROS2 nodes communicate via asynchronous publish/subscribe topics, services, and actions. These connections are instantiated dynamically at runtime without a single centralized manifest, making data flows invisible during manual inspection.</p>
+                    <div class="card-footer-badge"><i class="fa-solid fa-circle-exclamation" style="color: var(--alert-red);"></i> Inability to trace interfaces</div>
+                </div>
+                <div class="minimal-card">
+                    <div class="card-badge">Composition Opacity</div>
+                    <h3 class="card-title">02. Multi-Layer Launch Trees</h3>
+                    <p class="card-body">Robotics pipelines use deeply nested Python (<code>.launch.py</code>) and XML launch files with conditional logic, dynamic namespaces, and topic remappings. Manually tracing which node launches with which topic is nearly impossible in large repos.</p>
+                    <div class="card-footer-badge"><i class="fa-solid fa-sitemap" style="color: var(--primary);"></i> Complex nesting & remappings</div>
+                </div>
+                <div class="minimal-card">
+                    <div class="card-badge">Software Erosion</div>
+                    <h3 class="card-title">03. Documentation Rot</h3>
+                    <p class="card-body">As robotics packages evolve, hand-written architecture diagrams become outdated within weeks. Over 80% of open-source ROS2 packages lack up-to-date architectural specifications, leading to severe architectural drift.</p>
+                    <div class="card-footer-badge"><i class="fa-solid fa-triangle-exclamation" style="color: var(--alert-red);"></i> High maintenance barrier</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: LITERATURE REVIEW (PREVIOUS PAPERS) -->
+        <section class="slide" data-slide="3" data-notes="Ma'am, in our literature survey, we observed two completely independent research tracks published this year in 2026. Track 1 includes Benchat et al. and Briechle et al., which focus on ROS2 architecture extraction, but they only output raw graphs. Track 2 is the CIAO paper by De Luca et al., published in ICSA 2026, which generates standard ISO 42010 documentation, but is completely blind to ROS2. No prior paper bridges this gap.">
+            <div class="slide-header">
+                <div class="category-tracker">02. Literature Review</div>
+                <h2 class="slide-title">Recent Breakthroughs & Related Work (2026)</h2>
+                <p class="slide-subtitle">Analyzing the two dominant but disconnected research tracks in software architecture recovery</p>
+            </div>
+            <div class="grid-2">
+                <div class="minimal-card">
+                    <div class="card-badge" style="color: var(--primary);"><i class="fa-solid fa-robot"></i> Track 1: ROS2 Architecture Recovery</div>
+                    <h3 class="card-title">Benchat et al. (arXiv:2602.18644) & Briechle et al. (arXiv:2605.20055)</h3>
+                    <div class="card-body">
+                        <ul style="padding-left: 16px; margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px;">
+                            <li><strong>What they do:</strong> Use LLM agents to read ROS2 source code and launch files, reconstructing hierarchical architecture diagrams (nodes, topics, launch composition).</li>
+                            <li><strong>Methodology:</strong> AST extraction and prompt engineering to reconstruct computation graphs.</li>
+                            <li><strong style="color: var(--alert-red);">Critical Gap:</strong> They stop purely at the diagram/graph model. They do <em>not</em> produce polished, standards-based written developer documentation, and their accuracy degrades on complex launch compositions.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer-badge"><i class="fa-solid fa-ban" style="color: var(--alert-red);"></i> No written developer manuals produced</div>
+                </div>
+                <div class="minimal-card">
+                    <div class="card-badge" style="color: var(--accent-purple);"><i class="fa-solid fa-file-lines"></i> Track 2: General Software Documentation</div>
+                    <h3 class="card-title">CIAO — De Luca et al. (Accepted ICSA 2026 / arXiv:2604.08293)</h3>
+                    <div class="card-body">
+                        <ul style="padding-left: 16px; margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px;">
+                            <li><strong>What they do:</strong> LLM pipeline that turns generic GitHub software repositories into structured architectural documentation (ISO/IEC/IEEE 42010, C4 model).</li>
+                            <li><strong>Evaluation:</strong> Empirically validated with 22 professional software developers.</li>
+                            <li><strong style="color: var(--alert-red);">Critical Gap:</strong> Has <em>zero concept of ROS2</em>. It cannot parse launch files, DDS pub/sub topics, namespace remappings, node lifecycles, or action servers. Fails on robotics codebases.</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer-badge"><i class="fa-solid fa-ban" style="color: var(--alert-red);"></i> Completely blind to robotics middleware</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: COMPARATIVE ANALYSIS TABLE -->
+        <section class="slide" data-slide="4" data-notes="Ma'am, this comparison table clearly highlights our uniqueness. While Benchat and Briechle analyze ROS2, they only output raw diagrams without standards-based documentation. CIAO generates documentation, but completely lacks robotics understanding. Furthermore, ArchSynth uniquely introduces strict Pydantic blueprint schemas to stop LLM hallucinations and provides an intuitive web interface for real-time developer adoption.">
+            <div class="slide-header">
+                <div class="category-tracker">03. Comparative Analysis</div>
+                <h2 class="slide-title">Systematic Comparison with State-of-the-Art</h2>
+                <p class="slide-subtitle">Feature-by-feature matrix comparing 2026 published literature with ArchSynth</p>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Capability / Dimension</th>
+                        <th>Benchat et al. (2026)</th>
+                        <th>Briechle et al. (2026)</th>
+                        <th>CIAO (ICSA 2026)</th>
+                        <th class="col-highlight">ArchSynth (Our Work)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Target Domain</strong></td>
+                        <td>ROS2 Robotics</td>
+                        <td>ROS2 Robotics</td>
+                        <td>Generic Software (Java/Py)</td>
+                        <td class="col-highlight">ROS2 Robotics Systems</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Launch File Parsing</strong></td>
+                        <td>Partial / Simple</td>
+                        <td>AST + Regex</td>
+                        <td>None (❌ Unsupported)</td>
+                        <td class="col-highlight">Full AST (.py) + XML (.xml)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Primary Artifact Output</strong></td>
+                        <td>Raw PlantUML Diagram</td>
+                        <td>Node Dependency Graph</td>
+                        <td>ISO 42010 Written Manual</td>
+                        <td class="col-highlight">Both: C4 Diagrams + ISO 42010 Docs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Anti-Hallucination Guard</strong></td>
+                        <td>Prompt Engineering</td>
+                        <td>Prompt Engineering</td>
+                        <td>Few-shot Prompting</td>
+                        <td class="col-highlight">Strict Pydantic v2 Blueprints</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interactive User Tooling</strong></td>
+                        <td>None (CLI Scripts)</td>
+                        <td>None (CLI Scripts)</td>
+                        <td>None (CLI Scripts)</td>
+                        <td class="col-highlight">Full Web GUI + REST API</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Evaluation Methodology</strong></td>
+                        <td>Precision / Recall</td>
+                        <td>Precision / Recall</td>
+                        <td>22-Developer User Study</td>
+                        <td class="col-highlight">Dual: Prec/Recall/F1 + User Study</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SLIDE 5: RESEARCH GAP & NOVELTY -->
+        <section class="slide" data-slide="5" data-notes="Ma'am, this slide encapsulates our core academic thesis. We have identified three specific gaps: the recovery-to-documentation chasm, the robotics domain void in general SE tools, and LLM hallucination. Our novel contribution is fusing AST-based ROS2 static recovery with ISO 42010 documentation generation under strict Pydantic schema validation. This is our defensible research novelty.">
+            <div class="slide-header">
+                <div class="category-tracker">04. Research Gap & Novelty</div>
+                <h2 class="slide-title">The Research Gap & Academic Contribution</h2>
+                <p class="slide-subtitle">Synthesizing two disjoint paradigms into an empirical, defensible dissertation contribution</p>
+            </div>
+            <div class="grid-2">
+                <div class="minimal-card">
+                    <div class="card-badge" style="color: var(--alert-red);"><i class="fa-solid fa-magnifying-glass"></i> Three Critical Research Gaps</div>
+                    <div class="card-body" style="display: flex; flex-direction: column; gap: 10px;">
+                        <div>
+                            <strong style="color: var(--text-primary);">Gap 1: The Recovery-to-Documentation Chasm</strong>
+                            <p style="margin-top: 2px;">Existing ROS2 tools stop at diagrams. Engineers need structured written manuals (ISO 42010 / C4) describing component roles, lifecycle behavior, and external hardware interfaces.</p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--text-primary);">Gap 2: The Robotics Domain Void in SE Tools</strong>
+                            <p style="margin-top: 2px;">Tools like CIAO assume monolithic OOP class structures. They are completely incapable of resolving asynchronous DDS pub/sub topologies and nested launch trees.</p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--text-primary);">Gap 3: Unconstrained LLM Hallucinations</strong>
+                            <p style="margin-top: 2px;">Prior tools rely on loose natural-language prompts. Without strict schema validation, LLMs frequently invent non-existent topics and connections.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="minimal-card highlight">
+                    <div class="card-badge" style="color: var(--primary);"><i class="fa-solid fa-award"></i> The Novel Contribution</div>
+                    <h3 class="card-title" style="font-size: 18px; margin-top: 4px;">ArchSynth fuses ROS2-aware static recovery with ISO 42010 documentation generation.</h3>
+                    <p class="card-body" style="margin-top: 10px;">
+                        ArchSynth bridges the gap by pairing deterministic AST parsing of ROS2 nodes and launch files with <strong>Pydantic schema blueprints</strong>. 
+                        <br><br>
+                        This enables LLMs to cluster subsystems and generate both <strong>interactive C4 Mermaid diagrams</strong> and <strong>standards-compliant developer manuals</strong> with verified zero hallucination.
+                    </p>
+                    <div class="card-footer-badge" style="color: var(--primary);"><i class="fa-solid fa-check-double"></i> Citable, defensible dissertation contribution</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: 5-STAGE PIPELINE ARCHITECTURE -->
+        <section class="slide" data-slide="6" data-notes="Ma'am, here is the operational workflow of ArchSynth. It operates in five clean, modular stages: First, the Ingestor validates that the repository is a legitimate ROS2 package. Second, the NodeAnalyzer extracts communication primitives using AST parsing so we don't waste tokens. Third, the LaunchAnalyzer parses the hierarchical composition of launch files. Fourth, the ArchitectureConstructor uses Google Gemini or local Ollama, strictly bounded by Pydantic schemas, to construct subsystems. Finally, the DocGenerator renders C4 Mermaid diagrams and ISO 42010 documentation.">
+            <div class="slide-header">
+                <div class="category-tracker">05. Methodology & Architecture</div>
+                <h2 class="slide-title">The ArchSynth 5-Stage Execution Pipeline</h2>
+                <p class="slide-subtitle">How source code and launch configurations flow into verified architecture artifacts</p>
+            </div>
+            <div class="grid-5">
+                <div class="minimal-card">
+                    <div class="card-badge">Step 01</div>
+                    <h4 class="card-title" style="font-size: 14px;">Ingestor</h4>
+                    <div style="font-size: 10px; color: var(--accent-teal); font-weight: 600; margin-bottom: 6px;">[Target Repo / URL]</div>
+                    <p class="card-body" style="font-size: 11px;">Clones repo. Validates <code>package.xml</code> manifests. Discovers package hierarchy and verifies ROS2 compliance.</p>
+                    <div class="card-footer-badge">package.xml Guard</div>
+                </div>
+                <div class="minimal-card">
+                    <div class="card-badge">Step 02</div>
+                    <h4 class="card-title" style="font-size: 14px;">NodeAnalyzer</h4>
+                    <div style="font-size: 10px; color: var(--accent-teal); font-weight: 600; margin-bottom: 6px;">[Python Source AST]</div>
+                    <p class="card-body" style="font-size: 11px;">Parses Python AST. Deterministically extracts publishers, subscribers, services, actions, and QoS parameters.</p>
+                    <div class="card-footer-badge">AST Extraction</div>
+                </div>
+                <div class="minimal-card">
+                    <div class="card-badge">Step 03</div>
+                    <h4 class="card-title" style="font-size: 14px;">LaunchAnalyzer</h4>
+                    <div style="font-size: 10px; color: var(--accent-teal); font-weight: 600; margin-bottom: 6px;">[.launch.py / .xml]</div>
+                    <p class="card-body" style="font-size: 11px;">Parses nested launch trees, arguments, namespace groups, and dynamic topic/service remappings.</p>
+                    <div class="card-footer-badge">Launch Graph</div>
+                </div>
+                <div class="minimal-card">
+                    <div class="card-badge">Step 04</div>
+                    <h4 class="card-title" style="font-size: 14px;">Constructor</h4>
+                    <div style="font-size: 10px; color: var(--accent-teal); font-weight: 600; margin-bottom: 6px;">[Schema + LLM]</div>
+                    <p class="card-body" style="font-size: 11px;">Synthesizes node & launch data into C4 models. Strictly constrained by Pydantic blueprints to stop hallucination.</p>
+                    <div class="card-footer-badge">Blueprint Bound</div>
+                </div>
+                <div class="minimal-card highlight">
+                    <div class="card-badge">Step 05</div>
+                    <h4 class="card-title" style="font-size: 14px;">DocGenerator</h4>
+                    <div style="font-size: 10px; color: var(--accent-teal); font-weight: 600; margin-bottom: 6px;">[Validated Model]</div>
+                    <p class="card-body" style="font-size: 11px;">Emits complete ISO 42010 Markdown docs, C4 Mermaid visual diagrams, and individual node catalogs.</p>
+                    <div class="card-footer-badge" style="color: var(--primary);">ISO 42010 Output</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: WHAT HAS BEEN DONE TILL NOW -->
+        <section class="slide" data-slide="7" data-notes="Ma'am, to summarize our current implementation progress: All core backend pipeline modules are fully coded and functional. The Pydantic anti-hallucination blueprints are active. Our LLM client handles both Gemini and local Ollama models. We also developed a complete interactive web dashboard using Flask and vanilla web technologies, allowing any user to test repos with preset options.">
+            <div class="slide-header">
+                <div class="category-tracker">06. Implementation Status</div>
+                <h2 class="slide-title">What Has Been Implemented Till Now</h2>
+                <p class="slide-subtitle">Summary of completed technical deliverables and functional components in the repository</p>
+            </div>
+            <div class="grid-2">
+                <div class="minimal-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span class="card-badge" style="color: var(--success-green);"><i class="fa-solid fa-circle-check"></i> 100% Implemented</span>
+                    </div>
+                    <h4 class="card-title">Core Extraction & Synthesis Pipeline (`src/`)</h4>
+                    <p class="card-body">All five pipeline stages (<code>ingestor.py</code>, <code>node_analyzer.py</code>, <code>launch_analyzer.py</code>, <code>architecture_constructor.py</code>, <code>doc_generator.py</code>, <code>main.py</code>) are built, integrated, and verified.</p>
+                </div>
+                <div class="minimal-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span class="card-badge" style="color: var(--success-green);"><i class="fa-solid fa-circle-check"></i> Production Ready</span>
+                    </div>
+                    <h4 class="card-title">Blueprint Schema Engine (`src/schema.py`)</h4>
+                    <p class="card-body">Strict Pydantic v2 models for <code>ROS2Node</code>, <code>LaunchFile</code>, <code>Subsystem</code>, and <code>ArchitectureModel</code>. Enforces structural validity and prevents LLM hallucinations.</p>
+                </div>
+                <div class="minimal-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span class="card-badge" style="color: var(--primary);"><i class="fa-solid fa-robot"></i> Dual Backend</span>
+                    </div>
+                    <h4 class="card-title">Dual-LLM Client Wrapper (`src/llm_client.py`)</h4>
+                    <p class="card-body">Engineered hybrid support for cloud-based Google Gemini 2.5 Flash and local offline Ollama (Qwen2.5-Coder / Llama-3) for zero-cost, privacy-friendly inference.</p>
+                </div>
+                <div class="minimal-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span class="card-badge" style="color: var(--primary);"><i class="fa-solid fa-window-maximize"></i> Fully Functional</span>
+                    </div>
+                    <h4 class="card-title">Interactive Web Dashboard (`app.py`, `web/`)</h4>
+                    <p class="card-body">Modern Glassmorphism web UI with real-time execution animation, live Mermaid diagram viewer, marked.js doc preview, pre-configured sample presets, and 1-click download.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: CASE STUDY VALIDATION (NAV2) -->
+        <section class="slide" data-slide="8" data-notes="Ma'am, this slide presents the actual empirical validation of our pipeline on Navigation2. Nav2 is one of the largest and most complex ROS2 production repositories. ArchSynth successfully extracted 46 nodes, resolved 41 launch files, and accurately clustered them into 4 core functional subsystems. The entire ISO 42010 documentation and Mermaid diagram were synthesized automatically.">
+            <div class="slide-header">
+                <div class="category-tracker">07. Case Study Validation</div>
+                <h2 class="slide-title">Empirical Validation: Navigation2 (Nav2) Case Study</h2>
+                <p class="slide-subtitle">Real execution metrics obtained from running ArchSynth on the benchmark ROS2 Nav2 repository</p>
+            </div>
+            <div class="grid-4-metrics">
+                <div class="metric-card">
+                    <div class="metric-value" style="color: var(--primary);">46</div>
+                    <div class="metric-label">Discovered ROS2 Nodes</div>
+                    <div class="metric-sub">Mapped across packages</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" style="color: var(--accent-teal);">41</div>
+                    <div class="metric-label">Parsed Launch Files</div>
+                    <div class="metric-sub">Resolved hierarchically</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" style="color: var(--accent-purple);">04</div>
+                    <div class="metric-label">Synthesized Subsystems</div>
+                    <div class="metric-sub">Logical C4 clustering</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" style="color: var(--success-green);">14+</div>
+                    <div class="metric-label">DDS Topic Connections</div>
+                    <div class="metric-sub">Pub/Sub pairs linked</div>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="minimal-card">
+                    <div class="card-badge" style="color: var(--primary);">Synthesized Subsystem Breakdown</div>
+                    <div class="card-body" style="font-size: 11px; line-height: 1.6;">
+                        <strong>1. Core Navigation Stack:</strong> planner_server, smoother_server, controller_server, behavior_server, bt_navigator, route_server.<br>
+                        <strong>2. Localization & Map Services:</strong> map_server, amcl, lifecycle_manager_localization, keepout_filters.<br>
+                        <strong>3. System Testing & High-Level API:</strong> BasicNavigator, NavTester, BackupTest, DriveTest, WaypointFollower.<br>
+                        <strong>4. Infrastructure & Management:</strong> Component container & lifecycle manager.
+                    </div>
+                </div>
+                <div class="minimal-card highlight">
+                    <div class="card-badge" style="color: var(--accent-teal);">Generated Artifacts (Verified)</div>
+                    <div class="card-body" style="font-size: 11px; line-height: 1.6;">
+                        • <strong>Architecture JSON (144 KB):</strong> Complete verified schema model capturing all nodes, topics, and launch parameters.<br>
+                        • <strong>ISO 42010 README.md:</strong> Full developer manual with executive summary, C4 diagrams, and individual node catalog specs.<br>
+                        • <strong>Native Mermaid Diagrams:</strong> Interactive C4 Component graph rendering natively in GitHub Markdown.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: RESEARCH SCOPING -->
+        <section class="slide" data-slide="9" data-notes="Ma'am, to ensure our dissertation remains achievable, scientifically rigorous, and focused, we defined strict scope boundaries. We are deliberately not wasting time setting up Gazebo simulation or physical robot hardware because our research question is strictly in software engineering: how to reliably extract and document ROS2 architectures from source code. This scoping guarantees completion on schedule.">
+            <div class="slide-header">
+                <div class="category-tracker">08. Methodological Rigor</div>
+                <h2 class="slide-title">Deliberate Scoping & Boundary Definition</h2>
+                <p class="slide-subtitle">Ensuring high software engineering rigor and realistic part-time dissertation execution</p>
+            </div>
+            <div class="grid-2">
+                <div class="minimal-card">
+                    <div class="card-badge" style="color: var(--success-green);"><i class="fa-solid fa-check"></i> Strictly In Scope (Academic Focus)</div>
+                    <div class="card-body" style="display: flex; flex-direction: column; gap: 8px;">
+                        <div>
+                            <strong>• Static Source & Launch AST Analysis:</strong> Deterministic extraction of ROS2 nodes and launch composition without execution overhead.
+                        </div>
+                        <div>
+                            <strong>• Schema-Constrained Synthesis:</strong> Enforcing strict Pydantic blueprints to mathematically eliminate LLM hallucinations.
+                        </div>
+                        <div>
+                            <strong>• Standards-Compliant Output (ISO 42010 / C4):</strong> Generating standardized written documentation and native Mermaid diagrams.
+                        </div>
+                        <div>
+                            <strong>• Quantitative Benchmarking:</strong> Precision, Recall, and F1 scoring against hand-crafted ground truths.
+                        </div>
+                    </div>
+                </div>
+                <div class="minimal-card">
+                    <div class="card-badge" style="color: var(--alert-red);"><i class="fa-solid fa-xmark"></i> Deliberately Out of Scope (Avoiding Drift)</div>
+                    <div class="card-body" style="display: flex; flex-direction: column; gap: 8px;">
+                        <div>
+                            <strong>• Physical Robot & Gazebo/RViz Sim:</strong> Physical hardware and simulation do not impact static architecture recovery.
+                        </div>
+                        <div>
+                            <strong>• Live Runtime Tracing (rosbag2 / LTTng):</strong> Runtime tracing is deferred to future work; static analysis ensures 100% code coverage.
+                        </div>
+                        <div>
+                            <strong>• Reinforcement Learning / Perception:</strong> Focus remains on robotics software engineering rather than algorithm training.
+                        </div>
+                        <div>
+                            <strong>• Kubernetes / Container Orchestration:</strong> Focus is on the ROS2 computational graph itself.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: FUTURE ROADMAP -->
+        <section class="slide" data-slide="10" data-notes="Ma'am, looking forward, these are our six planned milestones: First, establishing the hand-drawn ground-truth baseline. Second, generating precision, recall, and F1 metrics to quantitatively benchmark against Briechle et al. Third, conducting a human evaluation study with 3 to 5 developers, adopting CIAO's methodology. Fourth, extending AST parsing to pure C++ nodes using tree-sitter. Finally, synthesizing the results into the final dissertation chapters and conference submission.">
+            <div class="slide-header">
+                <div class="category-tracker">09. Future Scope & Roadmap</div>
+                <h2 class="slide-title">What We Will Do Next: Evaluation & Extensions</h2>
+                <p class="slide-subtitle">The upcoming phases to complete the dissertation and submit for academic publication</p>
+            </div>
+            <div class="grid-3">
+                <div class="minimal-card">
+                    <div class="card-badge">Step 01 • Immediate</div>
+                    <h4 class="card-title">Ground-Truth Formalization</h4>
+                    <p class="card-body">Construct hand-curated ground-truth models for <code>nav2_bt_navigator</code> and SLAM Toolbox to serve as mathematical reference baselines.</p>
+                </div>
+                <div class="minimal-card">
+                    <div class="card-badge">Step 02 • Quantitative</div>
+                    <h4 class="card-title">Precision, Recall & F1 Benchmarking</h4>
+                    <p class="card-body">Run <code>eval/run_eval.py</code> against ground truths. Directly benchmark precision and recall metrics against Briechle et al.</p>
+                </div>
+                <div class="minimal-card">
+                    <div class="card-badge">Step 03 • Qualitative</div>
+                    <h4 class="card-title">Human Developer User Study</h4>
+                    <p class="card-body">Conduct a structured Likert-scale user study with 3–5 robotics engineers to rate documentation accuracy, readability, and utility (mirroring CIAO).</p>
+                </div>
+                <div class="minimal-card">
+                    <div class="card-badge">Step 04 • Parser Extension</div>
+                    <h4 class="card-title">C++ Node AST Parsing</h4>
+                    <p class="card-body">Incorporate <code>tree-sitter</code> / <code>libclang</code> to statically extract publishers and subscribers directly from pure C++ ROS2 nodes.</p>
+                </div>
+                <div class="minimal-card">
+                    <div class="card-badge">Step 05 • DevOps Integration</div>
+                    <h4 class="card-title">CI/CD & MkDocs Static Site</h4>
+                    <p class="card-body">Automate documentation generation via GitHub Actions and export interactive static documentation websites using MkDocs.</p>
+                </div>
+                <div class="minimal-card highlight">
+                    <div class="card-badge" style="color: var(--primary);">Step 06 • Publication</div>
+                    <h4 class="card-title">Dissertation Chapters & Paper</h4>
+                    <p class="card-body">Complete literature logs, write dissertation chapters, and submit a research paper manuscript (e.g. ICSA, MSR, or IROS).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 11: TIMELINE & MILESTONES -->
+        <section class="slide" data-slide="11" data-notes="Ma'am, here is our execution timeline. Phases 0 through 4 are completely achieved ahead of schedule. We are currently in Phase 5 building out the formal ground-truth benchmark. Over the next four weeks, we will execute the human user study and C++ parsing in Phase 6, leading directly into the final thesis write-up and defense in Phase 7.">
+            <div class="slide-header">
+                <div class="category-tracker">10. Dissertation Timeline</div>
+                <h2 class="slide-title">Milestone Execution Schedule</h2>
+                <p class="slide-subtitle">Phased breakdown from setup through to thesis defense and paper submission</p>
+            </div>
+            <div>
+                <div class="timeline-row">
+                    <div class="timeline-phase" style="color: var(--success-green);">Phase 0 – 2</div>
+                    <div class="timeline-desc">Setup, Pydantic Schema Blueprints, and Python AST NodeAnalyzer</div>
+                    <div class="timeline-status status-done">Completed ✅</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-phase" style="color: var(--success-green);">Phase 3 – 4</div>
+                    <div class="timeline-desc">LaunchAnalyzer, ArchitectureConstructor (Gemini/Ollama), and Web UI</div>
+                    <div class="timeline-status status-done">Completed ✅</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-phase" style="color: var(--primary);">Phase 5</div>
+                    <div class="timeline-desc">Ground Truth Formalization & Quantitative Benchmarking (Precision/Recall/F1)</div>
+                    <div class="timeline-status status-progress">In Progress 🔄</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-phase" style="color: var(--accent-purple);">Phase 6</div>
+                    <div class="timeline-desc">Human Developer Evaluation Study (Likert Questionnaire) & C++ Tree-Sitter Parser</div>
+                    <div class="timeline-status status-next">Next 4 Weeks ⏳</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-phase" style="color: var(--text-muted);">Phase 7</div>
+                    <div class="timeline-desc">Final Dissertation Writing, Conference Paper Submission & Final Defense</div>
+                    <div class="timeline-status" style="background: var(--card-bg); color: var(--text-muted);">Final Phase 🎯</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 12: SUMMARY & GUIDANCE REQUEST -->
+        <section class="slide" data-slide="12" data-notes="Thank you very much, Ma'am. To conclude, we have a working end-to-end framework that bridges the gap between ROS2 recovery and ISO 42010 documentation generation. I would love to receive your valuable feedback and guidance on the ground-truth benchmark selection, the developer questionnaire design, and your advice on the target conference venue. Thank you, and I am ready for any questions.">
+            <div class="slide-header">
+                <div class="category-tracker">11. Summary & Discussion</div>
+                <h2 class="slide-title">Summary & Seeking Guidance from Ma'am</h2>
+                <p class="slide-subtitle">Key dissertation takeaways and targeted points for supervisor discussion</p>
+            </div>
+            <div class="grid-2">
+                <div class="minimal-card">
+                    <div class="card-badge" style="color: var(--primary);"><i class="fa-solid fa-list-check"></i> Core Progress Summary</div>
+                    <div class="card-body" style="display: flex; flex-direction: column; gap: 8px;">
+                        <div>
+                            <strong>• Defensible Research Contribution:</strong> Fused ROS2 hierarchical recovery with ISO 42010 documentation generation, filling an unaddressed gap in 2026 literature.
+                        </div>
+                        <div>
+                            <strong>• Working End-to-End System:</strong> The full pipeline and web interface are operational and validated on Navigation2 (46 nodes, 41 launch files).
+                        </div>
+                        <div>
+                            <strong>• Zero Hallucination Guarantee:</strong> Pydantic blueprint schemas strictly bound LLM outputs to valid syntax.
+                        </div>
+                    </div>
+                </div>
+                <div class="minimal-card highlight">
+                    <div class="card-badge" style="color: var(--primary);"><i class="fa-solid fa-comments"></i> Guidance Requested from Ma'am</div>
+                    <div class="card-body" style="display: flex; flex-direction: column; gap: 10px;">
+                        <div>
+                            <strong style="color: var(--text-primary);">1. Ground Truth Selection:</strong>
+                            <p style="margin-top: 2px;">Does Ma'am recommend any specific additional ROS2 packages beyond Navigation2 (e.g. SLAM Toolbox or Autoware) for our benchmark?</p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--text-primary);">2. Human Developer Questionnaire:</strong>
+                            <p style="margin-top: 2px;">Guidance on Likert-scale questions to evaluate documentation clarity versus developer trust.</p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--text-primary);">3. Target Publication Venue:</strong>
+                            <p style="margin-top: 2px;">Advice on targeting robotics venues (IROS / ICRA) versus software engineering venues (ICSA / MSR).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Collapsible Speaker Script Panel -->
+    <div class="notes-panel" id="notes-panel">
+        <div class="notes-title"><i class="fa-solid fa-microphone-lines"></i> Suggested Presentation Script (What to say to Ma'am for this slide):</div>
+        <div class="notes-text" id="notes-content">Loading script...</div>
+    </div>
+
+    <!-- Keyboard Shortcuts Legend -->
+    <div class="keyboard-hints">
+        <span><span class="key-badge">←</span> / <span class="key-badge">→</span> Navigate Slides</span>
+        <span><span class="key-badge">Space</span> Next</span>
+        <span><span class="key-badge">S</span> Toggle Speaker Script</span>
+        <span><span class="key-badge">T</span> Toggle Theme</span>
+        <span><span class="key-badge">F</span> Fullscreen</span>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const counter = document.getElementById('slide-counter');
+        const notesPanel = document.getElementById('notes-panel');
+        const notesContent = document.getElementById('notes-content');
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNext = document.getElementById('btn-next');
+        const btnNotes = document.getElementById('btn-notes');
+        const btnTheme = document.getElementById('btn-theme');
+        const btnFullscreen = document.getElementById('btn-fullscreen');
+
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function updateSlide(index) {
+            if (index < 0) index = 0;
+            if (index >= totalSlides) index = totalSlides - 1;
+            
+            slides.forEach((s, idx) => {
+                s.classList.toggle('active', idx === index);
+            });
+
+            currentSlide = index;
+            counter.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
+            
+            // Update speaker notes
+            const activeNotes = slides[currentSlide].getAttribute('data-notes') || "No script available for this slide.";
+            notesContent.textContent = activeNotes;
+        }
+
+        btnPrev.addEventListener('click', () => updateSlide(currentSlide - 1));
+        btnNext.addEventListener('click', () => updateSlide(currentSlide + 1));
+
+        btnNotes.addEventListener('click', () => {
+            notesPanel.classList.toggle('visible');
+        });
+
+        btnTheme.addEventListener('click', () => {
+            const curTheme = document.body.getAttribute('data-theme');
+            const newTheme = curTheme === 'light' ? 'dark' : 'light';
+            document.body.setAttribute('data-theme', newTheme);
+            btnTheme.innerHTML = newTheme === 'light' ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+        });
+
+        btnFullscreen.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') {
+                e.preventDefault();
+                updateSlide(currentSlide + 1);
+            } else if (e.key === 'ArrowLeft' || e.key === 'Backspace') {
+                e.preventDefault();
+                updateSlide(currentSlide - 1);
+            } else if (e.key === 's' || e.key === 'S') {
+                notesPanel.classList.toggle('visible');
+            } else if (e.key === 't' || e.key === 'T') {
+                btnTheme.click();
+            } else if (e.key === 'f' || e.key === 'F') {
+                btnFullscreen.click();
+            }
+        });
+
+        // Initialize first slide notes
+        updateSlide(0);
+    </script>
+</body>
+</html>

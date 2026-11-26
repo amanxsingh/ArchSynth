@@ -1,0 +1,16 @@
+{
+  "_comment": "Ground truth subsystem assignments for Nav2 nodes. Format: {node_name: subsystem_name}. Manually verified against Nav2 architecture documentation.",
+  "bt_navigator": "navigation",
+  "planner_server": "planning",
+  "controller_server": "control",
+  "amcl": "localization",
+  "map_server": "mapping",
+  "map_saver_server": "mapping",
+  "lifecycle_manager": "lifecycle",
+  "waypoint_follower": "navigation",
+  "velocity_smoother": "control",
+  "collision_monitor": "safety",
+  "smoother_server": "planning",
+  "docking_server": "docking",
+  "route_server": "navigation"
+}

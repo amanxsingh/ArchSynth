@@ -1,0 +1,80 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variables & credentials
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & temporary files
+*.log
+logs/
+*.tmp
+*.temp
+.tmp/
+
+# Case study repos (cloned locally, not tracked; keep metadata/manifests if added explicitly)
+case_studies/*/
+
+# Generated pipeline outputs & runtime databases
+output/
+docs/output/
+docs/generated/
+*.db
+*.sqlite
+*.sqlite3
+
+# ROS 2 / colcon build artifacts & bags
+build/
+install/
+log/
+*.bag
+*.db3
+*.mcap
+
+# Test coverage & caches
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# Distribution & packaging
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model checkpoints & archives
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.bin
+*.zip
+*.tar.gz
+*.tgz
+
+# Large raw benchmark run dumps (keep curated CSV/JSON/MD benchmark reports tracked)
+benchmarks/*/raw_runs/
+benchmarks/*/logs/

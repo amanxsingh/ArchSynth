@@ -1,0 +1,6 @@
+model_id,display_name,exact_version_tag,provider,family,context_window_tokens,avg_input_tokens,avg_output_tokens,schema_compliance_pct,unsupported_entity_pct,subsystem_ari,avg_latency_s,input_cost_per_1m_usd,output_cost_per_1m_usd,total_cost_per_run_usd
+gemini_2_5_flash,Google Gemini 2.5 Flash,gemini-2.5-flash,Google DeepMind,Gemini,1048576,12450,1820,100.0,0.0,0.895,1.25,0.075,0.300,0.00148
+gemini_1_5_pro,Google Gemini 1.5 Pro,gemini-1.5-pro-002,Google DeepMind,Gemini,2097152,12450,2150,100.0,0.0,0.924,3.80,1.250,5.000,0.02631
+gpt_4o,OpenAI GPT-4o,gpt-4o-2024-08-06,OpenAI,GPT-4,128000,12450,1940,98.5,1.2,0.880,2.40,2.500,10.000,0.05053
+claude_3_5_sonnet,Anthropic Claude 3.5 Sonnet,claude-3-5-sonnet-20241022,Anthropic,Claude,200000,12450,2010,99.1,0.8,0.912,2.85,3.000,15.000,0.06750
+llama_3_1_70b,Meta Llama 3.1 70B Instruct,llama-3.1-70b-instruct,Meta AI (Ollama),Llama,128000,12450,1780,94.2,3.5,0.815,7.40,0.000,0.000,0.00000

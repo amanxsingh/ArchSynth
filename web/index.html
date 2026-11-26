@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchSynth v2.0 — Evidence-Grounded ROS 2 Architecture Recovery</title>
+
+    <!-- Project Favicon (Inline SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Cpath d='M30 70 L50 30 L70 70 Z' fill='none' stroke='%2322d3ee' stroke-width='8'/%3E%3Ccircle cx='50' cy='30' r='10' fill='%23818cf8'/%3E%3Ccircle cx='30' cy='70' r='10' fill='%2334d399'/%3E%3Ccircle cx='70' cy='70' r='10' fill='%23fb7185'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Marked.js for Markdown Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Mermaid.js for Live Diagram Rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+    <!-- Custom Glassmorphism Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Background Light Orbs -->
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <div class="logo-icon"><i class="fa-solid fa-diagram-project"></i></div>
+            <div class="brand-text">
+                <span class="brand-title">ArchSynth <span style="font-size: 0.7em; color: var(--accent-cyan); font-weight: 500;">v2.0</span></span>
+                <span class="brand-subtitle">ROS 2 Architecture Recovery Platform</span>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <button type="button" id="nav-btn-home" class="nav-link-btn" style="background: rgba(34, 211, 238, 0.12); border-color: rgba(34, 211, 238, 0.35); color: #22d3ee; cursor: pointer;">
+                <i class="fa-solid fa-house"></i> Home
+            </button>
+            <span class="badge badge-gemini"><i class="fa-solid fa-shield-halved"></i> Provenance Verified</span>
+            <span class="badge badge-mtech"><i class="fa-solid fa-graduation-cap"></i> M.Tech Dissertation</span>
+            <a href="benchmarks" class="nav-link-btn" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">
+                <i class="fa-solid fa-chart-line"></i> Research Benchmarking ↗
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Hero Title Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">ROS 2 Architecture Recovery <span class="gradient-text">& Auto-Documentation</span></h1>
+            <p class="hero-description">
+                Domain-specific static analysis, launch hierarchy resolution, and schema-constrained synthesis for Robot Operating System 2 codebases. Recovers complete C4 component models, communication topologies, lifecycle states, and ISO/IEC/IEEE 42010 architecture views with source-level provenance.
+            </p>
+        </section>
+
+        <!-- Search Box & Quick Loader Panel -->
+        <section class="glass-card search-card">
+            <form id="analyze-form" class="search-form">
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="repo-input" 
+                        placeholder="Enter ROS 2 Repository URL or local path (e.g. case_studies/nav2, case_studies/slam_toolbox)..."
+                        autocomplete="off"
+                        required
+                    />
+                    <button type="submit" id="btn-submit" class="btn-primary">
+                        <span class="btn-text"><i class="fa-solid fa-bolt"></i> Recover Architecture</span>
+                        <div class="spinner-sm hidden"></div>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Quick Presets Pills & Load Precomputed Dropdown -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1rem;">
+                <div class="presets-container" style="margin-top: 0;">
+                    <span class="presets-label"><i class="fa-solid fa-fire"></i> Target Case Studies:</span>
+                    <button type="button" class="preset-pill" data-url="case_studies/nav2"><i class="fa-solid fa-robot"></i> Navigation2 (nav2)</button>
+                    <button type="button" class="preset-pill" data-url="case_studies/slam_toolbox"><i class="fa-solid fa-map-location-dot"></i> SLAM Toolbox</button>
+                    <button type="button" class="preset-pill" data-url="case_studies/ros2_control"><i class="fa-solid fa-microchip"></i> ROS 2 Control</button>
+                    <button type="button" class="preset-pill" data-url="case_studies/jaco2_sim_devkit"><i class="fa-solid fa-hand"></i> Jaco2 Devkit</button>
+                    <button type="button" class="preset-pill" data-url="case_studies/behaviortree_cpp"><i class="fa-solid fa-network-wired"></i> BehaviorTree.CPP</button>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 0.8rem; color: var(--text-dim);"><i class="fa-solid fa-database"></i> Precomputed Run:</span>
+                    <select id="run-selector" style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-glass); color: #fff; padding: 0.35rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.8rem; cursor: pointer;">
+                        <option value="">-- Select Precomputed Run --</option>
+                        <option value="nav2_corrected_pipeline">Navigation2 (nav2)</option>
+                        <option value="slam_toolbox_pipeline">SLAM Toolbox</option>
+                        <option value="ros2_control_pipeline">ROS 2 Control</option>
+                        <option value="jaco2_sim_devkit_pipeline">Kinova Jaco2 Devkit</option>
+                        <option value="behaviortree_cpp_pipeline">BehaviorTree.CPP</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Non-ROS2 Repository Error Banner -->
+        <div id="error-banner" class="glass-card error-banner hidden">
+            <div class="error-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="error-content">
+                <h3 class="error-title" id="error-title">Validation Failed: Non-ROS2 Repository</h3>
+                <p id="error-message" class="error-desc">No package.xml manifest files found in this repository. Please enter a valid ROS2 repository URL or local folder path.</p>
+            </div>
+        </div>
+
+        <!-- Pipeline Progress Loader Card -->
+        <div id="loading-card" class="glass-card loading-card hidden">
+            <h3 class="loading-title"><i class="fa-solid fa-microchip fa-spin"></i> ArchSynth Execution Pipeline in Progress</h3>
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar-fill"></div>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item" id="step-1"><i class="fa-solid fa-download"></i> 1. Ingestion</div>
+                <div class="step-item" id="step-2"><i class="fa-solid fa-code"></i> 2. AST Node Parsing</div>
+                <div class="step-item" id="step-3"><i class="fa-solid fa-diagram-nested"></i> 3. Launch Analysis</div>
+                <div class="step-item" id="step-4"><i class="fa-solid fa-brain"></i> 4. Architecture Synthesis</div>
+                <div class="step-item" id="step-5"><i class="fa-solid fa-file-contract"></i> 5. Doc Generator</div>
+            </div>
+        </div>
+
+        <!-- Home Page Welcome & Benchmark Case Studies Gallery -->
+        <div id="welcome-section" class="welcome-section">
+            <div class="glass-card" style="padding: 2rem; margin-bottom: 1.5rem; border-color: rgba(34, 211, 238, 0.2); background: radial-gradient(circle at top left, rgba(34, 211, 238, 0.05), transparent 60%), rgba(255, 255, 255, 0.02);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <span class="badge" style="background: rgba(34, 211, 238, 0.1); color: var(--accent-cyan); border: 1px solid rgba(34, 211, 238, 0.25); margin-bottom: 0.75rem; display: inline-flex;">
+                            <i class="fa-solid fa-sparkles"></i> Grounded Recovery Platform
+                        </span>
+                        <h2 style="font-size: 1.6rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem;">
+                            Ready to Recover ROS 2 Architecture
+                        </h2>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 780px; line-height: 1.6;">
+                            ArchSynth automates architectural extraction for ROS 2 systems with source-level provenance. Click any precomputed case study below to load its full C4 architecture, communication graph, and lifecycle state machines, or enter a custom repository path above.
+                        </p>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start;">
+                        <div style="font-size: 0.8rem; color: var(--text-dim);"><i class="fa-solid fa-circle-info"></i> Instant Loading & Export</div>
+                        <div style="font-size: 0.78rem; color: var(--text-muted);"><i class="fa-solid fa-file-arrow-down" style="color: var(--accent-emerald);"></i> Markdown (.md) downloads enabled on selection</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study Gallery Cards -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3 style="font-size: 1.1rem; font-weight: 600; color: #fff; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-layer-group" style="color: var(--accent-indigo);"></i> Precomputed Evaluation Case Studies
+                </h3>
+                <span style="font-size: 0.8rem; color: var(--text-dim);">5 Verified Benchmarks Available</span>
+            </div>
+
+            <div class="case-studies-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
+                <!-- Card 1: Nav2 -->
+                <div class="glass-card case-card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(34, 211, 238, 0.2); transition: transform 0.2s, border-color 0.2s;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(34, 211, 238, 0.12); border: 1px solid rgba(34, 211, 238, 0.3); display: flex; align-items: center; justify-content: center; color: var(--accent-cyan); font-size: 1.25rem;">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <span class="badge" style="background: rgba(34, 211, 238, 0.1); color: var(--accent-cyan); font-size: 0.72rem;">Reconciled</span>
+                        </div>
+                        <h4 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem;">Navigation2 (Nav2)</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">
+                            Complete autonomous navigation system. Recovers 20 production nodes, 41 launch files, 23 lifecycle managers, and 123 plugins.
+                        </p>
+                        <div style="font-size: 0.75rem; color: var(--text-dim); margin-bottom: 1.25rem;">
+                            <span style="display: inline-block; margin-right: 0.75rem;"><i class="fa-solid fa-code"></i> 66 Nodes</span>
+                            <span style="display: inline-block; margin-right: 0.75rem;"><i class="fa-solid fa-diagram-project"></i> 24 Plugin Classes</span>
+                            <span style="display: inline-block;"><i class="fa-solid fa-arrows-spin"></i> 23 Managers</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-primary welcome-load-btn" data-run="nav2_corrected_pipeline" style="width: 100%; justify-content: center; font-size: 0.85rem; padding: 0.55rem 1rem;">
+                        <i class="fa-solid fa-folder-open"></i> Load Nav2 Architecture & Docs
+                    </button>
+                </div>
+
+                <!-- Card 2: SLAM Toolbox -->
+                <div class="glass-card case-card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(168, 85, 247, 0.2); transition: transform 0.2s, border-color 0.2s;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(168, 85, 247, 0.12); border: 1px solid rgba(168, 85, 247, 0.3); display: flex; align-items: center; justify-content: center; color: var(--accent-purple); font-size: 1.25rem;">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <span class="badge" style="background: rgba(168, 85, 247, 0.1); color: var(--accent-purple); font-size: 0.72rem;">Benchmark</span>
+                        </div>
+                        <h4 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem;">SLAM Toolbox</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">
+                            2D LiDAR simultaneous localization and mapping. Recovers synchronous/asynchronous pipelines and Ceres scan matching.
+                        </p>
+                        <div style="font-size: 0.75rem; color: var(--text-dim); margin-bottom: 1.25rem;">
+                            <span style="display: inline-block; margin-right: 0.75rem;"><i class="fa-solid fa-code"></i> Lifecycled SLAM</span>
+                            <span style="display: inline-block;"><i class="fa-solid fa-network-wired"></i> Map Server / Saver</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-primary welcome-load-btn" data-run="slam_toolbox_pipeline" style="width: 100%; justify-content: center; font-size: 0.85rem; padding: 0.55rem 1rem; background: linear-gradient(135deg, #a855f7, #6366f1);">
+                        <i class="fa-solid fa-folder-open"></i> Load SLAM Toolbox
+                    </button>
+                </div>
+
+                <!-- Card 3: ROS 2 Control -->
+                <div class="glass-card case-card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(52, 211, 153, 0.2); transition: transform 0.2s, border-color 0.2s;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.3); display: flex; align-items: center; justify-content: center; color: var(--accent-emerald); font-size: 1.25rem;">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <span class="badge" style="background: rgba(52, 211, 153, 0.1); color: var(--accent-emerald); font-size: 0.72rem;">Benchmark</span>
+                        </div>
+                        <h4 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem;">ROS 2 Control</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">
+                            Real-time controller orchestration framework. Recovers Controller Manager, Resource Manager, and hardware interfaces.
+                        </p>
+                        <div style="font-size: 0.75rem; color: var(--text-dim); margin-bottom: 1.25rem;">
+                            <span style="display: inline-block; margin-right: 0.75rem;"><i class="fa-solid fa-code"></i> Controller Manager</span>
+                            <span style="display: inline-block;"><i class="fa-solid fa-sliders"></i> Hardware Interface</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-primary welcome-load-btn" data-run="ros2_control_pipeline" style="width: 100%; justify-content: center; font-size: 0.85rem; padding: 0.55rem 1rem;">
+                        <i class="fa-solid fa-folder-open"></i> Load ROS 2 Control
+                    </button>
+                </div>
+
+                <!-- Card 4: Jaco2 Devkit -->
+                <div class="glass-card case-card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(251, 113, 133, 0.2); transition: transform 0.2s, border-color 0.2s;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(251, 113, 133, 0.12); border: 1px solid rgba(251, 113, 133, 0.3); display: flex; align-items: center; justify-content: center; color: var(--accent-rose); font-size: 1.25rem;">
+                                <i class="fa-solid fa-hand"></i>
+                            </div>
+                            <span class="badge" style="background: rgba(251, 113, 133, 0.1); color: var(--accent-rose); font-size: 0.72rem;">Benchmark</span>
+                        </div>
+                        <h4 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem;">Kinova Jaco2 Devkit</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">
+                            6-DOF robotic manipulator platform with joint trajectory action servers, Gazebo simulation, and gripper control.
+                        </p>
+                        <div style="font-size: 0.75rem; color: var(--text-dim); margin-bottom: 1.25rem;">
+                            <span style="display: inline-block; margin-right: 0.75rem;"><i class="fa-solid fa-code"></i> Arm Controller</span>
+                            <span style="display: inline-block;"><i class="fa-solid fa-vr-cardboard"></i> Gazebo Simulation</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-primary welcome-load-btn" data-run="jaco2_sim_devkit_pipeline" style="width: 100%; justify-content: center; font-size: 0.85rem; padding: 0.55rem 1rem;">
+                        <i class="fa-solid fa-folder-open"></i> Load Jaco2 Devkit
+                    </button>
+                </div>
+
+                <!-- Card 5: BehaviorTree.CPP -->
+                <div class="glass-card case-card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(245, 158, 11, 0.2); transition: transform 0.2s, border-color 0.2s;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="width: 44px; height: 44px; border-radius: var(--radius-sm); background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); display: flex; align-items: center; justify-content: center; color: #f59e0b; font-size: 1.25rem;">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <span class="badge" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; font-size: 0.72rem;">Benchmark</span>
+                        </div>
+                        <h4 style="font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem;">BehaviorTree.CPP</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">
+                            Decision-making engine for robotics autonomy. Recovers XML control flow trees, action nodes, and condition bindings.
+                        </p>
+                        <div style="font-size: 0.75rem; color: var(--text-dim); margin-bottom: 1.25rem;">
+                            <span style="display: inline-block; margin-right: 0.75rem;"><i class="fa-solid fa-tree"></i> 17 Tree Models</span>
+                            <span style="display: inline-block;"><i class="fa-solid fa-diagram-successor"></i> 740 BT Nodes</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-primary welcome-load-btn" data-run="behaviortree_cpp_pipeline" style="width: 100%; justify-content: center; font-size: 0.85rem; padding: 0.55rem 1rem;">
+                        <i class="fa-solid fa-folder-open"></i> Load BehaviorTree.CPP
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Results Dashboard (Architecture Recovery Only) -->
+        <div id="results-dashboard" class="results-dashboard hidden">
+            
+            <!-- Top Dashboard Navigation Bar -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <button type="button" id="btn-back-home" class="btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.85rem; cursor: pointer;">
+                    <i class="fa-solid fa-arrow-left"></i> Home / Switch Case Study
+                </button>
+                <span id="active-run-badge" class="badge" style="background: rgba(34, 211, 238, 0.12); color: var(--accent-cyan); border: 1px solid rgba(34, 211, 238, 0.3); font-size: 0.78rem;">
+                    <i class="fa-solid fa-circle-check"></i> Loaded & Ready for Export
+                </span>
+            </div>
+            
+            <!-- Repository Provenance & Metadata Banner -->
+            <div class="glass-card provenance-card">
+                <div class="provenance-info">
+                    <div class="prov-item">
+                        <span class="prov-label"><i class="fa-solid fa-box"></i> Repository</span>
+                        <span id="prov-repo-name" class="prov-value">--</span>
+                    </div>
+                    <div class="prov-item">
+                        <span class="prov-label"><i class="fa-solid fa-code-branch"></i> Git Branch</span>
+                        <span id="prov-branch" class="prov-value">--</span>
+                    </div>
+                    <div class="prov-item">
+                        <span class="prov-label"><i class="fa-solid fa-hashtag"></i> Commit SHA</span>
+                        <span id="prov-commit" class="prov-value">--</span>
+                    </div>
+                    <div class="prov-item">
+                        <span class="prov-label"><i class="fa-solid fa-robot"></i> ROS 2 Target</span>
+                        <span id="prov-distro" class="prov-value">Jazzy / Humble</span>
+                    </div>
+                    <div class="prov-item">
+                        <span class="prov-label"><i class="fa-regular fa-clock"></i> Timestamp</span>
+                        <span id="prov-timestamp" class="prov-value" style="font-size: 0.78rem;">--</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    <button id="btn-download" class="btn-success" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+                        <i class="fa-solid fa-download"></i> Export Docs (.md)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pipeline Phase Execution Status Tracker -->
+            <div class="phase-tracker">
+                <div class="phase-pill complete"><i class="fa-solid fa-circle-check"></i> Phase 1: Node Discovery</div>
+                <div class="phase-pill complete"><i class="fa-solid fa-circle-check"></i> Phase 2: Launch Analysis</div>
+                <div class="phase-pill complete"><i class="fa-solid fa-circle-check"></i> Phase 3: Interface Extraction</div>
+                <div class="phase-pill complete"><i class="fa-solid fa-circle-check"></i> Phase 4: Architecture Synthesis</div>
+                <div class="phase-pill complete"><i class="fa-solid fa-circle-check"></i> Phase 5: Documentation</div>
+            </div>
+
+            <!-- Overview Architecture Metric Counter Cards -->
+            <div class="metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                <div class="glass-card metric-card">
+                    <div class="metric-icon icon-indigo"><i class="fa-solid fa-cubes"></i></div>
+                    <div class="metric-info">
+                        <span id="stat-nodes" class="metric-value">--</span>
+                        <span class="metric-label">Recovered Nodes</span>
+                    </div>
+                </div>
+                <div class="glass-card metric-card">
+                    <div class="metric-icon icon-cyan"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="metric-info">
+                        <span id="stat-launches" class="metric-value">--</span>
+                        <span class="metric-label">Launch Profiles</span>
+                    </div>
+                </div>
+                <div class="glass-card metric-card">
+                    <div class="metric-icon icon-emerald"><i class="fa-solid fa-sitemap"></i></div>
+                    <div class="metric-info">
+                        <span id="stat-subsystems" class="metric-value">--</span>
+                        <span class="metric-label">Subsystems</span>
+                    </div>
+                </div>
+                <div class="glass-card metric-card">
+                    <div class="metric-icon icon-rose"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="metric-info">
+                        <span id="stat-topics" class="metric-value">--</span>
+                        <span class="metric-label">DDS Interfaces</span>
+                    </div>
+                </div>
+                <div class="glass-card metric-card">
+                    <div class="metric-icon icon-purple"><i class="fa-solid fa-arrows-rotate"></i></div>
+                    <div class="metric-info">
+                        <span id="stat-lifecycle" class="metric-value">--</span>
+                        <span class="metric-label">Lifecycle Nodes</span>
+                    </div>
+                </div>
+                <div class="glass-card metric-card">
+                    <div class="metric-icon icon-emerald" style="color: #fbbf24;"><i class="fa-solid fa-puzzle-piece"></i></div>
+                    <div class="metric-info">
+                        <span id="stat-plugins" class="metric-value">--</span>
+                        <span class="metric-label">Plugins & BTs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabbed Navigation Bar -->
+            <div class="arch-tabs-nav">
+                <button class="arch-tab-btn active" data-tab="tab-overview"><i class="fa-solid fa-diagram-project"></i> Architecture Views (ISO 42010)</button>
+                <button class="arch-tab-btn" data-tab="tab-nodes"><i class="fa-solid fa-cubes"></i> Discovered Nodes</button>
+                <button class="arch-tab-btn" data-tab="tab-communication"><i class="fa-solid fa-network-wired"></i> Communication Graph</button>
+                <button class="arch-tab-btn" data-tab="tab-deployment"><i class="fa-solid fa-rocket"></i> Launch & Deployment</button>
+                <button class="arch-tab-btn" data-tab="tab-subsystems"><i class="fa-solid fa-sitemap"></i> Subsystems & Clusters</button>
+                <button class="arch-tab-btn" data-tab="tab-lifecycle"><i class="fa-solid fa-arrows-rotate"></i> Lifecycle & Plugins</button>
+                <button class="arch-tab-btn" data-tab="tab-evidence"><i class="fa-solid fa-magnifying-glass-chart"></i> Source Traceability</button>
+                <button class="arch-tab-btn" data-tab="tab-documentation"><i class="fa-solid fa-file-lines"></i> Architecture Manual</button>
+            </div>
+
+            <!-- TAB 1: Architecture Overview & Views -->
+            <div id="tab-overview" class="arch-tab-pane active">
+                <div class="glass-card diagram-card">
+                    <div class="card-header" style="flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                            <h3 id="view-title"><i class="fa-solid fa-diagram-project"></i> Reconstructed Architecture View</h3>
+                            <span id="view-badge" class="badge badge-purple">Component View (Level 3)</span>
+                        </div>
+                        <div class="views-switch-bar" id="views-switcher">
+                            <button class="view-btn active" data-view="component">Component View</button>
+                            <button class="view-btn" data-view="context">Context View</button>
+                            <button class="view-btn" data-view="functional">Functional View</button>
+                            <button class="view-btn" data-view="deployment">Deployment View</button>
+                            <button class="view-btn" data-view="lifecycle">Lifecycle View</button>
+                            <button class="view-btn" data-view="communication">Communication View</button>
+                            <button class="view-btn" data-view="plugin">Plugin View</button>
+                            <button class="view-btn" data-view="behavior_tree">Behavior Tree View</button>
+                        </div>
+                    </div>
+                    <div id="mermaid-container" class="mermaid-view" style="min-height: 480px;">
+                        <!-- Mermaid diagram rendered here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: Nodes & Components Table -->
+            <div id="tab-nodes" class="arch-tab-pane">
+                <div class="glass-card" style="padding: 1.5rem;">
+                    <div class="table-filter-bar">
+                        <h3><i class="fa-solid fa-cubes"></i> Discovered ROS 2 Nodes and Components</h3>
+                        <input type="text" id="node-search" class="table-search-input" placeholder="Search nodes by name, package, class...">
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="arch-table" id="nodes-table">
+                            <thead>
+                                <tr>
+                                    <th>Node Name</th>
+                                    <th>Package</th>
+                                    <th>Executable / Target</th>
+                                    <th>Class Name</th>
+                                    <th>Type</th>
+                                    <th>Lifecycle</th>
+                                    <th>Source File Reference</th>
+                                </tr>
+                            </thead>
+                            <tbody id="nodes-table-body">
+                                <tr><td colspan="7" class="text-dim">Loading nodes...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: Communication & Dependency Graph -->
+            <div id="tab-communication" class="arch-tab-pane">
+                <div class="glass-card" style="padding: 1.5rem;">
+                    <div class="table-filter-bar">
+                        <h3><i class="fa-solid fa-network-wired"></i> Extracted ROS 2 Communication Interfaces</h3>
+                        <input type="text" id="comm-search" class="table-search-input" placeholder="Search topic, service, action, QoS...">
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="arch-table" id="comm-table">
+                            <thead>
+                                <tr>
+                                    <th>Interface Type</th>
+                                    <th>Topic / Service / Action Name</th>
+                                    <th>Publisher / Server Node</th>
+                                    <th>Subscriber / Client Node</th>
+                                    <th>QoS Profile (Reliability / Durability)</th>
+                                    <th>Boundary Role</th>
+                                </tr>
+                            </thead>
+                            <tbody id="comm-table-body">
+                                <tr><td colspan="6" class="text-dim">Loading communication interfaces...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: Launch & Deployment Profiles -->
+            <div id="tab-deployment" class="arch-tab-pane">
+                <div class="glass-card" style="padding: 1.5rem;">
+                    <h3><i class="fa-solid fa-rocket"></i> Deployment Profiles & Launch Configurations</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 1rem;">
+                        Resolved launch execution profiles mapping source nodes to runtime component containers and launch substitutions.
+                    </p>
+                    <div class="table-wrapper">
+                        <table class="arch-table" id="deployment-table">
+                            <thead>
+                                <tr>
+                                    <th>Profile Name</th>
+                                    <th>Profile Type</th>
+                                    <th>Container Host</th>
+                                    <th>Target Launch File</th>
+                                    <th>Active Deployment Nodes</th>
+                                </tr>
+                            </thead>
+                            <tbody id="deployment-table-body">
+                                <tr><td colspan="5" class="text-dim">Loading deployment profiles...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: Subsystems & Clusters -->
+            <div id="tab-subsystems" class="arch-tab-pane">
+                <div class="glass-card" style="padding: 1.5rem;">
+                    <h3><i class="fa-solid fa-sitemap"></i> Synthesized Architectural Subsystems</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 1rem;">
+                        High-level functional subsystem clusters synthesized using graph modularity and semantic cohesion constraints.
+                    </p>
+                    <div id="subsystems-container" class="subsystems-grid">
+                        <p class="text-dim">Loading subsystems...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 6: Lifecycle & Plugins -->
+            <div id="tab-lifecycle" class="arch-tab-pane">
+                <div class="glass-card" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <h3><i class="fa-solid fa-arrows-rotate"></i> Lifecycle State Management</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 1rem;">
+                        ROS 2 managed nodes implementing the state machine: Unconfigured → Inactive → Active → Finalized.
+                    </p>
+                    <div class="table-wrapper">
+                        <table class="arch-table" id="lifecycle-table">
+                            <thead>
+                                <tr>
+                                    <th>Lifecycle Node</th>
+                                    <th>Package</th>
+                                    <th>Managed State</th>
+                                    <th>Transition Callbacks</th>
+                                    <th>Lifecycle Manager</th>
+                                </tr>
+                            </thead>
+                            <tbody id="lifecycle-table-body">
+                                <tr><td colspan="5" class="text-dim">Loading lifecycle data...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 1.5rem;">
+                    <h3><i class="fa-solid fa-puzzle-piece"></i> Plugin Architecture & Behavior Trees</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 1rem;">
+                        pluginlib plugin declarations and BehaviorTree.CPP navigation decision hierarchies.
+                    </p>
+                    <div class="table-wrapper">
+                        <table class="arch-table" id="plugins-table">
+                            <thead>
+                                <tr>
+                                    <th>Plugin Class</th>
+                                    <th>Base Class Interface</th>
+                                    <th>Package</th>
+                                    <th>Plugin Manifest (XML)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="plugins-table-body">
+                                <tr><td colspan="4" class="text-dim">Loading plugin registrations...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 7: Evidence Traceability Matrix -->
+            <div id="tab-evidence" class="arch-tab-pane">
+                <div class="glass-card" style="padding: 1.5rem;">
+                    <div class="table-filter-bar">
+                        <div>
+                            <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Source-Level Evidence Traceability Matrix</h3>
+                            <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: 0.2rem;">
+                                Complete audit trail verifying that every recovered entity is grounded in real source code.
+                            </p>
+                        </div>
+                        <input type="text" id="evidence-search" class="table-search-input" placeholder="Search evidence by entity, file, line...">
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="arch-table" id="evidence-table">
+                            <thead>
+                                <tr>
+                                    <th>Architectural Entity</th>
+                                    <th>Evidence Type</th>
+                                    <th>Source File Path</th>
+                                    <th>Line Range</th>
+                                    <th>Detection Method</th>
+                                    <th>Grounding Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="evidence-table-body">
+                                <tr><td colspan="6" class="text-dim">Loading evidence items...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 8: ISO 42010 Architecture Documentation -->
+            <div id="tab-documentation" class="arch-tab-pane">
+                <div class="glass-card doc-viewer-card">
+                    <div class="card-header">
+                        <h3><i class="fa-solid fa-file-lines"></i> Reconstructed ISO/IEC/IEEE 42010 Architecture Documentation</h3>
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <button id="btn-download-tab-md" class="btn-success" style="padding: 0.45rem 0.95rem; font-size: 0.82rem;">
+                                <i class="fa-solid fa-download"></i> Download .md
+                            </button>
+                            <button id="btn-copy-md" class="btn-secondary"><i class="fa-regular fa-copy"></i> Copy Markdown</button>
+                        </div>
+                    </div>
+                    <div id="markdown-body" class="markdown-body">
+                        <!-- Rendered markdown rendered here -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>ArchSynth Architecture Recovery Engine &copy; 2026 M.Tech Dissertation (Automation & Robotics, DIAT Pune) | Strictly Separated from Evaluation Benchmarks</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

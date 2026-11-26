@@ -1,0 +1,15 @@
+[
+  "bt_navigator",
+  "planner_server",
+  "controller_server",
+  "amcl",
+  "map_server",
+  "lifecycle_manager",
+  "waypoint_follower",
+  "velocity_smoother",
+  "collision_monitor",
+  "smoother_server",
+  "map_saver_server",
+  "docking_server",
+  "route_server"
+]

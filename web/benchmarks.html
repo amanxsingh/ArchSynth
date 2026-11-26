@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchSynth v2.0 — Research Benchmarks & Evaluation Suite</title>
+
+    <!-- Project Favicon (Inline SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f172a'/%3E%3Cpath d='M30 70 L50 30 L70 70 Z' fill='none' stroke='%2322d3ee' stroke-width='8'/%3E%3Ccircle cx='50' cy='30' r='10' fill='%23818cf8'/%3E%3Ccircle cx='30' cy='70' r='10' fill='%2334d399'/%3E%3Ccircle cx='70' cy='70' r='10' fill='%23fb7185'/%3E%3C/svg%3E">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Glassmorphism Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Background Light Orbs -->
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <div class="logo-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="brand-text">
+                <span class="brand-title">ArchSynth <span style="font-size: 0.7em; color: var(--accent-purple); font-weight: 500;">Research</span></span>
+                <span class="brand-subtitle">Benchmarking & Experimental Evaluation</span>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <a href="/" class="nav-link-btn" style="background: rgba(34, 211, 238, 0.15); border-color: rgba(34, 211, 238, 0.4); color: #38bdf8;">
+                <i class="fa-solid fa-arrow-left"></i> Architecture Recovery Dashboard
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">Empirical Benchmarking <span class="gradient-text">& Research Evaluation</span></h1>
+            <p class="hero-description">
+                Rigorous multi-dimensional evaluation of ArchSynth across 5 open-source ROS 2 repositories, 5 frontier and open-weight LLMs, 6 context-memory configurations, and a 7-stage architectural ablation study.
+            </p>
+        </section>
+
+        <!-- Benchmark Summary Metric Cards -->
+        <div class="metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-bottom: 2rem;">
+            <div class="glass-card metric-card">
+                <div class="metric-icon icon-indigo"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <div class="metric-info">
+                    <span class="metric-value">5</span>
+                    <span class="metric-label">Repositories Evaluated</span>
+                </div>
+            </div>
+            <div class="glass-card metric-card">
+                <div class="metric-icon icon-purple"><i class="fa-solid fa-brain"></i></div>
+                <div class="metric-info">
+                    <span class="metric-value">5</span>
+                    <span class="metric-label">LLM Models Benchmarked</span>
+                </div>
+            </div>
+            <div class="glass-card metric-card">
+                <div class="metric-icon icon-cyan"><i class="fa-solid fa-memory"></i></div>
+                <div class="metric-info">
+                    <span class="metric-value">6</span>
+                    <span class="metric-label">Context Memory Studies</span>
+                </div>
+            </div>
+            <div class="glass-card metric-card">
+                <div class="metric-icon icon-emerald"><i class="fa-solid fa-sliders"></i></div>
+                <div class="metric-info">
+                    <span class="metric-value">7</span>
+                    <span class="metric-label">Ablation Pipeline Levels</span>
+                </div>
+            </div>
+            <div class="glass-card metric-card">
+                <div class="metric-icon icon-rose"><i class="fa-solid fa-vial-circle-check"></i></div>
+                <div class="metric-info">
+                    <span class="metric-value">155 / 155</span>
+                    <span class="metric-label">Automated Unit Tests (100%)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Multi-Repository Evaluation -->
+        <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
+            <div class="card-header">
+                <div>
+                    <h3><i class="fa-solid fa-cubes"></i> 1. Cross-Repository Structural Complexity & Recovery Metrics</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem;">
+                        Evaluated across 5 pinned Git commits with verifiable ROS 2 packages, launch architectures, and interfaces.
+                    </p>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="arch-table" id="repo-benchmark-table">
+                    <thead>
+                        <tr>
+                            <th>Repository</th>
+                            <th>Pinned Commit</th>
+                            <th>Packages</th>
+                            <th>Nodes</th>
+                            <th>Launch Files</th>
+                            <th>Interfaces</th>
+                            <th>Runtime Inst.</th>
+                            <th>Precision</th>
+                            <th>Recall</th>
+                            <th>F1 Score</th>
+                            <th>Evidence Cov.</th>
+                            <th>Time (s)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="repo-benchmark-body">
+                        <tr><td colspan="12" class="text-dim">Loading repository metrics...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 2: Multi-Model Evaluation -->
+        <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
+            <div class="card-header">
+                <div>
+                    <h3><i class="fa-solid fa-brain"></i> 2. Frontier & Open-Weight LLM Comparative Evaluation</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem;">
+                        Exact model versions evaluated with identical schema constraints, prompts, and source evidence.
+                    </p>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="arch-table" id="model-benchmark-table">
+                    <thead>
+                        <tr>
+                            <th>Model Provider & Identifier</th>
+                            <th>Family</th>
+                            <th>Context Window</th>
+                            <th>Avg. Input Tokens</th>
+                            <th>Avg. Output Tokens</th>
+                            <th>Latency (s)</th>
+                            <th>Schema Compliance</th>
+                            <th>Unsupported Rate</th>
+                            <th>Pricing (In / Out)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="model-benchmark-body">
+                        <tr><td colspan="9" class="text-dim">Loading model comparison data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 3: Context Memory & Token Efficiency -->
+        <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
+            <div class="card-header">
+                <div>
+                    <h3><i class="fa-solid fa-memory"></i> 3. Context Memory Strategy & Token Efficiency Experiments</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem;">
+                        Investigating: <em>"How does structured, hierarchical, and retrieval-based memory affect accuracy, completeness, and token efficiency?"</em>
+                    </p>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="arch-table" id="context-benchmark-table">
+                    <thead>
+                        <tr>
+                            <th>Memory Experiment Configuration</th>
+                            <th>Prompt Tokens</th>
+                            <th>Total Tokens</th>
+                            <th>Recovery F1</th>
+                            <th>Unsupported Rate</th>
+                            <th>Latency (s)</th>
+                            <th>Empirical Trade-off & Architectural Analysis</th>
+                        </tr>
+                    </thead>
+                    <tbody id="context-benchmark-body">
+                        <tr><td colspan="7" class="text-dim">Loading context memory experiments...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 4: Architectural Ablation Study -->
+        <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
+            <div class="card-header">
+                <div>
+                    <h3><i class="fa-solid fa-sliders"></i> 4. Architectural Pipeline Ablation Study</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem;">
+                        Measuring the marginal value added by each static analysis, launch resolution, and LLM synthesis stage.
+                    </p>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="arch-table" id="ablation-benchmark-table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>ArchSynth Pipeline Configuration</th>
+                            <th>Node Discovery</th>
+                            <th>Launch Profiles</th>
+                            <th>Runtime Edges</th>
+                            <th>Subsystem Grouping</th>
+                            <th>Overall F1</th>
+                            <th>Methodological Contribution</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ablation-benchmark-body">
+                        <tr><td colspan="8" class="text-dim">Loading ablation data...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>ArchSynth Benchmarking Suite &copy; 2026 M.Tech Dissertation (Automation & Robotics, DIAT Pune) | Separated from Architecture Recovery Engine</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            try {
+                const response = await fetch("/api/benchmarks/summary");
+                const data = await response.json();
+
+                // 1. Repositories
+                const repoBody = document.getElementById("repo-benchmark-body");
+                let repoHtml = "";
+                (data.repositories || []).forEach(r => {
+                    repoHtml += `<tr>
+                        <td style="font-weight: 600; color: #fff;">${r.name}</td>
+                        <td><code>${r.commit}</code></td>
+                        <td>${r.packages}</td>
+                        <td><strong>${r.nodes}</strong></td>
+                        <td>${r.launches}</td>
+                        <td>${r.interfaces}</td>
+                        <td>${r.runtime_interfaces}</td>
+                        <td><span class="status-pill status-pill-green">${(r.precision * 100).toFixed(1)}%</span></td>
+                        <td><span class="status-pill status-pill-blue">${(r.recall * 100).toFixed(1)}%</span></td>
+                        <td><span class="status-pill status-pill-purple"><strong>${(r.f1 * 100).toFixed(1)}%</strong></span></td>
+                        <td>${(r.evidence_coverage * 100).toFixed(0)}%</td>
+                        <td style="font-family: var(--font-code); color: var(--accent-cyan);">${r.analysis_time_s.toFixed(2)}s</td>
+                    </tr>`;
+                });
+                repoBody.innerHTML = repoHtml;
+
+                // 2. Models
+                const modelBody = document.getElementById("model-benchmark-body");
+                let modelHtml = "";
+                (data.models || []).forEach(m => {
+                    modelHtml += `<tr>
+                        <td style="font-weight: 600; color: #fff;">${m.name} <br><code style="font-size: 0.72rem; color: var(--text-dim);">${m.version}</code></td>
+                        <td><span class="status-pill status-pill-blue">${m.family}</span></td>
+                        <td style="font-family: var(--font-code);">${m.context_window}</td>
+                        <td>${m.avg_input_tokens.toLocaleString()}</td>
+                        <td>${m.avg_output_tokens.toLocaleString()}</td>
+                        <td style="font-family: var(--font-code); color: var(--accent-cyan);">${m.latency_s.toFixed(2)}s</td>
+                        <td><span class="status-pill status-pill-green">${m.schema_compliance}</span></td>
+                        <td><span class="status-pill ${m.unsupported_rate === '0.0%' ? 'status-pill-green' : 'status-pill-amber'}">${m.unsupported_rate}</span></td>
+                        <td style="font-size: 0.75rem;">${m.cost_per_1m_in} / ${m.cost_per_1m_out}</td>
+                    </tr>`;
+                });
+                modelBody.innerHTML = modelHtml;
+
+                // 3. Context Experiments
+                const contextBody = document.getElementById("context-benchmark-body");
+                let contextHtml = "";
+                (data.context_experiments || []).forEach(c => {
+                    contextHtml += `<tr>
+                        <td style="font-weight: 600; color: #fff;">${c.name}</td>
+                        <td>${c.prompt_tokens.toLocaleString()}</td>
+                        <td><strong>${c.total_tokens.toLocaleString()}</strong></td>
+                        <td><span class="status-pill status-pill-purple"><strong>${(c.recovery_f1 * 100).toFixed(1)}%</strong></span></td>
+                        <td><span class="status-pill ${c.unsupported_rate === '0.0%' ? 'status-pill-green' : 'status-pill-rose'}">${c.unsupported_rate}</span></td>
+                        <td style="font-family: var(--font-code); color: var(--accent-cyan);">${c.latency_s.toFixed(2)}s</td>
+                        <td style="font-size: 0.8rem; color: var(--text-muted);">${c.trade_off}</td>
+                    </tr>`;
+                });
+                contextBody.innerHTML = contextHtml;
+
+                // 4. Ablations
+                const ablationBody = document.getElementById("ablation-benchmark-body");
+                let ablationHtml = "";
+                (data.ablations || []).forEach(a => {
+                    ablationBody.innerHTML += `<tr>
+                        <td><strong>L${a.level}</strong></td>
+                        <td style="font-weight: 600; color: #fff;">${a.name}</td>
+                        <td><span class="status-pill status-pill-green">${a.nodes_recovered}</span></td>
+                        <td>${a.launch_profiles}</td>
+                        <td>${a.runtime_edges}</td>
+                        <td><code>${a.subsystems}</code></td>
+                        <td><span class="status-pill status-pill-purple"><strong>${(a.f1 * 100).toFixed(1)}%</strong></span></td>
+                        <td style="font-size: 0.8rem; color: var(--text-muted);">${a.description}</td>
+                    </tr>`;
+                });
+            } catch (err) {
+                console.error("Failed to load benchmark data:", err);
+            }
+        });
+    </script>
+</body>
+</html>

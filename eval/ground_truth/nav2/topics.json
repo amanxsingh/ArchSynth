@@ -1,0 +1,20 @@
+[
+  "/cmd_vel",
+  "/cmd_vel_nav",
+  "/cmd_vel_smoothed",
+  "/scan",
+  "/map",
+  "/tf",
+  "/tf_static",
+  "/odom",
+  "/initialpose",
+  "/goal_pose",
+  "/plan",
+  "/local_plan",
+  "/particle_cloud",
+  "/amcl_pose",
+  "/cost_cloud",
+  "/local_costmap/costmap",
+  "/global_costmap/costmap",
+  "/bond"
+]

@@ -1,0 +1,544 @@
+[
+  {
+    "repo_id": "nav2",
+    "configuration": "Baseline A: Static Regex-only",
+    "status": "executed",
+    "nodes": {
+      "ground_truth": 13,
+      "predicted": 9,
+      "tp": 0,
+      "fp": 9,
+      "fn": 13,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "topics": {
+      "ground_truth": 15,
+      "predicted": 106,
+      "tp": 8,
+      "fp": 98,
+      "fn": 7,
+      "precision": 0.0755,
+      "recall": 0.5333,
+      "f1": 0.1322
+    },
+    "services": {
+      "ground_truth": 6,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "actions": {
+      "ground_truth": 14,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 14,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "evidence_coverage": 0.0,
+    "time_s": 0.32
+  },
+  {
+    "repo_id": "nav2",
+    "configuration": "Baseline B: Multi-language AST (Phase 1)",
+    "status": "executed",
+    "nodes": {
+      "ground_truth": 13,
+      "predicted": 29,
+      "tp": 13,
+      "fp": 16,
+      "fn": 0,
+      "precision": 0.4483,
+      "recall": 1.0,
+      "f1": 0.619
+    },
+    "topics": {
+      "ground_truth": 15,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 15,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "services": {
+      "ground_truth": 6,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "actions": {
+      "ground_truth": 14,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 14,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "evidence_coverage": 1.0,
+    "time_s": 3.162
+  },
+  {
+    "repo_id": "nav2",
+    "configuration": "Baseline C: Static + Launch (Phase 1+2)",
+    "status": "executed",
+    "nodes": {
+      "ground_truth": 13,
+      "predicted": 59,
+      "tp": 13,
+      "fp": 46,
+      "fn": 0,
+      "precision": 0.2203,
+      "recall": 1.0,
+      "f1": 0.3611
+    },
+    "topics": {
+      "ground_truth": 15,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 15,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "services": {
+      "ground_truth": 6,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 6,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "actions": {
+      "ground_truth": 14,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 14,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "evidence_coverage": 1.0,
+    "time_s": 5.855
+  },
+  {
+    "repo_id": "nav2",
+    "configuration": "Baseline D: Static + Launch + Comm (Phase 1-3)",
+    "status": "executed",
+    "nodes": {
+      "ground_truth": 13,
+      "predicted": 29,
+      "tp": 13,
+      "fp": 16,
+      "fn": 0,
+      "precision": 0.4483,
+      "recall": 1.0,
+      "f1": 0.619
+    },
+    "topics": {
+      "ground_truth": 15,
+      "predicted": 67,
+      "tp": 10,
+      "fp": 57,
+      "fn": 5,
+      "precision": 0.1493,
+      "recall": 0.6667,
+      "f1": 0.2439
+    },
+    "services": {
+      "ground_truth": 6,
+      "predicted": 34,
+      "tp": 6,
+      "fp": 28,
+      "fn": 0,
+      "precision": 0.1765,
+      "recall": 1.0,
+      "f1": 0.3
+    },
+    "actions": {
+      "ground_truth": 14,
+      "predicted": 18,
+      "tp": 13,
+      "fp": 5,
+      "fn": 1,
+      "precision": 0.7222,
+      "recall": 0.9286,
+      "f1": 0.8125
+    },
+    "evidence_coverage": 1.0,
+    "time_s": 7.61
+  },
+  {
+    "repo_id": "nav2",
+    "configuration": "Baseline E: Full ArchSynth Mode A (skip_llm=True)",
+    "status": "executed",
+    "nodes": {
+      "ground_truth": 13,
+      "predicted": 29,
+      "tp": 13,
+      "fp": 16,
+      "fn": 0,
+      "precision": 0.4483,
+      "recall": 1.0,
+      "f1": 0.619
+    },
+    "topics": {
+      "ground_truth": 15,
+      "predicted": 67,
+      "tp": 10,
+      "fp": 57,
+      "fn": 5,
+      "precision": 0.1493,
+      "recall": 0.6667,
+      "f1": 0.2439
+    },
+    "services": {
+      "ground_truth": 6,
+      "predicted": 34,
+      "tp": 6,
+      "fp": 28,
+      "fn": 0,
+      "precision": 0.1765,
+      "recall": 1.0,
+      "f1": 0.3
+    },
+    "actions": {
+      "ground_truth": 14,
+      "predicted": 18,
+      "tp": 13,
+      "fp": 5,
+      "fn": 1,
+      "precision": 0.7222,
+      "recall": 0.9286,
+      "f1": 0.8125
+    },
+    "evidence_coverage": 1.0,
+    "time_s": 11.464
+  },
+  {
+    "repo_id": "nav2",
+    "configuration": "LLM-only",
+    "status": "unavailable",
+    "reason": "google-generativeai and ollama Python packages are not installed in the active environment",
+    "nodes": null,
+    "topics": null,
+    "services": null,
+    "actions": null,
+    "evidence_coverage": null,
+    "time_s": null
+  },
+  {
+    "repo_id": "nav2",
+    "configuration": "Static + LLM",
+    "status": "unavailable",
+    "reason": "google-generativeai and ollama Python packages are not installed in the active environment",
+    "nodes": null,
+    "topics": null,
+    "services": null,
+    "actions": null,
+    "evidence_coverage": null,
+    "time_s": null
+  },
+  {
+    "repo_id": "nav2",
+    "configuration": "Static + LLM + Schema (Mode B)",
+    "status": "unavailable",
+    "reason": "google-generativeai and ollama Python packages are not installed in the active environment",
+    "nodes": null,
+    "topics": null,
+    "services": null,
+    "actions": null,
+    "evidence_coverage": null,
+    "time_s": null
+  },
+  {
+    "repo_id": "jaco2_sim_devkit",
+    "configuration": "Baseline A: Static Regex-only",
+    "status": "executed",
+    "nodes": {
+      "ground_truth": 11,
+      "predicted": 9,
+      "tp": 1,
+      "fp": 8,
+      "fn": 10,
+      "precision": 0.1111,
+      "recall": 0.0909,
+      "f1": 0.1
+    },
+    "topics": {
+      "ground_truth": 8,
+      "predicted": 8,
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "services": {
+      "ground_truth": 3,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "actions": {
+      "ground_truth": 1,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "evidence_coverage": 0.0,
+    "time_s": 0.026
+  },
+  {
+    "repo_id": "jaco2_sim_devkit",
+    "configuration": "Baseline B: Multi-language AST (Phase 1)",
+    "status": "executed",
+    "nodes": {
+      "ground_truth": 11,
+      "predicted": 11,
+      "tp": 11,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "topics": {
+      "ground_truth": 8,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "services": {
+      "ground_truth": 3,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "actions": {
+      "ground_truth": 1,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "evidence_coverage": 1.0,
+    "time_s": 0.177
+  },
+  {
+    "repo_id": "jaco2_sim_devkit",
+    "configuration": "Baseline C: Static + Launch (Phase 1+2)",
+    "status": "executed",
+    "nodes": {
+      "ground_truth": 11,
+      "predicted": 26,
+      "tp": 11,
+      "fp": 15,
+      "fn": 0,
+      "precision": 0.4231,
+      "recall": 1.0,
+      "f1": 0.5946
+    },
+    "topics": {
+      "ground_truth": 8,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "services": {
+      "ground_truth": 3,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "actions": {
+      "ground_truth": 1,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "evidence_coverage": 1.0,
+    "time_s": 0.534
+  },
+  {
+    "repo_id": "jaco2_sim_devkit",
+    "configuration": "Baseline D: Static + Launch + Comm (Phase 1-3)",
+    "status": "executed",
+    "nodes": {
+      "ground_truth": 11,
+      "predicted": 11,
+      "tp": 11,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "topics": {
+      "ground_truth": 8,
+      "predicted": 8,
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "services": {
+      "ground_truth": 3,
+      "predicted": 3,
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "actions": {
+      "ground_truth": 1,
+      "predicted": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "evidence_coverage": 1.0,
+    "time_s": 0.643
+  },
+  {
+    "repo_id": "jaco2_sim_devkit",
+    "configuration": "Baseline E: Full ArchSynth Mode A (skip_llm=True)",
+    "status": "executed",
+    "nodes": {
+      "ground_truth": 11,
+      "predicted": 11,
+      "tp": 11,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "topics": {
+      "ground_truth": 8,
+      "predicted": 8,
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "services": {
+      "ground_truth": 3,
+      "predicted": 3,
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "actions": {
+      "ground_truth": 1,
+      "predicted": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "evidence_coverage": 1.0,
+    "time_s": 1.695
+  },
+  {
+    "repo_id": "jaco2_sim_devkit",
+    "configuration": "LLM-only",
+    "status": "unavailable",
+    "reason": "google-generativeai and ollama Python packages are not installed in the active environment",
+    "nodes": null,
+    "topics": null,
+    "services": null,
+    "actions": null,
+    "evidence_coverage": null,
+    "time_s": null
+  },
+  {
+    "repo_id": "jaco2_sim_devkit",
+    "configuration": "Static + LLM",
+    "status": "unavailable",
+    "reason": "google-generativeai and ollama Python packages are not installed in the active environment",
+    "nodes": null,
+    "topics": null,
+    "services": null,
+    "actions": null,
+    "evidence_coverage": null,
+    "time_s": null
+  },
+  {
+    "repo_id": "jaco2_sim_devkit",
+    "configuration": "Static + LLM + Schema (Mode B)",
+    "status": "unavailable",
+    "reason": "google-generativeai and ollama Python packages are not installed in the active environment",
+    "nodes": null,
+    "topics": null,
+    "services": null,
+    "actions": null,
+    "evidence_coverage": null,
+    "time_s": null
+  }
+]

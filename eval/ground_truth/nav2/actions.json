@@ -1,0 +1,14 @@
+[
+  "/navigate_to_pose",
+  "/navigate_through_poses",
+  "/follow_path",
+  "/compute_path_to_pose",
+  "/compute_path_through_poses",
+  "/follow_waypoints",
+  "/spin",
+  "/wait",
+  "/backup",
+  "/assisted_teleop",
+  "/dock_robot",
+  "/undock_robot"
+]

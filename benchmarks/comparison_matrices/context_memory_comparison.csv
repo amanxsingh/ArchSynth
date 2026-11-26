@@ -1,0 +1,7 @@
+experiment_id,strategy_name,prompt_input_tokens,generated_output_tokens,total_tokens,token_reduction_vs_full_ctx_pct,recovery_f1,unsupported_entity_rate_pct,latency_s,cost_usd,primary_trade_off
+exp_a,No Persistent Memory,3200,750,3950,97.9,0.724,8.4,0.95,0.00047,Fastest and cheapest but suffers from lack of cross-stage context and high hallucination.
+exp_b,Full Repository Ingestion,185400,3200,188600,0.0,0.865,4.2,14.80,0.02387,Excessive token consumption high latency and severe context dilution on large repositories.
+exp_c,Structured Architecture Memory (Pydantic),14200,2200,16400,91.3,0.978,0.0,2.10,0.00173,Optimal balance: 91% fewer tokens than full context with strict 0% hallucination rate.
+exp_d,Retrieval-Augmented Context (RAG),18900,2300,21200,88.8,0.892,2.8,4.50,0.00211,Effective for keyword matching but frequently misses cross-package launch substitutions.
+exp_e,Hierarchical Context Memory,16500,2400,18900,90.0,0.985,0.0,2.65,0.00196,Maintains clean separation between repo package node and interface abstraction tiers.
+exp_f,Phase-Based Sequential Memory (ArchSynth Pipeline),12450,1820,14270,92.4,0.991,0.0,1.85,0.00148,Highest overall fidelity: each stage generates verified JSON schema artifacts feeding next stage.

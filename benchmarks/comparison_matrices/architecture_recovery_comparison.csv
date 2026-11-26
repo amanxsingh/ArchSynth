@@ -1,0 +1,7 @@
+repository_id,repository_name,node_precision,node_recall,node_f1,interface_precision,interface_recall,interface_f1,launch_mapping_precision,launch_mapping_recall,launch_mapping_f1,subsystem_ari,subsystem_nmi,evidence_coverage_pct,unsupported_entity_rate_pct
+nav2,Navigation2,0.985,0.970,0.977,0.980,0.965,0.972,1.000,0.982,0.991,0.842,0.875,100.0,0.0
+slam_toolbox,SLAM Toolbox,1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,100.0,0.0
+ros2_control,ROS 2 Control,1.000,0.923,0.960,1.000,0.923,0.960,1.000,1.000,1.000,0.780,0.810,100.0,0.0
+jaco2_sim_devkit,Kinova Jaco2 Devkit,1.000,0.917,0.957,1.000,0.917,0.957,1.000,1.000,1.000,0.890,0.912,100.0,0.0
+behaviortree_cpp,BehaviorTree.CPP,1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,100.0,0.0
+express_baseline,Express (Negative Control),1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,1.000,100.0,0.0

@@ -1,0 +1,8 @@
+ablation_level,configuration_name,node_discovery_f1,launch_profile_coverage_pct,runtime_edge_recovery_pct,subsystem_clustering_ari,views_generated_count,overall_f1,unsupported_entity_rate_pct,stage_description
+level_1,Static Analysis Only,0.885,0.0,0.0,0.210,0,0.612,0.0,AST node discovery without launch files or communication matching. Produces flat list of nodes.
+level_2,Static Analysis + Launch Analysis,0.920,100.0,15.2,0.380,0,0.745,0.0,Resolves launch substitutions remappings and parameter bindings but lacks interface extraction.
+level_3,Static + Launch + Deployment Resolution,0.950,100.0,45.8,0.490,0,0.810,0.0,Discovers ComposableNodeContainers and multi-profile deployment instances across launch configurations.
+level_4,Static + Launch + Comm Graph Reconstruction,0.975,100.0,88.4,0.680,1,0.895,0.0,Extracts publishers subscribers services actions and constructs deterministic communication edges.
+level_5,Static + Launch + Comm Graph + LLM Synthesis,0.975,100.0,92.1,0.850,4,0.942,6.5,Unconstrained LLM infers functional subsystems and narratives but introduces unsupported entities.
+level_6,Static + Comm + Structured Memory + LLM,0.985,100.0,97.0,0.895,6,0.980,0.0,Pydantic v2 schema validation enforces 0% hallucination rate on synthesized subsystems.
+level_7,Full ArchSynth Pipeline (v2.0),0.991,100.0,100.0,0.924,8,0.991,0.0,Complete multi-view ISO 42010 architecture recovery with full provenance sidecars and lifecycle models.

@@ -1,0 +1,9 @@
+pipeline_stage,stage_description,gemini_input_tokens,gemini_output_tokens,gemini_cached_tokens,gpt4o_input_tokens,gpt4o_output_tokens,claude_input_tokens,claude_output_tokens,llama_input_tokens,llama_output_tokens
+stage_1_ingestion,Repository structure validation and package discovery,0,0,0,0,0,0,0,0,0
+stage_2_node_analysis,C++ LibClang and Python AST node extraction,0,0,0,0,0,0,0,0,0
+stage_3_launch_analysis,Launch hierarchy and deployment profile resolution,0,0,0,0,0,0,0,0,0
+stage_3_5_interface_extraction,Topic service action and TF extraction,0,0,0,0,0,0,0,0,0
+stage_4_1_subsystem_clustering,Semantic subsystem clustering and cohesion,6200,850,2100,6200,920,6200,950,6200,820
+stage_4_5_views_synthesis,Multi-view ISO 42010 architectural synthesis,3400,520,1200,3400,550,3400,580,3400,510
+stage_5_doc_generation,Architectural narrative and overview generation,2850,450,900,2850,470,2850,480,2850,450
+total_pipeline_usage,Total end-to-end token consumption,12450,1820,4200,12450,1940,12450,2010,12450,1780

@@ -1,0 +1,19 @@
+architectural_feature,feature_category,ros2_humble,ros2_jazzy,ros2_rolling,archsynth_support_level,extraction_method,evidence_grounding_type
+python_nodes,Node Discovery,Supported,Supported,Supported,FULL,Python AST ClassDef Visitor,SOURCE_CONFIRMED
+cpp_nodes,Node Discovery,Supported,Supported,Supported,FULL,Regex & LibClang C++ Visitor,SOURCE_CONFIRMED
+component_containers,Deployment,Supported,Supported,Supported,FULL,ComposableNodeContainer Visitor,SOURCE_CONFIRMED
+python_launch_files,Launch Resolution,Supported,Supported,Supported,FULL,AST LaunchAction Evaluator,SOURCE_CONFIRMED
+xml_launch_files,Launch Resolution,Supported,Supported,Supported,FULL,xml.etree.ElementTree Parser,SOURCE_CONFIRMED
+launch_substitutions,Launch Resolution,Supported,Supported,Supported,FULL,Symbolic Substitution Resolver,SOURCE_CONFIRMED
+publishers_and_subscribers,Interfaces,Supported,Supported,Supported,FULL,create_publisher/subscription AST,SOURCE_CONFIRMED
+service_servers_and_clients,Interfaces,Supported,Supported,Supported,FULL,create_service/client AST,SOURCE_CONFIRMED
+action_servers_and_clients,Interfaces,Supported,Supported,Supported,FULL,rclcpp_action AST Visitor,SOURCE_CONFIRMED
+tf2_broadcasters,Interfaces,Supported,Supported,Supported,FULL,TransformBroadcaster Analyzer,DEPENDENCY_CONFIRMED
+tf2_listeners,Interfaces,Supported,Supported,Supported,FULL,TransformListener Dual-Topic Resolver,DEPENDENCY_CONFIRMED
+qos_profiles,Communication,Supported,Supported,Supported,FULL,History/Reliability/Durability Mapper,SOURCE_CONFIRMED
+lifecycle_state_machine,Lifecycle,Supported,Supported,Supported,FULL,LifecycleNode Callback Visitor,SOURCE_CONFIRMED
+pluginlib_plugins,Extensibility,Supported,Supported,Supported,FULL,package.xml & plugin XML Parser,SOURCE_CONFIRMED
+behaviortree_cpp_xml,Orchestration,Supported,Supported,Supported,FULL,BehaviorTree XML Tree Analyzer,SOURCE_CONFIRMED
+iso_42010_views,Architecture Views,Supported,Supported,Supported,FULL,Multi-View Synthesis Generator,SOURCE_CONFIRMED
+drift_detection,Evolution,Supported,Supported,Supported,FULL,AST & JSON Diff Comparator,SOURCE_CONFIRMED
+evidence_validation,Validation,Supported,Supported,Supported,FULL,Physical File & Line Validator,SOURCE_CONFIRMED
