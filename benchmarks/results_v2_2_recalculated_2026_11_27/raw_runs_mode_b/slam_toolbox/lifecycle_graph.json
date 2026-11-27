@@ -1,0 +1,79 @@
+{
+  "provenance": null,
+  "lifecycle_managers": [],
+  "managed_nodes": [],
+  "unmanaged_nodes": [
+    "slam_toolbox::AsynchronousSlamToolbox",
+    "slam_toolbox::DecentralizedMultiRobotSlamToolbox",
+    "slam_toolbox::LifelongSlamToolbox",
+    "slam_toolbox::LocalizationSlamToolbox",
+    "slam_toolbox::MapAndLocalizationSlamToolbox",
+    "slam_toolbox::MergeMapsKinematic",
+    "slam_toolbox::SlamToolbox",
+    "slam_toolbox::Slamtoolboxplugin",
+    "slam_toolbox::Slamtoolboxstateupdatenode",
+    "slam_toolbox::SynchronousSlamToolbox"
+  ],
+  "standard_transitions": [
+    {
+      "transition_id": 1,
+      "transition_name": "configure",
+      "from_state": "Unconfigured",
+      "to_state": "Inactive",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 2,
+      "transition_name": "cleanup",
+      "from_state": "Inactive",
+      "to_state": "Unconfigured",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 3,
+      "transition_name": "activate",
+      "from_state": "Inactive",
+      "to_state": "Active",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 4,
+      "transition_name": "deactivate",
+      "from_state": "Active",
+      "to_state": "Inactive",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 5,
+      "transition_name": "unconfigured_shutdown",
+      "from_state": "Unconfigured",
+      "to_state": "Finalized",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 6,
+      "transition_name": "inactive_shutdown",
+      "from_state": "Inactive",
+      "to_state": "Finalized",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 7,
+      "transition_name": "active_shutdown",
+      "from_state": "Active",
+      "to_state": "Finalized",
+      "trigger": "lifecycle_manager"
+    }
+  ],
+  "startup_sequence": [],
+  "mermaid_diagram": "stateDiagram-v2\n    [*] --> Unconfigured\n    Unconfigured --> Configuring : configure() [ID 1]\n    Configuring --> Inactive : success\n    Configuring --> Unconfigured : failure\n    Inactive --> Activating : activate() [ID 3]\n    Activating --> Active : success\n    Activating --> Inactive : failure\n    Active --> Deactivating : deactivate() [ID 4]\n    Deactivating --> Inactive : success\n    Inactive --> CleaningUp : cleanup() [ID 2]\n    CleaningUp --> Unconfigured : success\n    Active --> ShuttingDown : shutdown() [ID 7]\n    Inactive --> ShuttingDown : shutdown() [ID 6]\n    Unconfigured --> ShuttingDown : shutdown() [ID 5]\n    ShuttingDown --> Finalized : success\n    Finalized --> [*]\n",
+  "_provenance": {
+    "repository_name": "slam_toolbox",
+    "repository_url": "https://github.com/SteveMacenski/slam_toolbox",
+    "commit_hash": "eee0cd5e4a161bb10f8334b5420c93876b31ca99",
+    "branch": "ros2",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:58.725002+00:00"
+  }
+}

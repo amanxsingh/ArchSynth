@@ -1,0 +1,9 @@
+{
+  "repository_name": "slam_toolbox",
+  "repository_url": "https://github.com/SteveMacenski/slam_toolbox",
+  "commit_hash": "eee0cd5e4a161bb10f8334b5420c93876b31ca99",
+  "branch": "ros2",
+  "archsynth_version": "2.0",
+  "artifact_schema_version": "1.0",
+  "analysis_timestamp": "2026-11-27T08:12:58.583503+00:00"
+}

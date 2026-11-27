@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "system_name": "SLAM Toolbox",
+    "repository_id": "slam_toolbox",
+    "official_url": "https://github.com/SteveMacenski/slam_toolbox",
+    "branch": "ros2",
+    "pinned_commit": "eee0cd5e4a161bb10f8334b5420c93876b31ca99",
+    "verification_method": "Manual source audit of case_studies/slam_toolbox C++ sources, RViz plugin, and launch files",
+    "scope_definitions": {
+      "nodes": "4 unique runtime node names (slam_toolbox, map_merging, SlamToolboxPlugin, SlamToolboxStateUpdateNode) across 10 C++ node classes (1 base + 6 SLAM modes + merge tool + 2 RViz helper nodes)",
+      "topics": "14 unique production topic basenames (including /tf via tf2_ros::TransformBroadcaster/Listener)",
+      "services": "14 unique production services",
+      "actions": "0 ROS 2 actions"
+    }
+  },
+  "nodes": [
+    {"name": "slam_toolbox", "class_name": "SlamToolbox", "package": "slam_toolbox", "source_file": "src/slam_toolbox_common.cpp"},
+    {"name": "slam_toolbox", "class_name": "AsynchronousSlamToolbox", "package": "slam_toolbox", "source_file": "src/slam_toolbox_async.cpp"},
+    {"name": "slam_toolbox", "class_name": "SynchronousSlamToolbox", "package": "slam_toolbox", "source_file": "src/slam_toolbox_sync.cpp"},
+    {"name": "slam_toolbox", "class_name": "LocalizationSlamToolbox", "package": "slam_toolbox", "source_file": "src/slam_toolbox_localization.cpp"},
+    {"name": "slam_toolbox", "class_name": "LifelongSlamToolbox", "package": "slam_toolbox", "source_file": "src/experimental/slam_toolbox_lifelong.cpp"},
+    {"name": "slam_toolbox", "class_name": "MapAndLocalizationSlamToolbox", "package": "slam_toolbox", "source_file": "src/experimental/slam_toolbox_map_and_localization.cpp"},
+    {"name": "slam_toolbox", "class_name": "DecentralizedMultiRobotSlamToolbox", "package": "slam_toolbox", "source_file": "src/slam_toolbox_decentralized_multirobot.cpp"},
+    {"name": "map_merging", "class_name": "MergeMapsKinematic", "package": "slam_toolbox", "source_file": "src/merge_maps_kinematic.cpp"},
+    {"name": "SlamToolboxPlugin", "class_name": "Slamtoolboxplugin", "package": "slam_toolbox", "source_file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp#L48"},
+    {"name": "SlamToolboxStateUpdateNode", "class_name": "Slamtoolboxstateupdatenode", "package": "slam_toolbox", "source_file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp#L580"}
+  ],
+  "topics": [
+    {"name": "pose", "source_file": "src/slam_toolbox_common.cpp#L475"},
+    {"name": "map", "source_file": "src/slam_toolbox_common.cpp#L477"},
+    {"name": "map_metadata", "source_file": "src/slam_toolbox_common.cpp#L479"},
+    {"name": "pose_graph", "source_file": "src/slam_toolbox_common.cpp#L502"},
+    {"name": "new_node_event", "source_file": "src/slam_toolbox_common.cpp#L505"},
+    {"name": "loop_closure_event", "source_file": "src/slam_toolbox_common.cpp#L507"},
+    {"name": "scan_visualization", "source_file": "src/loop_closure_assistant.cpp#L62"},
+    {"name": "graph_visualization", "source_file": "src/loop_closure_assistant.cpp#L76"},
+    {"name": "localized_scan", "source_file": "src/slam_toolbox_decentralized_multirobot.cpp#L45-L47"},
+    {"name": "initialpose", "source_file": "src/slam_toolbox_localization.cpp#L82"},
+    {"name": "scan", "source_file": "src/slam_toolbox_common.cpp"},
+    {"name": "map_{i}", "source_file": "src/merge_maps_kinematic.cpp#L46"},
+    {"name": "map_metadata_{i}", "source_file": "src/merge_maps_kinematic.cpp#L48"},
+    {"name": "/tf", "source_file": "src/slam_toolbox_common.cpp#L134-L135"}
+  ],
+  "services": [
+    {"name": "slam_toolbox/dynamic_map", "source_file": "src/slam_toolbox_common.cpp#L482"},
+    {"name": "slam_toolbox/pause_new_measurements", "source_file": "src/slam_toolbox_common.cpp#L485"},
+    {"name": "slam_toolbox/serialize_map", "source_file": "src/slam_toolbox_common.cpp#L490"},
+    {"name": "slam_toolbox/deserialize_map", "source_file": "src/slam_toolbox_common.cpp#L494"},
+    {"name": "slam_toolbox/reset", "source_file": "src/slam_toolbox_common.cpp#L498"},
+    {"name": "slam_toolbox/save_map", "source_file": "src/map_saver.cpp#L34"},
+    {"name": "slam_toolbox/clear_changes", "source_file": "src/loop_closure_assistant.cpp#L54"},
+    {"name": "slam_toolbox/manual_loop_closure", "source_file": "src/loop_closure_assistant.cpp#L58"},
+    {"name": "slam_toolbox/toggle_interactive_mode", "source_file": "src/loop_closure_assistant.cpp#L71"},
+    {"name": "slam_toolbox/merge_submaps", "source_file": "src/merge_maps_kinematic.cpp#L51"},
+    {"name": "slam_toolbox/add_submap", "source_file": "src/merge_maps_kinematic.cpp#L54"},
+    {"name": "slam_toolbox/clear_queue", "source_file": "src/slam_toolbox_sync.cpp#L82"},
+    {"name": "slam_toolbox/clear_localization_buffer", "source_file": "src/slam_toolbox_localization.cpp#L87"},
+    {"name": "slam_toolbox/set_localization_mode", "source_file": "src/experimental/slam_toolbox_map_and_localization.cpp#L52"}
+  ],
+  "actions": []
+}

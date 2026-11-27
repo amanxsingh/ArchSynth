@@ -1,0 +1,652 @@
+{
+  "provenance": null,
+  "nodes": [
+    "slam_toolbox::AsynchronousSlamToolbox",
+    "slam_toolbox::DecentralizedMultiRobotSlamToolbox",
+    "slam_toolbox::LifelongSlamToolbox",
+    "slam_toolbox::LocalizationSlamToolbox",
+    "slam_toolbox::MapAndLocalizationSlamToolbox",
+    "slam_toolbox::MergeMapsKinematic",
+    "slam_toolbox::SlamToolbox",
+    "slam_toolbox::Slamtoolboxplugin",
+    "slam_toolbox::Slamtoolboxstateupdatenode",
+    "slam_toolbox::SynchronousSlamToolbox"
+  ],
+  "matrix": {
+    "slam_toolbox::AsynchronousSlamToolbox": {
+      "slam_toolbox::AsynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LifelongSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MapAndLocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MergeMapsKinematic": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxplugin": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxstateupdatenode": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+      "slam_toolbox::AsynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+        "topic": 1,
+        "service": 0,
+        "action": 0,
+        "total": 1
+      },
+      "slam_toolbox::LifelongSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MapAndLocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MergeMapsKinematic": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxplugin": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxstateupdatenode": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "slam_toolbox::LifelongSlamToolbox": {
+      "slam_toolbox::AsynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LifelongSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MapAndLocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MergeMapsKinematic": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxplugin": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxstateupdatenode": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "slam_toolbox::LocalizationSlamToolbox": {
+      "slam_toolbox::AsynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LifelongSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MapAndLocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MergeMapsKinematic": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxplugin": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxstateupdatenode": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "slam_toolbox::MapAndLocalizationSlamToolbox": {
+      "slam_toolbox::AsynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LifelongSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MapAndLocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MergeMapsKinematic": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxplugin": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxstateupdatenode": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "slam_toolbox::MergeMapsKinematic": {
+      "slam_toolbox::AsynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LifelongSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MapAndLocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MergeMapsKinematic": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SlamToolbox": {
+        "topic": 1,
+        "service": 0,
+        "action": 0,
+        "total": 1
+      },
+      "slam_toolbox::Slamtoolboxplugin": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxstateupdatenode": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "slam_toolbox::SlamToolbox": {
+      "slam_toolbox::AsynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LifelongSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MapAndLocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MergeMapsKinematic": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SlamToolbox": {
+        "topic": 1,
+        "service": 0,
+        "action": 0,
+        "total": 1
+      },
+      "slam_toolbox::Slamtoolboxplugin": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxstateupdatenode": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "slam_toolbox::Slamtoolboxplugin": {
+      "slam_toolbox::AsynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LifelongSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MapAndLocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MergeMapsKinematic": {
+        "topic": 0,
+        "service": 2,
+        "action": 0,
+        "total": 2
+      },
+      "slam_toolbox::SlamToolbox": {
+        "topic": 0,
+        "service": 7,
+        "action": 0,
+        "total": 7
+      },
+      "slam_toolbox::Slamtoolboxplugin": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxstateupdatenode": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 1,
+        "action": 0,
+        "total": 1
+      }
+    },
+    "slam_toolbox::Slamtoolboxstateupdatenode": {
+      "slam_toolbox::AsynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LifelongSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MapAndLocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MergeMapsKinematic": {
+        "topic": 0,
+        "service": 2,
+        "action": 0,
+        "total": 2
+      },
+      "slam_toolbox::SlamToolbox": {
+        "topic": 0,
+        "service": 7,
+        "action": 0,
+        "total": 7
+      },
+      "slam_toolbox::Slamtoolboxplugin": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxstateupdatenode": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 1,
+        "action": 0,
+        "total": 1
+      }
+    },
+    "slam_toolbox::SynchronousSlamToolbox": {
+      "slam_toolbox::AsynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LifelongSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::LocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MapAndLocalizationSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::MergeMapsKinematic": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxplugin": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::Slamtoolboxstateupdatenode": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "slam_toolbox::SynchronousSlamToolbox": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    }
+  },
+  "summary": {
+    "topic": 3,
+    "service": 20,
+    "action": 0,
+    "total": 23
+  },
+  "_provenance": {
+    "repository_name": "slam_toolbox",
+    "repository_url": "https://github.com/SteveMacenski/slam_toolbox",
+    "commit_hash": "eee0cd5e4a161bb10f8334b5420c93876b31ca99",
+    "branch": "ros2",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:58.608040+00:00"
+  }
+}

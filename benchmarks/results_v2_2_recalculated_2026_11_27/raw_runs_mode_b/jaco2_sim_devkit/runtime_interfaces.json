@@ -1,0 +1,494 @@
+[
+  {
+    "runtime_instance_id": "jaco2_controller/launch/jsp_gui_control.launch.py::jsp_controller#L39[ns=|prof=default|parent=root]::publisher::/arm_controller/joint_trajectory#17",
+    "declaration_id": "jaco2_controller::JSPGUIController::publisher::arm_controller/joint_trajectory#L17",
+    "launch_instance_id": "jaco2_controller/launch/jsp_gui_control.launch.py::jsp_controller#L39[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_controller::JSPGUIController",
+    "interface_type": "publisher",
+    "raw_name": "arm_controller/joint_trajectory",
+    "resolved_name": "/arm_controller/joint_trajectory",
+    "message_type": "trajectory_msgs/msg/JointTrajectory",
+    "direction": "out",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_controller/jaco2_controller/jsp_gui_controller.py",
+        "line_start": 17,
+        "line_end": 17,
+        "evidence_type": "publisher_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Publisher created for topic 'arm_controller/joint_trajectory' with type 'trajectory_msgs/msg/JointTrajectory'"
+      },
+      {
+        "file": "jaco2_controller/launch/jsp_gui_control.launch.py",
+        "line_start": 39,
+        "line_end": 43,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_controller', exec='jsp_controller', name='jsp_controller'"
+      }
+    ]
+  },
+  {
+    "runtime_instance_id": "jaco2_controller/launch/jsp_gui_control.launch.py::jsp_controller#L39[ns=|prof=default|parent=root]::publisher::/gripper_controller/joint_trajectory#18",
+    "declaration_id": "jaco2_controller::JSPGUIController::publisher::gripper_controller/joint_trajectory#L18",
+    "launch_instance_id": "jaco2_controller/launch/jsp_gui_control.launch.py::jsp_controller#L39[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_controller::JSPGUIController",
+    "interface_type": "publisher",
+    "raw_name": "gripper_controller/joint_trajectory",
+    "resolved_name": "/gripper_controller/joint_trajectory",
+    "message_type": "trajectory_msgs/msg/JointTrajectory",
+    "direction": "out",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_controller/jaco2_controller/jsp_gui_controller.py",
+        "line_start": 18,
+        "line_end": 18,
+        "evidence_type": "publisher_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Publisher created for topic 'gripper_controller/joint_trajectory' with type 'trajectory_msgs/msg/JointTrajectory'"
+      },
+      {
+        "file": "jaco2_controller/launch/jsp_gui_control.launch.py",
+        "line_start": 39,
+        "line_end": 43,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_controller', exec='jsp_controller', name='jsp_controller'"
+      }
+    ]
+  },
+  {
+    "runtime_instance_id": "jaco2_controller/launch/jsp_gui_control.launch.py::jsp_controller#L39[ns=|prof=default|parent=root]::subscriber::/joint_commands#19",
+    "declaration_id": "jaco2_controller::JSPGUIController::subscriber::joint_commands#L19",
+    "launch_instance_id": "jaco2_controller/launch/jsp_gui_control.launch.py::jsp_controller#L39[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_controller::JSPGUIController",
+    "interface_type": "subscriber",
+    "raw_name": "joint_commands",
+    "resolved_name": "/joint_commands",
+    "message_type": "sensor_msgs/msg/JointState",
+    "direction": "in",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_controller/jaco2_controller/jsp_gui_controller.py",
+        "line_start": 19,
+        "line_end": 19,
+        "evidence_type": "subscriber_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Subscriber created for topic 'joint_commands' with type 'sensor_msgs/msg/JointState'"
+      },
+      {
+        "file": "jaco2_controller/launch/jsp_gui_control.launch.py",
+        "line_start": 39,
+        "line_end": 43,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_controller', exec='jsp_controller', name='jsp_controller'"
+      }
+    ]
+  },
+  {
+    "runtime_instance_id": "jaco2_moveit_task_constructor/launch/run.launch.py::scene_publisher#L28[ns=|prof=default|parent=root]::publisher::/planning_scene#23",
+    "declaration_id": "jaco2_moveit_task_constructor::ScenePublisher::publisher::/planning_scene#L23",
+    "launch_instance_id": "jaco2_moveit_task_constructor/launch/run.launch.py::scene_publisher#L28[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_moveit_task_constructor::ScenePublisher",
+    "interface_type": "publisher",
+    "raw_name": "/planning_scene",
+    "resolved_name": "/planning_scene",
+    "message_type": "moveit_msgs/msg/PlanningScene",
+    "direction": "out",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/scene_publisher.py",
+        "line_start": 23,
+        "line_end": 23,
+        "evidence_type": "publisher_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Publisher created for topic '/planning_scene' with type 'moveit_msgs/msg/PlanningScene'"
+      },
+      {
+        "file": "jaco2_moveit_task_constructor/launch/run.launch.py",
+        "line_start": 28,
+        "line_end": 32,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_moveit_task_constructor', exec='scene_publisher', name='scene_publisher'"
+      }
+    ]
+  },
+  {
+    "runtime_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]::publisher::/servo_node/delta_joint_cmds#57",
+    "declaration_id": "jaco2_servo::Xbox360Teleop::publisher::/servo_node/delta_joint_cmds#L57",
+    "launch_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_servo::Xbox360Teleop",
+    "interface_type": "publisher",
+    "raw_name": "/servo_node/delta_joint_cmds",
+    "resolved_name": "/servo_node/delta_joint_cmds",
+    "message_type": "control_msgs/msg/JointJog",
+    "direction": "out",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+        "line_start": 57,
+        "line_end": 57,
+        "evidence_type": "publisher_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Publisher created for topic '/servo_node/delta_joint_cmds' with type 'control_msgs/msg/JointJog'"
+      },
+      {
+        "file": "jaco2_servo/launch/joystick_teleop.launch.py",
+        "line_start": 48,
+        "line_end": 52,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_servo', exec='joy_teleop', name='joy_teleop'"
+      }
+    ]
+  },
+  {
+    "runtime_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]::publisher::/servo_node/delta_twist_cmds#58",
+    "declaration_id": "jaco2_servo::Xbox360Teleop::publisher::/servo_node/delta_twist_cmds#L58",
+    "launch_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_servo::Xbox360Teleop",
+    "interface_type": "publisher",
+    "raw_name": "/servo_node/delta_twist_cmds",
+    "resolved_name": "/servo_node/delta_twist_cmds",
+    "message_type": "geometry_msgs/msg/TwistStamped",
+    "direction": "out",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+        "line_start": 58,
+        "line_end": 58,
+        "evidence_type": "publisher_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Publisher created for topic '/servo_node/delta_twist_cmds' with type 'geometry_msgs/msg/TwistStamped'"
+      },
+      {
+        "file": "jaco2_servo/launch/joystick_teleop.launch.py",
+        "line_start": 48,
+        "line_end": 52,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_servo', exec='joy_teleop', name='joy_teleop'"
+      }
+    ]
+  },
+  {
+    "runtime_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]::service_client::/servo_node/start_servo#59",
+    "declaration_id": "jaco2_servo::Xbox360Teleop::service_client::/servo_node/start_servo#L59",
+    "launch_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_servo::Xbox360Teleop",
+    "interface_type": "service_client",
+    "raw_name": "/servo_node/start_servo",
+    "resolved_name": "/servo_node/start_servo",
+    "message_type": "std_srvs/srv/Trigger",
+    "direction": "out",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+        "line_start": 59,
+        "line_end": 59,
+        "evidence_type": "service_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "ServiceClient created for service '/servo_node/start_servo' with type 'std_srvs/srv/Trigger'"
+      },
+      {
+        "file": "jaco2_servo/launch/joystick_teleop.launch.py",
+        "line_start": 48,
+        "line_end": 52,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_servo', exec='joy_teleop', name='joy_teleop'"
+      }
+    ]
+  },
+  {
+    "runtime_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]::service_client::/servo_node/stop_servo#60",
+    "declaration_id": "jaco2_servo::Xbox360Teleop::service_client::/servo_node/stop_servo#L60",
+    "launch_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_servo::Xbox360Teleop",
+    "interface_type": "service_client",
+    "raw_name": "/servo_node/stop_servo",
+    "resolved_name": "/servo_node/stop_servo",
+    "message_type": "std_srvs/srv/Trigger",
+    "direction": "out",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+        "line_start": 60,
+        "line_end": 60,
+        "evidence_type": "service_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "ServiceClient created for service '/servo_node/stop_servo' with type 'std_srvs/srv/Trigger'"
+      },
+      {
+        "file": "jaco2_servo/launch/joystick_teleop.launch.py",
+        "line_start": 48,
+        "line_end": 52,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_servo', exec='joy_teleop', name='joy_teleop'"
+      }
+    ]
+  },
+  {
+    "runtime_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]::service_client::/servo_node/switch_command_type#61",
+    "declaration_id": "jaco2_servo::Xbox360Teleop::service_client::/servo_node/switch_command_type#L61",
+    "launch_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_servo::Xbox360Teleop",
+    "interface_type": "service_client",
+    "raw_name": "/servo_node/switch_command_type",
+    "resolved_name": "/servo_node/switch_command_type",
+    "message_type": "moveit_msgs/srv/ServoCommandType",
+    "direction": "out",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+        "line_start": 61,
+        "line_end": 61,
+        "evidence_type": "service_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "ServiceClient created for service '/servo_node/switch_command_type' with type 'moveit_msgs/srv/ServoCommandType'"
+      },
+      {
+        "file": "jaco2_servo/launch/joystick_teleop.launch.py",
+        "line_start": 48,
+        "line_end": 52,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_servo', exec='joy_teleop', name='joy_teleop'"
+      }
+    ]
+  },
+  {
+    "runtime_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]::subscriber::/joy#63",
+    "declaration_id": "jaco2_servo::Xbox360Teleop::subscriber::/joy#L63",
+    "launch_instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_servo::Xbox360Teleop",
+    "interface_type": "subscriber",
+    "raw_name": "/joy",
+    "resolved_name": "/joy",
+    "message_type": "sensor_msgs/msg/Joy",
+    "direction": "in",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+        "line_start": 63,
+        "line_end": 63,
+        "evidence_type": "subscriber_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Subscriber created for topic '/joy' with type 'sensor_msgs/msg/Joy'"
+      },
+      {
+        "file": "jaco2_servo/launch/joystick_teleop.launch.py",
+        "line_start": 48,
+        "line_end": 52,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_servo', exec='joy_teleop', name='joy_teleop'"
+      }
+    ]
+  },
+  {
+    "runtime_instance_id": "jaco2_servo/launch/keyboard_teleop.launch.py::key_teleop#L48[ns=|prof=default|parent=root]::publisher::/servo_node/delta_joint_cmds#94",
+    "declaration_id": "jaco2_servo::KeyboardServo::publisher::/servo_node/delta_joint_cmds#L94",
+    "launch_instance_id": "jaco2_servo/launch/keyboard_teleop.launch.py::key_teleop#L48[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_servo::KeyboardServo",
+    "interface_type": "publisher",
+    "raw_name": "/servo_node/delta_joint_cmds",
+    "resolved_name": "/servo_node/delta_joint_cmds",
+    "message_type": "control_msgs/msg/JointJog",
+    "direction": "out",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_servo/jaco2_servo/keyboard_teleop.py",
+        "line_start": 94,
+        "line_end": 94,
+        "evidence_type": "publisher_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Publisher created for topic '/servo_node/delta_joint_cmds' with type 'control_msgs/msg/JointJog'"
+      },
+      {
+        "file": "jaco2_servo/launch/keyboard_teleop.launch.py",
+        "line_start": 48,
+        "line_end": 52,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_servo', exec='key_teleop', name='key_teleop'"
+      }
+    ]
+  },
+  {
+    "runtime_instance_id": "jaco2_servo/launch/keyboard_teleop.launch.py::key_teleop#L48[ns=|prof=default|parent=root]::publisher::/servo_node/delta_twist_cmds#95",
+    "declaration_id": "jaco2_servo::KeyboardServo::publisher::/servo_node/delta_twist_cmds#L95",
+    "launch_instance_id": "jaco2_servo/launch/keyboard_teleop.launch.py::key_teleop#L48[ns=|prof=default|parent=root]",
+    "owner_node_id": "jaco2_servo::KeyboardServo",
+    "interface_type": "publisher",
+    "raw_name": "/servo_node/delta_twist_cmds",
+    "resolved_name": "/servo_node/delta_twist_cmds",
+    "message_type": "geometry_msgs/msg/TwistStamped",
+    "direction": "out",
+    "namespace": "",
+    "applied_remappings": [],
+    "deployment_profile": "default",
+    "container_name": null,
+    "qos_reliability": null,
+    "qos_durability": null,
+    "evidence": [
+      {
+        "file": "jaco2_servo/jaco2_servo/keyboard_teleop.py",
+        "line_start": 95,
+        "line_end": 95,
+        "evidence_type": "publisher_creation",
+        "source": "python_ast_interface_extractor",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Publisher created for topic '/servo_node/delta_twist_cmds' with type 'geometry_msgs/msg/TwistStamped'"
+      },
+      {
+        "file": "jaco2_servo/launch/keyboard_teleop.launch.py",
+        "line_start": 48,
+        "line_end": 52,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='jaco2_servo', exec='key_teleop', name='key_teleop'"
+      }
+    ]
+  }
+]

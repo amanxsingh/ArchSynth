@@ -1,8 +1,8 @@
 """
-ArchSynth v2.2 Complete Benchmark Recalculation Runner.
+ArchSynth v2.2 Benchmark Recalculation Runner (Updated with Extraction Fixes + Verified GT).
 Evaluates all 6 repositories (Nav2, SLAM Toolbox, ROS 2 Control, JACO2, BehaviorTree.CPP, Express.js)
 and writes all curated artifacts + raw outputs into:
-    benchmarks/results_v2_2_recalculated_2026_11_25/
+    benchmarks/results_v2_2_recalculated_2026_11_27/
 without modifying any previous benchmark results.
 """
 
@@ -16,11 +16,11 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set
+from typing import Any, Dict, List, Set
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from eval.evaluator import ResearchEvaluator, calculate_ari_nmi, compute_fuzzy_prf1, compute_prf1
+from eval.evaluator import ResearchEvaluator, calculate_ari_nmi
 from src.evidence_validator import EvidenceValidator
 from src.launch_analyzer import run_phase2_launch_pipeline
 from src.main import ArchSynthPipeline
@@ -31,7 +31,7 @@ from src.schema import ArchitectureModel, PipelineConfig
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("ArchSynthV22Benchmark")
 
-OUT_ROOT = Path("benchmarks/results_v2_2_recalculated_2026_11_25")
+OUT_ROOT = Path("benchmarks/results_v2_2_recalculated_2026_11_27")
 RAW_ROOT = OUT_ROOT / "raw_runs"
 
 REPOS = [
@@ -48,7 +48,7 @@ REPOS = [
         "name": "SLAM Toolbox",
         "path": Path("case_studies/slam_toolbox"),
         "url": "https://github.com/SteveMacenski/slam_toolbox",
-        "gt_path": None,
+        "gt_path": Path("eval/ground_truth/slam_toolbox/ground_truth.json"),
         "is_ros": True,
     },
     {
@@ -56,7 +56,7 @@ REPOS = [
         "name": "ROS 2 Control",
         "path": Path("case_studies/ros2_control"),
         "url": "https://github.com/ros-controls/ros2_control",
-        "gt_path": None,
+        "gt_path": Path("eval/ground_truth/ros2_control/ground_truth.json"),
         "is_ros": True,
     },
     {
@@ -73,7 +73,7 @@ REPOS = [
         "path": Path("case_studies/behaviortree_cpp"),
         "url": "https://github.com/BehaviorTree/BehaviorTree.CPP.git",
         "gt_path": None,
-        "is_ros": False,  # C++ library / optional ROS 2 wrapper
+        "is_ros": False,
     },
     {
         "id": "express",
@@ -123,41 +123,85 @@ def prf1_with_counts(pred_set: Set[str], gt_set: Set[str]) -> Dict[str, Any]:
 
 
 def clean_basename(s: str) -> str:
-    return s.strip("/").split("/")[-1].lower()
+    return s.strip().strip("/").split("::")[-1].split("/")[-1].lower()
+
+
+def _prod_interfaces(model: ArchitectureModel):
+    prod_ids = {n.id for n in model.nodes if not n.is_test}
+    return [d for d in model.interfaces if d.owner_node_id in prod_ids]
+
+
+def _extract_topic_set(decls) -> Set[str]:
+    return {
+        clean_basename(d.resolved_name or d.name_expression)
+        for d in decls
+        if d.interface_type.value in ("publisher", "subscriber", "tf_broadcaster", "tf_listener")
+        and clean_basename(d.resolved_name or d.name_expression)
+    }
+
+
+def _extract_service_set(decls) -> Set[str]:
+    return {
+        clean_basename(d.resolved_name or d.name_expression)
+        for d in decls
+        if d.interface_type.value in ("service_server", "service_client")
+        and clean_basename(d.resolved_name or d.name_expression)
+    }
+
+
+def _extract_action_set(decls) -> Set[str]:
+    return {
+        clean_basename(d.resolved_name or d.name_expression)
+        for d in decls
+        if d.interface_type.value in ("action_server", "action_client")
+        and clean_basename(d.resolved_name or d.name_expression)
+    }
+
+
+def evaluate_standard_ros_repo(model: ArchitectureModel, gt: Dict[str, Any]) -> Dict[str, Any]:
+    pred_nodes = {clean_basename(n.name or n.class_name) for n in model.nodes if not n.is_test}
+    gt_nodes = {clean_basename(n["name"]) for n in gt["nodes"]}
+
+    prod_decls = _prod_interfaces(model)
+    pred_topics = _extract_topic_set(prod_decls)
+    gt_topics = {clean_basename(t["name"]) for t in gt["topics"]}
+
+    pred_services = _extract_service_set(prod_decls)
+    gt_services = {clean_basename(s["name"]) for s in gt["services"]}
+
+    pred_actions = _extract_action_set(prod_decls)
+    gt_actions = {clean_basename(a["name"]) for a in gt.get("actions", [])}
+
+    return {
+        "nodes": prf1_with_counts(pred_nodes, gt_nodes),
+        "topics": prf1_with_counts(pred_topics, gt_topics),
+        "services": prf1_with_counts(pred_services, gt_services),
+        "actions": prf1_with_counts(pred_actions, gt_actions),
+    }
 
 
 def evaluate_jaco2_detailed(model: ArchitectureModel, gt: Dict[str, Any]) -> Dict[str, Any]:
     pred_nodes = {clean_basename(n.name or n.class_name) for n in model.nodes if not n.is_test}
     gt_nodes = {clean_basename(n["name"]) for n in gt["nodes"]}
 
-    # Source-declared interfaces (exclude config::* and api_inferred)
-    src_topics = {
-        clean_basename(d.resolved_name or d.name_expression)
-        for d in model.interfaces
-        if d.interface_type.value in ("publisher", "subscriber") and not d.owner_node_id.startswith("config::")
-    }
+    prod_decls = _prod_interfaces(model)
+    src_topics = _extract_topic_set(prod_decls)
     gt_topics = {clean_basename(t["name"]) for t in gt["topics"]}
 
-    src_services = {
-        clean_basename(d.resolved_name or d.name_expression)
-        for d in model.interfaces
-        if d.interface_type.value in ("service_server", "service_client") and not d.owner_node_id.startswith("config::")
-    }
+    src_services = _extract_service_set(prod_decls)
     gt_services = {clean_basename(s["name"]) for s in gt["services"]}
 
-    # Actions separated cleanly:
     src_actions = {
         (d.owner_node_id, clean_basename(d.resolved_name or d.name_expression))
-        for d in model.interfaces
+        for d in prod_decls
         if d.interface_type.value in ("action_server", "action_client")
-        and not d.owner_node_id.startswith("config::")
         and d.discovery_method != "python_ast_moveit_execution"
     }
     gt_src_actions = {(a["owner"], clean_basename(a["name"])) for a in gt.get("actions", [])}
 
     api_actions = {
         (d.owner_node_id, clean_basename(d.resolved_name or d.name_expression))
-        for d in model.interfaces
+        for d in prod_decls
         if d.discovery_method == "python_ast_moveit_execution"
     }
     gt_api_actions = {(a["owner"], clean_basename(a["name"])) for a in gt.get("api_inferred_actions", [])}
@@ -169,7 +213,6 @@ def evaluate_jaco2_detailed(model: ArchitectureModel, gt: Dict[str, Any]) -> Dic
     }
     gt_yaml_actions = {a["name"].lower() for a in gt.get("yaml_configured_actions", [])}
 
-    # Subsystems (by package_name / architectural_role)
     gt_roles = {clean_basename(n["name"]): n["architectural_role"] for n in gt["nodes"]}
     pred_roles = {}
     node_id_to_clean = {n.id: clean_basename(n.name or n.class_name) for n in model.nodes}
@@ -191,17 +234,23 @@ def evaluate_jaco2_detailed(model: ArchitectureModel, gt: Dict[str, Any]) -> Dic
 
 
 def evaluate_nav2_detailed(model: ArchitectureModel, gt: Dict[str, Any]) -> Dict[str, Any]:
-    pred_nodes = {clean_basename(n.name or n.class_name) for n in model.nodes if not n.is_test}
+    prod_nodes = [n for n in model.nodes if not n.is_test]
+    pred_nodes = {clean_basename(n.name or n.class_name) for n in prod_nodes}
     gt_core_nodes = {clean_basename(n["name"]) for n in gt.get("core_nodes", gt["nodes"])}
     gt_ext_nodes = {clean_basename(n["name"]) for n in gt.get("extended_nodes", gt["nodes"])}
 
-    pred_topics = {clean_basename(d.resolved_name or d.name_expression) for d in model.interfaces if d.interface_type.value in ("publisher", "subscriber")}
+    # Package-scoped core evaluation: restrict predictions to the canonical GT packages
+    core_pkgs = {n["package"] for n in gt.get("core_nodes", []) if n.get("package")}
+    core_pkg_nodes = {clean_basename(n.name or n.class_name) for n in prod_nodes if n.package_name in core_pkgs}
+
+    prod_decls = _prod_interfaces(model)
+    pred_topics = _extract_topic_set(prod_decls)
     gt_topics = {clean_basename(t["name"]) for t in gt["topics"]}
 
-    pred_services = {clean_basename(d.resolved_name or d.name_expression) for d in model.interfaces if d.interface_type.value in ("service_server", "service_client")}
+    pred_services = _extract_service_set(prod_decls)
     gt_services = {clean_basename(s["name"]) for s in gt["services"]}
 
-    pred_actions = {clean_basename(d.resolved_name or d.name_expression) for d in model.interfaces if d.interface_type.value in ("action_server", "action_client")}
+    pred_actions = _extract_action_set(prod_decls)
     gt_actions = {clean_basename(a["name"]) for a in gt["actions"]}
 
     ev = ResearchEvaluator(model, gt)
@@ -210,6 +259,7 @@ def evaluate_nav2_detailed(model: ArchitectureModel, gt: Dict[str, Any]) -> Dict
 
     return {
         "nodes_core": prf1_with_counts(pred_nodes, gt_core_nodes),
+        "nodes_core_pkg_scoped": prf1_with_counts(core_pkg_nodes, gt_core_nodes),
         "nodes_extended": prf1_with_counts(pred_nodes, gt_ext_nodes),
         "topics": prf1_with_counts(pred_topics, gt_topics),
         "services": prf1_with_counts(pred_services, gt_services),
@@ -263,6 +313,7 @@ def run_real_ablation(repo_id: str, repo_root: Path, gt: Dict[str, Any], raw_out
     b_nodes = run_node_analysis(repo_root, nodes_file)
     tB = round(time.time() - t0, 3)
     b_node_names = {clean_basename(n.name or n.class_name) for n in b_nodes if not n.is_test}
+    prod_ids = {n.id for n in b_nodes if not n.is_test}
     results.append({
         "repo_id": repo_id,
         "configuration": "Baseline B: Multi-language AST (Phase 1)",
@@ -292,40 +343,36 @@ def run_real_ablation(repo_id: str, repo_root: Path, gt: Dict[str, Any], raw_out
         "time_s": round(tB + tC, 3),
     })
 
-    # 4. Baseline D: Static + Launch + Comm Graph (Phase 1+2+3)
+    # 4. Baseline D: Static + Launch + Comm Graph (Phase 1+2+3, prod-filtered)
     t0 = time.time()
     decls, _, _, _ = run_phase3_communication_pipeline(repo_root, nodes_file, ab_dir / "launch_instances.json", ab_dir)
     tD = round(time.time() - t0, 3)
-    d_topics = {clean_basename(d.resolved_name or d.name_expression) for d in decls if d.interface_type.value in ("publisher", "subscriber") and not d.owner_node_id.startswith("config::")}
-    d_svcs = {clean_basename(d.resolved_name or d.name_expression) for d in decls if d.interface_type.value in ("service_server", "service_client") and not d.owner_node_id.startswith("config::")}
-    d_acts = {clean_basename(d.resolved_name or d.name_expression) for d in decls if d.interface_type.value in ("action_server", "action_client") and not d.owner_node_id.startswith("config::")}
+    d_prod = [d for d in decls if d.owner_node_id in prod_ids]
     results.append({
         "repo_id": repo_id,
         "configuration": "Baseline D: Static + Launch + Comm (Phase 1-3)",
         "status": "executed",
         "nodes": prf1_with_counts(b_node_names, gt_nodes),
-        "topics": prf1_with_counts(d_topics, gt_topics),
-        "services": prf1_with_counts(d_svcs, gt_services),
-        "actions": prf1_with_counts(d_acts, gt_actions),
+        "topics": prf1_with_counts(_extract_topic_set(d_prod), gt_topics),
+        "services": prf1_with_counts(_extract_service_set(d_prod), gt_services),
+        "actions": prf1_with_counts(_extract_action_set(d_prod), gt_actions),
         "evidence_coverage": 1.0,
         "time_s": round(tB + tC + tD, 3),
     })
 
     # 5. Baseline E (Mode A Deterministic Full ArchSynth)
     arch = ArchitectureModel.model_validate(json.loads((raw_out / "architecture.json").read_text(encoding="utf-8")))
-    e_topics = {clean_basename(d.resolved_name or d.name_expression) for d in arch.interfaces if d.interface_type.value in ("publisher", "subscriber") and not d.owner_node_id.startswith("config::")}
-    e_svcs = {clean_basename(d.resolved_name or d.name_expression) for d in arch.interfaces if d.interface_type.value in ("service_server", "service_client") and not d.owner_node_id.startswith("config::")}
-    e_acts = {clean_basename(d.resolved_name or d.name_expression) for d in arch.interfaces if d.interface_type.value in ("action_server", "action_client") and not d.owner_node_id.startswith("config::")}
+    e_prod = _prod_interfaces(arch)
     results.append({
         "repo_id": repo_id,
         "configuration": "Baseline E: Full ArchSynth Mode A (skip_llm=True)",
         "status": "executed",
         "nodes": prf1_with_counts(b_node_names, gt_nodes),
-        "topics": prf1_with_counts(e_topics, gt_topics),
-        "services": prf1_with_counts(e_svcs, gt_services),
-        "actions": prf1_with_counts(e_acts, gt_actions),
+        "topics": prf1_with_counts(_extract_topic_set(e_prod), gt_topics),
+        "services": prf1_with_counts(_extract_service_set(e_prod), gt_services),
+        "actions": prf1_with_counts(_extract_action_set(e_prod), gt_actions),
         "evidence_coverage": 1.0,
-        "time_s": None,  # filled from main run
+        "time_s": None,
     })
 
     # 6. Unavailable LLM-only / Static + LLM (Mode B)
@@ -397,32 +444,38 @@ def main():
         test_nodes = sum(1 for n in model.nodes if n.is_test)
         rec = (model.architecture_validation.inventory_reconciliation if model.architecture_validation else {})
 
-        # Compute GT metrics if GT exists
-        gt_eval = None
         if spec["gt_path"] and spec["gt_path"].exists():
             gt = json.loads(spec["gt_path"].read_text(encoding="utf-8"))
             gt_hashes[rid] = {"path": str(spec["gt_path"]), "sha256": sha256_file(spec["gt_path"])}
             if rid == "jaco2_sim_devkit":
                 gt_eval = evaluate_jaco2_detailed(model, gt)
                 for cat in ("nodes", "topics", "services", "source_actions", "api_inferred_actions", "yaml_configured_actions"):
-                    m = gt_eval[cat]
-                    entity_rows.append({"repository_id": rid, "category": cat, **m})
+                    entity_rows.append({"repository_id": rid, "category": cat, **gt_eval[cat]})
                 subsystem_metrics_all[rid] = gt_eval["subsystems"]
             elif rid == "nav2":
                 gt_eval = evaluate_nav2_detailed(model, gt)
-                for cat in ("nodes_core", "nodes_extended", "topics", "services", "actions"):
-                    m = gt_eval[cat]
-                    entity_rows.append({"repository_id": rid, "category": cat, **m})
+                for cat in ("nodes_core", "nodes_core_pkg_scoped", "nodes_extended", "topics", "services", "actions"):
+                    entity_rows.append({"repository_id": rid, "category": cat, **gt_eval[cat]})
                 subsystem_metrics_all[rid] = gt_eval["subsystems"]
+            else:
+                gt_eval = evaluate_standard_ros_repo(model, gt)
+                for cat in ("nodes", "topics", "services", "actions"):
+                    entity_rows.append({"repository_id": rid, "category": cat, **gt_eval[cat]})
+                subsystem_metrics_all[rid] = {
+                    "subsystems_count": len(model.subsystems),
+                    "ari": "N/A (no cluster partition in GT)",
+                    "nmi": "N/A (no cluster partition in GT)",
+                }
 
             gt_comparison[rid] = gt_eval
-            ab_res = run_real_ablation(rid, rpath, gt, raw_out)
-            for row in ab_res:
-                if row["configuration"].startswith("Baseline E"):
-                    row["time_s"] = elapsed
-            ablation_all.extend(ab_res)
+            if rid in ("nav2", "jaco2_sim_devkit", "slam_toolbox", "ros2_control"):
+                ab_res = run_real_ablation(rid, rpath, gt, raw_out)
+                for row in ab_res:
+                    if row["configuration"].startswith("Baseline E"):
+                        row["time_s"] = elapsed
+                ablation_all.extend(ab_res)
         else:
-            # No GT -> mark unavailable explicitly
+            prod_decls = _prod_interfaces(model)
             for cat in ("nodes", "topics", "services", "actions"):
                 entity_rows.append({
                     "repository_id": rid,
@@ -430,9 +483,9 @@ def main():
                     "ground_truth": "N/A",
                     "predicted": (
                         prod_nodes if cat == "nodes" else
-                        len({clean_basename(d.resolved_name or d.name_expression) for d in model.interfaces if d.interface_type.value in ("publisher", "subscriber")}) if cat == "topics" else
-                        len({clean_basename(d.resolved_name or d.name_expression) for d in model.interfaces if d.interface_type.value in ("service_server", "service_client")}) if cat == "services" else
-                        len({clean_basename(d.resolved_name or d.name_expression) for d in model.interfaces if d.interface_type.value in ("action_server", "action_client")})
+                        len(_extract_topic_set(prod_decls)) if cat == "topics" else
+                        len(_extract_service_set(prod_decls)) if cat == "services" else
+                        len(_extract_action_set(prod_decls))
                     ),
                     "tp": "N/A", "fp": "N/A", "fn": "N/A",
                     "precision": "N/A", "recall": "N/A", "f1": "N/A",
@@ -473,7 +526,6 @@ def main():
             "reconciliation": rec,
         }
 
-    # Save CSVs & JSONs
     def write_csv(path: Path, rows: List[Dict[str, Any]]):
         if not rows:
             return
@@ -487,7 +539,6 @@ def main():
     write_csv(OUT_ROOT / "entity_metrics.csv", entity_rows)
     write_csv(OUT_ROOT / "execution_times.csv", exec_times)
 
-    # Flatten ablation CSV
     ab_flat = []
     for r in ablation_all:
         ab_flat.append({
@@ -510,11 +561,19 @@ def main():
     (OUT_ROOT / "subsystem_metrics.json").write_text(json.dumps(subsystem_metrics_all, indent=2), encoding="utf-8")
 
     manifest = {
-        "archsynth_version": "2.2",
+        "archsynth_version": "2.2-updated",
         "execution_timestamp": datetime.now(timezone.utc).isoformat(),
         "mode": "deterministic_static_skip_llm_true",
+        "fixes_applied": [
+            "Excluded placeholder '_' C++ standalone nodes (src/cpp_analyzer.py)",
+            "Added CamelCase->snake_case node name fallback when C++ node_name is empty (src/node_analyzer.py)",
+            "Excluded test-node interfaces and malformed shared_from_this()/get_node_base_interface expressions (src/interface_extractor.py, eval/run_v22_benchmark.py)",
+            "Added nav2::create_transform_broadcaster and StaticTransformBroadcaster TF topic extraction (src/interface_extractor.py)",
+            "Created manually verified ground truth for slam_toolbox and ros2_control + core-package-scoped Nav2 evaluation"
+        ],
         "scoring_rules": {
-            "matching": "Canonical basename matching (strip leading '/', split '/'[-1], lowercase) per eval/evaluator.py",
+            "matching": "Canonical basename matching (strip leading '/', split '::' and '/', take last segment, lowercase)",
+            "production_scope": "Interfaces filtered strictly to non-test production nodes (not node.is_test)",
             "zero_denominator": "0/0 -> 1.0; one-sided empty -> 0.0",
             "invariants": "TP + FN == ground_truth; TP + FP == predicted",
             "missing_ground_truth": "Marked N/A (never fabricated)",
@@ -523,7 +582,7 @@ def main():
         "repositories": manifest_repos,
     }
     (OUT_ROOT / "evaluation_manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
-    logger.info(f"Benchmark v2.2 artifacts saved to {OUT_ROOT}")
+    logger.info(f"Updated v2.2 benchmark artifacts saved to {OUT_ROOT}")
 
 
 if __name__ == "__main__":

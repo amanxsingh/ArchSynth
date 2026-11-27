@@ -1,0 +1,667 @@
+{
+  "provenance": null,
+  "plugins": [
+    {
+      "plugin_name": "mock_components/GenericSystem",
+      "class_type": "mock_components::GenericSystem",
+      "base_class_type": "hardware_interface::SystemInterface",
+      "package_name": "hardware_interface",
+      "manifest_file": "hardware_interface/mock_components_plugin_description.xml",
+      "library_path": null,
+      "description": "Generic components for simple mocking of system hardware.",
+      "plugin_category": "hardware_interface_SystemInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface/mock_components_plugin_description.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mock_components::GenericSystem' extending base class 'hardware_interface::SystemInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "joint_limits/JointTrajectoryPointSaturationLimiter",
+      "class_type": "JointTrajectoryPointSaturationLimiter",
+      "base_class_type": "joint_limits::JointLimiterInterface<trajectory_msgs::msg::JointTrajectoryPoint>",
+      "package_name": "joint_limits",
+      "manifest_file": "joint_limits/joint_limiters.xml",
+      "library_path": "joint_saturation_limiter",
+      "description": "Simple joint limiter using clamping approach. Warning: clamping can cause discontinuities.",
+      "plugin_category": "joint_limits_JointLimiterInterface<trajectory_msgs_msg_JointTrajectoryPoint>",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "joint_limits/joint_limiters.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'JointTrajectoryPointSaturationLimiter' extending base class 'joint_limits::JointLimiterInterface<trajectory_msgs::msg::JointTrajectoryPoint>'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "joint_limits/JointInterfacesSaturationLimiter",
+      "class_type": "JointInterfacesSaturationLimiter",
+      "base_class_type": "joint_limits::JointLimiterInterface<joint_limits::JointControlInterfacesData>",
+      "package_name": "joint_limits",
+      "manifest_file": "joint_limits/joint_limiters.xml",
+      "library_path": "joint_saturation_limiter",
+      "description": "Simple joint range limiter using clamping approach with the parsed limits.",
+      "plugin_category": "joint_limits_JointLimiterInterface<joint_limits_JointControlInterfacesData>",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "joint_limits/joint_limiters.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'JointInterfacesSaturationLimiter' extending base class 'joint_limits::JointLimiterInterface<joint_limits::JointControlInterfacesData>'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "joint_limits/JointInterfacesSoftLimiter",
+      "class_type": "JointInterfacesSoftLimiter",
+      "base_class_type": "joint_limits::JointLimiterInterface<joint_limits::JointControlInterfacesData>",
+      "package_name": "joint_limits",
+      "manifest_file": "joint_limits/joint_limiters.xml",
+      "library_path": "joint_saturation_limiter",
+      "description": "Simple joint range limiter performing clamping between the parsed soft limits and the parsed joint limits.",
+      "plugin_category": "joint_limits_JointLimiterInterface<joint_limits_JointControlInterfacesData>",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "joint_limits/joint_limiters.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'JointInterfacesSoftLimiter' extending base class 'joint_limits::JointLimiterInterface<joint_limits::JointControlInterfacesData>'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "ControllerManager",
+      "class_type": "rqt_controller_manager.controller_manager.ControllerManager",
+      "base_class_type": "rqt_gui_py::Plugin",
+      "package_name": "rqt_controller_manager",
+      "manifest_file": "rqt_controller_manager/plugin.xml",
+      "library_path": null,
+      "description": "Graphical frontend for interacting with the controller manager.",
+      "plugin_category": "rqt_gui_py_Plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "rqt_controller_manager/plugin.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'rqt_controller_manager.controller_manager.ControllerManager' extending base class 'rqt_gui_py::Plugin'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "transmission_interface/SimpleTransmission",
+      "class_type": "transmission_interface::SimpleTransmissionLoader",
+      "base_class_type": "transmission_interface::TransmissionLoader",
+      "package_name": "transmission_interface",
+      "manifest_file": "transmission_interface/ros2_control_plugins.xml",
+      "library_path": null,
+      "description": "Load configuration of a simple transmission from a URDF description.",
+      "plugin_category": "transmission_interface_TransmissionLoader",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "transmission_interface/ros2_control_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'transmission_interface::SimpleTransmissionLoader' extending base class 'transmission_interface::TransmissionLoader'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "transmission_interface/FourBarLinkageTransmission",
+      "class_type": "transmission_interface::FourBarLinkageTransmissionLoader",
+      "base_class_type": "transmission_interface::TransmissionLoader",
+      "package_name": "transmission_interface",
+      "manifest_file": "transmission_interface/ros2_control_plugins.xml",
+      "library_path": null,
+      "description": "Load configuration of a four bar linkage transmission from a URDF description.",
+      "plugin_category": "transmission_interface_TransmissionLoader",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "transmission_interface/ros2_control_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'transmission_interface::FourBarLinkageTransmissionLoader' extending base class 'transmission_interface::TransmissionLoader'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "transmission_interface/DifferentialTransmission",
+      "class_type": "transmission_interface::DifferentialTransmissionLoader",
+      "base_class_type": "transmission_interface::TransmissionLoader",
+      "package_name": "transmission_interface",
+      "manifest_file": "transmission_interface/ros2_control_plugins.xml",
+      "library_path": null,
+      "description": "Load configuration of a four bar linkage transmission from a URDF description.",
+      "plugin_category": "transmission_interface_TransmissionLoader",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "transmission_interface/ros2_control_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'transmission_interface::DifferentialTransmissionLoader' extending base class 'transmission_interface::TransmissionLoader'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_actuator",
+      "class_type": "TestActuator",
+      "base_class_type": "hardware_interface::ActuatorInterface",
+      "package_name": "hardware_interface_testing",
+      "manifest_file": "hardware_interface_testing/test/test_components/test_components.xml",
+      "library_path": null,
+      "description": "Test Actuator",
+      "plugin_category": "hardware_interface_ActuatorInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface_testing/test/test_components/test_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'TestActuator' extending base class 'hardware_interface::ActuatorInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_actuator_exclusive_interfaces",
+      "class_type": "TestActuatorExclusiveInterfaces",
+      "base_class_type": "hardware_interface::ActuatorInterface",
+      "package_name": "hardware_interface_testing",
+      "manifest_file": "hardware_interface_testing/test/test_components/test_components.xml",
+      "library_path": null,
+      "description": "Test Actuator",
+      "plugin_category": "hardware_interface_ActuatorInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface_testing/test/test_components/test_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'TestActuatorExclusiveInterfaces' extending base class 'hardware_interface::ActuatorInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_sensor",
+      "class_type": "TestSensor",
+      "base_class_type": "hardware_interface::SensorInterface",
+      "package_name": "hardware_interface_testing",
+      "manifest_file": "hardware_interface_testing/test/test_components/test_components.xml",
+      "library_path": null,
+      "description": "Test Sensor",
+      "plugin_category": "hardware_interface_SensorInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface_testing/test/test_components/test_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'TestSensor' extending base class 'hardware_interface::SensorInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_system",
+      "class_type": "TestSystem",
+      "base_class_type": "hardware_interface::SystemInterface",
+      "package_name": "hardware_interface_testing",
+      "manifest_file": "hardware_interface_testing/test/test_components/test_components.xml",
+      "library_path": null,
+      "description": "Test System",
+      "plugin_category": "hardware_interface_SystemInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface_testing/test/test_components/test_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'TestSystem' extending base class 'hardware_interface::SystemInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_uninitializable_actuator",
+      "class_type": "TestUninitializableActuator",
+      "base_class_type": "hardware_interface::ActuatorInterface",
+      "package_name": "hardware_interface_testing",
+      "manifest_file": "hardware_interface_testing/test/test_components/test_components.xml",
+      "library_path": null,
+      "description": "Test Uninitializable Actuator",
+      "plugin_category": "hardware_interface_ActuatorInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface_testing/test/test_components/test_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'TestUninitializableActuator' extending base class 'hardware_interface::ActuatorInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_uninitializable_sensor",
+      "class_type": "TestUninitializableSensor",
+      "base_class_type": "hardware_interface::SensorInterface",
+      "package_name": "hardware_interface_testing",
+      "manifest_file": "hardware_interface_testing/test/test_components/test_components.xml",
+      "library_path": null,
+      "description": "Test Uninitializable Sensor",
+      "plugin_category": "hardware_interface_SensorInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface_testing/test/test_components/test_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'TestUninitializableSensor' extending base class 'hardware_interface::SensorInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_uninitializable_system",
+      "class_type": "TestUninitializableSystem",
+      "base_class_type": "hardware_interface::SystemInterface",
+      "package_name": "hardware_interface_testing",
+      "manifest_file": "hardware_interface_testing/test/test_components/test_components.xml",
+      "library_path": null,
+      "description": "Test Uninitializable System",
+      "plugin_category": "hardware_interface_SystemInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface_testing/test/test_components/test_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'TestUninitializableSystem' extending base class 'hardware_interface::SystemInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_hardware_components/TestSingleJointActuator",
+      "class_type": "test_hardware_components::TestSingleJointActuator",
+      "base_class_type": "hardware_interface::ActuatorInterface",
+      "package_name": "hardware_interface",
+      "manifest_file": "hardware_interface/test/test_hardware_components/test_hardware_components.xml",
+      "library_path": null,
+      "description": "Test actuator component for a single position joint",
+      "plugin_category": "hardware_interface_ActuatorInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface/test/test_hardware_components/test_hardware_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'test_hardware_components::TestSingleJointActuator' extending base class 'hardware_interface::ActuatorInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_hardware_components/TestForceTorqueSensor",
+      "class_type": "test_hardware_components::TestForceTorqueSensor",
+      "base_class_type": "hardware_interface::SensorInterface",
+      "package_name": "hardware_interface",
+      "manifest_file": "hardware_interface/test/test_hardware_components/test_hardware_components.xml",
+      "library_path": null,
+      "description": "Test sensor component emulating a force torque sensor",
+      "plugin_category": "hardware_interface_SensorInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface/test/test_hardware_components/test_hardware_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'test_hardware_components::TestForceTorqueSensor' extending base class 'hardware_interface::SensorInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_hardware_components/TestIMUSensor",
+      "class_type": "test_hardware_components::TestIMUSensor",
+      "base_class_type": "hardware_interface::SensorInterface",
+      "package_name": "hardware_interface",
+      "manifest_file": "hardware_interface/test/test_hardware_components/test_hardware_components.xml",
+      "library_path": null,
+      "description": "Test sensor component emulating an IMU sensor",
+      "plugin_category": "hardware_interface_SensorInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface/test/test_hardware_components/test_hardware_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'test_hardware_components::TestIMUSensor' extending base class 'hardware_interface::SensorInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_hardware_components/TestTwoJointSystem",
+      "class_type": "test_hardware_components::TestTwoJointSystem",
+      "base_class_type": "hardware_interface::SystemInterface",
+      "package_name": "hardware_interface",
+      "manifest_file": "hardware_interface/test/test_hardware_components/test_hardware_components.xml",
+      "library_path": null,
+      "description": "Test system component for a two degree of freedom position joint robot",
+      "plugin_category": "hardware_interface_SystemInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface/test/test_hardware_components/test_hardware_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'test_hardware_components::TestTwoJointSystem' extending base class 'hardware_interface::SystemInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "test_hardware_components/TestSystemCommandModes",
+      "class_type": "test_hardware_components::TestSystemCommandModes",
+      "base_class_type": "hardware_interface::SystemInterface",
+      "package_name": "hardware_interface",
+      "manifest_file": "hardware_interface/test/test_hardware_components/test_hardware_components.xml",
+      "library_path": null,
+      "description": "Test system component for a system with both position and velocity command modes",
+      "plugin_category": "hardware_interface_SystemInterface",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "hardware_interface/test/test_hardware_components/test_hardware_components.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'test_hardware_components::TestSystemCommandModes' extending base class 'hardware_interface::SystemInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "controller_manager/test_chainable_controller",
+      "class_type": "test_chainable_controller::TestChainableController",
+      "base_class_type": "controller_interface::ChainableControllerInterface",
+      "package_name": "controller_manager",
+      "manifest_file": "controller_manager/test/test_chainable_controller/test_chainable_controller.xml",
+      "library_path": null,
+      "description": "Controller used for testing",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "controller_manager/test/test_chainable_controller/test_chainable_controller.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'test_chainable_controller::TestChainableController' extending base class 'controller_interface::ChainableControllerInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "controller_manager/test_controller",
+      "class_type": "test_controller::TestController",
+      "base_class_type": "controller_interface::ControllerInterface",
+      "package_name": "controller_manager",
+      "manifest_file": "controller_manager/test/test_controller/test_controller.xml",
+      "library_path": null,
+      "description": "Controller used for testing",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "controller_manager/test/test_controller/test_controller.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'test_controller::TestController' extending base class 'controller_interface::ControllerInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "controller_manager/test_controller_failed_activate",
+      "class_type": "test_controller_failed_activate::TestControllerFailedActivate",
+      "base_class_type": "controller_interface::ControllerInterface",
+      "package_name": "controller_manager",
+      "manifest_file": "controller_manager/test/test_controller_failed_activate/test_controller_failed_activate.xml",
+      "library_path": null,
+      "description": "Controller used for testing",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "controller_manager/test/test_controller_failed_activate/test_controller_failed_activate.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'test_controller_failed_activate::TestControllerFailedActivate' extending base class 'controller_interface::ControllerInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "controller_manager/test_controller_failed_init",
+      "class_type": "test_controller_failed_init::TestControllerFailedInit",
+      "base_class_type": "controller_interface::ControllerInterface",
+      "package_name": "controller_manager",
+      "manifest_file": "controller_manager/test/test_controller_failed_init/test_controller_failed_init.xml",
+      "library_path": null,
+      "description": "Controller used for testing",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "controller_manager/test/test_controller_failed_init/test_controller_failed_init.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'test_controller_failed_init::TestControllerFailedInit' extending base class 'controller_interface::ControllerInterface'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "controller_manager/test_controller_with_interfaces",
+      "class_type": "test_controller_with_interfaces::TestControllerWithInterfaces",
+      "base_class_type": "controller_interface::ControllerInterface",
+      "package_name": "controller_manager",
+      "manifest_file": "controller_manager/test/test_controller_with_interfaces/test_controller_with_interfaces.xml",
+      "library_path": null,
+      "description": "Controller used for testing",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "controller_manager/test/test_controller_with_interfaces/test_controller_with_interfaces.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'test_controller_with_interfaces::TestControllerWithInterfaces' extending base class 'controller_interface::ControllerInterface'"
+        }
+      ]
+    }
+  ],
+  "categories": {
+    "hardware_interface_SystemInterface": [
+      "mock_components/GenericSystem",
+      "test_system",
+      "test_uninitializable_system",
+      "test_hardware_components/TestTwoJointSystem",
+      "test_hardware_components/TestSystemCommandModes"
+    ],
+    "joint_limits_JointLimiterInterface<trajectory_msgs_msg_JointTrajectoryPoint>": [
+      "joint_limits/JointTrajectoryPointSaturationLimiter"
+    ],
+    "joint_limits_JointLimiterInterface<joint_limits_JointControlInterfacesData>": [
+      "joint_limits/JointInterfacesSaturationLimiter",
+      "joint_limits/JointInterfacesSoftLimiter"
+    ],
+    "rqt_gui_py_Plugin": [
+      "ControllerManager"
+    ],
+    "transmission_interface_TransmissionLoader": [
+      "transmission_interface/SimpleTransmission",
+      "transmission_interface/FourBarLinkageTransmission",
+      "transmission_interface/DifferentialTransmission"
+    ],
+    "hardware_interface_ActuatorInterface": [
+      "test_actuator",
+      "test_actuator_exclusive_interfaces",
+      "test_uninitializable_actuator",
+      "test_hardware_components/TestSingleJointActuator"
+    ],
+    "hardware_interface_SensorInterface": [
+      "test_sensor",
+      "test_uninitializable_sensor",
+      "test_hardware_components/TestForceTorqueSensor",
+      "test_hardware_components/TestIMUSensor"
+    ],
+    "controller": [
+      "controller_manager/test_chainable_controller",
+      "controller_manager/test_controller",
+      "controller_manager/test_controller_failed_activate",
+      "controller_manager/test_controller_failed_init",
+      "controller_manager/test_controller_with_interfaces"
+    ]
+  },
+  "server_configurations": [],
+  "status_counts": {
+    "registered": 0,
+    "available": 25,
+    "configured": 0,
+    "selected": 0,
+    "runtime_loaded": 0,
+    "unknown": 0
+  },
+  "mermaid_diagram": "classDiagram\n    direction TB\n    class hardware_interface_SystemInterface {\n        <<interface>>\n    }\n    class mock_components_GenericSystem {\n        package: hardware_interface\n    }\n    hardware_interface_SystemInterface <|-- mock_components_GenericSystem\n    class joint_limits_JointLimiterInterface_trajectory_msgs_msg_JointTrajectoryPoint_ {\n        <<interface>>\n    }\n    class JointTrajectoryPointSaturationLimiter {\n        package: joint_limits\n    }\n    joint_limits_JointLimiterInterface_trajectory_msgs_msg_JointTrajectoryPoint_ <|-- JointTrajectoryPointSaturationLimiter\n    class joint_limits_JointLimiterInterface_joint_limits_JointControlInterfacesData_ {\n        <<interface>>\n    }\n    class JointInterfacesSaturationLimiter {\n        package: joint_limits\n    }\n    joint_limits_JointLimiterInterface_joint_limits_JointControlInterfacesData_ <|-- JointInterfacesSaturationLimiter\n    class JointInterfacesSoftLimiter {\n        package: joint_limits\n    }\n    joint_limits_JointLimiterInterface_joint_limits_JointControlInterfacesData_ <|-- JointInterfacesSoftLimiter\n    class rqt_gui_py_Plugin {\n        <<interface>>\n    }\n    class rqt_controller_manager.controller_manager.ControllerManager {\n        package: rqt_controller_manager\n    }\n    rqt_gui_py_Plugin <|-- rqt_controller_manager.controller_manager.ControllerManager\n    class transmission_interface_TransmissionLoader {\n        <<interface>>\n    }\n    class transmission_interface_SimpleTransmissionLoader {\n        package: transmission_interface\n    }\n    transmission_interface_TransmissionLoader <|-- transmission_interface_SimpleTransmissionLoader\n    class transmission_interface_FourBarLinkageTransmissionLoader {\n        package: transmission_interface\n    }\n    transmission_interface_TransmissionLoader <|-- transmission_interface_FourBarLinkageTransmissionLoader\n    class transmission_interface_DifferentialTransmissionLoader {\n        package: transmission_interface\n    }\n    transmission_interface_TransmissionLoader <|-- transmission_interface_DifferentialTransmissionLoader\n    class hardware_interface_ActuatorInterface {\n        <<interface>>\n    }\n    class TestActuator {\n        package: hardware_interface_testing\n    }\n    hardware_interface_ActuatorInterface <|-- TestActuator\n    class TestActuatorExclusiveInterfaces {\n        package: hardware_interface_testing\n    }\n    hardware_interface_ActuatorInterface <|-- TestActuatorExclusiveInterfaces\n    class hardware_interface_SensorInterface {\n        <<interface>>\n    }\n    class TestSensor {\n        package: hardware_interface_testing\n    }\n    hardware_interface_SensorInterface <|-- TestSensor\n    class TestSystem {\n        package: hardware_interface_testing\n    }\n    hardware_interface_SystemInterface <|-- TestSystem\n    class TestUninitializableActuator {\n        package: hardware_interface_testing\n    }\n    hardware_interface_ActuatorInterface <|-- TestUninitializableActuator\n    class TestUninitializableSensor {\n        package: hardware_interface_testing\n    }\n    hardware_interface_SensorInterface <|-- TestUninitializableSensor\n    class TestUninitializableSystem {\n        package: hardware_interface_testing\n    }\n    hardware_interface_SystemInterface <|-- TestUninitializableSystem\n    class test_hardware_components_TestSingleJointActuator {\n        package: hardware_interface\n    }\n    hardware_interface_ActuatorInterface <|-- test_hardware_components_TestSingleJointActuator\n    class test_hardware_components_TestForceTorqueSensor {\n        package: hardware_interface\n    }\n    hardware_interface_SensorInterface <|-- test_hardware_components_TestForceTorqueSensor\n    class test_hardware_components_TestIMUSensor {\n        package: hardware_interface\n    }\n    hardware_interface_SensorInterface <|-- test_hardware_components_TestIMUSensor\n    class test_hardware_components_TestTwoJointSystem {\n        package: hardware_interface\n    }\n    hardware_interface_SystemInterface <|-- test_hardware_components_TestTwoJointSystem\n    class test_hardware_components_TestSystemCommandModes {\n        package: hardware_interface\n    }\n    hardware_interface_SystemInterface <|-- test_hardware_components_TestSystemCommandModes\n    class controller_interface_ChainableControllerInterface {\n        <<interface>>\n    }\n    class test_chainable_controller_TestChainableController {\n        package: controller_manager\n    }\n    controller_interface_ChainableControllerInterface <|-- test_chainable_controller_TestChainableController\n    class controller_interface_ControllerInterface {\n        <<interface>>\n    }\n    class test_controller_TestController {\n        package: controller_manager\n    }\n    controller_interface_ControllerInterface <|-- test_controller_TestController\n    class test_controller_failed_activate_TestControllerFailedActivate {\n        package: controller_manager\n    }\n    controller_interface_ControllerInterface <|-- test_controller_failed_activate_TestControllerFailedActivate\n    class test_controller_failed_init_TestControllerFailedInit {\n        package: controller_manager\n    }\n    controller_interface_ControllerInterface <|-- test_controller_failed_init_TestControllerFailedInit\n    class test_controller_with_interfaces_TestControllerWithInterfaces {\n        package: controller_manager\n    }\n    controller_interface_ControllerInterface <|-- test_controller_with_interfaces_TestControllerWithInterfaces",
+  "_provenance": {
+    "repository_name": "ros2_control",
+    "repository_url": "https://github.com/ros-controls/ros2_control",
+    "commit_hash": "4052b56d53bdcb562653935255d118f203398b22",
+    "branch": "master",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:13:15.034114+00:00"
+  }
+}

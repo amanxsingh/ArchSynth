@@ -1,0 +1,256 @@
+{
+  "provenance": null,
+  "nodes": [
+    "controller_manager::ControllerManager",
+    "controller_manager::TestControllerClient",
+    "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict",
+    "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list",
+    "controller_manager::TestNode#test__test_ros2_control_node_launch",
+    "controller_manager::TestNode#test__test_test_utils"
+  ],
+  "matrix": {
+    "controller_manager::ControllerManager": {
+      "controller_manager::ControllerManager": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerClient": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_ros2_control_node_launch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_test_utils": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "controller_manager::TestControllerClient": {
+      "controller_manager::ControllerManager": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerClient": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_ros2_control_node_launch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_test_utils": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict": {
+      "controller_manager::ControllerManager": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerClient": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_ros2_control_node_launch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_test_utils": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list": {
+      "controller_manager::ControllerManager": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerClient": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_ros2_control_node_launch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_test_utils": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "controller_manager::TestNode#test__test_ros2_control_node_launch": {
+      "controller_manager::ControllerManager": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerClient": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_ros2_control_node_launch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_test_utils": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "controller_manager::TestNode#test__test_test_utils": {
+      "controller_manager::ControllerManager": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerClient": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_ros2_control_node_launch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "controller_manager::TestNode#test__test_test_utils": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    }
+  },
+  "summary": {
+    "topic": 0,
+    "service": 0,
+    "action": 0,
+    "total": 0
+  },
+  "_provenance": {
+    "repository_name": "ros2_control",
+    "repository_url": "https://github.com/ros-controls/ros2_control",
+    "commit_hash": "4052b56d53bdcb562653935255d118f203398b22",
+    "branch": "master",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:13:14.894154+00:00"
+  }
+}

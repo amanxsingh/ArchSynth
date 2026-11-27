@@ -1,0 +1,494 @@
+{
+  "provenance": null,
+  "subsystems": [
+    {
+      "name": "pkg_jaco2_moveit_task_constructor",
+      "description": "Production subsystem responsible for pkg jaco2 moveit task constructor capabilities.",
+      "nodes": [
+        "jaco2_moveit_task_constructor::MtcCartesian",
+        "jaco2_moveit_task_constructor::MtcPickplace",
+        "jaco2_moveit_task_constructor::ScenePublisher"
+      ],
+      "launch_files": [
+        "jaco2_moveit_task_constructor/launch/run.launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 3.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 0.0,
+      "coupling_external": 3.0,
+      "incoming_dependencies": 0,
+      "outgoing_dependencies": 3,
+      "interface_density": 1.0,
+      "boundary_interfaces": [],
+      "justification": "Grouped 3 node(s) from package(s) jaco2_moveit_task_constructor based on package boundary, functional role, and 0 internal / 3 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/scene_publisher.py",
+          "line_start": 10,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node jaco2_moveit_task_constructor::ScenePublisher assigned to subsystem pkg_jaco2_moveit_task_constructor via multi-criteria clustering"
+        },
+        {
+          "file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/pickplace.py",
+          "line_start": 14,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node jaco2_moveit_task_constructor::MtcPickplace assigned to subsystem pkg_jaco2_moveit_task_constructor via multi-criteria clustering"
+        },
+        {
+          "file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/planner.py",
+          "line_start": 12,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node jaco2_moveit_task_constructor::MtcCartesian assigned to subsystem pkg_jaco2_moveit_task_constructor via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "pkg_jaco2_moveit_demos",
+      "description": "Production subsystem responsible for pkg jaco2 moveit demos capabilities.",
+      "nodes": [
+        "jaco2_moveit_demos::MoveitInterface",
+        "jaco2_moveit_demos::MoveitPlanning"
+      ],
+      "launch_files": [
+        "jaco2_moveit_demos/launch/moveit_py.launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 1.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 0.0,
+      "coupling_external": 1.0,
+      "incoming_dependencies": 0,
+      "outgoing_dependencies": 1,
+      "interface_density": 0.5,
+      "boundary_interfaces": [],
+      "justification": "Grouped 2 node(s) from package(s) jaco2_moveit_demos based on package boundary, functional role, and 0 internal / 1 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "jaco2_moveit_demos/jaco2_moveit_demos/moveit_planning.py",
+          "line_start": 14,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node jaco2_moveit_demos::MoveitPlanning assigned to subsystem pkg_jaco2_moveit_demos via multi-criteria clustering"
+        },
+        {
+          "file": "jaco2_moveit_demos/jaco2_moveit_demos/moveit_interface.py",
+          "line_start": 15,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node jaco2_moveit_demos::MoveitInterface assigned to subsystem pkg_jaco2_moveit_demos via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "pkg_jaco2_servo",
+      "description": "Production subsystem responsible for pkg jaco2 servo capabilities.",
+      "nodes": [
+        "jaco2_servo::CommandSwitch",
+        "jaco2_servo::KeyboardServo",
+        "jaco2_servo::Xbox360Teleop"
+      ],
+      "launch_files": [
+        "jaco2_servo/launch/joystick_teleop.launch.py",
+        "jaco2_servo/launch/keyboard_teleop.launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 9.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 0.0,
+      "coupling_external": 9.0,
+      "incoming_dependencies": 1,
+      "outgoing_dependencies": 8,
+      "interface_density": 3.0,
+      "boundary_interfaces": [],
+      "justification": "Grouped 3 node(s) from package(s) jaco2_servo based on package boundary, functional role, and 0 internal / 9 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "jaco2_servo/jaco2_servo/servo_cmd_switch.py",
+          "line_start": 12,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node jaco2_servo::CommandSwitch assigned to subsystem pkg_jaco2_servo via multi-criteria clustering"
+        },
+        {
+          "file": "jaco2_servo/jaco2_servo/keyboard_teleop.py",
+          "line_start": 88,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node jaco2_servo::KeyboardServo assigned to subsystem pkg_jaco2_servo via multi-criteria clustering"
+        },
+        {
+          "file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+          "line_start": 43,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node jaco2_servo::Xbox360Teleop assigned to subsystem pkg_jaco2_servo via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "pkg_jaco2_gazebo",
+      "description": "Production subsystem responsible for pkg jaco2 gazebo capabilities.",
+      "nodes": [
+        "jaco2_gazebo::DepthImageRemap"
+      ],
+      "launch_files": [
+        "jaco2_gazebo/launch/gazebo_world.launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 2.0,
+      "cohesion_status": "N/A",
+      "coupling_internal": 0.0,
+      "coupling_external": 2.0,
+      "incoming_dependencies": 1,
+      "outgoing_dependencies": 1,
+      "interface_density": 2.0,
+      "boundary_interfaces": [],
+      "justification": "Grouped 1 node(s) from package(s) jaco2_gazebo based on package boundary, functional role, and 0 internal / 2 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "jaco2_gazebo/scripts/depth_image_remap.py",
+          "line_start": 10,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node jaco2_gazebo::DepthImageRemap assigned to subsystem pkg_jaco2_gazebo via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "pkg_jaco2_controller",
+      "description": "Production subsystem responsible for pkg jaco2 controller capabilities.",
+      "nodes": [
+        "jaco2_controller::JSPGUIController"
+      ],
+      "launch_files": [
+        "jaco2_controller/launch/jsp_gui_control.launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 3.0,
+      "cohesion_status": "N/A",
+      "coupling_internal": 0.0,
+      "coupling_external": 3.0,
+      "incoming_dependencies": 1,
+      "outgoing_dependencies": 2,
+      "interface_density": 3.0,
+      "boundary_interfaces": [],
+      "justification": "Grouped 1 node(s) from package(s) jaco2_controller based on package boundary, functional role, and 0 internal / 3 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "jaco2_controller/jaco2_controller/jsp_gui_controller.py",
+          "line_start": 9,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node jaco2_controller::JSPGUIController assigned to subsystem pkg_jaco2_controller via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "pkg_jaco2_description",
+      "description": "Production subsystem responsible for pkg jaco2 description capabilities.",
+      "nodes": [
+        "jaco2_description::TrackEndEffector"
+      ],
+      "launch_files": [],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 0.0,
+      "cohesion_status": "N/A",
+      "coupling_internal": 0.0,
+      "coupling_external": 0.0,
+      "incoming_dependencies": 0,
+      "outgoing_dependencies": 0,
+      "interface_density": 0.0,
+      "boundary_interfaces": [],
+      "justification": "Grouped 1 node(s) from package(s) jaco2_description based on package boundary, functional role, and 0 internal / 0 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "jaco2_description/scripts/track_end_effector.py",
+          "line_start": 14,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node jaco2_description::TrackEndEffector assigned to subsystem pkg_jaco2_description via multi-criteria clustering"
+        }
+      ]
+    }
+  ],
+  "unassigned_nodes": [],
+  "cohesion_coupling_metrics": {
+    "pkg_jaco2_moveit_task_constructor": {
+      "cohesion": 0.0,
+      "coupling": 3.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 3.0,
+      "interface_density": 1.0
+    },
+    "pkg_jaco2_moveit_demos": {
+      "cohesion": 0.0,
+      "coupling": 1.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 1.0,
+      "interface_density": 0.5
+    },
+    "pkg_jaco2_servo": {
+      "cohesion": 0.0,
+      "coupling": 9.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 9.0,
+      "interface_density": 3.0
+    },
+    "pkg_jaco2_gazebo": {
+      "cohesion": 0.0,
+      "coupling": 2.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 2.0,
+      "interface_density": 2.0
+    },
+    "pkg_jaco2_controller": {
+      "cohesion": 0.0,
+      "coupling": 3.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 3.0,
+      "interface_density": 3.0
+    },
+    "pkg_jaco2_description": {
+      "cohesion": 0.0,
+      "coupling": 0.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 0.0,
+      "interface_density": 0.0
+    }
+  },
+  "clustering_method": "multi_criteria_evidence_affinity_clustering",
+  "node_assignments": {
+    "jaco2_moveit_task_constructor::MtcCartesian": {
+      "primary_subsystem": "pkg_jaco2_moveit_task_constructor",
+      "package": "jaco2_moveit_task_constructor",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_jaco2_moveit_task_constructor' via package 'jaco2_moveit_task_constructor' and role 'unknown'"
+    },
+    "jaco2_moveit_task_constructor::MtcPickplace": {
+      "primary_subsystem": "pkg_jaco2_moveit_task_constructor",
+      "package": "jaco2_moveit_task_constructor",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_jaco2_moveit_task_constructor' via package 'jaco2_moveit_task_constructor' and role 'unknown'"
+    },
+    "jaco2_moveit_task_constructor::ScenePublisher": {
+      "primary_subsystem": "pkg_jaco2_moveit_task_constructor",
+      "package": "jaco2_moveit_task_constructor",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_jaco2_moveit_task_constructor' via package 'jaco2_moveit_task_constructor' and role 'unknown'"
+    },
+    "jaco2_moveit_demos::MoveitInterface": {
+      "primary_subsystem": "pkg_jaco2_moveit_demos",
+      "package": "jaco2_moveit_demos",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_jaco2_moveit_demos' via package 'jaco2_moveit_demos' and role 'unknown'"
+    },
+    "jaco2_moveit_demos::MoveitPlanning": {
+      "primary_subsystem": "pkg_jaco2_moveit_demos",
+      "package": "jaco2_moveit_demos",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_jaco2_moveit_demos' via package 'jaco2_moveit_demos' and role 'unknown'"
+    },
+    "jaco2_servo::CommandSwitch": {
+      "primary_subsystem": "pkg_jaco2_servo",
+      "package": "jaco2_servo",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_jaco2_servo' via package 'jaco2_servo' and role 'unknown'"
+    },
+    "jaco2_servo::KeyboardServo": {
+      "primary_subsystem": "pkg_jaco2_servo",
+      "package": "jaco2_servo",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_jaco2_servo' via package 'jaco2_servo' and role 'unknown'"
+    },
+    "jaco2_servo::Xbox360Teleop": {
+      "primary_subsystem": "pkg_jaco2_servo",
+      "package": "jaco2_servo",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_jaco2_servo' via package 'jaco2_servo' and role 'unknown'"
+    },
+    "jaco2_gazebo::DepthImageRemap": {
+      "primary_subsystem": "pkg_jaco2_gazebo",
+      "package": "jaco2_gazebo",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_jaco2_gazebo' via package 'jaco2_gazebo' and role 'unknown'"
+    },
+    "jaco2_controller::JSPGUIController": {
+      "primary_subsystem": "pkg_jaco2_controller",
+      "package": "jaco2_controller",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_jaco2_controller' via package 'jaco2_controller' and role 'unknown'"
+    },
+    "jaco2_description::TrackEndEffector": {
+      "primary_subsystem": "pkg_jaco2_description",
+      "package": "jaco2_description",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_jaco2_description' via package 'jaco2_description' and role 'unknown'"
+    }
+  },
+  "reference_comparison": {
+    "subsystem_metrics": {
+      "perception_costmaps": {
+        "reference_node_count": 5,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "localization_state_estimation": {
+        "reference_node_count": 5,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "navigation_orchestration": {
+        "reference_node_count": 3,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "global_planning": {
+        "reference_node_count": 1,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "trajectory_control": {
+        "reference_node_count": 3,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "recovery_behaviors": {
+        "reference_node_count": 2,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "system_supervision": {
+        "reference_node_count": 1,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "client_autonomy_api": {
+        "reference_node_count": 1,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    },
+    "mean_jaccard_similarity": 0.0,
+    "reference_subsystem_count": 9,
+    "recovered_subsystem_count": 6
+  },
+  "_provenance": {
+    "repository_name": "jaco2_sim_devkit",
+    "repository_url": "https://github.com/VibhuSharma19/jaco2_sim_devkit",
+    "commit_hash": "993a6e3de05e50fec4ce40c65a5b1d3a9d8ca9cc",
+    "branch": "main",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:38.705654+00:00"
+  }
+}

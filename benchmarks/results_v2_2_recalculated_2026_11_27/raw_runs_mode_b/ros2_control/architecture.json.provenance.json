@@ -1,0 +1,9 @@
+{
+  "repository_name": "ros2_control",
+  "repository_url": "https://github.com/ros-controls/ros2_control",
+  "commit_hash": "4052b56d53bdcb562653935255d118f203398b22",
+  "branch": "master",
+  "archsynth_version": "2.0",
+  "artifact_schema_version": "1.0",
+  "analysis_timestamp": "2026-11-27T08:13:17.898194+00:00"
+}

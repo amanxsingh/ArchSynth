@@ -1,0 +1,3719 @@
+{
+  "provenance": null,
+  "repo_name": "slam_toolbox",
+  "source_potential_edges": [
+    {
+      "edge_id": "potential::topic::slam_toolbox::MergeMapsKinematic->slam_toolbox::SlamToolbox::map",
+      "graph_level": "source_potential",
+      "communication_type": "topic",
+      "interface_name": "map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::MergeMapsKinematic",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::MergeMapsKinematic::publisher::/map#L46",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::intra::slam_toolbox::SlamToolbox->slam_toolbox::SlamToolbox::map",
+      "graph_level": "source_potential",
+      "communication_type": "topic",
+      "interface_name": "map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::SlamToolbox",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "unknown",
+      "qos_details": "Intra-node helper communication between core SlamToolbox publisher and MapSaver subscriber",
+      "status": "matched",
+      "edge_kind": "intra_node",
+      "source_component": "SlamToolbox",
+      "target_component": "MapSaver",
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::peer::slam_toolbox::DecentralizedMultiRobotSlamToolbox->slam_toolbox::DecentralizedMultiRobotSlamToolbox::localized_scan",
+      "graph_level": "source_potential",
+      "communication_type": "topic",
+      "interface_name": "localized_scan",
+      "message_type": "slam_toolbox/msg/LocalizedLaserScan",
+      "source_node_id": "slam_toolbox::DecentralizedMultiRobotSlamToolbox",
+      "target_node_id": "slam_toolbox::DecentralizedMultiRobotSlamToolbox",
+      "source_declaration_id": "slam_toolbox::DecentralizedMultiRobotSlamToolbox::publisher::/localized_scan#L45",
+      "target_declaration_id": "slam_toolbox::DecentralizedMultiRobotSlamToolbox::subscriber::/localized_scan#L47",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "unknown",
+      "qos_details": "Inter-instance peer communication across robot namespaces (self-message filtering enabled)",
+      "status": "matched",
+      "edge_kind": "peer_instance",
+      "source_component": "DecentralizedMultiRobotSlamToolbox (Robot A)",
+      "target_component": "DecentralizedMultiRobotSlamToolbox (Robot B)",
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_decentralized_multirobot.cpp",
+          "line_start": 45,
+          "line_end": 46,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/localized_scan' with type 'slam_toolbox/msg/LocalizedLaserScan'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/slam_toolbox_decentralized_multirobot.cpp",
+          "line_start": 47,
+          "line_end": 50,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/localized_scan' with type 'slam_toolbox/msg/LocalizedLaserScan'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxplugin->slam_toolbox::SlamToolbox::slam_toolbox/serialize_map",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/serialize_map",
+      "message_type": "slam_toolbox/srv/SerializePoseGraph",
+      "source_node_id": "slam_toolbox::Slamtoolboxplugin",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/serialize_map#L64",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/serialize_map#L490",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 64,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/serialize_map' with type 'slam_toolbox/srv/SerializePoseGraph'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 490,
+          "line_end": 493,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/serialize_map' with type 'slam_toolbox/srv/SerializePoseGraph'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxstateupdatenode->slam_toolbox::SlamToolbox::slam_toolbox/serialize_map",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/serialize_map",
+      "message_type": "slam_toolbox/srv/SerializePoseGraph",
+      "source_node_id": "slam_toolbox::Slamtoolboxstateupdatenode",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/serialize_map#L64",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/serialize_map#L490",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 64,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/serialize_map' with type 'slam_toolbox/srv/SerializePoseGraph'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 490,
+          "line_end": 493,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/serialize_map' with type 'slam_toolbox/srv/SerializePoseGraph'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxplugin->slam_toolbox::SlamToolbox::slam_toolbox/deserialize_map",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/deserialize_map",
+      "message_type": "slam_toolbox/srv/DeserializePoseGraph",
+      "source_node_id": "slam_toolbox::Slamtoolboxplugin",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/deserialize_map#L67",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/deserialize_map#L494",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 67,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/deserialize_map' with type 'slam_toolbox/srv/DeserializePoseGraph'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 494,
+          "line_end": 497,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/deserialize_map' with type 'slam_toolbox/srv/DeserializePoseGraph'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxstateupdatenode->slam_toolbox::SlamToolbox::slam_toolbox/deserialize_map",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/deserialize_map",
+      "message_type": "slam_toolbox/srv/DeserializePoseGraph",
+      "source_node_id": "slam_toolbox::Slamtoolboxstateupdatenode",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/deserialize_map#L67",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/deserialize_map#L494",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 67,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/deserialize_map' with type 'slam_toolbox/srv/DeserializePoseGraph'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 494,
+          "line_end": 497,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/deserialize_map' with type 'slam_toolbox/srv/DeserializePoseGraph'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxplugin->slam_toolbox::SlamToolbox::slam_toolbox/clear_changes",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/clear_changes",
+      "message_type": "slam_toolbox/srv/Clear",
+      "source_node_id": "slam_toolbox::Slamtoolboxplugin",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/clear_changes#L69",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/clear_changes#L54",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 69,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/clear_changes' with type 'slam_toolbox/srv/Clear'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/loop_closure_assistant.cpp",
+          "line_start": 54,
+          "line_end": 56,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/clear_changes' with type 'slam_toolbox/srv/Clear'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxstateupdatenode->slam_toolbox::SlamToolbox::slam_toolbox/clear_changes",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/clear_changes",
+      "message_type": "slam_toolbox/srv/Clear",
+      "source_node_id": "slam_toolbox::Slamtoolboxstateupdatenode",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/clear_changes#L69",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/clear_changes#L54",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 69,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/clear_changes' with type 'slam_toolbox/srv/Clear'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/loop_closure_assistant.cpp",
+          "line_start": 54,
+          "line_end": 56,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/clear_changes' with type 'slam_toolbox/srv/Clear'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxplugin->slam_toolbox::SlamToolbox::slam_toolbox/manual_loop_closure",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/manual_loop_closure",
+      "message_type": "slam_toolbox/srv/LoopClosure",
+      "source_node_id": "slam_toolbox::Slamtoolboxplugin",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/manual_loop_closure#L71",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/manual_loop_closure#L58",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 71,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/manual_loop_closure' with type 'slam_toolbox/srv/LoopClosure'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/loop_closure_assistant.cpp",
+          "line_start": 58,
+          "line_end": 60,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/manual_loop_closure' with type 'slam_toolbox/srv/LoopClosure'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxstateupdatenode->slam_toolbox::SlamToolbox::slam_toolbox/manual_loop_closure",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/manual_loop_closure",
+      "message_type": "slam_toolbox/srv/LoopClosure",
+      "source_node_id": "slam_toolbox::Slamtoolboxstateupdatenode",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/manual_loop_closure#L71",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/manual_loop_closure#L58",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 71,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/manual_loop_closure' with type 'slam_toolbox/srv/LoopClosure'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/loop_closure_assistant.cpp",
+          "line_start": 58,
+          "line_end": 60,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/manual_loop_closure' with type 'slam_toolbox/srv/LoopClosure'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxplugin->slam_toolbox::SlamToolbox::slam_toolbox/save_map",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/save_map",
+      "message_type": "slam_toolbox/srv/SaveMap",
+      "source_node_id": "slam_toolbox::Slamtoolboxplugin",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/save_map#L73",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/save_map#L34",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 73,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/save_map' with type 'slam_toolbox/srv/SaveMap'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 34,
+          "line_end": 38,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/save_map' with type 'slam_toolbox/srv/SaveMap'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxstateupdatenode->slam_toolbox::SlamToolbox::slam_toolbox/save_map",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/save_map",
+      "message_type": "slam_toolbox/srv/SaveMap",
+      "source_node_id": "slam_toolbox::Slamtoolboxstateupdatenode",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/save_map#L73",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/save_map#L34",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 73,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/save_map' with type 'slam_toolbox/srv/SaveMap'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 34,
+          "line_end": 38,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/save_map' with type 'slam_toolbox/srv/SaveMap'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxplugin->slam_toolbox::SynchronousSlamToolbox::slam_toolbox/clear_queue",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/clear_queue",
+      "message_type": "slam_toolbox/srv/ClearQueue",
+      "source_node_id": "slam_toolbox::Slamtoolboxplugin",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/clear_queue#L75",
+      "target_declaration_id": "slam_toolbox::SynchronousSlamToolbox::service_server::slam_toolbox/clear_queue#L82",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 75,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/clear_queue' with type 'slam_toolbox/srv/ClearQueue'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/slam_toolbox_sync.cpp",
+          "line_start": 82,
+          "line_end": 86,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/clear_queue' with type 'slam_toolbox/srv/ClearQueue'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxstateupdatenode->slam_toolbox::SynchronousSlamToolbox::slam_toolbox/clear_queue",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/clear_queue",
+      "message_type": "slam_toolbox/srv/ClearQueue",
+      "source_node_id": "slam_toolbox::Slamtoolboxstateupdatenode",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/clear_queue#L75",
+      "target_declaration_id": "slam_toolbox::SynchronousSlamToolbox::service_server::slam_toolbox/clear_queue#L82",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 75,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/clear_queue' with type 'slam_toolbox/srv/ClearQueue'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/slam_toolbox_sync.cpp",
+          "line_start": 82,
+          "line_end": 86,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/clear_queue' with type 'slam_toolbox/srv/ClearQueue'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxplugin->slam_toolbox::SlamToolbox::slam_toolbox/toggle_interactive_mode",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/toggle_interactive_mode",
+      "message_type": "slam_toolbox/srv/ToggleInteractive",
+      "source_node_id": "slam_toolbox::Slamtoolboxplugin",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/toggle_interactive_mode#L78",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/toggle_interactive_mode#L71",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 78,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/toggle_interactive_mode' with type 'slam_toolbox/srv/ToggleInteractive'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/loop_closure_assistant.cpp",
+          "line_start": 71,
+          "line_end": 73,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/toggle_interactive_mode' with type 'slam_toolbox/srv/ToggleInteractive'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxstateupdatenode->slam_toolbox::SlamToolbox::slam_toolbox/toggle_interactive_mode",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/toggle_interactive_mode",
+      "message_type": "slam_toolbox/srv/ToggleInteractive",
+      "source_node_id": "slam_toolbox::Slamtoolboxstateupdatenode",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/toggle_interactive_mode#L78",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/toggle_interactive_mode#L71",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 78,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/toggle_interactive_mode' with type 'slam_toolbox/srv/ToggleInteractive'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/loop_closure_assistant.cpp",
+          "line_start": 71,
+          "line_end": 73,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/toggle_interactive_mode' with type 'slam_toolbox/srv/ToggleInteractive'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxplugin->slam_toolbox::SlamToolbox::slam_toolbox/pause_new_measurements",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/pause_new_measurements",
+      "message_type": "slam_toolbox/srv/Pause",
+      "source_node_id": "slam_toolbox::Slamtoolboxplugin",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/pause_new_measurements#L80",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/pause_new_measurements#L485",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 80,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/pause_new_measurements' with type 'slam_toolbox/srv/Pause'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 485,
+          "line_end": 489,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/pause_new_measurements' with type 'slam_toolbox/srv/Pause'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxstateupdatenode->slam_toolbox::SlamToolbox::slam_toolbox/pause_new_measurements",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/pause_new_measurements",
+      "message_type": "slam_toolbox/srv/Pause",
+      "source_node_id": "slam_toolbox::Slamtoolboxstateupdatenode",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/pause_new_measurements#L80",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::service_server::slam_toolbox/pause_new_measurements#L485",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 80,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/pause_new_measurements' with type 'slam_toolbox/srv/Pause'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 485,
+          "line_end": 489,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/pause_new_measurements' with type 'slam_toolbox/srv/Pause'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxplugin->slam_toolbox::MergeMapsKinematic::slam_toolbox/add_submap",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/add_submap",
+      "message_type": "slam_toolbox/srv/AddSubmap",
+      "source_node_id": "slam_toolbox::Slamtoolboxplugin",
+      "target_node_id": "slam_toolbox::MergeMapsKinematic",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/add_submap#L83",
+      "target_declaration_id": "slam_toolbox::MergeMapsKinematic::service_server::slam_toolbox/add_submap#L54",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 83,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/add_submap' with type 'slam_toolbox/srv/AddSubmap'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 54,
+          "line_end": 56,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/add_submap' with type 'slam_toolbox/srv/AddSubmap'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxstateupdatenode->slam_toolbox::MergeMapsKinematic::slam_toolbox/add_submap",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/add_submap",
+      "message_type": "slam_toolbox/srv/AddSubmap",
+      "source_node_id": "slam_toolbox::Slamtoolboxstateupdatenode",
+      "target_node_id": "slam_toolbox::MergeMapsKinematic",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/add_submap#L83",
+      "target_declaration_id": "slam_toolbox::MergeMapsKinematic::service_server::slam_toolbox/add_submap#L54",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 83,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/add_submap' with type 'slam_toolbox/srv/AddSubmap'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 54,
+          "line_end": 56,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/add_submap' with type 'slam_toolbox/srv/AddSubmap'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxplugin->slam_toolbox::MergeMapsKinematic::slam_toolbox/merge_submaps",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/merge_submaps",
+      "message_type": "slam_toolbox/srv/MergeMaps",
+      "source_node_id": "slam_toolbox::Slamtoolboxplugin",
+      "target_node_id": "slam_toolbox::MergeMapsKinematic",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/merge_submaps#L85",
+      "target_declaration_id": "slam_toolbox::MergeMapsKinematic::service_server::slam_toolbox/merge_submaps#L51",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 85,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/merge_submaps' with type 'slam_toolbox/srv/MergeMaps'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 51,
+          "line_end": 53,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/merge_submaps' with type 'slam_toolbox/srv/MergeMaps'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::service::slam_toolbox::Slamtoolboxstateupdatenode->slam_toolbox::MergeMapsKinematic::slam_toolbox/merge_submaps",
+      "graph_level": "source_potential",
+      "communication_type": "service",
+      "interface_name": "slam_toolbox/merge_submaps",
+      "message_type": "slam_toolbox/srv/MergeMaps",
+      "source_node_id": "slam_toolbox::Slamtoolboxstateupdatenode",
+      "target_node_id": "slam_toolbox::MergeMapsKinematic",
+      "source_declaration_id": "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/merge_submaps#L85",
+      "target_declaration_id": "slam_toolbox::MergeMapsKinematic::service_server::slam_toolbox/merge_submaps#L51",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 85,
+          "line_end": null,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_client for service 'slam_toolbox/merge_submaps' with type 'slam_toolbox/srv/MergeMaps'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 51,
+          "line_end": 53,
+          "evidence_type": "service_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_service for service 'slam_toolbox/merge_submaps' with type 'slam_toolbox/srv/MergeMaps'"
+        }
+      ]
+    }
+  ],
+  "deployment_runtime_edges": [
+    {
+      "edge_id": "runtime::default::topic::launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "target_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]->launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LocalizationSlamToolbox",
+      "target_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/localization_launch.py",
+          "line_start": 48,
+          "line_end": 61,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='localization_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]->launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LocalizationSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/localization_launch.py",
+          "line_start": 48,
+          "line_end": 61,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='localization_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]->launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LocalizationSlamToolbox",
+      "target_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/localization_launch.py",
+          "line_start": 48,
+          "line_end": 61,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='localization_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]->launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LocalizationSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/localization_launch.py",
+          "line_start": 48,
+          "line_end": 61,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='localization_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]->launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::MergeMapsKinematic",
+      "target_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "source_declaration_id": "slam_toolbox::MergeMapsKinematic::publisher::/map#L46",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/merge_maps_kinematic_launch.py",
+          "line_start": 7,
+          "line_end": 12,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Standalone Node declared in launch: pkg='slam_toolbox', exec='merge_maps_kinematic', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]->launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::MergeMapsKinematic",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::MergeMapsKinematic::publisher::/map#L46",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/merge_maps_kinematic_launch.py",
+          "line_start": 7,
+          "line_end": 12,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Standalone Node declared in launch: pkg='slam_toolbox', exec='merge_maps_kinematic', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]->launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::MergeMapsKinematic",
+      "target_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::MergeMapsKinematic::publisher::/map#L46",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/merge_maps_kinematic_launch.py",
+          "line_start": 7,
+          "line_end": 12,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Standalone Node declared in launch: pkg='slam_toolbox', exec='merge_maps_kinematic', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]->launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::MergeMapsKinematic",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::MergeMapsKinematic::publisher::/map#L46",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/merge_maps_kinematic_launch.py",
+          "line_start": 7,
+          "line_end": 12,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Standalone Node declared in launch: pkg='slam_toolbox', exec='merge_maps_kinematic', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]->launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]->launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    }
+  ],
+  "intra_node_edges": [
+    {
+      "edge_id": "potential::intra::slam_toolbox::SlamToolbox->slam_toolbox::SlamToolbox::map",
+      "graph_level": "source_potential",
+      "communication_type": "topic",
+      "interface_name": "map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::SlamToolbox",
+      "target_node_id": "slam_toolbox::SlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "unknown",
+      "qos_details": "Intra-node helper communication between core SlamToolbox publisher and MapSaver subscriber",
+      "status": "matched",
+      "edge_kind": "intra_node",
+      "source_component": "SlamToolbox",
+      "target_component": "MapSaver",
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        }
+      ]
+    }
+  ],
+  "peer_edges": [
+    {
+      "edge_id": "potential::peer::slam_toolbox::DecentralizedMultiRobotSlamToolbox->slam_toolbox::DecentralizedMultiRobotSlamToolbox::localized_scan",
+      "graph_level": "source_potential",
+      "communication_type": "topic",
+      "interface_name": "localized_scan",
+      "message_type": "slam_toolbox/msg/LocalizedLaserScan",
+      "source_node_id": "slam_toolbox::DecentralizedMultiRobotSlamToolbox",
+      "target_node_id": "slam_toolbox::DecentralizedMultiRobotSlamToolbox",
+      "source_declaration_id": "slam_toolbox::DecentralizedMultiRobotSlamToolbox::publisher::/localized_scan#L45",
+      "target_declaration_id": "slam_toolbox::DecentralizedMultiRobotSlamToolbox::subscriber::/localized_scan#L47",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "unknown",
+      "qos_details": "Inter-instance peer communication across robot namespaces (self-message filtering enabled)",
+      "status": "matched",
+      "edge_kind": "peer_instance",
+      "source_component": "DecentralizedMultiRobotSlamToolbox (Robot A)",
+      "target_component": "DecentralizedMultiRobotSlamToolbox (Robot B)",
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_decentralized_multirobot.cpp",
+          "line_start": 45,
+          "line_end": 46,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/localized_scan' with type 'slam_toolbox/msg/LocalizedLaserScan'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/slam_toolbox_decentralized_multirobot.cpp",
+          "line_start": 47,
+          "line_end": 50,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/localized_scan' with type 'slam_toolbox/msg/LocalizedLaserScan'"
+        }
+      ]
+    }
+  ],
+  "cross_profile_edges": [
+    {
+      "edge_id": "runtime::default::topic::launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "target_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]->launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LocalizationSlamToolbox",
+      "target_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/localization_launch.py",
+          "line_start": 48,
+          "line_end": 61,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='localization_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]->launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LocalizationSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/localization_launch.py",
+          "line_start": 48,
+          "line_end": 61,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='localization_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]->launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LocalizationSlamToolbox",
+      "target_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/localization_launch.py",
+          "line_start": 48,
+          "line_end": 61,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='localization_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]->launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::LocalizationSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/localization_launch.py",
+          "line_start": 48,
+          "line_end": 61,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='localization_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]->launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::MergeMapsKinematic",
+      "target_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "source_declaration_id": "slam_toolbox::MergeMapsKinematic::publisher::/map#L46",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/merge_maps_kinematic_launch.py",
+          "line_start": 7,
+          "line_end": 12,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Standalone Node declared in launch: pkg='slam_toolbox', exec='merge_maps_kinematic', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]->launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::MergeMapsKinematic",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::MergeMapsKinematic::publisher::/map#L46",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/merge_maps_kinematic_launch.py",
+          "line_start": 7,
+          "line_end": 12,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Standalone Node declared in launch: pkg='slam_toolbox', exec='merge_maps_kinematic', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]->launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::MergeMapsKinematic",
+      "target_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::MergeMapsKinematic::publisher::/map#L46",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/merge_maps_kinematic_launch.py",
+          "line_start": 7,
+          "line_end": 12,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Standalone Node declared in launch: pkg='slam_toolbox', exec='merge_maps_kinematic', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]->launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::MergeMapsKinematic",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::MergeMapsKinematic::publisher::/map#L46",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/merge_maps_kinematic_launch.py",
+          "line_start": 7,
+          "line_end": 12,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Standalone Node declared in launch: pkg='slam_toolbox', exec='merge_maps_kinematic', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]->launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]->launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/offline_launch.py",
+          "line_start": 27,
+          "line_end": 37,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::LifelongSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/lifelong_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    },
+    {
+      "edge_id": "runtime::default::topic::launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]->launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]::/map",
+      "graph_level": "deployment_runtime",
+      "communication_type": "topic",
+      "interface_name": "/map",
+      "message_type": "nav_msgs/msg/OccupancyGrid",
+      "source_node_id": "slam_toolbox::SynchronousSlamToolbox",
+      "target_node_id": "slam_toolbox::AsynchronousSlamToolbox",
+      "source_declaration_id": "slam_toolbox::SlamToolbox::publisher::/map#L477",
+      "target_declaration_id": "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+      "source_instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "target_instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "deployment_profile": "default",
+      "qos_status": "unknown",
+      "qos_details": "Reliability and durability compatible; deadline and liveliness unevaluated.",
+      "status": "matched",
+      "edge_kind": "cross_profile",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 477,
+          "line_end": 478,
+          "evidence_type": "publisher_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_publisher for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_sync_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "src/map_saver.cpp",
+          "line_start": 46,
+          "line_end": 47,
+          "evidence_type": "subscriber_creation",
+          "source": "cpp_interface_extractor",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ create_subscription for topic '/map' with type 'nav_msgs/msg/OccupancyGrid'"
+        },
+        {
+          "file": "launch/online_async_launch.py",
+          "line_start": 47,
+          "line_end": 60,
+          "evidence_type": "launch_node",
+          "source": "launch_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+        }
+      ]
+    }
+  ],
+  "unmatched_endpoints": [],
+  "external_endpoints": [
+    "slam_toolbox::Slamtoolboxplugin::subscriber::initialpose#L59",
+    "slam_toolbox::Slamtoolboxstateupdatenode::subscriber::initialpose#L59",
+    "slam_toolbox::MergeMapsKinematic::publisher::/map_metadata#L48",
+    "slam_toolbox::MergeMapsKinematic::publisher::/map_{i}#L105",
+    "slam_toolbox::MergeMapsKinematic::publisher::/map_metadata_{i}#L107",
+    "slam_toolbox::MergeMapsKinematic::tf_broadcaster::/tf#L58",
+    "slam_toolbox::SlamToolbox::publisher::pose#L475",
+    "slam_toolbox::SlamToolbox::publisher::/map_metadata#L479",
+    "slam_toolbox::SlamToolbox::publisher::slam_toolbox/pose_graph#L502",
+    "slam_toolbox::SlamToolbox::publisher::slam_toolbox/new_node_event#L505",
+    "slam_toolbox::SlamToolbox::publisher::slam_toolbox/loop_closure_event#L507",
+    "slam_toolbox::SlamToolbox::subscriber::/scan#L511",
+    "slam_toolbox::SlamToolbox::service_server::slam_toolbox/dynamic_map#L482",
+    "slam_toolbox::SlamToolbox::service_server::slam_toolbox/reset#L498",
+    "slam_toolbox::SlamToolbox::tf_broadcaster::/tf#L135",
+    "slam_toolbox::SlamToolbox::publisher::slam_toolbox/scan_visualization#L62",
+    "slam_toolbox::SlamToolbox::publisher::slam_toolbox/graph_visualization#L76",
+    "slam_toolbox::SlamToolbox::tf_broadcaster::/tf#L51",
+    "slam_toolbox::LocalizationSlamToolbox::subscriber::initialpose#L82",
+    "slam_toolbox::LocalizationSlamToolbox::service_server::slam_toolbox/clear_localization_buffer#L87",
+    "slam_toolbox::MapAndLocalizationSlamToolbox::subscriber::initialpose#L93",
+    "slam_toolbox::MapAndLocalizationSlamToolbox::service_server::slam_toolbox/set_localization_mode#L52",
+    "slam_toolbox::MapAndLocalizationSlamToolbox::service_server::slam_toolbox/clear_localization_buffer#L95"
+  ],
+  "external_confirmed_endpoints": [
+    "slam_toolbox::MergeMapsKinematic::tf_broadcaster::/tf#L58",
+    "slam_toolbox::SlamToolbox::subscriber::/scan#L511",
+    "slam_toolbox::SlamToolbox::tf_broadcaster::/tf#L135",
+    "slam_toolbox::SlamToolbox::tf_broadcaster::/tf#L51"
+  ],
+  "external_candidate_endpoints": [
+    "slam_toolbox::Slamtoolboxplugin::subscriber::initialpose#L59",
+    "slam_toolbox::Slamtoolboxstateupdatenode::subscriber::initialpose#L59",
+    "slam_toolbox::MergeMapsKinematic::publisher::/map_metadata#L48",
+    "slam_toolbox::MergeMapsKinematic::publisher::/map_{i}#L105",
+    "slam_toolbox::MergeMapsKinematic::publisher::/map_metadata_{i}#L107",
+    "slam_toolbox::SlamToolbox::publisher::pose#L475",
+    "slam_toolbox::SlamToolbox::publisher::/map_metadata#L479",
+    "slam_toolbox::SlamToolbox::publisher::slam_toolbox/pose_graph#L502",
+    "slam_toolbox::SlamToolbox::publisher::slam_toolbox/new_node_event#L505",
+    "slam_toolbox::SlamToolbox::publisher::slam_toolbox/loop_closure_event#L507",
+    "slam_toolbox::SlamToolbox::service_server::slam_toolbox/dynamic_map#L482",
+    "slam_toolbox::SlamToolbox::service_server::slam_toolbox/reset#L498",
+    "slam_toolbox::SlamToolbox::publisher::slam_toolbox/scan_visualization#L62",
+    "slam_toolbox::SlamToolbox::publisher::slam_toolbox/graph_visualization#L76",
+    "slam_toolbox::LocalizationSlamToolbox::subscriber::initialpose#L82",
+    "slam_toolbox::LocalizationSlamToolbox::service_server::slam_toolbox/clear_localization_buffer#L87",
+    "slam_toolbox::MapAndLocalizationSlamToolbox::subscriber::initialpose#L93",
+    "slam_toolbox::MapAndLocalizationSlamToolbox::service_server::slam_toolbox/set_localization_mode#L52",
+    "slam_toolbox::MapAndLocalizationSlamToolbox::service_server::slam_toolbox/clear_localization_buffer#L95"
+  ],
+  "internal_matched_endpoints": [
+    "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/serialize_map#L64",
+    "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/deserialize_map#L67",
+    "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/clear_changes#L69",
+    "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/manual_loop_closure#L71",
+    "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/save_map#L73",
+    "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/clear_queue#L75",
+    "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/toggle_interactive_mode#L78",
+    "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/pause_new_measurements#L80",
+    "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/add_submap#L83",
+    "slam_toolbox::Slamtoolboxplugin::service_client::slam_toolbox/merge_submaps#L85",
+    "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/serialize_map#L64",
+    "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/deserialize_map#L67",
+    "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/clear_changes#L69",
+    "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/manual_loop_closure#L71",
+    "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/save_map#L73",
+    "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/clear_queue#L75",
+    "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/toggle_interactive_mode#L78",
+    "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/pause_new_measurements#L80",
+    "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/add_submap#L83",
+    "slam_toolbox::Slamtoolboxstateupdatenode::service_client::slam_toolbox/merge_submaps#L85",
+    "slam_toolbox::MergeMapsKinematic::publisher::/map#L46",
+    "slam_toolbox::MergeMapsKinematic::service_server::slam_toolbox/merge_submaps#L51",
+    "slam_toolbox::MergeMapsKinematic::service_server::slam_toolbox/add_submap#L54",
+    "slam_toolbox::SlamToolbox::publisher::/map#L477",
+    "slam_toolbox::SlamToolbox::service_server::slam_toolbox/pause_new_measurements#L485",
+    "slam_toolbox::SlamToolbox::service_server::slam_toolbox/serialize_map#L490",
+    "slam_toolbox::SlamToolbox::service_server::slam_toolbox/deserialize_map#L494",
+    "slam_toolbox::SlamToolbox::subscriber::/map#L46",
+    "slam_toolbox::SlamToolbox::service_server::slam_toolbox/save_map#L34",
+    "slam_toolbox::SlamToolbox::service_server::slam_toolbox/clear_changes#L54",
+    "slam_toolbox::SlamToolbox::service_server::slam_toolbox/manual_loop_closure#L58",
+    "slam_toolbox::SlamToolbox::service_server::slam_toolbox/toggle_interactive_mode#L71",
+    "slam_toolbox::SynchronousSlamToolbox::service_server::slam_toolbox/clear_queue#L82"
+  ],
+  "internal_peer_endpoints": [
+    "slam_toolbox::DecentralizedMultiRobotSlamToolbox::publisher::/localized_scan#L45",
+    "slam_toolbox::DecentralizedMultiRobotSlamToolbox::subscriber::/localized_scan#L47"
+  ],
+  "dependency_generated_endpoints": [
+    "slam_toolbox::Slamtoolboxplugin::tf_listener::/tf#L57",
+    "slam_toolbox::Slamtoolboxstateupdatenode::tf_listener::/tf#L57",
+    "slam_toolbox::SlamToolbox::tf_listener::/tf#L134"
+  ],
+  "action_protocols": [],
+  "_provenance": {
+    "repository_name": "slam_toolbox",
+    "repository_url": "https://github.com/SteveMacenski/slam_toolbox",
+    "commit_hash": "eee0cd5e4a161bb10f8334b5420c93876b31ca99",
+    "branch": "ros2",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:58.583503+00:00"
+  }
+}

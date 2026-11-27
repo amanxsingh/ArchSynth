@@ -1,0 +1,27 @@
+flowchart LR
+    %% ArchSynth Recovered ROS2 Communication Graph
+    classDef nodeClass fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef clientClass fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
+    slam_toolbox_MergeMapsKinematic -->|"map (OccupancyGrid)"| slam_toolbox_SlamToolbox
+    slam_toolbox_SlamToolbox -->|"map (OccupancyGrid)"| slam_toolbox_SlamToolbox
+    slam_toolbox_DecentralizedMultiRobotSlamToolbox -->|"localized_scan (LocalizedLaserScan)"| slam_toolbox_DecentralizedMultiRobotSlamToolbox
+    slam_toolbox_Slamtoolboxplugin -.->|"slam_toolbox/serialize_map (SerializePoseGraph)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxstateupdatenode -.->|"slam_toolbox/serialize_map (SerializePoseGraph)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxplugin -.->|"slam_toolbox/deserialize_map (DeserializePoseGraph)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxstateupdatenode -.->|"slam_toolbox/deserialize_map (DeserializePoseGraph)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxplugin -.->|"slam_toolbox/clear_changes (Clear)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxstateupdatenode -.->|"slam_toolbox/clear_changes (Clear)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxplugin -.->|"slam_toolbox/manual_loop_closure (LoopClosure)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxstateupdatenode -.->|"slam_toolbox/manual_loop_closure (LoopClosure)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxplugin -.->|"slam_toolbox/save_map (SaveMap)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxstateupdatenode -.->|"slam_toolbox/save_map (SaveMap)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxplugin -.->|"slam_toolbox/clear_queue (ClearQueue)"| slam_toolbox_SynchronousSlamToolbox
+    slam_toolbox_Slamtoolboxstateupdatenode -.->|"slam_toolbox/clear_queue (ClearQueue)"| slam_toolbox_SynchronousSlamToolbox
+    slam_toolbox_Slamtoolboxplugin -.->|"slam_toolbox/toggle_interactive_mode (ToggleInteractive)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxstateupdatenode -.->|"slam_toolbox/toggle_interactive_mode (ToggleInteractive)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxplugin -.->|"slam_toolbox/pause_new_measurements (Pause)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxstateupdatenode -.->|"slam_toolbox/pause_new_measurements (Pause)"| slam_toolbox_SlamToolbox
+    slam_toolbox_Slamtoolboxplugin -.->|"slam_toolbox/add_submap (AddSubmap)"| slam_toolbox_MergeMapsKinematic
+    slam_toolbox_Slamtoolboxstateupdatenode -.->|"slam_toolbox/add_submap (AddSubmap)"| slam_toolbox_MergeMapsKinematic
+    slam_toolbox_Slamtoolboxplugin -.->|"slam_toolbox/merge_submaps (MergeMaps)"| slam_toolbox_MergeMapsKinematic
+    slam_toolbox_Slamtoolboxstateupdatenode -.->|"slam_toolbox/merge_submaps (MergeMaps)"| slam_toolbox_MergeMapsKinematic

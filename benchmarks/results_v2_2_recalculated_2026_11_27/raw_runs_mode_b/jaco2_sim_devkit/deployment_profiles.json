@@ -1,0 +1,215 @@
+[
+  {
+    "profile_name": "standalone",
+    "condition": "use_composition == False",
+    "description": "Standalone ROS2 executable processes",
+    "instance_ids": [],
+    "container_ids": [],
+    "configuration_args": {
+      "use_composition": "False"
+    }
+  },
+  {
+    "profile_name": "composable",
+    "condition": "use_composition == True",
+    "description": "Composed ROS2 components hosted in component containers",
+    "instance_ids": [],
+    "container_ids": [],
+    "configuration_args": {
+      "use_composition": "True"
+    }
+  },
+  {
+    "profile_name": "default",
+    "condition": "unconditional",
+    "description": "Always active or profile-agnostic nodes",
+    "instance_ids": [
+      "jaco2_controller/launch/controller.launch.py::ros2_control_node#L30[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/controller.launch.py::spawner#L42[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/controller.launch.py::spawner#L55[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/controller.launch.py::spawner#L67[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/generic_controller.launch.py::robot_state_publisher#L46[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/generic_controller.launch.py::robot_state_publisher#L54[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/generic_controller.launch.py::ros2_control_node#L64[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/generic_controller.launch.py::spawner#L78[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/generic_controller.launch.py::spawner#L89[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/generic_controller.launch.py::spawner#L99[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/jsp_gui_control.launch.py::joint_state_publisher_gui#L31[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/jsp_gui_control.launch.py::jsp_controller#L39[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/display.launch.py::robot_state_publisher#L25[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/display.launch.py::joint_state_publisher_gui#L31[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/display.launch.py::rviz2#L36[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/gazebo.launch.py::robot_state_publisher#L60[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/gazebo.launch.py::robot_state_publisher#L68[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/gazebo.launch.py::create#L88[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/gazebo.launch.py::parameter_bridge#L99[ns=|prof=default|parent=root]",
+      "jaco2_gazebo/launch/gazebo_world.launch.py::robot_state_publisher#L31[ns=|prof=default|parent=root]",
+      "jaco2_gazebo/launch/gazebo_world.launch.py::create#L44[ns=|prof=default|parent=root]",
+      "jaco2_gazebo/launch/gazebo_world.launch.py::parameter_bridge#L56[ns=|prof=default|parent=root]",
+      "jaco2_gazebo/launch/gazebo_world.launch.py::depth_image_remap.py#L64[ns=|prof=default|parent=root]",
+      "jaco2_moveit_config/launch/jaco2_move_group.launch.py::move_group#L47[ns=|prof=default|parent=root]",
+      "jaco2_moveit_config/launch/jaco2_move_group.launch.py::rviz2#L66[ns=|prof=default|parent=root]",
+      "jaco2_moveit_demos/launch/moveit_py.launch.py::${exe}#L38[ns=|prof=default|parent=root]",
+      "jaco2_moveit_demos/launch/moveit_py.launch.py::rviz2#L52[ns=|prof=default|parent=root]",
+      "jaco2_moveit_task_constructor/launch/move_group.launch.py::move_group#L30[ns=|prof=default|parent=root]",
+      "jaco2_moveit_task_constructor/launch/move_group.launch.py::rviz2#L43[ns=|prof=default|parent=root]",
+      "jaco2_moveit_task_constructor/launch/run.launch.py::scene_publisher#L28[ns=|prof=default|parent=root]",
+      "jaco2_moveit_task_constructor/launch/run.launch.py::${exe}#L34[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/joystick_teleop.launch.py::rviz2#L36[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/joystick_teleop.launch.py::joy_node#L54[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/joystick_teleop.launch.py::servo_node#L61[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/keyboard_teleop.launch.py::rviz2#L36[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/keyboard_teleop.launch.py::key_teleop#L48[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/keyboard_teleop.launch.py::servo_node#L54[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_controller.launch",
+    "condition": "launch=controller.launch.py",
+    "description": "Alternative standalone launch profile: controller.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_controller/launch/controller.launch.py::ros2_control_node#L30[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/controller.launch.py::spawner#L42[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/controller.launch.py::spawner#L55[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/controller.launch.py::spawner#L67[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_generic_controller.launch",
+    "condition": "UnlessCondition(${use_camera})",
+    "description": "Alternative standalone launch profile: generic_controller.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_controller/launch/generic_controller.launch.py::robot_state_publisher#L46[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/generic_controller.launch.py::robot_state_publisher#L54[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/generic_controller.launch.py::ros2_control_node#L64[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/generic_controller.launch.py::spawner#L78[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/generic_controller.launch.py::spawner#L89[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/generic_controller.launch.py::spawner#L99[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_jsp_gui_control.launch",
+    "condition": "launch=jsp_gui_control.launch.py",
+    "description": "Alternative standalone launch profile: jsp_gui_control.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_controller/launch/jsp_gui_control.launch.py::joint_state_publisher_gui#L31[ns=|prof=default|parent=root]",
+      "jaco2_controller/launch/jsp_gui_control.launch.py::jsp_controller#L39[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_display.launch",
+    "condition": "launch=display.launch.py",
+    "description": "Alternative standalone launch profile: display.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_description/launch/display.launch.py::robot_state_publisher#L25[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/display.launch.py::joint_state_publisher_gui#L31[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/display.launch.py::rviz2#L36[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_gazebo.launch",
+    "condition": "IfCondition(${use_camera})",
+    "description": "Alternative standalone launch profile: gazebo.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_description/launch/gazebo.launch.py::robot_state_publisher#L60[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/gazebo.launch.py::robot_state_publisher#L68[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/gazebo.launch.py::create#L88[ns=|prof=default|parent=root]",
+      "jaco2_description/launch/gazebo.launch.py::parameter_bridge#L99[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_gazebo_world.launch",
+    "condition": "launch=gazebo_world.launch.py",
+    "description": "Alternative standalone launch profile: gazebo_world.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_gazebo/launch/gazebo_world.launch.py::robot_state_publisher#L31[ns=|prof=default|parent=root]",
+      "jaco2_gazebo/launch/gazebo_world.launch.py::create#L44[ns=|prof=default|parent=root]",
+      "jaco2_gazebo/launch/gazebo_world.launch.py::parameter_bridge#L56[ns=|prof=default|parent=root]",
+      "jaco2_gazebo/launch/gazebo_world.launch.py::depth_image_remap.py#L64[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_jaco2_move_group.launch",
+    "condition": "launch=jaco2_move_group.launch.py",
+    "description": "Alternative standalone launch profile: jaco2_move_group.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_moveit_config/launch/jaco2_move_group.launch.py::move_group#L47[ns=|prof=default|parent=root]",
+      "jaco2_moveit_config/launch/jaco2_move_group.launch.py::rviz2#L66[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_moveit_py.launch",
+    "condition": "launch=moveit_py.launch.py",
+    "description": "Alternative standalone launch profile: moveit_py.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_moveit_demos/launch/moveit_py.launch.py::${exe}#L38[ns=|prof=default|parent=root]",
+      "jaco2_moveit_demos/launch/moveit_py.launch.py::rviz2#L52[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_move_group.launch",
+    "condition": "launch=move_group.launch.py",
+    "description": "Alternative standalone launch profile: move_group.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_moveit_task_constructor/launch/move_group.launch.py::move_group#L30[ns=|prof=default|parent=root]",
+      "jaco2_moveit_task_constructor/launch/move_group.launch.py::rviz2#L43[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_run.launch",
+    "condition": "launch=run.launch.py",
+    "description": "Alternative standalone launch profile: run.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_moveit_task_constructor/launch/run.launch.py::scene_publisher#L28[ns=|prof=default|parent=root]",
+      "jaco2_moveit_task_constructor/launch/run.launch.py::${exe}#L34[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_joystick_teleop.launch",
+    "condition": "launch=joystick_teleop.launch.py",
+    "description": "Alternative standalone launch profile: joystick_teleop.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_servo/launch/joystick_teleop.launch.py::rviz2#L36[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/joystick_teleop.launch.py::joy_node#L54[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/joystick_teleop.launch.py::servo_node#L61[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_keyboard_teleop.launch",
+    "condition": "launch=keyboard_teleop.launch.py",
+    "description": "Alternative standalone launch profile: keyboard_teleop.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "jaco2_servo/launch/keyboard_teleop.launch.py::rviz2#L36[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/keyboard_teleop.launch.py::key_teleop#L48[ns=|prof=default|parent=root]",
+      "jaco2_servo/launch/keyboard_teleop.launch.py::servo_node#L54[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  }
+]

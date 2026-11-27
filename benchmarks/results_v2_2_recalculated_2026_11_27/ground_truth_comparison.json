@@ -1,0 +1,231 @@
+{
+  "nav2": {
+    "nodes_core": {
+      "ground_truth": 13,
+      "predicted": 28,
+      "tp": 13,
+      "fp": 15,
+      "fn": 0,
+      "precision": 0.4643,
+      "recall": 1.0,
+      "f1": 0.6341
+    },
+    "nodes_core_pkg_scoped": {
+      "ground_truth": 13,
+      "predicted": 17,
+      "tp": 13,
+      "fp": 4,
+      "fn": 0,
+      "precision": 0.7647,
+      "recall": 1.0,
+      "f1": 0.8667
+    },
+    "nodes_extended": {
+      "ground_truth": 22,
+      "predicted": 28,
+      "tp": 21,
+      "fp": 7,
+      "fn": 1,
+      "precision": 0.75,
+      "recall": 0.9545,
+      "f1": 0.84
+    },
+    "topics": {
+      "ground_truth": 15,
+      "predicted": 40,
+      "tp": 10,
+      "fp": 30,
+      "fn": 5,
+      "precision": 0.25,
+      "recall": 0.6667,
+      "f1": 0.3636
+    },
+    "services": {
+      "ground_truth": 6,
+      "predicted": 26,
+      "tp": 6,
+      "fp": 20,
+      "fn": 0,
+      "precision": 0.2308,
+      "recall": 1.0,
+      "f1": 0.375
+    },
+    "actions": {
+      "ground_truth": 14,
+      "predicted": 17,
+      "tp": 13,
+      "fp": 4,
+      "fn": 1,
+      "precision": 0.7647,
+      "recall": 0.9286,
+      "f1": 0.8387
+    },
+    "subsystems": {
+      "mean_jaccard_similarity": 0.7,
+      "ari": 0.2632,
+      "nmi": 0.8186,
+      "evaluated_nodes": 8
+    },
+    "plugins_and_bt": {
+      "plugin_accuracy": 1.0,
+      "matched_plugins": 14,
+      "total_gt_plugins": 14,
+      "evaluated_plugin_scope": "14 core plugins (controller, planner, smoother, behaviors, costmaps) out of 28 selected and 123 declared in CMake/XML manifests",
+      "behavior_tree_accuracy": 1.0,
+      "matched_bt_bindings": 6,
+      "total_gt_bt_bindings": 6,
+      "evaluated_bt_scope": "6 core leaf action bindings in default NavigateToPoseWReplanningAndRecovery tree out of 60 recovered across 17 trees"
+    }
+  },
+  "slam_toolbox": {
+    "nodes": {
+      "ground_truth": 4,
+      "predicted": 4,
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "topics": {
+      "ground_truth": 14,
+      "predicted": 14,
+      "tp": 14,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "services": {
+      "ground_truth": 14,
+      "predicted": 14,
+      "tp": 14,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "actions": {
+      "ground_truth": 0,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "ros2_control": {
+    "nodes": {
+      "ground_truth": 1,
+      "predicted": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "topics": {
+      "ground_truth": 2,
+      "predicted": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "services": {
+      "ground_truth": 11,
+      "predicted": 11,
+      "tp": 11,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "actions": {
+      "ground_truth": 0,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "jaco2_sim_devkit": {
+    "nodes": {
+      "ground_truth": 11,
+      "predicted": 11,
+      "tp": 11,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "topics": {
+      "ground_truth": 8,
+      "predicted": 8,
+      "tp": 8,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "services": {
+      "ground_truth": 3,
+      "predicted": 3,
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "source_actions": {
+      "ground_truth": 0,
+      "predicted": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "api_inferred_actions": {
+      "ground_truth": 3,
+      "predicted": 3,
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "yaml_configured_actions": {
+      "ground_truth": 2,
+      "predicted": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "subsystems": {
+      "ari": 1.0,
+      "nmi": 1.0,
+      "evaluated_nodes": 11
+    }
+  }
+}

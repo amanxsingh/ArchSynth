@@ -1,0 +1,44 @@
+{
+  "provenance": null,
+  "repo_name": "ros2_control",
+  "source_potential_edges": [],
+  "deployment_runtime_edges": [],
+  "intra_node_edges": [],
+  "peer_edges": [],
+  "cross_profile_edges": [],
+  "unmatched_endpoints": [
+    "controller_manager::ControllerManager::publisher::~/activity#L657",
+    "controller_manager::ControllerManager::subscriber::robot_description#L754",
+    "controller_manager::ControllerManager::service_server::~/list_controllers#L1170",
+    "controller_manager::ControllerManager::service_server::~/list_controller_types#L1174",
+    "controller_manager::ControllerManager::service_server::~/load_controller#L1178",
+    "controller_manager::ControllerManager::service_server::~/configure_controller#L1181",
+    "controller_manager::ControllerManager::service_server::~/reload_controller_libraries#L1186",
+    "controller_manager::ControllerManager::service_server::~/switch_controller#L1190",
+    "controller_manager::ControllerManager::service_server::~/unload_controller#L1194",
+    "controller_manager::ControllerManager::service_server::~/cleanup_controller#L1198",
+    "controller_manager::ControllerManager::service_server::~/list_hardware_components#L1203",
+    "controller_manager::ControllerManager::service_server::~/list_hardware_interfaces#L1208",
+    "controller_manager::ControllerManager::service_server::~/set_hardware_component_state#L1213"
+  ],
+  "external_endpoints": [
+    "controller_manager::TestNode#test__test_test_utils::publisher::/joint_states#L65"
+  ],
+  "external_confirmed_endpoints": [],
+  "external_candidate_endpoints": [
+    "controller_manager::TestNode#test__test_test_utils::publisher::/joint_states#L65"
+  ],
+  "internal_matched_endpoints": [],
+  "internal_peer_endpoints": [],
+  "dependency_generated_endpoints": [],
+  "action_protocols": [],
+  "_provenance": {
+    "repository_name": "ros2_control",
+    "repository_url": "https://github.com/ros-controls/ros2_control",
+    "commit_hash": "4052b56d53bdcb562653935255d118f203398b22",
+    "branch": "master",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:13:14.874439+00:00"
+  }
+}

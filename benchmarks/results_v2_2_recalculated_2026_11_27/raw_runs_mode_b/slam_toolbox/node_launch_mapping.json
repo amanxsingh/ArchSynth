@@ -1,0 +1,150 @@
+[
+  {
+    "node_id": "slam_toolbox::Slamtoolboxplugin",
+    "class_name": "Slamtoolboxplugin",
+    "package_name": "slam_toolbox",
+    "source_file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "slam_toolbox::Slamtoolboxstateupdatenode",
+    "class_name": "Slamtoolboxstateupdatenode",
+    "package_name": "slam_toolbox",
+    "source_file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "slam_toolbox::MergeMapsKinematic",
+    "class_name": "MergeMapsKinematic",
+    "package_name": "slam_toolbox",
+    "source_file": "src/merge_maps_kinematic.cpp",
+    "mapping_status": "resolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [
+      "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]"
+    ],
+    "launch_files": [
+      "launch/merge_maps_kinematic_launch.py"
+    ],
+    "deployment_profiles": [
+      "default"
+    ]
+  },
+  {
+    "node_id": "slam_toolbox::AsynchronousSlamToolbox",
+    "class_name": "slam_toolbox::AsynchronousSlamToolbox",
+    "package_name": "slam_toolbox",
+    "source_file": "src/slam_toolbox_async.cpp",
+    "mapping_status": "resolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [
+      "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]"
+    ],
+    "launch_files": [
+      "launch/online_async_launch.py"
+    ],
+    "deployment_profiles": [
+      "default"
+    ]
+  },
+  {
+    "node_id": "slam_toolbox::SlamToolbox",
+    "class_name": "slam_toolbox::SlamToolbox",
+    "package_name": "slam_toolbox",
+    "source_file": "src/slam_toolbox_common.cpp",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "slam_toolbox::DecentralizedMultiRobotSlamToolbox",
+    "class_name": "slam_toolbox::DecentralizedMultiRobotSlamToolbox",
+    "package_name": "slam_toolbox",
+    "source_file": "src/slam_toolbox_decentralized_multirobot.cpp",
+    "mapping_status": "resolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [
+      "launch/online_async_decentralized_multirobot_launch.py::slam_toolbox#L51[ns=${namespace}|prof=default|parent=root]"
+    ],
+    "launch_files": [
+      "launch/online_async_decentralized_multirobot_launch.py"
+    ],
+    "deployment_profiles": [
+      "default"
+    ]
+  },
+  {
+    "node_id": "slam_toolbox::LocalizationSlamToolbox",
+    "class_name": "slam_toolbox::LocalizationSlamToolbox",
+    "package_name": "slam_toolbox",
+    "source_file": "src/slam_toolbox_localization.cpp",
+    "mapping_status": "resolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [
+      "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]"
+    ],
+    "launch_files": [
+      "launch/localization_launch.py"
+    ],
+    "deployment_profiles": [
+      "default"
+    ]
+  },
+  {
+    "node_id": "slam_toolbox::SynchronousSlamToolbox",
+    "class_name": "slam_toolbox::SynchronousSlamToolbox",
+    "package_name": "slam_toolbox",
+    "source_file": "src/slam_toolbox_sync.cpp",
+    "mapping_status": "resolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [
+      "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]"
+    ],
+    "launch_files": [
+      "launch/offline_launch.py",
+      "launch/online_sync_launch.py"
+    ],
+    "deployment_profiles": [
+      "default"
+    ]
+  },
+  {
+    "node_id": "slam_toolbox::LifelongSlamToolbox",
+    "class_name": "slam_toolbox::LifelongSlamToolbox",
+    "package_name": "slam_toolbox",
+    "source_file": "src/experimental/slam_toolbox_lifelong.cpp",
+    "mapping_status": "resolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [
+      "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]"
+    ],
+    "launch_files": [
+      "launch/lifelong_launch.py"
+    ],
+    "deployment_profiles": [
+      "default"
+    ]
+  },
+  {
+    "node_id": "slam_toolbox::MapAndLocalizationSlamToolbox",
+    "class_name": "slam_toolbox::MapAndLocalizationSlamToolbox",
+    "package_name": "slam_toolbox",
+    "source_file": "src/experimental/slam_toolbox_map_and_localization.cpp",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  }
+]

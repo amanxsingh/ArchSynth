@@ -1,0 +1,2056 @@
+{
+  "provenance": null,
+  "lifecycle_managers": [
+    {
+      "manager_name": "lifecycle_manager_filters",
+      "launch_file": "nav2_system_tests/src/costmap_filters/test_keepout_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "filter_mask_server",
+        "costmap_filter_info_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_filters/manage_nodes",
+        "/lifecycle_manager_filters/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_filters",
+      "launch_file": "nav2_system_tests/src/costmap_filters/test_speed_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "filter_mask_server",
+        "costmap_filter_info_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_filters/manage_nodes",
+        "/lifecycle_manager_filters/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_navigation",
+      "launch_file": "nav2_system_tests/src/error_codes/test_error_codes_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "controller_server",
+        "planner_server",
+        "smoother_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_navigation/manage_nodes",
+        "/lifecycle_manager_navigation/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_localization",
+      "launch_file": "nav2_system_tests/src/gps_navigation/dual_ekf_navsat.launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "ekf_filter_node_odom",
+        "ekf_filter_node_map"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_localization/manage_nodes",
+        "/lifecycle_manager_localization/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager",
+      "launch_file": "nav2_system_tests/src/localization/test_localization_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "map_server",
+        "amcl"
+      ],
+      "service_servers": [
+        "/lifecycle_manager/manage_nodes",
+        "/lifecycle_manager/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_navigation",
+      "launch_file": "nav2_system_tests/src/behaviors/backup/test_backup_behavior.launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "behavior_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_navigation/manage_nodes",
+        "/lifecycle_manager_navigation/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_navigation",
+      "launch_file": "nav2_system_tests/src/behaviors/drive_on_heading/test_drive_on_heading_behavior.launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "behavior_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_navigation/manage_nodes",
+        "/lifecycle_manager_navigation/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_navigation",
+      "launch_file": "nav2_system_tests/src/behaviors/spin/test_spin_behavior.launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "behavior_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_navigation/manage_nodes",
+        "/lifecycle_manager_navigation/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager",
+      "launch_file": "nav2_rviz_plugins/launch/route_tool.launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "map_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager/manage_nodes",
+        "/lifecycle_manager/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager",
+      "launch_file": "nav2_map_server/launch/map_saver_server.launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "map_saver"
+      ],
+      "service_servers": [
+        "/lifecycle_manager/manage_nodes",
+        "/lifecycle_manager/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_vo_server",
+      "launch_file": "nav2_map_server/launch/vector_object_server.launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "vector_object_server",
+        "costmap_filter_info_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_vo_server/manage_nodes",
+        "/lifecycle_manager_vo_server/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_test",
+      "launch_file": "nav2_lifecycle_manager/test/launch_bond_test.py",
+      "autostart": false,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "bond_tester"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_test/manage_nodes",
+        "/lifecycle_manager_test/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_test",
+      "launch_file": "nav2_lifecycle_manager/test/launch_lifecycle_test.py",
+      "autostart": false,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "lifecycle_node_test"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_test/manage_nodes",
+        "/lifecycle_manager_test/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager",
+      "launch_file": "nav2_costmap_2d/test/integration/costmap_tests_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "map_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager/manage_nodes",
+        "/lifecycle_manager/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_collision_detector",
+      "launch_file": "nav2_collision_monitor/launch/collision_detector_node.launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "collision_detector"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_collision_detector/manage_nodes",
+        "/lifecycle_manager_collision_detector/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_collision_monitor",
+      "launch_file": "nav2_collision_monitor/launch/collision_monitor_node.launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "collision_monitor"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_collision_monitor/manage_nodes",
+        "/lifecycle_manager_collision_monitor/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_keepout_zone",
+      "launch_file": "nav2_bringup/launch/keepout_zone_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "keepout_filter_mask_server",
+        "keepout_costmap_filter_info_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_keepout_zone/manage_nodes",
+        "/lifecycle_manager_keepout_zone/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_localization",
+      "launch_file": "nav2_bringup/launch/localization_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "map_server",
+        "amcl"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_localization/manage_nodes",
+        "/lifecycle_manager_localization/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_navigation",
+      "launch_file": "nav2_bringup/launch/navigation_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "controller_server",
+        "smoother_server",
+        "planner_server",
+        "route_server",
+        "behavior_server",
+        "velocity_smoother",
+        "collision_monitor",
+        "bt_navigator",
+        "waypoint_follower",
+        "docking_server",
+        "following_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_navigation/manage_nodes",
+        "/lifecycle_manager_navigation/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_slam",
+      "launch_file": "nav2_bringup/launch/slam_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "map_saver"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_slam/manage_nodes",
+        "/lifecycle_manager_slam/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_speed_zone",
+      "launch_file": "nav2_bringup/launch/speed_zone_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "speed_filter_mask_server",
+        "speed_costmap_filter_info_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_speed_zone/manage_nodes",
+        "/lifecycle_manager_speed_zone/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_map_server",
+      "launch_file": "nav2_bringup/launch/tb3_loopback_simulation_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "map_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_map_server/manage_nodes",
+        "/lifecycle_manager_map_server/is_active"
+      ]
+    },
+    {
+      "manager_name": "lifecycle_manager_map_server",
+      "launch_file": "nav2_bringup/launch/tb4_loopback_simulation_launch.py",
+      "autostart": true,
+      "bond_timeout": 4.0,
+      "managed_node_names": [
+        "map_server"
+      ],
+      "service_servers": [
+        "/lifecycle_manager_map_server/manage_nodes",
+        "/lifecycle_manager_map_server/is_active"
+      ]
+    }
+  ],
+  "managed_nodes": [
+    {
+      "node_id": "unresolved::filter_mask_server",
+      "launch_name": "filter_mask_server",
+      "managing_manager": "lifecycle_manager_filters",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/costmap_filters/test_keepout_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'filter_mask_server' managed by 'lifecycle_manager_filters' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::CostmapFilterInfoServer",
+      "launch_name": "costmap_filter_info_server",
+      "managing_manager": "lifecycle_manager_filters",
+      "transition_order_index": 1,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/costmap_filter_info_server.hpp",
+          "line_start": 28,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::CostmapFilterInfoServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_system_tests/src/costmap_filters/test_keepout_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'costmap_filter_info_server' managed by 'lifecycle_manager_filters' at index 1"
+        }
+      ]
+    },
+    {
+      "node_id": "unresolved::filter_mask_server",
+      "launch_name": "filter_mask_server",
+      "managing_manager": "lifecycle_manager_filters",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/costmap_filters/test_speed_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'filter_mask_server' managed by 'lifecycle_manager_filters' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::CostmapFilterInfoServer",
+      "launch_name": "costmap_filter_info_server",
+      "managing_manager": "lifecycle_manager_filters",
+      "transition_order_index": 1,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/costmap_filter_info_server.hpp",
+          "line_start": 28,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::CostmapFilterInfoServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_system_tests/src/costmap_filters/test_speed_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'costmap_filter_info_server' managed by 'lifecycle_manager_filters' at index 1"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_controller::ControllerServer",
+      "launch_name": "controller_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_controller/include/nav2_controller/controller_server.hpp",
+          "line_start": 52,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_controller::ControllerServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_system_tests/src/error_codes/test_error_codes_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'controller_server' managed by 'lifecycle_manager_navigation' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_planner::PlannerServer",
+      "launch_name": "planner_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 1,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_planner/include/nav2_planner/planner_server.hpp",
+          "line_start": 52,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_planner::PlannerServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_system_tests/src/error_codes/test_error_codes_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'planner_server' managed by 'lifecycle_manager_navigation' at index 1"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_smoother::SmootherServer",
+      "launch_name": "smoother_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 2,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_smoother/include/nav2_smoother/nav2_smoother.hpp",
+          "line_start": 46,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_smoother::SmootherServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_system_tests/src/error_codes/test_error_codes_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'smoother_server' managed by 'lifecycle_manager_navigation' at index 2"
+        }
+      ]
+    },
+    {
+      "node_id": "unresolved::ekf_filter_node_odom",
+      "launch_name": "ekf_filter_node_odom",
+      "managing_manager": "lifecycle_manager_localization",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/gps_navigation/dual_ekf_navsat.launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'ekf_filter_node_odom' managed by 'lifecycle_manager_localization' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "unresolved::ekf_filter_node_map",
+      "launch_name": "ekf_filter_node_map",
+      "managing_manager": "lifecycle_manager_localization",
+      "transition_order_index": 1,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/gps_navigation/dual_ekf_navsat.launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'ekf_filter_node_map' managed by 'lifecycle_manager_localization' at index 1"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::MapServer",
+      "launch_name": "map_server",
+      "managing_manager": "lifecycle_manager",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/map_server.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::MapServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_system_tests/src/localization/test_localization_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'map_server' managed by 'lifecycle_manager' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_amcl::AmclNode",
+      "launch_name": "amcl",
+      "managing_manager": "lifecycle_manager",
+      "transition_order_index": 1,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_amcl/include/nav2_amcl/amcl_node.hpp",
+          "line_start": 59,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_amcl::AmclNode' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_system_tests/src/localization/test_localization_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'amcl' managed by 'lifecycle_manager' at index 1"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_behaviors::behavior_server::BehaviorServer",
+      "launch_name": "behavior_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_behaviors/include/nav2_behaviors/behavior_server.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'behavior_server::BehaviorServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_system_tests/src/behaviors/backup/test_backup_behavior.launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'behavior_server' managed by 'lifecycle_manager_navigation' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_behaviors::behavior_server::BehaviorServer",
+      "launch_name": "behavior_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_behaviors/include/nav2_behaviors/behavior_server.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'behavior_server::BehaviorServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_system_tests/src/behaviors/drive_on_heading/test_drive_on_heading_behavior.launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'behavior_server' managed by 'lifecycle_manager_navigation' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_behaviors::behavior_server::BehaviorServer",
+      "launch_name": "behavior_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_behaviors/include/nav2_behaviors/behavior_server.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'behavior_server::BehaviorServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_system_tests/src/behaviors/spin/test_spin_behavior.launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'behavior_server' managed by 'lifecycle_manager_navigation' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::MapServer",
+      "launch_name": "map_server",
+      "managing_manager": "lifecycle_manager",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/map_server.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::MapServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_rviz_plugins/launch/route_tool.launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'map_server' managed by 'lifecycle_manager' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::MapSaver",
+      "launch_name": "map_saver",
+      "managing_manager": "lifecycle_manager",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/map_saver.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::MapSaver' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_map_server/launch/map_saver_server.launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'map_saver' managed by 'lifecycle_manager' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::VectorObjectServer",
+      "launch_name": "vector_object_server",
+      "managing_manager": "lifecycle_manager_vo_server",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/vector_object_server.hpp",
+          "line_start": 39,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::VectorObjectServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_map_server/launch/vector_object_server.launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'vector_object_server' managed by 'lifecycle_manager_vo_server' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::CostmapFilterInfoServer",
+      "launch_name": "costmap_filter_info_server",
+      "managing_manager": "lifecycle_manager_vo_server",
+      "transition_order_index": 1,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/costmap_filter_info_server.hpp",
+          "line_start": 28,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::CostmapFilterInfoServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_map_server/launch/vector_object_server.launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'costmap_filter_info_server' managed by 'lifecycle_manager_vo_server' at index 1"
+        }
+      ]
+    },
+    {
+      "node_id": "unresolved::bond_tester",
+      "launch_name": "bond_tester",
+      "managing_manager": "lifecycle_manager_test",
+      "transition_order_index": 0,
+      "autostart": false,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Inactive",
+      "evidence": [
+        {
+          "file": "nav2_lifecycle_manager/test/launch_bond_test.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'bond_tester' managed by 'lifecycle_manager_test' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_lifecycle_manager::LifecycleNodeTest",
+      "launch_name": "lifecycle_node_test",
+      "managing_manager": "lifecycle_manager_test",
+      "transition_order_index": 0,
+      "autostart": false,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_error",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Inactive",
+      "evidence": [
+        {
+          "file": "nav2_lifecycle_manager/test/test_lifecycle_manager.cpp",
+          "line_start": 25,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'LifecycleNodeTest' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_lifecycle_manager/test/launch_lifecycle_test.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'lifecycle_node_test' managed by 'lifecycle_manager_test' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::MapServer",
+      "launch_name": "map_server",
+      "managing_manager": "lifecycle_manager",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/map_server.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::MapServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_costmap_2d/test/integration/costmap_tests_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'map_server' managed by 'lifecycle_manager' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_collision_monitor::CollisionDetector",
+      "launch_name": "collision_detector",
+      "managing_manager": "lifecycle_manager_collision_detector",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_collision_monitor/include/nav2_collision_monitor/collision_detector_node.hpp",
+          "line_start": 50,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_collision_monitor::CollisionDetector' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_collision_monitor/launch/collision_detector_node.launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'collision_detector' managed by 'lifecycle_manager_collision_detector' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_collision_monitor::CollisionMonitor",
+      "launch_name": "collision_monitor",
+      "managing_manager": "lifecycle_manager_collision_monitor",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_collision_monitor/include/nav2_collision_monitor/collision_monitor_node.hpp",
+          "line_start": 54,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_collision_monitor::CollisionMonitor' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_collision_monitor/launch/collision_monitor_node.launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'collision_monitor' managed by 'lifecycle_manager_collision_monitor' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "unresolved::keepout_filter_mask_server",
+      "launch_name": "keepout_filter_mask_server",
+      "managing_manager": "lifecycle_manager_keepout_zone",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_bringup/launch/keepout_zone_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'keepout_filter_mask_server' managed by 'lifecycle_manager_keepout_zone' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "unresolved::keepout_costmap_filter_info_server",
+      "launch_name": "keepout_costmap_filter_info_server",
+      "managing_manager": "lifecycle_manager_keepout_zone",
+      "transition_order_index": 1,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_bringup/launch/keepout_zone_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'keepout_costmap_filter_info_server' managed by 'lifecycle_manager_keepout_zone' at index 1"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::MapServer",
+      "launch_name": "map_server",
+      "managing_manager": "lifecycle_manager_localization",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/map_server.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::MapServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/localization_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'map_server' managed by 'lifecycle_manager_localization' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_amcl::AmclNode",
+      "launch_name": "amcl",
+      "managing_manager": "lifecycle_manager_localization",
+      "transition_order_index": 1,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_amcl/include/nav2_amcl/amcl_node.hpp",
+          "line_start": 59,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_amcl::AmclNode' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/localization_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'amcl' managed by 'lifecycle_manager_localization' at index 1"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_controller::ControllerServer",
+      "launch_name": "controller_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_controller/include/nav2_controller/controller_server.hpp",
+          "line_start": 52,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_controller::ControllerServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/navigation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'controller_server' managed by 'lifecycle_manager_navigation' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_smoother::SmootherServer",
+      "launch_name": "smoother_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 1,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_smoother/include/nav2_smoother/nav2_smoother.hpp",
+          "line_start": 46,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_smoother::SmootherServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/navigation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'smoother_server' managed by 'lifecycle_manager_navigation' at index 1"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_planner::PlannerServer",
+      "launch_name": "planner_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 2,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_planner/include/nav2_planner/planner_server.hpp",
+          "line_start": 52,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_planner::PlannerServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/navigation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'planner_server' managed by 'lifecycle_manager_navigation' at index 2"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_route::RouteServer",
+      "launch_name": "route_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 3,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_route/include/nav2_route/route_server.hpp",
+          "line_start": 54,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_route::RouteServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/navigation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'route_server' managed by 'lifecycle_manager_navigation' at index 3"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_behaviors::behavior_server::BehaviorServer",
+      "launch_name": "behavior_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 4,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_behaviors/include/nav2_behaviors/behavior_server.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'behavior_server::BehaviorServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/navigation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'behavior_server' managed by 'lifecycle_manager_navigation' at index 4"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_velocity_smoother::VelocitySmoother",
+      "launch_name": "velocity_smoother",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 5,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_velocity_smoother/include/nav2_velocity_smoother/velocity_smoother.hpp",
+          "line_start": 41,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_velocity_smoother::VelocitySmoother' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/navigation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'velocity_smoother' managed by 'lifecycle_manager_navigation' at index 5"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_collision_monitor::CollisionMonitor",
+      "launch_name": "collision_monitor",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 6,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_collision_monitor/include/nav2_collision_monitor/collision_monitor_node.hpp",
+          "line_start": 54,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_collision_monitor::CollisionMonitor' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/navigation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'collision_monitor' managed by 'lifecycle_manager_navigation' at index 6"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_bt_navigator::BtNavigator",
+      "launch_name": "bt_navigator",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 7,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_bt_navigator/include/nav2_bt_navigator/bt_navigator.hpp",
+          "line_start": 38,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_bt_navigator::BtNavigator' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/navigation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'bt_navigator' managed by 'lifecycle_manager_navigation' at index 7"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_waypoint_follower::WaypointFollower",
+      "launch_name": "waypoint_follower",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 8,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_waypoint_follower/include/nav2_waypoint_follower/waypoint_follower.hpp",
+          "line_start": 67,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_waypoint_follower::WaypointFollower' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/navigation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'waypoint_follower' managed by 'lifecycle_manager_navigation' at index 8"
+        }
+      ]
+    },
+    {
+      "node_id": "opennav_docking::DockingServer",
+      "launch_name": "docking_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 9,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_docking/opennav_docking/include/opennav_docking/docking_server.hpp",
+          "line_start": 46,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'opennav_docking::DockingServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/navigation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'docking_server' managed by 'lifecycle_manager_navigation' at index 9"
+        }
+      ]
+    },
+    {
+      "node_id": "opennav_following::FollowingServer",
+      "launch_name": "following_server",
+      "managing_manager": "lifecycle_manager_navigation",
+      "transition_order_index": 10,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_following/opennav_following/include/opennav_following/following_server.hpp",
+          "line_start": 45,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'opennav_following::FollowingServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/navigation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'following_server' managed by 'lifecycle_manager_navigation' at index 10"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::MapSaver",
+      "launch_name": "map_saver",
+      "managing_manager": "lifecycle_manager_slam",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/map_saver.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::MapSaver' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/slam_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'map_saver' managed by 'lifecycle_manager_slam' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "unresolved::speed_filter_mask_server",
+      "launch_name": "speed_filter_mask_server",
+      "managing_manager": "lifecycle_manager_speed_zone",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_bringup/launch/speed_zone_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'speed_filter_mask_server' managed by 'lifecycle_manager_speed_zone' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "unresolved::speed_costmap_filter_info_server",
+      "launch_name": "speed_costmap_filter_info_server",
+      "managing_manager": "lifecycle_manager_speed_zone",
+      "transition_order_index": 1,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_bringup/launch/speed_zone_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'speed_costmap_filter_info_server' managed by 'lifecycle_manager_speed_zone' at index 1"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::MapServer",
+      "launch_name": "map_server",
+      "managing_manager": "lifecycle_manager_map_server",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/map_server.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::MapServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/tb3_loopback_simulation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'map_server' managed by 'lifecycle_manager_map_server' at index 0"
+        }
+      ]
+    },
+    {
+      "node_id": "nav2_map_server::MapServer",
+      "launch_name": "map_server",
+      "managing_manager": "lifecycle_manager_map_server",
+      "transition_order_index": 0,
+      "autostart": true,
+      "bond_enabled": true,
+      "handles_transition_callbacks": [
+        "on_activate",
+        "on_cleanup",
+        "on_configure",
+        "on_deactivate",
+        "on_shutdown"
+      ],
+      "is_lifecycle_node": true,
+      "configured_target_state": "Active",
+      "evidence": [
+        {
+          "file": "nav2_map_server/include/nav2_map_server/map_server.hpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "cpp_ast_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "C++ class 'nav2_map_server::MapServer' inheriting from 'nav2::LifecycleNode'"
+        },
+        {
+          "file": "nav2_bringup/launch/tb4_loopback_simulation_launch.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "launch_node",
+          "source": "lifecycle_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node 'map_server' managed by 'lifecycle_manager_map_server' at index 0"
+        }
+      ]
+    }
+  ],
+  "unmanaged_nodes": [
+    "nav2_costmap_2d::Costmap2DROS",
+    "nav2_costmap_2d::Costmap2dCloud",
+    "nav2_costmap_2d::Costmap2dMarker",
+    "nav2_lifecycle_manager::LifecycleManager",
+    "nav2_loopback_sim::LoopbackSimulator",
+    "nav2_rviz_plugins::Nav2RvizDockingPanelNode",
+    "nav2_rviz_plugins::Nav2RvizSelectorNode",
+    "nav2_simple_commander::BasicNavigator",
+    "nav2_simple_commander::RouteExample",
+    "nav2_util::BaseFootprintPublisher",
+    "nav2_util::LifecycleBringupClient"
+  ],
+  "standard_transitions": [
+    {
+      "transition_id": 1,
+      "transition_name": "configure",
+      "from_state": "Unconfigured",
+      "to_state": "Inactive",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 2,
+      "transition_name": "cleanup",
+      "from_state": "Inactive",
+      "to_state": "Unconfigured",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 3,
+      "transition_name": "activate",
+      "from_state": "Inactive",
+      "to_state": "Active",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 4,
+      "transition_name": "deactivate",
+      "from_state": "Active",
+      "to_state": "Inactive",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 5,
+      "transition_name": "unconfigured_shutdown",
+      "from_state": "Unconfigured",
+      "to_state": "Finalized",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 6,
+      "transition_name": "inactive_shutdown",
+      "from_state": "Inactive",
+      "to_state": "Finalized",
+      "trigger": "lifecycle_manager"
+    },
+    {
+      "transition_id": 7,
+      "transition_name": "active_shutdown",
+      "from_state": "Active",
+      "to_state": "Finalized",
+      "trigger": "lifecycle_manager"
+    }
+  ],
+  "startup_sequence": [
+    "lifecycle_manager_filters::filter_mask_server",
+    "lifecycle_manager_filters::costmap_filter_info_server",
+    "lifecycle_manager_filters::filter_mask_server",
+    "lifecycle_manager_filters::costmap_filter_info_server",
+    "lifecycle_manager_navigation::controller_server",
+    "lifecycle_manager_navigation::planner_server",
+    "lifecycle_manager_navigation::smoother_server",
+    "lifecycle_manager_localization::ekf_filter_node_odom",
+    "lifecycle_manager_localization::ekf_filter_node_map",
+    "lifecycle_manager::map_server",
+    "lifecycle_manager::amcl",
+    "lifecycle_manager_navigation::behavior_server",
+    "lifecycle_manager_navigation::behavior_server",
+    "lifecycle_manager_navigation::behavior_server",
+    "lifecycle_manager::map_server",
+    "lifecycle_manager::map_saver",
+    "lifecycle_manager_vo_server::vector_object_server",
+    "lifecycle_manager_vo_server::costmap_filter_info_server",
+    "lifecycle_manager_test::bond_tester",
+    "lifecycle_manager_test::lifecycle_node_test",
+    "lifecycle_manager::map_server",
+    "lifecycle_manager_collision_detector::collision_detector",
+    "lifecycle_manager_collision_monitor::collision_monitor",
+    "lifecycle_manager_keepout_zone::keepout_filter_mask_server",
+    "lifecycle_manager_keepout_zone::keepout_costmap_filter_info_server",
+    "lifecycle_manager_localization::map_server",
+    "lifecycle_manager_localization::amcl",
+    "lifecycle_manager_navigation::controller_server",
+    "lifecycle_manager_navigation::smoother_server",
+    "lifecycle_manager_navigation::planner_server",
+    "lifecycle_manager_navigation::route_server",
+    "lifecycle_manager_navigation::behavior_server",
+    "lifecycle_manager_navigation::velocity_smoother",
+    "lifecycle_manager_navigation::collision_monitor",
+    "lifecycle_manager_navigation::bt_navigator",
+    "lifecycle_manager_navigation::waypoint_follower",
+    "lifecycle_manager_navigation::docking_server",
+    "lifecycle_manager_navigation::following_server",
+    "lifecycle_manager_slam::map_saver",
+    "lifecycle_manager_speed_zone::speed_filter_mask_server",
+    "lifecycle_manager_speed_zone::speed_costmap_filter_info_server",
+    "lifecycle_manager_map_server::map_server",
+    "lifecycle_manager_map_server::map_server"
+  ],
+  "mermaid_diagram": "stateDiagram-v2\n    [*] --> Unconfigured\n    Unconfigured --> Configuring : configure() [ID 1]\n    Configuring --> Inactive : success\n    Configuring --> Unconfigured : failure\n    Inactive --> Activating : activate() [ID 3]\n    Activating --> Active : success\n    Activating --> Inactive : failure\n    Active --> Deactivating : deactivate() [ID 4]\n    Deactivating --> Inactive : success\n    Inactive --> CleaningUp : cleanup() [ID 2]\n    CleaningUp --> Unconfigured : success\n    Active --> ShuttingDown : shutdown() [ID 7]\n    Inactive --> ShuttingDown : shutdown() [ID 6]\n    Unconfigured --> ShuttingDown : shutdown() [ID 5]\n    ShuttingDown --> Finalized : success\n    Finalized --> [*]\n\n    note right of Active : <b>lifecycle_manager_filters</b> (autostart=True)\\n- filter_mask_server\\n- costmap_filter_info_server\n    note right of Active : <b>lifecycle_manager_filters</b> (autostart=True)\\n- filter_mask_server\\n- costmap_filter_info_server\n    note right of Active : <b>lifecycle_manager_navigation</b> (autostart=True)\\n- controller_server\\n- planner_server\\n- smoother_server\n    note right of Active : <b>lifecycle_manager_localization</b> (autostart=True)\\n- ekf_filter_node_odom\\n- ekf_filter_node_map\n    note right of Active : <b>lifecycle_manager</b> (autostart=True)\\n- map_server\\n- amcl\n    note right of Active : <b>lifecycle_manager_navigation</b> (autostart=True)\\n- behavior_server\n    note right of Active : <b>lifecycle_manager_navigation</b> (autostart=True)\\n- behavior_server\n    note right of Active : <b>lifecycle_manager_navigation</b> (autostart=True)\\n- behavior_server\n    note right of Active : <b>lifecycle_manager</b> (autostart=True)\\n- map_server\n    note right of Active : <b>lifecycle_manager</b> (autostart=True)\\n- map_saver\n    note right of Active : <b>lifecycle_manager_vo_server</b> (autostart=True)\\n- vector_object_server\\n- costmap_filter_info_server\n    note right of Active : <b>lifecycle_manager_test</b> (autostart=False)\\n- bond_tester\n    note right of Active : <b>lifecycle_manager_test</b> (autostart=False)\\n- lifecycle_node_test\n    note right of Active : <b>lifecycle_manager</b> (autostart=True)\\n- map_server\n    note right of Active : <b>lifecycle_manager_collision_detector</b> (autostart=True)\\n- collision_detector\n    note right of Active : <b>lifecycle_manager_collision_monitor</b> (autostart=True)\\n- collision_monitor\n    note right of Active : <b>lifecycle_manager_keepout_zone</b> (autostart=True)\\n- keepout_filter_mask_server\\n- keepout_costmap_filter_info_server\n    note right of Active : <b>lifecycle_manager_localization</b> (autostart=True)\\n- map_server\\n- amcl\n    note right of Active : <b>lifecycle_manager_navigation</b> (autostart=True)\\n- controller_server\\n- smoother_server\\n- planner_server\\n- route_server\\n- behavior_server\\n- velocity_smoother\\n- collision_monitor\\n- bt_navigator\\n- waypoint_follower\\n- docking_server\\n- following_server\n    note right of Active : <b>lifecycle_manager_slam</b> (autostart=True)\\n- map_saver\n    note right of Active : <b>lifecycle_manager_speed_zone</b> (autostart=True)\\n- speed_filter_mask_server\\n- speed_costmap_filter_info_server\n    note right of Active : <b>lifecycle_manager_map_server</b> (autostart=True)\\n- map_server\n    note right of Active : <b>lifecycle_manager_map_server</b> (autostart=True)\\n- map_server",
+  "_provenance": {
+    "repository_name": "Navigation2",
+    "repository_url": "https://github.com/ros-planning/navigation2",
+    "commit_hash": "6dbf4549ae1914188916b06dcc19dd3a8115d0a5",
+    "branch": "main",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:13:39.487953+00:00"
+  }
+}

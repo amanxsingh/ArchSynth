@@ -1,0 +1,42 @@
+[
+  {
+    "profile_name": "standalone",
+    "condition": "use_composition == False",
+    "description": "Standalone ROS2 executable processes",
+    "instance_ids": [],
+    "container_ids": [],
+    "configuration_args": {
+      "use_composition": "False"
+    }
+  },
+  {
+    "profile_name": "composable",
+    "condition": "use_composition == True",
+    "description": "Composed ROS2 components hosted in component containers",
+    "instance_ids": [],
+    "container_ids": [],
+    "configuration_args": {
+      "use_composition": "True"
+    }
+  },
+  {
+    "profile_name": "default",
+    "condition": "unconditional",
+    "description": "Always active or profile-agnostic nodes",
+    "instance_ids": [
+      "joint_limits/test/joint_limits_rosparam.launch.py::joint_limits_rosparam_test#L32[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_joint_limits_rosparam.launch",
+    "condition": "launch=joint_limits_rosparam.launch.py",
+    "description": "Alternative standalone launch profile: joint_limits_rosparam.launch.py, analyzed independently by default",
+    "instance_ids": [
+      "joint_limits/test/joint_limits_rosparam.launch.py::joint_limits_rosparam_test#L32[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  }
+]

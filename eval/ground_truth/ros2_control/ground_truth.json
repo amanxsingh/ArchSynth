@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "system_name": "ROS 2 Control",
+    "repository_id": "ros2_control",
+    "official_url": "https://github.com/ros-controls/ros2_control",
+    "branch": "master",
+    "pinned_commit": "4052b56d53bdcb62653935255d118f203398b22",
+    "verification_method": "Manual source audit of controller_manager/src/controller_manager.cpp and non-test sources in case_studies/ros2_control",
+    "scope_definitions": {
+      "nodes": "1 production C++ node class (ControllerManager -> controller_manager)",
+      "topics": "2 production topics (~/activity, robot_description)",
+      "services": "11 production controller/hardware management services on ControllerManager",
+      "actions": "0 ROS 2 actions"
+    }
+  },
+  "nodes": [
+    {
+      "name": "controller_manager",
+      "class_name": "ControllerManager",
+      "package": "controller_manager",
+      "source_file": "controller_manager/src/controller_manager.cpp#L531-L568"
+    }
+  ],
+  "topics": [
+    {"name": "~/activity", "source_file": "controller_manager/src/controller_manager.cpp#L657"},
+    {"name": "robot_description", "source_file": "controller_manager/src/controller_manager.cpp#L754"}
+  ],
+  "services": [
+    {"name": "~/list_controllers", "source_file": "controller_manager/src/controller_manager.cpp#L1170"},
+    {"name": "~/list_controller_types", "source_file": "controller_manager/src/controller_manager.cpp#L1174"},
+    {"name": "~/load_controller", "source_file": "controller_manager/src/controller_manager.cpp#L1178"},
+    {"name": "~/configure_controller", "source_file": "controller_manager/src/controller_manager.cpp#L1181"},
+    {"name": "~/reload_controller_libraries", "source_file": "controller_manager/src/controller_manager.cpp#L1186"},
+    {"name": "~/switch_controller", "source_file": "controller_manager/src/controller_manager.cpp#L1190"},
+    {"name": "~/unload_controller", "source_file": "controller_manager/src/controller_manager.cpp#L1194"},
+    {"name": "~/cleanup_controller", "source_file": "controller_manager/src/controller_manager.cpp#L1198"},
+    {"name": "~/list_hardware_components", "source_file": "controller_manager/src/controller_manager.cpp#L1203"},
+    {"name": "~/list_hardware_interfaces", "source_file": "controller_manager/src/controller_manager.cpp#L1208"},
+    {"name": "~/set_hardware_component_state", "source_file": "controller_manager/src/controller_manager.cpp#L1213"}
+  ],
+  "actions": []
+}

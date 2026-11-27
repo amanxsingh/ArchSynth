@@ -1,0 +1,789 @@
+{
+  "provenance": null,
+  "nodes": [
+    "jaco2_controller::JSPGUIController",
+    "jaco2_description::TrackEndEffector",
+    "jaco2_gazebo::DepthImageRemap",
+    "jaco2_moveit_demos::MoveitInterface",
+    "jaco2_moveit_demos::MoveitPlanning",
+    "jaco2_moveit_task_constructor::MtcCartesian",
+    "jaco2_moveit_task_constructor::MtcPickplace",
+    "jaco2_moveit_task_constructor::ScenePublisher",
+    "jaco2_servo::CommandSwitch",
+    "jaco2_servo::KeyboardServo",
+    "jaco2_servo::Xbox360Teleop"
+  ],
+  "matrix": {
+    "jaco2_controller::JSPGUIController": {
+      "jaco2_controller::JSPGUIController": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_description::TrackEndEffector": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_gazebo::DepthImageRemap": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitInterface": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitPlanning": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcCartesian": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcPickplace": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::ScenePublisher": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::CommandSwitch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::KeyboardServo": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::Xbox360Teleop": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "jaco2_description::TrackEndEffector": {
+      "jaco2_controller::JSPGUIController": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_description::TrackEndEffector": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_gazebo::DepthImageRemap": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitInterface": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitPlanning": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcCartesian": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcPickplace": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::ScenePublisher": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::CommandSwitch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::KeyboardServo": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::Xbox360Teleop": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "jaco2_gazebo::DepthImageRemap": {
+      "jaco2_controller::JSPGUIController": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_description::TrackEndEffector": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_gazebo::DepthImageRemap": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitInterface": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitPlanning": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcCartesian": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcPickplace": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::ScenePublisher": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::CommandSwitch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::KeyboardServo": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::Xbox360Teleop": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "jaco2_moveit_demos::MoveitInterface": {
+      "jaco2_controller::JSPGUIController": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_description::TrackEndEffector": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_gazebo::DepthImageRemap": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitInterface": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitPlanning": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcCartesian": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcPickplace": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::ScenePublisher": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::CommandSwitch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::KeyboardServo": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::Xbox360Teleop": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "jaco2_moveit_demos::MoveitPlanning": {
+      "jaco2_controller::JSPGUIController": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_description::TrackEndEffector": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_gazebo::DepthImageRemap": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitInterface": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitPlanning": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcCartesian": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcPickplace": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::ScenePublisher": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::CommandSwitch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::KeyboardServo": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::Xbox360Teleop": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "jaco2_moveit_task_constructor::MtcCartesian": {
+      "jaco2_controller::JSPGUIController": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_description::TrackEndEffector": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_gazebo::DepthImageRemap": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitInterface": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitPlanning": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcCartesian": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcPickplace": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::ScenePublisher": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::CommandSwitch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::KeyboardServo": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::Xbox360Teleop": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "jaco2_moveit_task_constructor::MtcPickplace": {
+      "jaco2_controller::JSPGUIController": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_description::TrackEndEffector": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_gazebo::DepthImageRemap": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitInterface": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitPlanning": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcCartesian": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcPickplace": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::ScenePublisher": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::CommandSwitch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::KeyboardServo": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::Xbox360Teleop": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "jaco2_moveit_task_constructor::ScenePublisher": {
+      "jaco2_controller::JSPGUIController": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_description::TrackEndEffector": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_gazebo::DepthImageRemap": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitInterface": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitPlanning": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcCartesian": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcPickplace": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::ScenePublisher": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::CommandSwitch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::KeyboardServo": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::Xbox360Teleop": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "jaco2_servo::CommandSwitch": {
+      "jaco2_controller::JSPGUIController": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_description::TrackEndEffector": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_gazebo::DepthImageRemap": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitInterface": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitPlanning": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcCartesian": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcPickplace": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::ScenePublisher": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::CommandSwitch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::KeyboardServo": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::Xbox360Teleop": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "jaco2_servo::KeyboardServo": {
+      "jaco2_controller::JSPGUIController": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_description::TrackEndEffector": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_gazebo::DepthImageRemap": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitInterface": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitPlanning": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcCartesian": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcPickplace": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::ScenePublisher": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::CommandSwitch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::KeyboardServo": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::Xbox360Teleop": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "jaco2_servo::Xbox360Teleop": {
+      "jaco2_controller::JSPGUIController": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_description::TrackEndEffector": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_gazebo::DepthImageRemap": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitInterface": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_demos::MoveitPlanning": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcCartesian": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::MtcPickplace": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_moveit_task_constructor::ScenePublisher": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::CommandSwitch": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::KeyboardServo": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      },
+      "jaco2_servo::Xbox360Teleop": {
+        "topic": 0,
+        "service": 0,
+        "action": 0,
+        "total": 0
+      }
+    },
+    "config::moveit_controllers": {
+      "config::ros2_controllers": {
+        "topic": 0,
+        "service": 0,
+        "action": 4,
+        "total": 4
+      }
+    }
+  },
+  "summary": {
+    "topic": 0,
+    "service": 0,
+    "action": 4,
+    "total": 4
+  },
+  "_provenance": {
+    "repository_name": "jaco2_sim_devkit",
+    "repository_url": "https://github.com/VibhuSharma19/jaco2_sim_devkit",
+    "commit_hash": "993a6e3de05e50fec4ce40c65a5b1d3a9d8ca9cc",
+    "branch": "main",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:38.593713+00:00"
+  }
+}

@@ -1,0 +1,108 @@
+[
+  {
+    "profile_name": "standalone",
+    "condition": "use_composition == False",
+    "description": "Standalone ROS2 executable processes",
+    "instance_ids": [],
+    "container_ids": [],
+    "configuration_args": {
+      "use_composition": "False"
+    }
+  },
+  {
+    "profile_name": "composable",
+    "condition": "use_composition == True",
+    "description": "Composed ROS2 components hosted in component containers",
+    "instance_ids": [],
+    "container_ids": [],
+    "configuration_args": {
+      "use_composition": "True"
+    }
+  },
+  {
+    "profile_name": "default",
+    "condition": "unconditional",
+    "description": "Always active or profile-agnostic nodes",
+    "instance_ids": [
+      "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]",
+      "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]",
+      "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+      "launch/online_async_decentralized_multirobot_launch.py::slam_toolbox#L51[ns=${namespace}|prof=default|parent=root]",
+      "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+      "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_lifelong",
+    "condition": "launch=lifelong_launch.py",
+    "description": "Alternative standalone launch profile: lifelong_launch.py, analyzed independently by default",
+    "instance_ids": [
+      "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_localization",
+    "condition": "launch=localization_launch.py",
+    "description": "Alternative standalone launch profile: localization_launch.py, analyzed independently by default",
+    "instance_ids": [
+      "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_merge_maps_kinematic",
+    "condition": "launch=merge_maps_kinematic_launch.py",
+    "description": "Alternative standalone launch profile: merge_maps_kinematic_launch.py, analyzed independently by default",
+    "instance_ids": [
+      "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_offline",
+    "condition": "launch=offline_launch.py",
+    "description": "Alternative standalone launch profile: offline_launch.py, analyzed independently by default",
+    "instance_ids": [
+      "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_online_async_decentralized_multirobot",
+    "condition": "launch=online_async_decentralized_multirobot_launch.py",
+    "description": "Alternative standalone launch profile: online_async_decentralized_multirobot_launch.py, analyzed independently by default",
+    "instance_ids": [
+      "launch/online_async_decentralized_multirobot_launch.py::slam_toolbox#L51[ns=${namespace}|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_online_async",
+    "condition": "launch=online_async_launch.py",
+    "description": "Alternative standalone launch profile: online_async_launch.py, analyzed independently by default",
+    "instance_ids": [
+      "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  },
+  {
+    "profile_name": "launch_online_sync",
+    "condition": "launch=online_sync_launch.py",
+    "description": "Alternative standalone launch profile: online_sync_launch.py, analyzed independently by default",
+    "instance_ids": [
+      "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]"
+    ],
+    "container_ids": [],
+    "configuration_args": {}
+  }
+]

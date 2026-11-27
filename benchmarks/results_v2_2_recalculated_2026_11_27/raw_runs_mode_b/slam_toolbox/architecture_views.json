@@ -1,0 +1,584 @@
+{
+  "provenance": null,
+  "standards_alignment": "ISO/IEC/IEEE 42010",
+  "views": {
+    "system_context": {
+      "view_id": "system_context",
+      "name": "System Context View",
+      "description": "System boundary for slam_toolbox derived from 10 source nodes, unmatched external-peer interfaces, and 0 external launch packages.",
+      "architectural_concerns": [
+        "System boundaries",
+        "External interfaces",
+        "Operational environment"
+      ],
+      "target_stakeholders": [
+        "System Architects",
+        "Robotics Integrators",
+        "Application Engineers"
+      ],
+      "entities": [
+        {
+          "name": "slam_toolbox Core Nodes",
+          "type": "software_system"
+        },
+        {
+          "name": "External ROS 2 Callers / Clients",
+          "type": "external_actor"
+        },
+        {
+          "name": "External Publishers / Sensors",
+          "type": "external_source"
+        },
+        {
+          "name": "External Consumers / Servers",
+          "type": "external_target"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "External ROS 2 Callers / Clients",
+          "target": "slam_toolbox Core Nodes",
+          "type": "service_or_action_call"
+        },
+        {
+          "source": "External Publishers / Sensors",
+          "target": "slam_toolbox Core Nodes",
+          "type": "topic_subscription"
+        },
+        {
+          "source": "slam_toolbox Core Nodes",
+          "target": "External Consumers / Servers",
+          "type": "topic_or_service_output"
+        }
+      ],
+      "mermaid_diagram": "flowchart TD\n    subgraph SystemBoundary [\"slam_toolbox System Boundary (10 source nodes)\"]\n        SystemCore[\"slam_toolbox Core Nodes\"]\n    end\n    ClientApp[\"External ROS 2 Callers / Clients\"]\n    ClientApp -->|\"slam_toolbox/clear_changes, slam_toolbox/clear_localization_buffer, slam_toolbox/deserialize_map, slam_toolbox/dynamic_map\"| SystemCore\n    ExtSources[\"External Publishers / Sensors\"]\n    ExtSources -->|\"/localized_scan, /map, /scan, initialpose\"| SystemCore\n    ExtTargets[\"External Consumers / Servers\"]\n    SystemCore -->|\"/localized_scan, /map, /map_metadata, /map_metadata_{i}\"| ExtTargets\n"
+    },
+    "package_dependency": {
+      "view_id": "package_dependency",
+      "name": "Package Dependency View",
+      "description": "Directed package dependency graph across 2 repository packages and 50 external dependencies (package.xml, setup.py, and resolved source dependencies).",
+      "architectural_concerns": [
+        "Package coupling",
+        "Build layering",
+        "Modular reusability"
+      ],
+      "target_stakeholders": [
+        "Software Maintainers",
+        "Build Engineers",
+        "Component Developers"
+      ],
+      "entities": [
+        {
+          "name": "karto_sdk",
+          "type": "internal_package",
+          "build_type": "unknown"
+        },
+        {
+          "name": "slam_toolbox",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "rviz_common",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "rviz_default_plugins",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "rviz_ogre_vendor",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "rviz_rendering",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "tf2_ros",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "tf2",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "tf2_sensor_msgs",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "tf2_geometry_msgs",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "nav2_map_server",
+          "type": "external_ros_package"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "slam_toolbox",
+          "target": "rviz_common",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "rviz_default_plugins",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "rviz_ogre_vendor",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "rviz_rendering",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2_ros",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2_sensor_msgs",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2_geometry_msgs",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2_ros",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2_sensor_msgs",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2_geometry_msgs",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "nav2_map_server",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "karto_sdk",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2_ros",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2_geometry_msgs",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "tf2_sensor_msgs",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "slam_toolbox",
+          "target": "rviz_common",
+          "type": "source_include",
+          "origin": "observed_source"
+        }
+      ],
+      "mermaid_diagram": "flowchart TD\n    karto_sdk[\"karto_sdk (unknown)\"]\n    slam_toolbox[\"slam_toolbox (ament_cmake)\"]\n    rviz_common[\"rviz_common (external)\"]\n    slam_toolbox -->|\"depend\"| rviz_common\n    rviz_default_plugins[\"rviz_default_plugins (external)\"]\n    slam_toolbox -->|\"depend\"| rviz_default_plugins\n    rviz_ogre_vendor[\"rviz_ogre_vendor (external)\"]\n    slam_toolbox -->|\"depend\"| rviz_ogre_vendor\n    rviz_rendering[\"rviz_rendering (external)\"]\n    slam_toolbox -->|\"depend\"| rviz_rendering\n    tf2_ros[\"tf2_ros (external)\"]\n    slam_toolbox -->|\"build_depend\"| tf2_ros\n    tf2[\"tf2 (external)\"]\n    slam_toolbox -->|\"build_depend\"| tf2\n    tf2_sensor_msgs[\"tf2_sensor_msgs (external)\"]\n    slam_toolbox -->|\"build_depend\"| tf2_sensor_msgs\n    tf2_geometry_msgs[\"tf2_geometry_msgs (external)\"]\n    slam_toolbox -->|\"build_depend\"| tf2_geometry_msgs\n    slam_toolbox -->|\"exec_depend\"| tf2\n    slam_toolbox -->|\"exec_depend\"| tf2_ros\n    slam_toolbox -->|\"exec_depend\"| tf2_sensor_msgs\n    slam_toolbox -->|\"exec_depend\"| tf2_geometry_msgs\n    nav2_map_server[\"nav2_map_server (external)\"]\n    slam_toolbox -->|\"exec_depend\"| nav2_map_server\n    slam_toolbox -.->|\"source_include\"| karto_sdk\n    slam_toolbox -.->|\"source_include\"| tf2\n    slam_toolbox -.->|\"source_include\"| tf2_ros\n    slam_toolbox -.->|\"source_include\"| tf2_geometry_msgs\n    slam_toolbox -.->|\"source_include\"| tf2_sensor_msgs\n    slam_toolbox -.->|\"source_include\"| rviz_common"
+    },
+    "subsystem_component": {
+      "view_id": "subsystem_component",
+      "name": "Subsystem / Component View",
+      "description": "Recovered functional software subsystems, metrics, and inter-subsystem communication edges for slam_toolbox.",
+      "architectural_concerns": [
+        "Functional decomposition",
+        "Subsystem cohesion",
+        "Coupling minimization"
+      ],
+      "target_stakeholders": [
+        "Lead Architects",
+        "Functional Leads",
+        "Domain Engineers"
+      ],
+      "entities": [
+        {
+          "name": "localization_state_estimation",
+          "type": "production_subsystem",
+          "node_count": 2
+        },
+        {
+          "name": "pkg_slam_toolbox",
+          "type": "production_subsystem",
+          "node_count": 5
+        },
+        {
+          "name": "visualization_operator_ui",
+          "type": "production_subsystem",
+          "node_count": 3
+        }
+      ],
+      "relationships": [
+        {
+          "source": "visualization_operator_ui",
+          "target": "pkg_slam_toolbox",
+          "type": "topic",
+          "interface": "map"
+        },
+        {
+          "source": "visualization_operator_ui",
+          "target": "pkg_slam_toolbox",
+          "type": "service",
+          "interface": "slam_toolbox/serialize_map"
+        }
+      ],
+      "mermaid_diagram": "flowchart TB\n    subgraph ProductionSubsystems [\"slam_toolbox Production Stack\"]\n        subgraph localization_state_estimation [\"Localization State Estimation (Cohesion=0.0)\"]\n            localization_state_estimation_LocalizationSlamToolbox[\"LocalizationSlamToolbox\"]\n            localization_state_estimation_MapAndLocalizationSlamToolbox[\"MapAndLocalizationSlamToolbox\"]\n        end\n        subgraph pkg_slam_toolbox [\"Pkg Slam Toolbox (Cohesion=0.0)\"]\n            pkg_slam_toolbox_AsynchronousSlamToolbox[\"AsynchronousSlamToolbox\"]\n            pkg_slam_toolbox_DecentralizedMultiRobotSlamToolbox[\"DecentralizedMultiRobotSlamToolbox\"]\n            pkg_slam_toolbox_LifelongSlamToolbox[\"LifelongSlamToolbox\"]\n            pkg_slam_toolbox_SlamToolbox[\"SlamToolbox\"]\n            pkg_slam_toolbox_SynchronousSlamToolbox[\"SynchronousSlamToolbox\"]\n        end\n        subgraph visualization_operator_ui [\"Visualization Operator Ui (Cohesion=0.333)\"]\n            visualization_operator_ui_MergeMapsKinematic[\"MergeMapsKinematic\"]\n            visualization_operator_ui_Slamtoolboxplugin[\"Slamtoolboxplugin\"]\n            visualization_operator_ui_Slamtoolboxstateupdatenode[\"Slamtoolboxstateupdatenode\"]\n        end\n    end\n    visualization_operator_ui -->|\"topic: map\"| pkg_slam_toolbox\n    visualization_operator_ui -->|\"service: slam_toolbox/serialize_map\"| pkg_slam_toolbox"
+    },
+    "runtime_deployment": {
+      "view_id": "runtime_deployment",
+      "name": "Runtime Deployment View",
+      "description": "Static launch-declared deployment topology for slam_toolbox (0 containers, 7 launch instances). Note: OS process hosting is inferred from launch declarations, not runtime-observed.",
+      "architectural_concerns": [
+        "Process allocation",
+        "IPC vs Intra-process communication",
+        "Deployment efficiency"
+      ],
+      "target_stakeholders": [
+        "Deployment Engineers",
+        "Embedded Systems Leads",
+        "Performance Engineers"
+      ],
+      "entities": [
+        {
+          "name": "lifelong_slam_toolbox_node",
+          "package": "slam_toolbox",
+          "type": "launch_executable",
+          "launch_file": "launch/lifelong_launch.py"
+        },
+        {
+          "name": "localization_slam_toolbox_node",
+          "package": "slam_toolbox",
+          "type": "launch_executable",
+          "launch_file": "launch/localization_launch.py"
+        },
+        {
+          "name": "merge_maps_kinematic",
+          "package": "slam_toolbox",
+          "type": "launch_executable",
+          "launch_file": "launch/merge_maps_kinematic_launch.py"
+        },
+        {
+          "name": "sync_slam_toolbox_node",
+          "package": "slam_toolbox",
+          "type": "launch_executable",
+          "launch_file": "launch/offline_launch.py"
+        },
+        {
+          "name": "decentralized_multirobot_slam_toolbox_node",
+          "package": "slam_toolbox",
+          "type": "launch_executable",
+          "launch_file": "launch/online_async_decentralized_multirobot_launch.py"
+        },
+        {
+          "name": "async_slam_toolbox_node",
+          "package": "slam_toolbox",
+          "type": "launch_executable",
+          "launch_file": "launch/online_async_launch.py"
+        }
+      ],
+      "relationships": [],
+      "mermaid_diagram": "flowchart TD\n    subgraph StaticLaunchDeployment [\"Static Launch-Declared Deployment - slam_toolbox\"]\n        proc_slam_toolbox_lifelong_slam_toolbox_node[\"Launch Executable: lifelong_slam_toolbox_node [slam_toolbox]\"]\n        proc_slam_toolbox_localization_slam_toolbox_node[\"Launch Executable: localization_slam_toolbox_node [slam_toolbox]\"]\n        proc_slam_toolbox_merge_maps_kinematic[\"Launch Executable: merge_maps_kinematic [slam_toolbox]\"]\n        proc_slam_toolbox_sync_slam_toolbox_node[\"Launch Executable: sync_slam_toolbox_node [slam_toolbox]\"]\n        proc_slam_toolbox_decentralized_multirobot_slam_toolbox_node[\"Launch Executable: decentralized_multirobot_slam_toolbox_node [slam_toolbox]\"]\n        proc_slam_toolbox_async_slam_toolbox_node[\"Launch Executable: async_slam_toolbox_node [slam_toolbox]\"]\n    end"
+    },
+    "communication_topology": {
+      "view_id": "communication_topology",
+      "name": "Communication View",
+      "description": "Recovered interaction topology displaying topics, services, and actions for slam_toolbox.",
+      "architectural_concerns": [
+        "Dataflow",
+        "Message passing latency",
+        "Interface compatibility"
+      ],
+      "target_stakeholders": [
+        "Integration Engineers",
+        "Safety Engineers",
+        "Robotics Developers"
+      ],
+      "entities": [
+        {
+          "name": "MergeMapsKinematic",
+          "type": "node"
+        },
+        {
+          "name": "SlamToolbox",
+          "type": "node"
+        },
+        {
+          "name": "DecentralizedMultiRobotSlamToolbox",
+          "type": "node"
+        },
+        {
+          "name": "Slamtoolboxplugin",
+          "type": "node"
+        },
+        {
+          "name": "Slamtoolboxstateupdatenode",
+          "type": "node"
+        },
+        {
+          "name": "SynchronousSlamToolbox",
+          "type": "node"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "MergeMapsKinematic",
+          "target": "SlamToolbox",
+          "interface": "map",
+          "type": "topic"
+        },
+        {
+          "source": "SlamToolbox",
+          "target": "SlamToolbox",
+          "interface": "map",
+          "type": "topic"
+        },
+        {
+          "source": "DecentralizedMultiRobotSlamToolbox",
+          "target": "DecentralizedMultiRobotSlamToolbox",
+          "interface": "localized_scan",
+          "type": "topic"
+        },
+        {
+          "source": "Slamtoolboxplugin",
+          "target": "SlamToolbox",
+          "interface": "slam_toolbox/serialize_map",
+          "type": "service"
+        },
+        {
+          "source": "Slamtoolboxstateupdatenode",
+          "target": "SlamToolbox",
+          "interface": "slam_toolbox/serialize_map",
+          "type": "service"
+        },
+        {
+          "source": "Slamtoolboxplugin",
+          "target": "SlamToolbox",
+          "interface": "slam_toolbox/deserialize_map",
+          "type": "service"
+        },
+        {
+          "source": "Slamtoolboxstateupdatenode",
+          "target": "SlamToolbox",
+          "interface": "slam_toolbox/deserialize_map",
+          "type": "service"
+        },
+        {
+          "source": "Slamtoolboxplugin",
+          "target": "SlamToolbox",
+          "interface": "slam_toolbox/clear_changes",
+          "type": "service"
+        },
+        {
+          "source": "Slamtoolboxstateupdatenode",
+          "target": "SlamToolbox",
+          "interface": "slam_toolbox/clear_changes",
+          "type": "service"
+        },
+        {
+          "source": "Slamtoolboxplugin",
+          "target": "SlamToolbox",
+          "interface": "slam_toolbox/manual_loop_closure",
+          "type": "service"
+        },
+        {
+          "source": "Slamtoolboxstateupdatenode",
+          "target": "SlamToolbox",
+          "interface": "slam_toolbox/manual_loop_closure",
+          "type": "service"
+        },
+        {
+          "source": "Slamtoolboxplugin",
+          "target": "SlamToolbox",
+          "interface": "slam_toolbox/save_map",
+          "type": "service"
+        },
+        {
+          "source": "Slamtoolboxstateupdatenode",
+          "target": "SlamToolbox",
+          "interface": "slam_toolbox/save_map",
+          "type": "service"
+        },
+        {
+          "source": "Slamtoolboxplugin",
+          "target": "SynchronousSlamToolbox",
+          "interface": "slam_toolbox/clear_queue",
+          "type": "service"
+        },
+        {
+          "source": "Slamtoolboxstateupdatenode",
+          "target": "SynchronousSlamToolbox",
+          "interface": "slam_toolbox/clear_queue",
+          "type": "service"
+        }
+      ],
+      "mermaid_diagram": "flowchart LR\n    MergeMapsKinematic[\"MergeMapsKinematic\"]\n    SlamToolbox[\"SlamToolbox\"]\n    MergeMapsKinematic -->|\"map [topic]\"| SlamToolbox\n    SlamToolbox -->|\"map [topic]\"| SlamToolbox\n    DecentralizedMultiRobotSlamToolbox[\"DecentralizedMultiRobotSlamToolbox\"]\n    DecentralizedMultiRobotSlamToolbox -->|\"localized_scan [topic]\"| DecentralizedMultiRobotSlamToolbox\n    Slamtoolboxplugin[\"Slamtoolboxplugin\"]\n    Slamtoolboxplugin -->|\"slam_toolbox/serialize_map [service]\"| SlamToolbox\n    Slamtoolboxstateupdatenode[\"Slamtoolboxstateupdatenode\"]\n    Slamtoolboxstateupdatenode -->|\"slam_toolbox/serialize_map [service]\"| SlamToolbox\n    Slamtoolboxplugin -->|\"slam_toolbox/deserialize_map [service]\"| SlamToolbox\n    Slamtoolboxstateupdatenode -->|\"slam_toolbox/deserialize_map [service]\"| SlamToolbox\n    Slamtoolboxplugin -->|\"slam_toolbox/clear_changes [service]\"| SlamToolbox\n    Slamtoolboxstateupdatenode -->|\"slam_toolbox/clear_changes [service]\"| SlamToolbox\n    Slamtoolboxplugin -->|\"slam_toolbox/manual_loop_closure [service]\"| SlamToolbox\n    Slamtoolboxstateupdatenode -->|\"slam_toolbox/manual_loop_closure [service]\"| SlamToolbox\n    Slamtoolboxplugin -->|\"slam_toolbox/save_map [service]\"| SlamToolbox\n    Slamtoolboxstateupdatenode -->|\"slam_toolbox/save_map [service]\"| SlamToolbox\n    SynchronousSlamToolbox[\"SynchronousSlamToolbox\"]\n    Slamtoolboxplugin -->|\"slam_toolbox/clear_queue [service]\"| SynchronousSlamToolbox\n    Slamtoolboxstateupdatenode -->|\"slam_toolbox/clear_queue [service]\"| SynchronousSlamToolbox"
+    },
+    "lifecycle_architecture": {
+      "view_id": "lifecycle_architecture",
+      "name": "Lifecycle View",
+      "description": "State machine sequencing and lifecycle management recovered for slam_toolbox.",
+      "architectural_concerns": [
+        "Deterministic startup",
+        "State consistency",
+        "Fault isolation"
+      ],
+      "target_stakeholders": [
+        "System Engineers",
+        "Safety Certification Authorities",
+        "Operations"
+      ],
+      "entities": [],
+      "relationships": [],
+      "mermaid_diagram": "stateDiagram-v2\n    [*] --> Unconfigured\n    Unconfigured --> Configuring : configure() [ID 1]\n    Configuring --> Inactive : success\n    Configuring --> Unconfigured : failure\n    Inactive --> Activating : activate() [ID 3]\n    Activating --> Active : success\n    Activating --> Inactive : failure\n    Active --> Deactivating : deactivate() [ID 4]\n    Deactivating --> Inactive : success\n    Inactive --> CleaningUp : cleanup() [ID 2]\n    CleaningUp --> Unconfigured : success\n    Active --> ShuttingDown : shutdown() [ID 7]\n    Inactive --> ShuttingDown : shutdown() [ID 6]\n    Unconfigured --> ShuttingDown : shutdown() [ID 5]\n    ShuttingDown --> Finalized : success\n    Finalized --> [*]\n"
+    },
+    "plugin_architecture": {
+      "view_id": "plugin_architecture",
+      "name": "Plugin Architecture View",
+      "description": "Pluginlib extensibility patterns and implementations recovered for slam_toolbox.",
+      "architectural_concerns": [
+        "Extensibility",
+        "Algorithm swappability",
+        "Runtime polymorphism"
+      ],
+      "target_stakeholders": [
+        "Algorithm Developers",
+        "Extension Authors",
+        "Software Architects"
+      ],
+      "entities": [
+        {
+          "name": "rviz_common::Panel",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "slam_toolbox::SlamToolboxPlugin",
+          "package": "rviz_plugins.xml",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "karto::ScanSolver",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "solver_plugins::CeresSolver",
+          "package": "solver_plugins.xml",
+          "type": "plugin_implementation"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "rviz_common::Panel",
+          "target": "slam_toolbox::SlamToolboxPlugin",
+          "type": "implements"
+        },
+        {
+          "source": "karto::ScanSolver",
+          "target": "solver_plugins::CeresSolver",
+          "type": "implements"
+        }
+      ],
+      "mermaid_diagram": "classDiagram\n    direction TB\n    class rviz_common_Panel {\n        <<interface>>\n    }\n    class slam_toolbox_SlamToolboxPlugin {\n        package: rviz_plugins.xml\n    }\n    rviz_common_Panel <|-- slam_toolbox_SlamToolboxPlugin\n    class karto_ScanSolver {\n        <<interface>>\n    }\n    class solver_plugins_CeresSolver {\n        package: solver_plugins.xml\n    }\n    karto_ScanSolver <|-- solver_plugins_CeresSolver"
+    },
+    "behavior_tree_orchestration": {
+      "view_id": "behavior_tree_orchestration",
+      "name": "Behavior Tree View",
+      "description": "Behavior Tree navigation orchestration is not utilized in slam_toolbox.",
+      "architectural_concerns": [
+        "Autonomous mission execution",
+        "Reactive recovery",
+        "Blackboard dataflow"
+      ],
+      "target_stakeholders": [
+        "Autonomy Engineers",
+        "Behavior Designers",
+        "Test Engineers"
+      ],
+      "entities": [],
+      "relationships": [],
+      "mermaid_diagram": "flowchart TD\n    NoBT[\"No Behavior Tree definitions declared in slam_toolbox\"]\n"
+    }
+  },
+  "summary": {
+    "total_views": 8,
+    "standards_alignment": "ISO/IEC/IEEE 42010",
+    "view_ids": [
+      "system_context",
+      "package_dependency",
+      "subsystem_component",
+      "runtime_deployment",
+      "communication_topology",
+      "lifecycle_architecture",
+      "plugin_architecture",
+      "behavior_tree_orchestration"
+    ],
+    "subsystem_count": 3,
+    "managed_node_count": 0,
+    "plugin_count": 2,
+    "behavior_trees_count": 0
+  },
+  "_provenance": {
+    "repository_name": "slam_toolbox",
+    "repository_url": "https://github.com/SteveMacenski/slam_toolbox",
+    "commit_hash": "eee0cd5e4a161bb10f8334b5420c93876b31ca99",
+    "branch": "ros2",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:59.119243+00:00"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "provenance": null,
+  "plugins": [
+    {
+      "plugin_name": "jaco2_jaco_arm/IKFastKinematicsPlugin",
+      "class_type": "jaco2_jaco_arm::IKFastKinematicsPlugin",
+      "base_class_type": "kinematics::KinematicsBase",
+      "package_name": "jaco2_jaco_arm_ikfast_plugin",
+      "manifest_file": "jaco2_jaco_arm_ikfast_plugin/jaco2_jaco_arm_moveit_ikfast_plugin_description.xml",
+      "library_path": null,
+      "description": "IKFast61 plugin for closed-form kinematics of jaco2 jaco_arm",
+      "plugin_category": "kinematics_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "jaco2_jaco_arm_ikfast_plugin/jaco2_jaco_arm_moveit_ikfast_plugin_description.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'jaco2_jaco_arm::IKFastKinematicsPlugin' extending base class 'kinematics::KinematicsBase'"
+        }
+      ]
+    }
+  ],
+  "categories": {
+    "kinematics_plugin": [
+      "jaco2_jaco_arm/IKFastKinematicsPlugin"
+    ]
+  },
+  "server_configurations": [],
+  "status_counts": {
+    "registered": 0,
+    "available": 1,
+    "configured": 0,
+    "selected": 0,
+    "runtime_loaded": 0,
+    "unknown": 0
+  },
+  "mermaid_diagram": "classDiagram\n    direction TB\n    class kinematics_KinematicsBase {\n        <<interface>>\n    }\n    class jaco2_jaco_arm_IKFastKinematicsPlugin {\n        package: jaco2_jaco_arm_ikfast_plugin\n    }\n    kinematics_KinematicsBase <|-- jaco2_jaco_arm_IKFastKinematicsPlugin",
+  "_provenance": {
+    "repository_name": "jaco2_sim_devkit",
+    "repository_url": "https://github.com/VibhuSharma19/jaco2_sim_devkit",
+    "commit_hash": "993a6e3de05e50fec4ce40c65a5b1d3a9d8ca9cc",
+    "branch": "main",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:38.821331+00:00"
+  }
+}

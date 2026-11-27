@@ -1,0 +1,733 @@
+{
+  "provenance": null,
+  "standards_alignment": "ISO/IEC/IEEE 42010",
+  "views": {
+    "system_context": {
+      "view_id": "system_context",
+      "name": "System Context View",
+      "description": "System boundary for jaco2_sim_devkit derived from 11 source nodes, unmatched external-peer interfaces, and 9 external launch packages.",
+      "architectural_concerns": [
+        "System boundaries",
+        "External interfaces",
+        "Operational environment"
+      ],
+      "target_stakeholders": [
+        "System Architects",
+        "Robotics Integrators",
+        "Application Engineers"
+      ],
+      "entities": [
+        {
+          "name": "jaco2_sim_devkit Core Nodes",
+          "type": "software_system"
+        },
+        {
+          "name": "External ROS 2 Callers / Clients",
+          "type": "external_actor"
+        },
+        {
+          "name": "External Publishers / Sensors",
+          "type": "external_source"
+        },
+        {
+          "name": "External Targets (controller_manager, joint_state_publisher_gui, joy)",
+          "type": "external_target"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "External ROS 2 Callers / Clients",
+          "target": "jaco2_sim_devkit Core Nodes",
+          "type": "service_or_action_call"
+        },
+        {
+          "source": "External Publishers / Sensors",
+          "target": "jaco2_sim_devkit Core Nodes",
+          "type": "topic_subscription"
+        },
+        {
+          "source": "jaco2_sim_devkit Core Nodes",
+          "target": "External Targets (controller_manager, joint_state_publisher_gui, joy)",
+          "type": "topic_or_service_output"
+        }
+      ],
+      "mermaid_diagram": "flowchart TD\n    subgraph SystemBoundary [\"jaco2_sim_devkit System Boundary (11 source nodes)\"]\n        SystemCore[\"jaco2_sim_devkit Core Nodes\"]\n    end\n    ClientApp[\"External ROS 2 Callers / Clients\"]\n    ClientApp -->|\"follow_joint_trajectory\"| SystemCore\n    ExtSources[\"External Publishers / Sensors\"]\n    ExtSources -->|\"/joy, /rgbd_camera/depth_image, joint_commands\"| SystemCore\n    ExtTargets[\"External Targets (controller_manager, joint_state_publisher_gui, joy)\"]\n    SystemCore -->|\"/planning_scene, /rgbd_camera/corrected_depth_image, /servo_node/delta_joint_cmds, /servo_node/delta_twist_cmds\"| ExtTargets\n"
+    },
+    "package_dependency": {
+      "view_id": "package_dependency",
+      "name": "Package Dependency View",
+      "description": "Directed package dependency graph across 11 repository packages and 55 external dependencies (package.xml, setup.py, and resolved source dependencies).",
+      "architectural_concerns": [
+        "Package coupling",
+        "Build layering",
+        "Modular reusability"
+      ],
+      "target_stakeholders": [
+        "Software Maintainers",
+        "Build Engineers",
+        "Component Developers"
+      ],
+      "entities": [
+        {
+          "name": "jaco2_bringup",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "jaco2_controller",
+          "type": "internal_package",
+          "build_type": "ament_python"
+        },
+        {
+          "name": "jaco2_description",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "jaco2_gazebo",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "jaco2_jaco_arm_ikfast_plugin",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "jaco2_moveit_config",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "jaco2_moveit_demos",
+          "type": "internal_package",
+          "build_type": "ament_python"
+        },
+        {
+          "name": "jaco2_moveit_task_constructor",
+          "type": "internal_package",
+          "build_type": "ament_python"
+        },
+        {
+          "name": "jaco2_servo",
+          "type": "internal_package",
+          "build_type": "ament_python"
+        },
+        {
+          "name": "jaco2_sim_devkit",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "jaco2_utils",
+          "type": "internal_package",
+          "build_type": "ament_python"
+        },
+        {
+          "name": "controller_manager",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "xacro",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "tf2_ros",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "tf2_kdl",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "tf2_eigen",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "moveit_core",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "moveit",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "moveit_ros_move_group",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "moveit_kinematics",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "moveit_planners",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "moveit_simple_controller_manager",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "moveit_configs_utils",
+          "type": "external_ros_package"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "jaco2_controller",
+          "target": "controller_manager",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_controller",
+          "target": "jaco2_description",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_controller",
+          "target": "controller_manager",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_controller",
+          "target": "jaco2_description",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_description",
+          "target": "xacro",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_description",
+          "target": "tf2_ros",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_description",
+          "target": "tf2_ros",
+          "type": "source_import",
+          "origin": "observed_source"
+        },
+        {
+          "source": "jaco2_description",
+          "target": "jaco2_utils",
+          "type": "source_import",
+          "origin": "observed_source"
+        },
+        {
+          "source": "jaco2_jaco_arm_ikfast_plugin",
+          "target": "tf2_kdl",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_jaco_arm_ikfast_plugin",
+          "target": "tf2_eigen",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_jaco_arm_ikfast_plugin",
+          "target": "moveit_core",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_jaco_arm_ikfast_plugin",
+          "target": "moveit_core",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_jaco_arm_ikfast_plugin",
+          "target": "moveit",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "jaco2_jaco_arm_ikfast_plugin",
+          "target": "tf2_kdl",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "jaco2_jaco_arm_ikfast_plugin",
+          "target": "tf2_eigen",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "jaco2_moveit_config",
+          "target": "moveit_ros_move_group",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_moveit_config",
+          "target": "moveit_kinematics",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_moveit_config",
+          "target": "moveit_planners",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_moveit_config",
+          "target": "moveit_simple_controller_manager",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_moveit_config",
+          "target": "tf2_ros",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_moveit_config",
+          "target": "xacro",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_moveit_config",
+          "target": "controller_manager",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_moveit_config",
+          "target": "jaco2_description",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_moveit_config",
+          "target": "moveit_configs_utils",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_moveit_config",
+          "target": "moveit_configs_utils",
+          "type": "source_import",
+          "origin": "observed_source"
+        },
+        {
+          "source": "jaco2_moveit_demos",
+          "target": "moveit",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_moveit_demos",
+          "target": "moveit",
+          "type": "source_import",
+          "origin": "observed_source"
+        },
+        {
+          "source": "jaco2_moveit_task_constructor",
+          "target": "moveit",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_moveit_task_constructor",
+          "target": "moveit",
+          "type": "source_import",
+          "origin": "observed_source"
+        },
+        {
+          "source": "jaco2_moveit_task_constructor",
+          "target": "jaco2_utils",
+          "type": "source_import",
+          "origin": "observed_source"
+        },
+        {
+          "source": "jaco2_sim_devkit",
+          "target": "jaco2_description",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_sim_devkit",
+          "target": "jaco2_controller",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_sim_devkit",
+          "target": "jaco2_moveit_config",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_sim_devkit",
+          "target": "jaco2_moveit_demos",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_sim_devkit",
+          "target": "jaco2_servo",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_sim_devkit",
+          "target": "jaco2_utils",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_sim_devkit",
+          "target": "jaco2_moveit_task_constructor",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_sim_devkit",
+          "target": "jaco2_gazebo",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_sim_devkit",
+          "target": "jaco2_bringup",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "jaco2_sim_devkit",
+          "target": "jaco2_jaco_arm_ikfast_plugin",
+          "type": "depend",
+          "origin": "declared_manifest"
+        }
+      ],
+      "mermaid_diagram": "flowchart TD\n    jaco2_bringup[\"jaco2_bringup (ament_cmake)\"]\n    jaco2_controller[\"jaco2_controller (ament_python)\"]\n    jaco2_description[\"jaco2_description (ament_cmake)\"]\n    jaco2_gazebo[\"jaco2_gazebo (ament_cmake)\"]\n    jaco2_jaco_arm_ikfast_plugin[\"jaco2_jaco_arm_ikfast_plugin (ament_cmake)\"]\n    jaco2_moveit_config[\"jaco2_moveit_config (ament_cmake)\"]\n    jaco2_moveit_demos[\"jaco2_moveit_demos (ament_python)\"]\n    jaco2_moveit_task_constructor[\"jaco2_moveit_task_constructor (ament_python)\"]\n    jaco2_servo[\"jaco2_servo (ament_python)\"]\n    jaco2_sim_devkit[\"jaco2_sim_devkit (ament_cmake)\"]\n    jaco2_utils[\"jaco2_utils (ament_python)\"]\n    controller_manager[\"controller_manager (external)\"]\n    jaco2_controller -->|\"build_depend\"| controller_manager\n    jaco2_controller -->|\"build_depend\"| jaco2_description\n    jaco2_controller -->|\"exec_depend\"| controller_manager\n    jaco2_controller -->|\"exec_depend\"| jaco2_description\n    xacro[\"xacro (external)\"]\n    jaco2_description -->|\"depend\"| xacro\n    tf2_ros[\"tf2_ros (external)\"]\n    jaco2_description -->|\"depend\"| tf2_ros\n    jaco2_description -.->|\"source_import\"| tf2_ros\n    jaco2_description -.->|\"source_import\"| jaco2_utils\n    tf2_kdl[\"tf2_kdl (external)\"]\n    jaco2_jaco_arm_ikfast_plugin -->|\"build_depend\"| tf2_kdl\n    tf2_eigen[\"tf2_eigen (external)\"]\n    jaco2_jaco_arm_ikfast_plugin -->|\"build_depend\"| tf2_eigen\n    moveit_core[\"moveit_core (external)\"]\n    jaco2_jaco_arm_ikfast_plugin -->|\"build_depend\"| moveit_core\n    jaco2_jaco_arm_ikfast_plugin -->|\"exec_depend\"| moveit_core\n    moveit[\"moveit (external)\"]\n    jaco2_jaco_arm_ikfast_plugin -.->|\"source_include\"| moveit\n    jaco2_jaco_arm_ikfast_plugin -.->|\"source_include\"| tf2_kdl\n    jaco2_jaco_arm_ikfast_plugin -.->|\"source_include\"| tf2_eigen\n    moveit_ros_move_group[\"moveit_ros_move_group (external)\"]\n    jaco2_moveit_config -->|\"exec_depend\"| moveit_ros_move_group\n    moveit_kinematics[\"moveit_kinematics (external)\"]\n    jaco2_moveit_config -->|\"exec_depend\"| moveit_kinematics\n    moveit_planners[\"moveit_planners (external)\"]\n    jaco2_moveit_config -->|\"exec_depend\"| moveit_planners\n    moveit_simple_controller_manager[\"moveit_simple_controller_manager (external)\"]\n    jaco2_moveit_config -->|\"exec_depend\"| moveit_simple_controller_manager\n    jaco2_moveit_config -->|\"exec_depend\"| tf2_ros\n    jaco2_moveit_config -->|\"exec_depend\"| xacro\n    jaco2_moveit_config -->|\"exec_depend\"| controller_manager\n    jaco2_moveit_config -->|\"exec_depend\"| jaco2_description\n    moveit_configs_utils[\"moveit_configs_utils (external)\"]\n    jaco2_moveit_config -->|\"exec_depend\"| moveit_configs_utils\n    jaco2_moveit_config -.->|\"source_import\"| moveit_configs_utils\n    jaco2_moveit_demos -->|\"exec_depend\"| moveit\n    jaco2_moveit_demos -.->|\"source_import\"| moveit\n    jaco2_moveit_task_constructor -->|\"exec_depend\"| moveit\n    jaco2_moveit_task_constructor -.->|\"source_import\"| moveit\n    jaco2_moveit_task_constructor -.->|\"source_import\"| jaco2_utils\n    jaco2_sim_devkit -->|\"depend\"| jaco2_description\n    jaco2_sim_devkit -->|\"depend\"| jaco2_controller\n    jaco2_sim_devkit -->|\"depend\"| jaco2_moveit_config\n    jaco2_sim_devkit -->|\"depend\"| jaco2_moveit_demos\n    jaco2_sim_devkit -->|\"depend\"| jaco2_servo\n    jaco2_sim_devkit -->|\"depend\"| jaco2_utils\n    jaco2_sim_devkit -->|\"depend\"| jaco2_moveit_task_constructor\n    jaco2_sim_devkit -->|\"depend\"| jaco2_gazebo\n    jaco2_sim_devkit -->|\"depend\"| jaco2_bringup\n    jaco2_sim_devkit -->|\"depend\"| jaco2_jaco_arm_ikfast_plugin"
+    },
+    "subsystem_component": {
+      "view_id": "subsystem_component",
+      "name": "Subsystem / Component View",
+      "description": "Recovered functional software subsystems, metrics, and inter-subsystem communication edges for jaco2_sim_devkit.",
+      "architectural_concerns": [
+        "Functional decomposition",
+        "Subsystem cohesion",
+        "Coupling minimization"
+      ],
+      "target_stakeholders": [
+        "Lead Architects",
+        "Functional Leads",
+        "Domain Engineers"
+      ],
+      "entities": [
+        {
+          "name": "pkg_jaco2_moveit_task_constructor",
+          "type": "production_subsystem",
+          "node_count": 3
+        },
+        {
+          "name": "pkg_jaco2_moveit_demos",
+          "type": "production_subsystem",
+          "node_count": 2
+        },
+        {
+          "name": "pkg_jaco2_servo",
+          "type": "production_subsystem",
+          "node_count": 3
+        },
+        {
+          "name": "pkg_jaco2_gazebo",
+          "type": "production_subsystem",
+          "node_count": 1
+        },
+        {
+          "name": "pkg_jaco2_controller",
+          "type": "production_subsystem",
+          "node_count": 1
+        },
+        {
+          "name": "pkg_jaco2_description",
+          "type": "production_subsystem",
+          "node_count": 1
+        }
+      ],
+      "relationships": [],
+      "mermaid_diagram": "flowchart TB\n    subgraph ProductionSubsystems [\"jaco2_sim_devkit Production Stack\"]\n        subgraph pkg_jaco2_moveit_task_constructor [\"Pkg Jaco2 Moveit Task Constructor (Cohesion=0.0)\"]\n            pkg_jaco2_moveit_task_constructor_MtcCartesian[\"MtcCartesian\"]\n            pkg_jaco2_moveit_task_constructor_MtcPickplace[\"MtcPickplace\"]\n            pkg_jaco2_moveit_task_constructor_ScenePublisher[\"ScenePublisher\"]\n        end\n        subgraph pkg_jaco2_moveit_demos [\"Pkg Jaco2 Moveit Demos (Cohesion=0.0)\"]\n            pkg_jaco2_moveit_demos_MoveitInterface[\"MoveitInterface\"]\n            pkg_jaco2_moveit_demos_MoveitPlanning[\"MoveitPlanning\"]\n        end\n        subgraph pkg_jaco2_servo [\"Pkg Jaco2 Servo (Cohesion=0.0)\"]\n            pkg_jaco2_servo_CommandSwitch[\"CommandSwitch\"]\n            pkg_jaco2_servo_KeyboardServo[\"KeyboardServo\"]\n            pkg_jaco2_servo_Xbox360Teleop[\"Xbox360Teleop\"]\n        end\n        subgraph pkg_jaco2_gazebo [\"Pkg Jaco2 Gazebo (Cohesion=N/A)\"]\n            pkg_jaco2_gazebo_DepthImageRemap[\"DepthImageRemap\"]\n        end\n        subgraph pkg_jaco2_controller [\"Pkg Jaco2 Controller (Cohesion=N/A)\"]\n            pkg_jaco2_controller_JSPGUIController[\"JSPGUIController\"]\n        end\n        subgraph pkg_jaco2_description [\"Pkg Jaco2 Description (Cohesion=N/A)\"]\n            pkg_jaco2_description_TrackEndEffector[\"TrackEndEffector\"]\n        end\n    end"
+    },
+    "runtime_deployment": {
+      "view_id": "runtime_deployment",
+      "name": "Runtime Deployment View",
+      "description": "Static launch-declared deployment topology for jaco2_sim_devkit (0 containers, 38 launch instances). Note: OS process hosting is inferred from launch declarations, not runtime-observed.",
+      "architectural_concerns": [
+        "Process allocation",
+        "IPC vs Intra-process communication",
+        "Deployment efficiency"
+      ],
+      "target_stakeholders": [
+        "Deployment Engineers",
+        "Embedded Systems Leads",
+        "Performance Engineers"
+      ],
+      "entities": [
+        {
+          "name": "ros2_control_node",
+          "package": "controller_manager",
+          "type": "launch_executable",
+          "launch_file": "jaco2_controller/launch/controller.launch.py"
+        },
+        {
+          "name": "spawner",
+          "package": "controller_manager",
+          "type": "launch_executable",
+          "launch_file": "jaco2_controller/launch/controller.launch.py"
+        },
+        {
+          "name": "robot_state_publisher",
+          "package": "robot_state_publisher",
+          "type": "launch_executable",
+          "launch_file": "jaco2_controller/launch/generic_controller.launch.py"
+        },
+        {
+          "name": "joint_state_publisher_gui",
+          "package": "joint_state_publisher_gui",
+          "type": "launch_executable",
+          "launch_file": "jaco2_controller/launch/jsp_gui_control.launch.py"
+        },
+        {
+          "name": "jsp_controller",
+          "package": "jaco2_controller",
+          "type": "launch_executable",
+          "launch_file": "jaco2_controller/launch/jsp_gui_control.launch.py"
+        },
+        {
+          "name": "rviz2",
+          "package": "rviz2",
+          "type": "launch_executable",
+          "launch_file": "jaco2_description/launch/display.launch.py"
+        },
+        {
+          "name": "create",
+          "package": "ros_gz_sim",
+          "type": "launch_executable",
+          "launch_file": "jaco2_description/launch/gazebo.launch.py"
+        },
+        {
+          "name": "parameter_bridge",
+          "package": "ros_gz_bridge",
+          "type": "launch_executable",
+          "launch_file": "jaco2_description/launch/gazebo.launch.py"
+        },
+        {
+          "name": "depth_image_remap.py",
+          "package": "jaco2_gazebo",
+          "type": "launch_executable",
+          "launch_file": "jaco2_gazebo/launch/gazebo_world.launch.py"
+        },
+        {
+          "name": "move_group",
+          "package": "moveit_ros_move_group",
+          "type": "launch_executable",
+          "launch_file": "jaco2_moveit_config/launch/jaco2_move_group.launch.py"
+        },
+        {
+          "name": "${exe}",
+          "package": "jaco2_moveit_demos",
+          "type": "launch_executable",
+          "launch_file": "jaco2_moveit_demos/launch/moveit_py.launch.py"
+        },
+        {
+          "name": "scene_publisher",
+          "package": "jaco2_moveit_task_constructor",
+          "type": "launch_executable",
+          "launch_file": "jaco2_moveit_task_constructor/launch/run.launch.py"
+        },
+        {
+          "name": "${exe}",
+          "package": "jaco2_moveit_task_constructor",
+          "type": "launch_executable",
+          "launch_file": "jaco2_moveit_task_constructor/launch/run.launch.py"
+        },
+        {
+          "name": "joy_teleop",
+          "package": "jaco2_servo",
+          "type": "launch_executable",
+          "launch_file": "jaco2_servo/launch/joystick_teleop.launch.py"
+        },
+        {
+          "name": "joy_node",
+          "package": "joy",
+          "type": "launch_executable",
+          "launch_file": "jaco2_servo/launch/joystick_teleop.launch.py"
+        },
+        {
+          "name": "servo_node",
+          "package": "moveit_servo",
+          "type": "launch_executable",
+          "launch_file": "jaco2_servo/launch/joystick_teleop.launch.py"
+        }
+      ],
+      "relationships": [],
+      "mermaid_diagram": "flowchart TD\n    subgraph StaticLaunchDeployment [\"Static Launch-Declared Deployment - jaco2_sim_devkit\"]\n        proc_controller_manager_ros2_control_node[\"Launch Executable: ros2_control_node [controller_manager]\"]\n        proc_controller_manager_spawner[\"Launch Executable: spawner [controller_manager]\"]\n        proc_robot_state_publisher_robot_state_publisher[\"Launch Executable: robot_state_publisher [robot_state_publisher]\"]\n        proc_joint_state_publisher_gui_joint_state_publisher_gui[\"Launch Executable: joint_state_publisher_gui [joint_state_publisher_gui]\"]\n        proc_jaco2_controller_jsp_controller[\"Launch Executable: jsp_controller [jaco2_controller]\"]\n        proc_rviz2_rviz2[\"Launch Executable: rviz2 [rviz2]\"]\n        proc_ros_gz_sim_create[\"Launch Executable: create [ros_gz_sim]\"]\n        proc_ros_gz_bridge_parameter_bridge[\"Launch Executable: parameter_bridge [ros_gz_bridge]\"]\n        proc_jaco2_gazebo_depth_image_remap_py[\"Launch Executable: depth_image_remap.py [jaco2_gazebo]\"]\n        proc_moveit_ros_move_group_move_group[\"Launch Executable: move_group [moveit_ros_move_group]\"]\n        proc_jaco2_moveit_demos_dyn_exe[\"Launch Executable: ${exe} (unresolved dynamic)\"]\n        proc_jaco2_moveit_task_constructor_scene_publisher[\"Launch Executable: scene_publisher [jaco2_moveit_task_constructor]\"]\n        proc_jaco2_moveit_task_constructor_dyn_exe[\"Launch Executable: ${exe} (unresolved dynamic)\"]\n        proc_jaco2_servo_joy_teleop[\"Launch Executable: joy_teleop [jaco2_servo]\"]\n        proc_joy_joy_node[\"Launch Executable: joy_node [joy]\"]\n        proc_moveit_servo_servo_node[\"Launch Executable: servo_node [moveit_servo]\"]\n    end"
+    },
+    "communication_topology": {
+      "view_id": "communication_topology",
+      "name": "Communication View",
+      "description": "Recovered interaction topology displaying topics, services, and actions for jaco2_sim_devkit.",
+      "architectural_concerns": [
+        "Dataflow",
+        "Message passing latency",
+        "Interface compatibility"
+      ],
+      "target_stakeholders": [
+        "Integration Engineers",
+        "Safety Engineers",
+        "Robotics Developers"
+      ],
+      "entities": [
+        {
+          "name": "moveit_controllers",
+          "type": "node"
+        },
+        {
+          "name": "ros2_controllers",
+          "type": "node"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "moveit_controllers",
+          "target": "ros2_controllers",
+          "interface": "arm_controller/follow_joint_trajectory",
+          "type": "action"
+        },
+        {
+          "source": "moveit_controllers",
+          "target": "ros2_controllers",
+          "interface": "arm_controller/follow_joint_trajectory",
+          "type": "action"
+        },
+        {
+          "source": "moveit_controllers",
+          "target": "ros2_controllers",
+          "interface": "gripper_controller/follow_joint_trajectory",
+          "type": "action"
+        },
+        {
+          "source": "moveit_controllers",
+          "target": "ros2_controllers",
+          "interface": "gripper_controller/follow_joint_trajectory",
+          "type": "action"
+        }
+      ],
+      "mermaid_diagram": "flowchart LR\n    moveit_controllers[\"moveit_controllers\"]\n    ros2_controllers[\"ros2_controllers\"]\n    moveit_controllers -->|\"arm_controller/follow_joint_trajectory [action]\"| ros2_controllers\n    moveit_controllers -->|\"arm_controller/follow_joint_trajectory [action]\"| ros2_controllers\n    moveit_controllers -->|\"gripper_controller/follow_joint_trajectory [action]\"| ros2_controllers\n    moveit_controllers -->|\"gripper_controller/follow_joint_trajectory [action]\"| ros2_controllers"
+    },
+    "lifecycle_architecture": {
+      "view_id": "lifecycle_architecture",
+      "name": "Lifecycle View",
+      "description": "No ROS 2 lifecycle nodes, lifecycle managers, or lifecycle configurations were detected in jaco2_sim_devkit. System-specific lifecycle diagram omitted.",
+      "architectural_concerns": [
+        "Deterministic startup",
+        "State consistency",
+        "Fault isolation"
+      ],
+      "target_stakeholders": [
+        "System Engineers",
+        "Safety Certification Authorities",
+        "Operations"
+      ],
+      "entities": [],
+      "relationships": [],
+      "mermaid_diagram": "flowchart TD\n    NoLifecycle[\"No ROS 2 lifecycle managers or lifecycle nodes detected in jaco2_sim_devkit\"]\n"
+    },
+    "plugin_architecture": {
+      "view_id": "plugin_architecture",
+      "name": "Plugin Architecture View",
+      "description": "Pluginlib extensibility patterns and implementations recovered for jaco2_sim_devkit.",
+      "architectural_concerns": [
+        "Extensibility",
+        "Algorithm swappability",
+        "Runtime polymorphism"
+      ],
+      "target_stakeholders": [
+        "Algorithm Developers",
+        "Extension Authors",
+        "Software Architects"
+      ],
+      "entities": [
+        {
+          "name": "kinematics::KinematicsBase",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "jaco2_jaco_arm::IKFastKinematicsPlugin",
+          "package": "jaco2_jaco_arm_ikfast_plugin",
+          "type": "plugin_implementation"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "kinematics::KinematicsBase",
+          "target": "jaco2_jaco_arm::IKFastKinematicsPlugin",
+          "type": "implements"
+        }
+      ],
+      "mermaid_diagram": "classDiagram\n    direction TB\n    class kinematics_KinematicsBase {\n        <<interface>>\n    }\n    class jaco2_jaco_arm_IKFastKinematicsPlugin {\n        package: jaco2_jaco_arm_ikfast_plugin\n    }\n    kinematics_KinematicsBase <|-- jaco2_jaco_arm_IKFastKinematicsPlugin"
+    },
+    "behavior_tree_orchestration": {
+      "view_id": "behavior_tree_orchestration",
+      "name": "Behavior Tree View",
+      "description": "Behavior Tree navigation orchestration is not utilized in jaco2_sim_devkit.",
+      "architectural_concerns": [
+        "Autonomous mission execution",
+        "Reactive recovery",
+        "Blackboard dataflow"
+      ],
+      "target_stakeholders": [
+        "Autonomy Engineers",
+        "Behavior Designers",
+        "Test Engineers"
+      ],
+      "entities": [],
+      "relationships": [],
+      "mermaid_diagram": "flowchart TD\n    NoBT[\"No Behavior Tree definitions declared in jaco2_sim_devkit\"]\n"
+    }
+  },
+  "summary": {
+    "total_views": 8,
+    "standards_alignment": "ISO/IEC/IEEE 42010",
+    "view_ids": [
+      "system_context",
+      "package_dependency",
+      "subsystem_component",
+      "runtime_deployment",
+      "communication_topology",
+      "lifecycle_architecture",
+      "plugin_architecture",
+      "behavior_tree_orchestration"
+    ],
+    "subsystem_count": 6,
+    "managed_node_count": 0,
+    "plugin_count": 1,
+    "behavior_trees_count": 0
+  },
+  "_provenance": {
+    "repository_name": "jaco2_sim_devkit",
+    "repository_url": "https://github.com/VibhuSharma19/jaco2_sim_devkit",
+    "commit_hash": "993a6e3de05e50fec4ce40c65a5b1d3a9d8ca9cc",
+    "branch": "main",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:39.301150+00:00"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "repository_name": "Navigation2",
+  "repository_url": "https://github.com/ros-planning/navigation2",
+  "commit_hash": "6dbf4549ae1914188916b06dcc19dd3a8115d0a5",
+  "branch": "main",
+  "archsynth_version": "2.0",
+  "artifact_schema_version": "1.0",
+  "analysis_timestamp": "2026-11-27T08:13:39.256147+00:00"
+}

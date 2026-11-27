@@ -1,0 +1,433 @@
+[
+  {
+    "instance_id": "launch/lifelong_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+    "node_id": "slam_toolbox::LifelongSlamToolbox",
+    "candidate_node_ids": [
+      "slam_toolbox::LifelongSlamToolbox"
+    ],
+    "mapping_status": "resolved",
+    "node_name": "slam_toolbox",
+    "package": "slam_toolbox",
+    "executable": "lifelong_slam_toolbox_node",
+    "plugin_class": null,
+    "launch_file": "launch/lifelong_launch.py",
+    "line_number": 47,
+    "parent_inclusion_id": null,
+    "namespace": "",
+    "remappings": {},
+    "parameters": [
+      "${slam_params_file}",
+      {
+        "use_lifecycle_manager": "${use_lifecycle_manager}",
+        "use_sim_time": "${use_sim_time}"
+      }
+    ],
+    "arguments": [],
+    "is_composable": false,
+    "container_name": null,
+    "condition": null,
+    "deployment_profile": "default",
+    "launch_arguments": {},
+    "evidence": [
+      {
+        "file": "launch/lifelong_launch.py",
+        "line_start": 47,
+        "line_end": 60,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='lifelong_slam_toolbox_node', name='slam_toolbox'"
+      }
+    ],
+    "repository_name": "slam_toolbox",
+    "action_type": "LifecycleNode",
+    "is_lifecycle": true,
+    "parameter_files": [
+      "${slam_params_file}"
+    ],
+    "inline_parameters": {
+      "use_lifecycle_manager": "${use_lifecycle_manager}",
+      "use_sim_time": "${use_sim_time}"
+    },
+    "lifecycle_info": {
+      "is_lifecycle": true,
+      "has_lifecycle_events": true,
+      "transitions": [
+        "TRANSITION_CONFIGURE",
+        "TRANSITION_ACTIVATE"
+      ],
+      "autostart_condition": "IfCondition((${autostart} and not (${use_lifecycle_manager})))",
+      "management_mode": "launch_event_handler"
+    },
+    "resolution_status": "resolved"
+  },
+  {
+    "instance_id": "launch/localization_launch.py::slam_toolbox#L48[ns=|prof=default|parent=root]",
+    "node_id": "slam_toolbox::LocalizationSlamToolbox",
+    "candidate_node_ids": [
+      "slam_toolbox::LocalizationSlamToolbox"
+    ],
+    "mapping_status": "resolved",
+    "node_name": "slam_toolbox",
+    "package": "slam_toolbox",
+    "executable": "localization_slam_toolbox_node",
+    "plugin_class": null,
+    "launch_file": "launch/localization_launch.py",
+    "line_number": 48,
+    "parent_inclusion_id": null,
+    "namespace": "",
+    "remappings": {},
+    "parameters": [
+      "${slam_params_file}",
+      {
+        "use_lifecycle_manager": "${use_lifecycle_manager}",
+        "use_sim_time": "${use_sim_time}"
+      }
+    ],
+    "arguments": [],
+    "is_composable": false,
+    "container_name": null,
+    "condition": null,
+    "deployment_profile": "default",
+    "launch_arguments": {},
+    "evidence": [
+      {
+        "file": "launch/localization_launch.py",
+        "line_start": 48,
+        "line_end": 61,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='localization_slam_toolbox_node', name='slam_toolbox'"
+      }
+    ],
+    "repository_name": "slam_toolbox",
+    "action_type": "LifecycleNode",
+    "is_lifecycle": true,
+    "parameter_files": [
+      "${slam_params_file}"
+    ],
+    "inline_parameters": {
+      "use_lifecycle_manager": "${use_lifecycle_manager}",
+      "use_sim_time": "${use_sim_time}"
+    },
+    "lifecycle_info": {
+      "is_lifecycle": true,
+      "has_lifecycle_events": true,
+      "transitions": [
+        "TRANSITION_CONFIGURE",
+        "TRANSITION_ACTIVATE"
+      ],
+      "autostart_condition": "IfCondition((${autostart} and not (${use_lifecycle_manager})))",
+      "management_mode": "launch_event_handler"
+    },
+    "resolution_status": "resolved"
+  },
+  {
+    "instance_id": "launch/merge_maps_kinematic_launch.py::slam_toolbox#L7[ns=|prof=default|parent=root]",
+    "node_id": "slam_toolbox::MergeMapsKinematic",
+    "candidate_node_ids": [
+      "slam_toolbox::MergeMapsKinematic"
+    ],
+    "mapping_status": "resolved",
+    "node_name": "slam_toolbox",
+    "package": "slam_toolbox",
+    "executable": "merge_maps_kinematic",
+    "plugin_class": null,
+    "launch_file": "launch/merge_maps_kinematic_launch.py",
+    "line_number": 7,
+    "parent_inclusion_id": null,
+    "namespace": "",
+    "remappings": {},
+    "parameters": [],
+    "arguments": [],
+    "is_composable": false,
+    "container_name": null,
+    "condition": null,
+    "deployment_profile": "default",
+    "launch_arguments": {},
+    "evidence": [
+      {
+        "file": "launch/merge_maps_kinematic_launch.py",
+        "line_start": 7,
+        "line_end": 12,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='slam_toolbox', exec='merge_maps_kinematic', name='slam_toolbox'"
+      }
+    ],
+    "repository_name": "slam_toolbox",
+    "action_type": "Node",
+    "is_lifecycle": false,
+    "parameter_files": [],
+    "inline_parameters": {},
+    "lifecycle_info": null,
+    "resolution_status": "resolved"
+  },
+  {
+    "instance_id": "launch/offline_launch.py::slam_toolbox#L27[ns=|prof=default|parent=root]",
+    "node_id": "slam_toolbox::SynchronousSlamToolbox",
+    "candidate_node_ids": [
+      "slam_toolbox::SynchronousSlamToolbox"
+    ],
+    "mapping_status": "resolved",
+    "node_name": "slam_toolbox",
+    "package": "slam_toolbox",
+    "executable": "sync_slam_toolbox_node",
+    "plugin_class": null,
+    "launch_file": "launch/offline_launch.py",
+    "line_number": 27,
+    "parent_inclusion_id": null,
+    "namespace": "",
+    "remappings": {},
+    "parameters": [
+      "D:/Web Dev/archy/case_studies/slam_toolbox/config/mapper_params_offline.yaml",
+      {
+        "use_lifecycle_manager": "${use_lifecycle_manager}"
+      }
+    ],
+    "arguments": [],
+    "is_composable": false,
+    "container_name": null,
+    "condition": null,
+    "deployment_profile": "default",
+    "launch_arguments": {},
+    "evidence": [
+      {
+        "file": "launch/offline_launch.py",
+        "line_start": 27,
+        "line_end": 37,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+      }
+    ],
+    "repository_name": "slam_toolbox",
+    "action_type": "LifecycleNode",
+    "is_lifecycle": true,
+    "parameter_files": [
+      "D:/Web Dev/archy/case_studies/slam_toolbox/config/mapper_params_offline.yaml"
+    ],
+    "inline_parameters": {
+      "use_lifecycle_manager": "${use_lifecycle_manager}"
+    },
+    "lifecycle_info": {
+      "is_lifecycle": true,
+      "has_lifecycle_events": true,
+      "transitions": [
+        "TRANSITION_CONFIGURE",
+        "TRANSITION_ACTIVATE"
+      ],
+      "autostart_condition": "IfCondition((${autostart} and not (${use_lifecycle_manager})))",
+      "management_mode": "launch_event_handler"
+    },
+    "resolution_status": "resolved"
+  },
+  {
+    "instance_id": "launch/online_async_decentralized_multirobot_launch.py::slam_toolbox#L51[ns=${namespace}|prof=default|parent=root]",
+    "node_id": "slam_toolbox::DecentralizedMultiRobotSlamToolbox",
+    "candidate_node_ids": [
+      "slam_toolbox::DecentralizedMultiRobotSlamToolbox"
+    ],
+    "mapping_status": "resolved",
+    "node_name": "slam_toolbox",
+    "package": "slam_toolbox",
+    "executable": "decentralized_multirobot_slam_toolbox_node",
+    "plugin_class": null,
+    "launch_file": "launch/online_async_decentralized_multirobot_launch.py",
+    "line_number": 51,
+    "parent_inclusion_id": null,
+    "namespace": "${namespace}",
+    "remappings": {
+      "/map": "map",
+      "/tf": "tf",
+      "/tf_static": "tf_static",
+      "/map_metadata": "map_metadata"
+    },
+    "parameters": [
+      "${slam_params_file}",
+      {
+        "use_lifecycle_manager": "${use_lifecycle_manager}",
+        "use_sim_time": "${use_sim_time}"
+      }
+    ],
+    "arguments": [],
+    "is_composable": false,
+    "container_name": null,
+    "condition": null,
+    "deployment_profile": "default",
+    "launch_arguments": {},
+    "evidence": [
+      {
+        "file": "launch/online_async_decentralized_multirobot_launch.py",
+        "line_start": 51,
+        "line_end": 65,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='decentralized_multirobot_slam_toolbox_node', name='slam_toolbox'"
+      }
+    ],
+    "repository_name": "slam_toolbox",
+    "action_type": "LifecycleNode",
+    "is_lifecycle": true,
+    "parameter_files": [
+      "${slam_params_file}"
+    ],
+    "inline_parameters": {
+      "use_lifecycle_manager": "${use_lifecycle_manager}",
+      "use_sim_time": "${use_sim_time}"
+    },
+    "lifecycle_info": {
+      "is_lifecycle": true,
+      "has_lifecycle_events": true,
+      "transitions": [
+        "TRANSITION_CONFIGURE",
+        "TRANSITION_ACTIVATE"
+      ],
+      "autostart_condition": "IfCondition((${autostart} and not (${use_lifecycle_manager})))",
+      "management_mode": "launch_event_handler"
+    },
+    "resolution_status": "resolved"
+  },
+  {
+    "instance_id": "launch/online_async_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+    "node_id": "slam_toolbox::AsynchronousSlamToolbox",
+    "candidate_node_ids": [
+      "slam_toolbox::AsynchronousSlamToolbox"
+    ],
+    "mapping_status": "resolved",
+    "node_name": "slam_toolbox",
+    "package": "slam_toolbox",
+    "executable": "async_slam_toolbox_node",
+    "plugin_class": null,
+    "launch_file": "launch/online_async_launch.py",
+    "line_number": 47,
+    "parent_inclusion_id": null,
+    "namespace": "",
+    "remappings": {},
+    "parameters": [
+      "${slam_params_file}",
+      {
+        "use_lifecycle_manager": "${use_lifecycle_manager}",
+        "use_sim_time": "${use_sim_time}"
+      }
+    ],
+    "arguments": [],
+    "is_composable": false,
+    "container_name": null,
+    "condition": null,
+    "deployment_profile": "default",
+    "launch_arguments": {},
+    "evidence": [
+      {
+        "file": "launch/online_async_launch.py",
+        "line_start": 47,
+        "line_end": 60,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='async_slam_toolbox_node', name='slam_toolbox'"
+      }
+    ],
+    "repository_name": "slam_toolbox",
+    "action_type": "LifecycleNode",
+    "is_lifecycle": true,
+    "parameter_files": [
+      "${slam_params_file}"
+    ],
+    "inline_parameters": {
+      "use_lifecycle_manager": "${use_lifecycle_manager}",
+      "use_sim_time": "${use_sim_time}"
+    },
+    "lifecycle_info": {
+      "is_lifecycle": true,
+      "has_lifecycle_events": true,
+      "transitions": [
+        "TRANSITION_CONFIGURE",
+        "TRANSITION_ACTIVATE"
+      ],
+      "autostart_condition": "IfCondition((${autostart} and not (${use_lifecycle_manager})))",
+      "management_mode": "launch_event_handler"
+    },
+    "resolution_status": "resolved"
+  },
+  {
+    "instance_id": "launch/online_sync_launch.py::slam_toolbox#L47[ns=|prof=default|parent=root]",
+    "node_id": "slam_toolbox::SynchronousSlamToolbox",
+    "candidate_node_ids": [
+      "slam_toolbox::SynchronousSlamToolbox"
+    ],
+    "mapping_status": "resolved",
+    "node_name": "slam_toolbox",
+    "package": "slam_toolbox",
+    "executable": "sync_slam_toolbox_node",
+    "plugin_class": null,
+    "launch_file": "launch/online_sync_launch.py",
+    "line_number": 47,
+    "parent_inclusion_id": null,
+    "namespace": "",
+    "remappings": {},
+    "parameters": [
+      "${slam_params_file}",
+      {
+        "use_lifecycle_manager": "${use_lifecycle_manager}",
+        "use_sim_time": "${use_sim_time}"
+      }
+    ],
+    "arguments": [],
+    "is_composable": false,
+    "container_name": null,
+    "condition": null,
+    "deployment_profile": "default",
+    "launch_arguments": {},
+    "evidence": [
+      {
+        "file": "launch/online_sync_launch.py",
+        "line_start": 47,
+        "line_end": 60,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "LifecycleNode declared in launch: pkg='slam_toolbox', exec='sync_slam_toolbox_node', name='slam_toolbox'"
+      }
+    ],
+    "repository_name": "slam_toolbox",
+    "action_type": "LifecycleNode",
+    "is_lifecycle": true,
+    "parameter_files": [
+      "${slam_params_file}"
+    ],
+    "inline_parameters": {
+      "use_lifecycle_manager": "${use_lifecycle_manager}",
+      "use_sim_time": "${use_sim_time}"
+    },
+    "lifecycle_info": {
+      "is_lifecycle": true,
+      "has_lifecycle_events": true,
+      "transitions": [
+        "TRANSITION_CONFIGURE",
+        "TRANSITION_ACTIVATE"
+      ],
+      "autostart_condition": "IfCondition((${autostart} and not (${use_lifecycle_manager})))",
+      "management_mode": "launch_event_handler"
+    },
+    "resolution_status": "resolved"
+  }
+]

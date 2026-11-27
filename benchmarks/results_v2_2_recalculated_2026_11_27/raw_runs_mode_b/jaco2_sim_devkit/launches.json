@@ -1,0 +1,3546 @@
+[
+  {
+    "file_path": "jaco2_controller/launch/controller.launch.py",
+    "package_name": "jaco2_controller",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "ros2_control_node",
+        "package": "controller_manager",
+        "executable": "ros2_control_node",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_controller/config/jaco2_controllers.yaml",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "--controller-ros-args",
+          "--remap /controller_manager/robot_description:=/robot_description"
+        ],
+        "respawn": false,
+        "output": "both",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 30,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_controller/config/jaco2_controllers.yaml"
+        ],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "joint_state_broadcaster",
+          "--controller-manager",
+          "/controller_manager",
+          "--controller-ros-args",
+          "--remap /controller_manager/robot_description:=/robot_description"
+        ],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 42,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "arm_controller",
+          "--controller-manager",
+          "/controller_manager",
+          "--controller-ros-args",
+          "--remap /controller_manager/robot_description:=/robot_description"
+        ],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 55,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "gripper_controller",
+          "--controller-manager",
+          "/controller_manager",
+          "--controller-ros-args",
+          "--remap /controller_manager/robot_description:=/robot_description"
+        ],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 67,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [],
+    "arguments": {
+      "model": {
+        "default": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_description/urdf/jaco2_standalone.xacro",
+        "description": "Path to robot model xacro file"
+      }
+    },
+    "groups": [],
+    "unresolved_expressions": [
+      "RegisterEventHandler(dynamic) at L79",
+      "RegisterEventHandler(dynamic) at L86"
+    ],
+    "instances": [
+      {
+        "instance_id": "jaco2_controller/launch/controller.launch.py::ros2_control_node#L30[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "ros2_control_node",
+        "package": "controller_manager",
+        "executable": "ros2_control_node",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/controller.launch.py",
+        "line_number": 30,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_controller/config/jaco2_controllers.yaml",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "--controller-ros-args",
+          "--remap /controller_manager/robot_description:=/robot_description"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/controller.launch.py",
+            "line_start": 30,
+            "line_end": 40,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='controller_manager', exec='ros2_control_node', name='ros2_control_node'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_controller/config/jaco2_controllers.yaml"
+        ],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_controller/launch/controller.launch.py::spawner#L42[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/controller.launch.py",
+        "line_number": 42,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "joint_state_broadcaster",
+          "--controller-manager",
+          "/controller_manager",
+          "--controller-ros-args",
+          "--remap /controller_manager/robot_description:=/robot_description"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/controller.launch.py",
+            "line_start": 42,
+            "line_end": 53,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='controller_manager', exec='spawner', name='spawner'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_controller/launch/controller.launch.py::spawner#L55[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/controller.launch.py",
+        "line_number": 55,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "arm_controller",
+          "--controller-manager",
+          "/controller_manager",
+          "--controller-ros-args",
+          "--remap /controller_manager/robot_description:=/robot_description"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/controller.launch.py",
+            "line_start": 55,
+            "line_end": 65,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='controller_manager', exec='spawner', name='spawner'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_controller/launch/controller.launch.py::spawner#L67[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/controller.launch.py",
+        "line_number": 67,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "gripper_controller",
+          "--controller-manager",
+          "/controller_manager",
+          "--controller-ros-args",
+          "--remap /controller_manager/robot_description:=/robot_description"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/controller.launch.py",
+            "line_start": 67,
+            "line_end": 77,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='controller_manager', exec='spawner', name='spawner'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_controller",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  },
+  {
+    "file_path": "jaco2_controller/launch/generic_controller.launch.py",
+    "package_name": "jaco2_controller",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()"
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": "UnlessCondition(${use_camera})",
+        "line_start": 46,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()"
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": "IfCondition(${use_camera})",
+        "line_start": 54,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "ros2_control_node",
+        "package": "controller_manager",
+        "executable": "ros2_control_node",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_controller/config/jaco2_controllers.yaml",
+          {
+            "robot_description": "ParameterValue()"
+          }
+        ],
+        "arguments": [
+          "--controller-ros-args",
+          "--remap /controller_manager/robot_description:=/robot_description"
+        ],
+        "respawn": false,
+        "output": "both",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 64,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_controller/config/jaco2_controllers.yaml"
+        ],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "joint_state_broadcaster",
+          "--controller-manager",
+          "/controller_manager"
+        ],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 78,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "arm_controller",
+          "--controller-manager",
+          "/controller_manager"
+        ],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 89,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "gripper_controller",
+          "--controller-manager",
+          "/controller_manager"
+        ],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 99,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [],
+    "arguments": {
+      "model": {
+        "default": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_description/urdf/jaco2_generic/jaco2_standalone_generic.xacro",
+        "description": "Path to robot model xacro file"
+      },
+      "camera_model": {
+        "default": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_description/urdf/jaco2_generic/jaco2_standalone_camera_generic.xacro",
+        "description": "Path to robot model with camera sensor xacro file"
+      },
+      "use_camera": {
+        "default": "false",
+        "description": "Flag to enable camera sensor"
+      }
+    },
+    "groups": [],
+    "unresolved_expressions": [],
+    "instances": [
+      {
+        "instance_id": "jaco2_controller/launch/generic_controller.launch.py::robot_state_publisher#L46[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/generic_controller.launch.py",
+        "line_number": 46,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()"
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": "UnlessCondition(${use_camera})",
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/generic_controller.launch.py",
+            "line_start": 46,
+            "line_end": 52,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='robot_state_publisher', exec='robot_state_publisher', name='robot_state_publisher'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_controller/launch/generic_controller.launch.py::robot_state_publisher#L54[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/generic_controller.launch.py",
+        "line_number": 54,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()"
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": "IfCondition(${use_camera})",
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/generic_controller.launch.py",
+            "line_start": 54,
+            "line_end": 60,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='robot_state_publisher', exec='robot_state_publisher', name='robot_state_publisher'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_controller/launch/generic_controller.launch.py::ros2_control_node#L64[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "ros2_control_node",
+        "package": "controller_manager",
+        "executable": "ros2_control_node",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/generic_controller.launch.py",
+        "line_number": 64,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_controller/config/jaco2_controllers.yaml",
+          {
+            "robot_description": "ParameterValue()"
+          }
+        ],
+        "arguments": [
+          "--controller-ros-args",
+          "--remap /controller_manager/robot_description:=/robot_description"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/generic_controller.launch.py",
+            "line_start": 64,
+            "line_end": 74,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='controller_manager', exec='ros2_control_node', name='ros2_control_node'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_controller/config/jaco2_controllers.yaml"
+        ],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_controller/launch/generic_controller.launch.py::spawner#L78[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/generic_controller.launch.py",
+        "line_number": 78,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "joint_state_broadcaster",
+          "--controller-manager",
+          "/controller_manager"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/generic_controller.launch.py",
+            "line_start": 78,
+            "line_end": 87,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='controller_manager', exec='spawner', name='spawner'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_controller/launch/generic_controller.launch.py::spawner#L89[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/generic_controller.launch.py",
+        "line_number": 89,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "arm_controller",
+          "--controller-manager",
+          "/controller_manager"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/generic_controller.launch.py",
+            "line_start": 89,
+            "line_end": 97,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='controller_manager', exec='spawner', name='spawner'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_controller/launch/generic_controller.launch.py::spawner#L99[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "spawner",
+        "package": "controller_manager",
+        "executable": "spawner",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/generic_controller.launch.py",
+        "line_number": 99,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "gripper_controller",
+          "--controller-manager",
+          "/controller_manager"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/generic_controller.launch.py",
+            "line_start": 99,
+            "line_end": 107,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='controller_manager', exec='spawner', name='spawner'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_controller",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  },
+  {
+    "file_path": "jaco2_controller/launch/jsp_gui_control.launch.py",
+    "package_name": "jaco2_controller",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "joint_state_publisher_gui",
+        "package": "joint_state_publisher_gui",
+        "executable": "joint_state_publisher_gui",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {
+          "/joint_states": "/joint_commands"
+        },
+        "parameters": [],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 31,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "jsp_controller",
+        "package": "jaco2_controller",
+        "executable": "jsp_controller",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 39,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [],
+    "arguments": {},
+    "groups": [],
+    "unresolved_expressions": [
+      "ExecuteProcess(dynamic) at L21",
+      "ExecuteProcess(dynamic) at L26",
+      "RegisterEventHandler(dynamic) at L45"
+    ],
+    "instances": [
+      {
+        "instance_id": "jaco2_controller/launch/jsp_gui_control.launch.py::joint_state_publisher_gui#L31[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "joint_state_publisher_gui",
+        "package": "joint_state_publisher_gui",
+        "executable": "joint_state_publisher_gui",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/jsp_gui_control.launch.py",
+        "line_number": 31,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {
+          "/joint_states": "/joint_commands"
+        },
+        "parameters": [],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/jsp_gui_control.launch.py",
+            "line_start": 31,
+            "line_end": 37,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='joint_state_publisher_gui', exec='joint_state_publisher_gui', name='joint_state_publisher_gui'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_controller/launch/jsp_gui_control.launch.py::jsp_controller#L39[ns=|prof=default|parent=root]",
+        "node_id": "jaco2_controller::JSPGUIController",
+        "candidate_node_ids": [
+          "jaco2_controller::JSPGUIController"
+        ],
+        "mapping_status": "resolved",
+        "node_name": "jsp_controller",
+        "package": "jaco2_controller",
+        "executable": "jsp_controller",
+        "plugin_class": null,
+        "launch_file": "jaco2_controller/launch/jsp_gui_control.launch.py",
+        "line_number": 39,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_controller/launch/jsp_gui_control.launch.py",
+            "line_start": 39,
+            "line_end": 43,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='jaco2_controller', exec='jsp_controller', name='jsp_controller'"
+          }
+        ],
+        "repository_name": "jaco2_controller",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_controller",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  },
+  {
+    "file_path": "jaco2_description/launch/display.launch.py",
+    "package_name": "jaco2_description",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()"
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 25,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "joint_state_publisher_gui",
+        "package": "joint_state_publisher_gui",
+        "executable": "joint_state_publisher_gui",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 31,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_description/rviz/display.rviz"
+        ],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 36,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [],
+    "arguments": {
+      "model": {
+        "default": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_description/urdf/jaco2_standalone.xacro",
+        "description": "Absolute path to robot urdf file"
+      }
+    },
+    "groups": [],
+    "unresolved_expressions": [],
+    "instances": [
+      {
+        "instance_id": "jaco2_description/launch/display.launch.py::robot_state_publisher#L25[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin_class": null,
+        "launch_file": "jaco2_description/launch/display.launch.py",
+        "line_number": 25,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()"
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_description/launch/display.launch.py",
+            "line_start": 25,
+            "line_end": 29,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='robot_state_publisher', exec='robot_state_publisher', name='robot_state_publisher'"
+          }
+        ],
+        "repository_name": "jaco2_description",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_description/launch/display.launch.py::joint_state_publisher_gui#L31[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "joint_state_publisher_gui",
+        "package": "joint_state_publisher_gui",
+        "executable": "joint_state_publisher_gui",
+        "plugin_class": null,
+        "launch_file": "jaco2_description/launch/display.launch.py",
+        "line_number": 31,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_description/launch/display.launch.py",
+            "line_start": 31,
+            "line_end": 34,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='joint_state_publisher_gui', exec='joint_state_publisher_gui', name='joint_state_publisher_gui'"
+          }
+        ],
+        "repository_name": "jaco2_description",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_description/launch/display.launch.py::rviz2#L36[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin_class": null,
+        "launch_file": "jaco2_description/launch/display.launch.py",
+        "line_number": 36,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_description/rviz/display.rviz"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_description/launch/display.launch.py",
+            "line_start": 36,
+            "line_end": 42,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='rviz2', exec='rviz2', name='rviz2'"
+          }
+        ],
+        "repository_name": "jaco2_description",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_description",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  },
+  {
+    "file_path": "jaco2_description/launch/gazebo.launch.py",
+    "package_name": "jaco2_description",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()",
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": "IfCondition(${use_camera})",
+        "line_start": 60,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()",
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": "UnlessCondition(${use_camera})",
+        "line_start": 68,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "create",
+        "package": "ros_gz_sim",
+        "executable": "create",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "-topic",
+          "robot_description",
+          "-name",
+          "jaco2",
+          "x",
+          "1.0",
+          "y",
+          "0.5",
+          "z",
+          "0.0"
+        ],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 88,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "parameter_bridge",
+        "package": "ros_gz_bridge",
+        "executable": "parameter_bridge",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"
+        ],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 99,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [
+      {
+        "file_path": "<share:ros_gz_sim>/launch/gz_sim.launch.py",
+        "resolved_path": "<share:ros_gz_sim>/launch/gz_sim.launch.py",
+        "package": null,
+        "launch_arguments": {
+          "gz_args": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_gazebo/worlds/empty.sdf",
+          "unpaused": "true"
+        },
+        "condition": null,
+        "line_start": 82,
+        "included_by": "jaco2_description/launch/gazebo.launch.py",
+        "resolution_status": "unresolved"
+      }
+    ],
+    "arguments": {
+      "model": {
+        "default": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_description/urdf/jaco2_standalone.xacro",
+        "description": "Path to robot model xacro file"
+      },
+      "camera_model": {
+        "default": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_description/urdf/jaco2_standalone_camera.xacro",
+        "description": "Path to robot model with camera sensor"
+      },
+      "use_camera": {
+        "default": "false",
+        "description": "Flag to enable camera sensor"
+      },
+      "empty_world": {
+        "default": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_gazebo/worlds/empty.sdf",
+        "description": null
+      }
+    },
+    "groups": [],
+    "unresolved_expressions": [],
+    "instances": [
+      {
+        "instance_id": "jaco2_description/launch/gazebo.launch.py::robot_state_publisher#L60[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin_class": null,
+        "launch_file": "jaco2_description/launch/gazebo.launch.py",
+        "line_number": 60,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()",
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": "IfCondition(${use_camera})",
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_description/launch/gazebo.launch.py",
+            "line_start": 60,
+            "line_end": 66,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='robot_state_publisher', exec='robot_state_publisher', name='robot_state_publisher'"
+          }
+        ],
+        "repository_name": "jaco2_description",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_description/launch/gazebo.launch.py::robot_state_publisher#L68[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin_class": null,
+        "launch_file": "jaco2_description/launch/gazebo.launch.py",
+        "line_number": 68,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()",
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": "UnlessCondition(${use_camera})",
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_description/launch/gazebo.launch.py",
+            "line_start": 68,
+            "line_end": 74,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='robot_state_publisher', exec='robot_state_publisher', name='robot_state_publisher'"
+          }
+        ],
+        "repository_name": "jaco2_description",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_description/launch/gazebo.launch.py::create#L88[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "create",
+        "package": "ros_gz_sim",
+        "executable": "create",
+        "plugin_class": null,
+        "launch_file": "jaco2_description/launch/gazebo.launch.py",
+        "line_number": 88,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "-topic",
+          "robot_description",
+          "-name",
+          "jaco2",
+          "x",
+          "1.0",
+          "y",
+          "0.5",
+          "z",
+          "0.0"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_description/launch/gazebo.launch.py",
+            "line_start": 88,
+            "line_end": 97,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='ros_gz_sim', exec='create', name='create'"
+          }
+        ],
+        "repository_name": "jaco2_description",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_description/launch/gazebo.launch.py::parameter_bridge#L99[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "parameter_bridge",
+        "package": "ros_gz_bridge",
+        "executable": "parameter_bridge",
+        "plugin_class": null,
+        "launch_file": "jaco2_description/launch/gazebo.launch.py",
+        "line_number": 99,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_description/launch/gazebo.launch.py",
+            "line_start": 99,
+            "line_end": 105,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='ros_gz_bridge', exec='parameter_bridge', name='parameter_bridge'"
+          }
+        ],
+        "repository_name": "jaco2_description",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_description",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  },
+  {
+    "file_path": "jaco2_gazebo/launch/gazebo_world.launch.py",
+    "package_name": "jaco2_gazebo",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()",
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 31,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "create",
+        "package": "ros_gz_sim",
+        "executable": "create",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "-topic",
+          "robot_description",
+          "-name",
+          "jaco2",
+          "-allow_renaming",
+          "true",
+          "x",
+          "1.0",
+          "y",
+          "0.5",
+          "z",
+          "0.0"
+        ],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 44,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "parameter_bridge",
+        "package": "ros_gz_bridge",
+        "executable": "parameter_bridge",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "use_sim_time": true,
+            "config_file": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_gazebo/config/gz_ros_bridge.yaml"
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 56,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "use_sim_time": true,
+          "config_file": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_gazebo/config/gz_ros_bridge.yaml"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "depth_image_remap.py",
+        "package": "jaco2_gazebo",
+        "executable": "depth_image_remap.py",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 64,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [
+      {
+        "file_path": "<share:ros_gz_sim>/launch/gz_sim.launch.py",
+        "resolved_path": "<share:ros_gz_sim>/launch/gz_sim.launch.py",
+        "package": null,
+        "launch_arguments": {
+          "gz_args": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_gazebo/worlds/pick_place_world.sdf"
+        },
+        "condition": null,
+        "line_start": 39,
+        "included_by": "jaco2_gazebo/launch/gazebo_world.launch.py",
+        "resolution_status": "unresolved"
+      }
+    ],
+    "arguments": {
+      "model": {
+        "default": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_description/urdf/jaco2_standalone_camera.xacro",
+        "description": "Path to robot model xacro file"
+      }
+    },
+    "groups": [],
+    "unresolved_expressions": [],
+    "instances": [
+      {
+        "instance_id": "jaco2_gazebo/launch/gazebo_world.launch.py::robot_state_publisher#L31[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "robot_state_publisher",
+        "package": "robot_state_publisher",
+        "executable": "robot_state_publisher",
+        "plugin_class": null,
+        "launch_file": "jaco2_gazebo/launch/gazebo_world.launch.py",
+        "line_number": 31,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "robot_description": "ParameterValue()",
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_gazebo/launch/gazebo_world.launch.py",
+            "line_start": 31,
+            "line_end": 37,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='robot_state_publisher', exec='robot_state_publisher', name='robot_state_publisher'"
+          }
+        ],
+        "repository_name": "jaco2_gazebo",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "robot_description": "ParameterValue()",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_gazebo/launch/gazebo_world.launch.py::create#L44[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "create",
+        "package": "ros_gz_sim",
+        "executable": "create",
+        "plugin_class": null,
+        "launch_file": "jaco2_gazebo/launch/gazebo_world.launch.py",
+        "line_number": 44,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [
+          "-topic",
+          "robot_description",
+          "-name",
+          "jaco2",
+          "-allow_renaming",
+          "true",
+          "x",
+          "1.0",
+          "y",
+          "0.5",
+          "z",
+          "0.0"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_gazebo/launch/gazebo_world.launch.py",
+            "line_start": 44,
+            "line_end": 54,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='ros_gz_sim', exec='create', name='create'"
+          }
+        ],
+        "repository_name": "jaco2_gazebo",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_gazebo/launch/gazebo_world.launch.py::parameter_bridge#L56[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "parameter_bridge",
+        "package": "ros_gz_bridge",
+        "executable": "parameter_bridge",
+        "plugin_class": null,
+        "launch_file": "jaco2_gazebo/launch/gazebo_world.launch.py",
+        "line_number": 56,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "use_sim_time": true,
+            "config_file": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_gazebo/config/gz_ros_bridge.yaml"
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_gazebo/launch/gazebo_world.launch.py",
+            "line_start": 56,
+            "line_end": 62,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='ros_gz_bridge', exec='parameter_bridge', name='parameter_bridge'"
+          }
+        ],
+        "repository_name": "jaco2_gazebo",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "use_sim_time": true,
+          "config_file": "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_gazebo/config/gz_ros_bridge.yaml"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_gazebo/launch/gazebo_world.launch.py::depth_image_remap.py#L64[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "unresolved",
+        "node_name": "depth_image_remap.py",
+        "package": "jaco2_gazebo",
+        "executable": "depth_image_remap.py",
+        "plugin_class": null,
+        "launch_file": "jaco2_gazebo/launch/gazebo_world.launch.py",
+        "line_number": 64,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_gazebo/launch/gazebo_world.launch.py",
+            "line_start": 64,
+            "line_end": 67,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='jaco2_gazebo', exec='depth_image_remap.py', name='depth_image_remap.py'"
+          }
+        ],
+        "repository_name": "jaco2_gazebo",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_gazebo",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  },
+  {
+    "file_path": "jaco2_moveit_config/launch/jaco2_move_group.launch.py",
+    "package_name": "jaco2_moveit_config",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "move_group",
+        "package": "moveit_ros_move_group",
+        "executable": "move_group",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_dict()",
+          {
+            "octomap_frame": "rgbd_camera",
+            "octomap_resolution": 0.05,
+            "max_range": 15.0
+          },
+          {
+            "use_sim_time": "${is_sim}"
+          },
+          {
+            "use_monitor": true
+          },
+          {
+            "use_robot_state_monitor": true
+          },
+          {
+            "use_scene_monitor": true
+          },
+          {
+            "use_geometry_monitor": true
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 47,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_dict()"
+        ],
+        "inline_parameters": {
+          "octomap_frame": "rgbd_camera",
+          "octomap_resolution": 0.05,
+          "max_range": 15.0,
+          "use_sim_time": "${is_sim}",
+          "use_monitor": true,
+          "use_robot_state_monitor": true,
+          "use_scene_monitor": true,
+          "use_geometry_monitor": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().trajectory_execution",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor",
+          "to_moveit_configs().sensors_3d",
+          {
+            "use_sim_time": "${is_sim}"
+          }
+        ],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_moveit_config/config/moveit.rviz"
+        ],
+        "respawn": false,
+        "output": "log",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 66,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().trajectory_execution",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor",
+          "to_moveit_configs().sensors_3d"
+        ],
+        "inline_parameters": {
+          "use_sim_time": "${is_sim}"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [],
+    "arguments": {
+      "is_sim": {
+        "default": "True",
+        "description": null
+      }
+    },
+    "groups": [],
+    "unresolved_expressions": [],
+    "instances": [
+      {
+        "instance_id": "jaco2_moveit_config/launch/jaco2_move_group.launch.py::move_group#L47[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "move_group",
+        "package": "moveit_ros_move_group",
+        "executable": "move_group",
+        "plugin_class": null,
+        "launch_file": "jaco2_moveit_config/launch/jaco2_move_group.launch.py",
+        "line_number": 47,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_dict()",
+          {
+            "octomap_frame": "rgbd_camera",
+            "octomap_resolution": 0.05,
+            "max_range": 15.0
+          },
+          {
+            "use_sim_time": "${is_sim}"
+          },
+          {
+            "use_monitor": true
+          },
+          {
+            "use_robot_state_monitor": true
+          },
+          {
+            "use_scene_monitor": true
+          },
+          {
+            "use_geometry_monitor": true
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_moveit_config/launch/jaco2_move_group.launch.py",
+            "line_start": 47,
+            "line_end": 58,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='moveit_ros_move_group', exec='move_group', name='move_group'"
+          }
+        ],
+        "repository_name": "jaco2_moveit_config",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_dict()"
+        ],
+        "inline_parameters": {
+          "octomap_frame": "rgbd_camera",
+          "octomap_resolution": 0.05,
+          "max_range": 15.0,
+          "use_sim_time": "${is_sim}",
+          "use_monitor": true,
+          "use_robot_state_monitor": true,
+          "use_scene_monitor": true,
+          "use_geometry_monitor": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_moveit_config/launch/jaco2_move_group.launch.py::rviz2#L66[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin_class": null,
+        "launch_file": "jaco2_moveit_config/launch/jaco2_move_group.launch.py",
+        "line_number": 66,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().trajectory_execution",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor",
+          "to_moveit_configs().sensors_3d",
+          {
+            "use_sim_time": "${is_sim}"
+          }
+        ],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_moveit_config/config/moveit.rviz"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_moveit_config/launch/jaco2_move_group.launch.py",
+            "line_start": 66,
+            "line_end": 82,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='rviz2', exec='rviz2', name='rviz2'"
+          }
+        ],
+        "repository_name": "jaco2_moveit_config",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().trajectory_execution",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor",
+          "to_moveit_configs().sensors_3d"
+        ],
+        "inline_parameters": {
+          "use_sim_time": "${is_sim}"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_moveit_config",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  },
+  {
+    "file_path": "jaco2_moveit_demos/launch/moveit_py.launch.py",
+    "package_name": "jaco2_moveit_demos",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "${exe}",
+        "package": "jaco2_moveit_demos",
+        "executable": "${exe}",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_dict()",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "both",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 38,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_dict()"
+        ],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().trajectory_execution",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_moveit_config/config/moveitpy_planning.rviz"
+        ],
+        "respawn": false,
+        "output": "both",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 52,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().trajectory_execution",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [],
+    "arguments": {
+      "exe": {
+        "default": null,
+        "description": null
+      }
+    },
+    "groups": [],
+    "unresolved_expressions": [],
+    "instances": [
+      {
+        "instance_id": "jaco2_moveit_demos/launch/moveit_py.launch.py::${exe}#L38[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "unresolved",
+        "node_name": "${exe}",
+        "package": "jaco2_moveit_demos",
+        "executable": "${exe}",
+        "plugin_class": null,
+        "launch_file": "jaco2_moveit_demos/launch/moveit_py.launch.py",
+        "line_number": 38,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_dict()",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_moveit_demos/launch/moveit_py.launch.py",
+            "line_start": 38,
+            "line_end": 44,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='jaco2_moveit_demos', exec='${exe}', name='${exe}'"
+          }
+        ],
+        "repository_name": "jaco2_moveit_demos",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_dict()"
+        ],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_moveit_demos/launch/moveit_py.launch.py::rviz2#L52[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin_class": null,
+        "launch_file": "jaco2_moveit_demos/launch/moveit_py.launch.py",
+        "line_number": 52,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().trajectory_execution",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_moveit_config/config/moveitpy_planning.rviz"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_moveit_demos/launch/moveit_py.launch.py",
+            "line_start": 52,
+            "line_end": 67,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='rviz2', exec='rviz2', name='rviz2'"
+          }
+        ],
+        "repository_name": "jaco2_moveit_demos",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().trajectory_execution",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_moveit_demos",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  },
+  {
+    "file_path": "jaco2_moveit_task_constructor/launch/move_group.launch.py",
+    "package_name": "jaco2_moveit_task_constructor",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "move_group",
+        "package": "moveit_ros_move_group",
+        "executable": "move_group",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_dict()",
+          {
+            "capabilities": "move_group/ExecuteTaskSolutionCapability"
+          },
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "both",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 30,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_dict()"
+        ],
+        "inline_parameters": {
+          "capabilities": "move_group/ExecuteTaskSolutionCapability",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().planning_scene_monitor",
+          {
+            "capabilities": "move_group/ExecuteTaskSolutionCapability"
+          },
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_moveit_task_constructor/config/mtc.rviz"
+        ],
+        "respawn": false,
+        "output": "log",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 43,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "inline_parameters": {
+          "capabilities": "move_group/ExecuteTaskSolutionCapability",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [],
+    "arguments": {},
+    "groups": [],
+    "unresolved_expressions": [],
+    "instances": [
+      {
+        "instance_id": "jaco2_moveit_task_constructor/launch/move_group.launch.py::move_group#L30[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "move_group",
+        "package": "moveit_ros_move_group",
+        "executable": "move_group",
+        "plugin_class": null,
+        "launch_file": "jaco2_moveit_task_constructor/launch/move_group.launch.py",
+        "line_number": 30,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_dict()",
+          {
+            "capabilities": "move_group/ExecuteTaskSolutionCapability"
+          },
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_moveit_task_constructor/launch/move_group.launch.py",
+            "line_start": 30,
+            "line_end": 39,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='moveit_ros_move_group', exec='move_group', name='move_group'"
+          }
+        ],
+        "repository_name": "jaco2_moveit_task_constructor",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_dict()"
+        ],
+        "inline_parameters": {
+          "capabilities": "move_group/ExecuteTaskSolutionCapability",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_moveit_task_constructor/launch/move_group.launch.py::rviz2#L43[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin_class": null,
+        "launch_file": "jaco2_moveit_task_constructor/launch/move_group.launch.py",
+        "line_number": 43,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().planning_scene_monitor",
+          {
+            "capabilities": "move_group/ExecuteTaskSolutionCapability"
+          },
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_moveit_task_constructor/config/mtc.rviz"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_moveit_task_constructor/launch/move_group.launch.py",
+            "line_start": 43,
+            "line_end": 57,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='rviz2', exec='rviz2', name='rviz2'"
+          }
+        ],
+        "repository_name": "jaco2_moveit_task_constructor",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "inline_parameters": {
+          "capabilities": "move_group/ExecuteTaskSolutionCapability",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_moveit_task_constructor",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  },
+  {
+    "file_path": "jaco2_moveit_task_constructor/launch/run.launch.py",
+    "package_name": "jaco2_moveit_task_constructor",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "scene_publisher",
+        "package": "jaco2_moveit_task_constructor",
+        "executable": "scene_publisher",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 28,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "${exe}",
+        "package": "jaco2_moveit_task_constructor",
+        "executable": "${exe}",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_dict()",
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "both",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 34,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_dict()",
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [],
+    "arguments": {
+      "exe": {
+        "default": null,
+        "description": null
+      }
+    },
+    "groups": [],
+    "unresolved_expressions": [
+      "RegisterEventHandler(dynamic) at L49"
+    ],
+    "instances": [
+      {
+        "instance_id": "jaco2_moveit_task_constructor/launch/run.launch.py::scene_publisher#L28[ns=|prof=default|parent=root]",
+        "node_id": "jaco2_moveit_task_constructor::ScenePublisher",
+        "candidate_node_ids": [
+          "jaco2_moveit_task_constructor::ScenePublisher"
+        ],
+        "mapping_status": "resolved",
+        "node_name": "scene_publisher",
+        "package": "jaco2_moveit_task_constructor",
+        "executable": "scene_publisher",
+        "plugin_class": null,
+        "launch_file": "jaco2_moveit_task_constructor/launch/run.launch.py",
+        "line_number": 28,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_moveit_task_constructor/launch/run.launch.py",
+            "line_start": 28,
+            "line_end": 32,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='jaco2_moveit_task_constructor', exec='scene_publisher', name='scene_publisher'"
+          }
+        ],
+        "repository_name": "jaco2_moveit_task_constructor",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_moveit_task_constructor/launch/run.launch.py::${exe}#L34[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "unresolved",
+        "node_name": "${exe}",
+        "package": "jaco2_moveit_task_constructor",
+        "executable": "${exe}",
+        "plugin_class": null,
+        "launch_file": "jaco2_moveit_task_constructor/launch/run.launch.py",
+        "line_number": 34,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_dict()",
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_moveit_task_constructor/launch/run.launch.py",
+            "line_start": 34,
+            "line_end": 47,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='jaco2_moveit_task_constructor', exec='${exe}', name='${exe}'"
+          }
+        ],
+        "repository_name": "jaco2_moveit_task_constructor",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_dict()",
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_pipelines",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_moveit_task_constructor",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  },
+  {
+    "file_path": "jaco2_servo/launch/joystick_teleop.launch.py",
+    "package_name": "jaco2_servo",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_servo/config/servo.rviz"
+        ],
+        "respawn": false,
+        "output": "log",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 36,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic"
+        ],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "joy_teleop",
+        "package": "jaco2_servo",
+        "executable": "joy_teleop",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 48,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "joy_node",
+        "package": "joy",
+        "executable": "joy_node",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "dev": "/dev/input/js2"
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 54,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "dev": "/dev/input/js2"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "servo_node",
+        "package": "moveit_servo",
+        "executable": "servo_node",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "moveit_servo": "to_dict()"
+          },
+          {
+            "update_period": 0.01
+          },
+          {
+            "planning_group_name": "jaco_arm"
+          },
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_scene_monitor",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 61,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "inline_parameters": {
+          "moveit_servo": "to_dict()",
+          "update_period": 0.01,
+          "planning_group_name": "jaco_arm",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [],
+    "arguments": {},
+    "groups": [],
+    "unresolved_expressions": [],
+    "instances": [
+      {
+        "instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::rviz2#L36[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin_class": null,
+        "launch_file": "jaco2_servo/launch/joystick_teleop.launch.py",
+        "line_number": 36,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_servo/config/servo.rviz"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_servo/launch/joystick_teleop.launch.py",
+            "line_start": 36,
+            "line_end": 46,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='rviz2', exec='rviz2', name='rviz2'"
+          }
+        ],
+        "repository_name": "jaco2_servo",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic"
+        ],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]",
+        "node_id": "jaco2_servo::Xbox360Teleop",
+        "candidate_node_ids": [
+          "jaco2_servo::Xbox360Teleop"
+        ],
+        "mapping_status": "resolved",
+        "node_name": "joy_teleop",
+        "package": "jaco2_servo",
+        "executable": "joy_teleop",
+        "plugin_class": null,
+        "launch_file": "jaco2_servo/launch/joystick_teleop.launch.py",
+        "line_number": 48,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_servo/launch/joystick_teleop.launch.py",
+            "line_start": 48,
+            "line_end": 52,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='jaco2_servo', exec='joy_teleop', name='joy_teleop'"
+          }
+        ],
+        "repository_name": "jaco2_servo",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::joy_node#L54[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "joy_node",
+        "package": "joy",
+        "executable": "joy_node",
+        "plugin_class": null,
+        "launch_file": "jaco2_servo/launch/joystick_teleop.launch.py",
+        "line_number": 54,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "dev": "/dev/input/js2"
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_servo/launch/joystick_teleop.launch.py",
+            "line_start": 54,
+            "line_end": 59,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='joy', exec='joy_node', name='joy_node'"
+          }
+        ],
+        "repository_name": "jaco2_servo",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {
+          "dev": "/dev/input/js2"
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_servo/launch/joystick_teleop.launch.py::servo_node#L61[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "servo_node",
+        "package": "moveit_servo",
+        "executable": "servo_node",
+        "plugin_class": null,
+        "launch_file": "jaco2_servo/launch/joystick_teleop.launch.py",
+        "line_number": 61,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "moveit_servo": "to_dict()"
+          },
+          {
+            "update_period": 0.01
+          },
+          {
+            "planning_group_name": "jaco_arm"
+          },
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_scene_monitor",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_servo/launch/joystick_teleop.launch.py",
+            "line_start": 61,
+            "line_end": 76,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='moveit_servo', exec='servo_node', name='servo_node'"
+          }
+        ],
+        "repository_name": "jaco2_servo",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "inline_parameters": {
+          "moveit_servo": "to_dict()",
+          "update_period": 0.01,
+          "planning_group_name": "jaco_arm",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_servo",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  },
+  {
+    "file_path": "jaco2_servo/launch/keyboard_teleop.launch.py",
+    "package_name": "jaco2_servo",
+    "launch_type": "python",
+    "nodes": [
+      {
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_servo/config/servo.rviz"
+        ],
+        "respawn": false,
+        "output": "log",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 36,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic"
+        ],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "key_teleop",
+        "package": "jaco2_servo",
+        "executable": "key_teleop",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 48,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "node_name": "servo_node",
+        "package": "moveit_servo",
+        "executable": "servo_node",
+        "plugin": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "moveit_servo": "to_dict()"
+          },
+          {
+            "update_period": 0.01
+          },
+          {
+            "planning_group_name": "jaco_arm"
+          },
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_scene_monitor",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "respawn": false,
+        "output": "screen",
+        "is_composable": false,
+        "target_container": null,
+        "condition": null,
+        "line_start": 54,
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "inline_parameters": {
+          "moveit_servo": "to_dict()",
+          "update_period": 0.01,
+          "planning_group_name": "jaco_arm",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "includes": [],
+    "arguments": {},
+    "groups": [],
+    "unresolved_expressions": [],
+    "instances": [
+      {
+        "instance_id": "jaco2_servo/launch/keyboard_teleop.launch.py::rviz2#L36[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "rviz2",
+        "package": "rviz2",
+        "executable": "rviz2",
+        "plugin_class": null,
+        "launch_file": "jaco2_servo/launch/keyboard_teleop.launch.py",
+        "line_number": 36,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [
+          "-d",
+          "D:/Web Dev/archy/case_studies/jaco2_sim_devkit/jaco2_servo/config/servo.rviz"
+        ],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_servo/launch/keyboard_teleop.launch.py",
+            "line_start": 36,
+            "line_end": 46,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='rviz2', exec='rviz2', name='rviz2'"
+          }
+        ],
+        "repository_name": "jaco2_servo",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic"
+        ],
+        "inline_parameters": {
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_servo/launch/keyboard_teleop.launch.py::key_teleop#L48[ns=|prof=default|parent=root]",
+        "node_id": "jaco2_servo::KeyboardServo",
+        "candidate_node_ids": [
+          "jaco2_servo::KeyboardServo"
+        ],
+        "mapping_status": "resolved",
+        "node_name": "key_teleop",
+        "package": "jaco2_servo",
+        "executable": "key_teleop",
+        "plugin_class": null,
+        "launch_file": "jaco2_servo/launch/keyboard_teleop.launch.py",
+        "line_number": 48,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_servo/launch/keyboard_teleop.launch.py",
+            "line_start": 48,
+            "line_end": 52,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='jaco2_servo', exec='key_teleop', name='key_teleop'"
+          }
+        ],
+        "repository_name": "jaco2_servo",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [],
+        "inline_parameters": {},
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      },
+      {
+        "instance_id": "jaco2_servo/launch/keyboard_teleop.launch.py::servo_node#L54[ns=|prof=default|parent=root]",
+        "node_id": null,
+        "candidate_node_ids": [],
+        "mapping_status": "external_dependency",
+        "node_name": "servo_node",
+        "package": "moveit_servo",
+        "executable": "servo_node",
+        "plugin_class": null,
+        "launch_file": "jaco2_servo/launch/keyboard_teleop.launch.py",
+        "line_number": 54,
+        "parent_inclusion_id": null,
+        "namespace": "",
+        "remappings": {},
+        "parameters": [
+          {
+            "moveit_servo": "to_dict()"
+          },
+          {
+            "update_period": 0.01
+          },
+          {
+            "planning_group_name": "jaco_arm"
+          },
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_scene_monitor",
+          {
+            "use_sim_time": true
+          }
+        ],
+        "arguments": [],
+        "is_composable": false,
+        "container_name": null,
+        "condition": null,
+        "deployment_profile": "default",
+        "launch_arguments": {},
+        "evidence": [
+          {
+            "file": "jaco2_servo/launch/keyboard_teleop.launch.py",
+            "line_start": 54,
+            "line_end": 69,
+            "evidence_type": "launch_node",
+            "source": "launch_analyzer",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Standalone Node declared in launch: pkg='moveit_servo', exec='servo_node', name='servo_node'"
+          }
+        ],
+        "repository_name": "jaco2_servo",
+        "action_type": "Node",
+        "is_lifecycle": false,
+        "parameter_files": [
+          "to_moveit_configs().robot_description",
+          "to_moveit_configs().robot_description_semantic",
+          "to_moveit_configs().robot_description_kinematics",
+          "to_moveit_configs().joint_limits",
+          "to_moveit_configs().planning_scene_monitor"
+        ],
+        "inline_parameters": {
+          "moveit_servo": "to_dict()",
+          "update_period": 0.01,
+          "planning_group_name": "jaco_arm",
+          "use_sim_time": true
+        },
+        "lifecycle_info": null,
+        "resolution_status": "resolved"
+      }
+    ],
+    "containers": [],
+    "repository_name": "jaco2_servo",
+    "is_cmake_installed": true,
+    "launch_role": null,
+    "is_runnable_entry_point": true,
+    "provenance": null
+  }
+]

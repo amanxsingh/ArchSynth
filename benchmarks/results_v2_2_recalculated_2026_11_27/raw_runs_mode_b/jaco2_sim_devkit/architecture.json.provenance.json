@@ -1,0 +1,9 @@
+{
+  "repository_name": "jaco2_sim_devkit",
+  "repository_url": "https://github.com/VibhuSharma19/jaco2_sim_devkit",
+  "commit_hash": "993a6e3de05e50fec4ce40c65a5b1d3a9d8ca9cc",
+  "branch": "main",
+  "archsynth_version": "2.0",
+  "artifact_schema_version": "1.0",
+  "analysis_timestamp": "2026-11-27T08:12:44.798633+00:00"
+}

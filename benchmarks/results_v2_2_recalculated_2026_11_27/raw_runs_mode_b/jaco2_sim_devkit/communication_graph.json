@@ -1,0 +1,325 @@
+{
+  "provenance": null,
+  "repo_name": "jaco2_sim_devkit",
+  "source_potential_edges": [
+    {
+      "edge_id": "potential::action::config::moveit_controllers->config::ros2_controllers::arm_controller/follow_joint_trajectory",
+      "graph_level": "source_potential",
+      "communication_type": "action",
+      "interface_name": "arm_controller/follow_joint_trajectory",
+      "message_type": "control_msgs/action/FollowJointTrajectory",
+      "source_node_id": "config::moveit_controllers",
+      "target_node_id": "config::ros2_controllers",
+      "source_declaration_id": "config::moveit_controllers::action_client::/arm_controller/follow_joint_trajectory#L10",
+      "target_declaration_id": "config::ros2_controllers::action_server::/arm_controller/follow_joint_trajectory#L6",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "jaco2_moveit_config/config/moveit_controllers.yaml",
+          "line_start": 10,
+          "line_end": 10,
+          "evidence_type": "parameter",
+          "source": "yaml_config_extractor",
+          "confidence": 0.85,
+          "claim_type": "config_declared",
+          "confidence_rationale": "Explicitly declared in moveit_controllers.yaml; runtime existence depends on move_group launch",
+          "explanation": "MoveIt controller 'arm_controller' configured for FollowJointTrajectory action '/arm_controller/follow_joint_trajectory'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "jaco2_moveit_config/config/ros2_controllers.yaml",
+          "line_start": 6,
+          "line_end": 6,
+          "evidence_type": "parameter",
+          "source": "yaml_config_extractor",
+          "confidence": 0.85,
+          "claim_type": "config_declared",
+          "confidence_rationale": "Explicitly declared in ros2_controllers.yaml; runtime existence depends on ros2_control spawner launch",
+          "explanation": "ros2_control JointTrajectoryController 'arm_controller' exposes FollowJointTrajectory action server '/arm_controller/follow_joint_trajectory'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::action::config::moveit_controllers->config::ros2_controllers::arm_controller/follow_joint_trajectory",
+      "graph_level": "source_potential",
+      "communication_type": "action",
+      "interface_name": "arm_controller/follow_joint_trajectory",
+      "message_type": "control_msgs/action/FollowJointTrajectory",
+      "source_node_id": "config::moveit_controllers",
+      "target_node_id": "config::ros2_controllers",
+      "source_declaration_id": "config::moveit_controllers::action_client::/arm_controller/follow_joint_trajectory#L10",
+      "target_declaration_id": "config::ros2_controllers::action_server::/arm_controller/follow_joint_trajectory#L5",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "jaco2_moveit_config/config/moveit_controllers.yaml",
+          "line_start": 10,
+          "line_end": 10,
+          "evidence_type": "parameter",
+          "source": "yaml_config_extractor",
+          "confidence": 0.85,
+          "claim_type": "config_declared",
+          "confidence_rationale": "Explicitly declared in moveit_controllers.yaml; runtime existence depends on move_group launch",
+          "explanation": "MoveIt controller 'arm_controller' configured for FollowJointTrajectory action '/arm_controller/follow_joint_trajectory'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "jaco2_controller/config/jaco2_controllers.yaml",
+          "line_start": 5,
+          "line_end": 5,
+          "evidence_type": "parameter",
+          "source": "yaml_config_extractor",
+          "confidence": 0.85,
+          "claim_type": "config_declared",
+          "confidence_rationale": "Explicitly declared in ros2_controllers.yaml; runtime existence depends on ros2_control spawner launch",
+          "explanation": "ros2_control JointTrajectoryController 'arm_controller' exposes FollowJointTrajectory action server '/arm_controller/follow_joint_trajectory'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::action::config::moveit_controllers->config::ros2_controllers::gripper_controller/follow_joint_trajectory",
+      "graph_level": "source_potential",
+      "communication_type": "action",
+      "interface_name": "gripper_controller/follow_joint_trajectory",
+      "message_type": "control_msgs/action/FollowJointTrajectory",
+      "source_node_id": "config::moveit_controllers",
+      "target_node_id": "config::ros2_controllers",
+      "source_declaration_id": "config::moveit_controllers::action_client::/gripper_controller/follow_joint_trajectory#L22",
+      "target_declaration_id": "config::ros2_controllers::action_server::/gripper_controller/follow_joint_trajectory#L10",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "jaco2_moveit_config/config/moveit_controllers.yaml",
+          "line_start": 22,
+          "line_end": 22,
+          "evidence_type": "parameter",
+          "source": "yaml_config_extractor",
+          "confidence": 0.85,
+          "claim_type": "config_declared",
+          "confidence_rationale": "Explicitly declared in moveit_controllers.yaml; runtime existence depends on move_group launch",
+          "explanation": "MoveIt controller 'gripper_controller' configured for FollowJointTrajectory action '/gripper_controller/follow_joint_trajectory'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "jaco2_moveit_config/config/ros2_controllers.yaml",
+          "line_start": 10,
+          "line_end": 10,
+          "evidence_type": "parameter",
+          "source": "yaml_config_extractor",
+          "confidence": 0.85,
+          "claim_type": "config_declared",
+          "confidence_rationale": "Explicitly declared in ros2_controllers.yaml; runtime existence depends on ros2_control spawner launch",
+          "explanation": "ros2_control JointTrajectoryController 'gripper_controller' exposes FollowJointTrajectory action server '/gripper_controller/follow_joint_trajectory'"
+        }
+      ]
+    },
+    {
+      "edge_id": "potential::action::config::moveit_controllers->config::ros2_controllers::gripper_controller/follow_joint_trajectory",
+      "graph_level": "source_potential",
+      "communication_type": "action",
+      "interface_name": "gripper_controller/follow_joint_trajectory",
+      "message_type": "control_msgs/action/FollowJointTrajectory",
+      "source_node_id": "config::moveit_controllers",
+      "target_node_id": "config::ros2_controllers",
+      "source_declaration_id": "config::moveit_controllers::action_client::/gripper_controller/follow_joint_trajectory#L22",
+      "target_declaration_id": "config::ros2_controllers::action_server::/gripper_controller/follow_joint_trajectory#L8",
+      "source_instance_id": null,
+      "target_instance_id": null,
+      "deployment_profile": null,
+      "qos_status": "compatible",
+      "qos_details": null,
+      "status": "matched",
+      "edge_kind": "inter_node",
+      "source_component": null,
+      "target_component": null,
+      "evidence_source": [
+        {
+          "file": "jaco2_moveit_config/config/moveit_controllers.yaml",
+          "line_start": 22,
+          "line_end": 22,
+          "evidence_type": "parameter",
+          "source": "yaml_config_extractor",
+          "confidence": 0.85,
+          "claim_type": "config_declared",
+          "confidence_rationale": "Explicitly declared in moveit_controllers.yaml; runtime existence depends on move_group launch",
+          "explanation": "MoveIt controller 'gripper_controller' configured for FollowJointTrajectory action '/gripper_controller/follow_joint_trajectory'"
+        }
+      ],
+      "evidence_target": [
+        {
+          "file": "jaco2_controller/config/jaco2_controllers.yaml",
+          "line_start": 8,
+          "line_end": 8,
+          "evidence_type": "parameter",
+          "source": "yaml_config_extractor",
+          "confidence": 0.85,
+          "claim_type": "config_declared",
+          "confidence_rationale": "Explicitly declared in ros2_controllers.yaml; runtime existence depends on ros2_control spawner launch",
+          "explanation": "ros2_control JointTrajectoryController 'gripper_controller' exposes FollowJointTrajectory action server '/gripper_controller/follow_joint_trajectory'"
+        }
+      ]
+    }
+  ],
+  "deployment_runtime_edges": [],
+  "intra_node_edges": [],
+  "peer_edges": [],
+  "cross_profile_edges": [],
+  "unmatched_endpoints": [
+    "jaco2_controller::JSPGUIController::publisher::arm_controller/joint_trajectory#L17",
+    "jaco2_controller::JSPGUIController::publisher::gripper_controller/joint_trajectory#L18",
+    "jaco2_moveit_demos::MoveitInterface::action_client::follow_joint_trajectory#L159",
+    "jaco2_moveit_task_constructor::MtcPickplace::action_client::follow_joint_trajectory#L124",
+    "jaco2_moveit_task_constructor::MtcCartesian::action_client::follow_joint_trajectory#L54",
+    "jaco2_moveit_task_constructor::ScenePublisher::publisher::/planning_scene#L23",
+    "jaco2_servo::Xbox360Teleop::publisher::/servo_node/delta_joint_cmds#L57",
+    "jaco2_servo::Xbox360Teleop::service_client::/servo_node/switch_command_type#L61",
+    "jaco2_servo::KeyboardServo::publisher::/servo_node/delta_joint_cmds#L94",
+    "jaco2_servo::CommandSwitch::service_client::/servo_node/switch_command_type#L18"
+  ],
+  "external_endpoints": [
+    "jaco2_controller::JSPGUIController::subscriber::joint_commands#L19",
+    "jaco2_gazebo::DepthImageRemap::subscriber::/rgbd_camera/depth_image#L19",
+    "jaco2_gazebo::DepthImageRemap::publisher::/rgbd_camera/corrected_depth_image#L25",
+    "jaco2_servo::Xbox360Teleop::publisher::/servo_node/delta_twist_cmds#L58",
+    "jaco2_servo::Xbox360Teleop::service_client::/servo_node/start_servo#L59",
+    "jaco2_servo::Xbox360Teleop::service_client::/servo_node/stop_servo#L60",
+    "jaco2_servo::Xbox360Teleop::subscriber::/joy#L63",
+    "jaco2_servo::KeyboardServo::publisher::/servo_node/delta_twist_cmds#L95"
+  ],
+  "external_confirmed_endpoints": [],
+  "external_candidate_endpoints": [
+    "jaco2_controller::JSPGUIController::subscriber::joint_commands#L19",
+    "jaco2_gazebo::DepthImageRemap::subscriber::/rgbd_camera/depth_image#L19",
+    "jaco2_gazebo::DepthImageRemap::publisher::/rgbd_camera/corrected_depth_image#L25",
+    "jaco2_servo::Xbox360Teleop::publisher::/servo_node/delta_twist_cmds#L58",
+    "jaco2_servo::Xbox360Teleop::service_client::/servo_node/start_servo#L59",
+    "jaco2_servo::Xbox360Teleop::service_client::/servo_node/stop_servo#L60",
+    "jaco2_servo::Xbox360Teleop::subscriber::/joy#L63",
+    "jaco2_servo::KeyboardServo::publisher::/servo_node/delta_twist_cmds#L95"
+  ],
+  "internal_matched_endpoints": [
+    "config::moveit_controllers::action_client::/arm_controller/follow_joint_trajectory#L10",
+    "config::moveit_controllers::action_client::/gripper_controller/follow_joint_trajectory#L22",
+    "config::ros2_controllers::action_server::/arm_controller/follow_joint_trajectory#L6",
+    "config::ros2_controllers::action_server::/gripper_controller/follow_joint_trajectory#L10",
+    "config::ros2_controllers::action_server::/arm_controller/follow_joint_trajectory#L5",
+    "config::ros2_controllers::action_server::/gripper_controller/follow_joint_trajectory#L8"
+  ],
+  "internal_peer_endpoints": [],
+  "dependency_generated_endpoints": [],
+  "action_protocols": [
+    {
+      "action_name": "/follow_joint_trajectory",
+      "action_type": "control_msgs/action/FollowJointTrajectory",
+      "owner_node_id": "jaco2_moveit_demos::MoveitInterface",
+      "role": "client",
+      "send_goal_service": "/follow_joint_trajectory/_action/send_goal",
+      "cancel_goal_service": "/follow_joint_trajectory/_action/cancel_goal",
+      "get_result_service": "/follow_joint_trajectory/_action/get_result",
+      "feedback_topic": "/follow_joint_trajectory/_action/feedback",
+      "status_topic": "/follow_joint_trajectory/_action/status"
+    },
+    {
+      "action_name": "/follow_joint_trajectory",
+      "action_type": "control_msgs/action/FollowJointTrajectory",
+      "owner_node_id": "jaco2_moveit_task_constructor::MtcPickplace",
+      "role": "client",
+      "send_goal_service": "/follow_joint_trajectory/_action/send_goal",
+      "cancel_goal_service": "/follow_joint_trajectory/_action/cancel_goal",
+      "get_result_service": "/follow_joint_trajectory/_action/get_result",
+      "feedback_topic": "/follow_joint_trajectory/_action/feedback",
+      "status_topic": "/follow_joint_trajectory/_action/status"
+    },
+    {
+      "action_name": "/follow_joint_trajectory",
+      "action_type": "control_msgs/action/FollowJointTrajectory",
+      "owner_node_id": "jaco2_moveit_task_constructor::MtcCartesian",
+      "role": "client",
+      "send_goal_service": "/follow_joint_trajectory/_action/send_goal",
+      "cancel_goal_service": "/follow_joint_trajectory/_action/cancel_goal",
+      "get_result_service": "/follow_joint_trajectory/_action/get_result",
+      "feedback_topic": "/follow_joint_trajectory/_action/feedback",
+      "status_topic": "/follow_joint_trajectory/_action/status"
+    },
+    {
+      "action_name": "/arm_controller/follow_joint_trajectory",
+      "action_type": "control_msgs/action/FollowJointTrajectory",
+      "owner_node_id": "config::moveit_controllers",
+      "role": "client",
+      "send_goal_service": "/arm_controller/follow_joint_trajectory/_action/send_goal",
+      "cancel_goal_service": "/arm_controller/follow_joint_trajectory/_action/cancel_goal",
+      "get_result_service": "/arm_controller/follow_joint_trajectory/_action/get_result",
+      "feedback_topic": "/arm_controller/follow_joint_trajectory/_action/feedback",
+      "status_topic": "/arm_controller/follow_joint_trajectory/_action/status"
+    },
+    {
+      "action_name": "/gripper_controller/follow_joint_trajectory",
+      "action_type": "control_msgs/action/FollowJointTrajectory",
+      "owner_node_id": "config::moveit_controllers",
+      "role": "client",
+      "send_goal_service": "/gripper_controller/follow_joint_trajectory/_action/send_goal",
+      "cancel_goal_service": "/gripper_controller/follow_joint_trajectory/_action/cancel_goal",
+      "get_result_service": "/gripper_controller/follow_joint_trajectory/_action/get_result",
+      "feedback_topic": "/gripper_controller/follow_joint_trajectory/_action/feedback",
+      "status_topic": "/gripper_controller/follow_joint_trajectory/_action/status"
+    },
+    {
+      "action_name": "/arm_controller/follow_joint_trajectory",
+      "action_type": "control_msgs/action/FollowJointTrajectory",
+      "owner_node_id": "config::ros2_controllers",
+      "role": "server",
+      "send_goal_service": "/arm_controller/follow_joint_trajectory/_action/send_goal",
+      "cancel_goal_service": "/arm_controller/follow_joint_trajectory/_action/cancel_goal",
+      "get_result_service": "/arm_controller/follow_joint_trajectory/_action/get_result",
+      "feedback_topic": "/arm_controller/follow_joint_trajectory/_action/feedback",
+      "status_topic": "/arm_controller/follow_joint_trajectory/_action/status"
+    },
+    {
+      "action_name": "/gripper_controller/follow_joint_trajectory",
+      "action_type": "control_msgs/action/FollowJointTrajectory",
+      "owner_node_id": "config::ros2_controllers",
+      "role": "server",
+      "send_goal_service": "/gripper_controller/follow_joint_trajectory/_action/send_goal",
+      "cancel_goal_service": "/gripper_controller/follow_joint_trajectory/_action/cancel_goal",
+      "get_result_service": "/gripper_controller/follow_joint_trajectory/_action/get_result",
+      "feedback_topic": "/gripper_controller/follow_joint_trajectory/_action/feedback",
+      "status_topic": "/gripper_controller/follow_joint_trajectory/_action/status"
+    }
+  ],
+  "_provenance": {
+    "repository_name": "jaco2_sim_devkit",
+    "repository_url": "https://github.com/VibhuSharma19/jaco2_sim_devkit",
+    "commit_hash": "993a6e3de05e50fec4ce40c65a5b1d3a9d8ca9cc",
+    "branch": "main",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:38.572601+00:00"
+  }
+}

@@ -1,0 +1,2445 @@
+{
+  "packages": [
+    {
+      "name": "jaco2_bringup",
+      "build_type": "ament_cmake",
+      "package_path": "jaco2_bringup",
+      "is_internal": true,
+      "declared_dependencies": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common"
+      ],
+      "observed_source_dependencies": [],
+      "console_scripts": {}
+    },
+    {
+      "name": "jaco2_controller",
+      "build_type": "ament_python",
+      "package_path": "jaco2_controller",
+      "is_internal": true,
+      "declared_dependencies": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257",
+        "ament_python",
+        "controller_manager",
+        "jaco2_description",
+        "joint_state_publisher_gui",
+        "python3-pytest",
+        "setuptools"
+      ],
+      "observed_source_dependencies": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_index_python",
+        "ament_pep257",
+        "launch",
+        "launch_ros",
+        "rclpy",
+        "sensor_msgs",
+        "trajectory_msgs"
+      ],
+      "console_scripts": {
+        "jsp_controller": "jaco2_controller.jsp_gui_controller:main"
+      }
+    },
+    {
+      "name": "jaco2_description",
+      "build_type": "ament_cmake",
+      "package_path": "jaco2_description",
+      "is_internal": true,
+      "declared_dependencies": [
+        "ament_cmake",
+        "ament_cmake_python",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "geometry_msgs",
+        "jaco2_utlis",
+        "python3",
+        "rclpy",
+        "tf2_ros",
+        "xacro"
+      ],
+      "observed_source_dependencies": [
+        "ament_index_python",
+        "cv2",
+        "geometry_msgs",
+        "jaco2_utils",
+        "launch",
+        "launch_ros",
+        "numpy",
+        "rclpy",
+        "tf2_ros"
+      ],
+      "console_scripts": {}
+    },
+    {
+      "name": "jaco2_gazebo",
+      "build_type": "ament_cmake",
+      "package_path": "jaco2_gazebo",
+      "is_internal": true,
+      "declared_dependencies": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common"
+      ],
+      "observed_source_dependencies": [
+        "ament_index_python",
+        "launch",
+        "launch_ros",
+        "rclpy",
+        "sensor_msgs",
+        "std_msgs"
+      ],
+      "console_scripts": {}
+    },
+    {
+      "name": "jaco2_jaco_arm_ikfast_plugin",
+      "build_type": "ament_cmake",
+      "package_path": "jaco2_jaco_arm_ikfast_plugin",
+      "is_internal": true,
+      "declared_dependencies": [
+        "ament_cmake",
+        "liblapack-dev",
+        "moveit_core",
+        "pluginlib",
+        "rclcpp",
+        "tf2_eigen",
+        "tf2_kdl"
+      ],
+      "observed_source_dependencies": [
+        "Eigen",
+        "moveit",
+        "pluginlib",
+        "rclcpp",
+        "tf2_eigen",
+        "tf2_kdl"
+      ],
+      "console_scripts": {}
+    },
+    {
+      "name": "jaco2_moveit_config",
+      "build_type": "ament_cmake",
+      "package_path": "jaco2_moveit_config",
+      "is_internal": true,
+      "declared_dependencies": [
+        "ament_cmake",
+        "controller_manager",
+        "jaco2_description",
+        "joint_state_publisher",
+        "joint_state_publisher_gui",
+        "moveit_configs_utils",
+        "moveit_kinematics",
+        "moveit_planners",
+        "moveit_ros_move_group",
+        "moveit_ros_visualization",
+        "moveit_ros_warehouse",
+        "moveit_setup_assistant",
+        "moveit_simple_controller_manager",
+        "octomap",
+        "robot_state_publisher",
+        "rviz2",
+        "rviz_common",
+        "rviz_default_plugins",
+        "tf2_ros",
+        "warehouse_ros_mongo",
+        "xacro"
+      ],
+      "observed_source_dependencies": [
+        "ament_index_python",
+        "launch",
+        "launch_ros",
+        "moveit_configs_utils"
+      ],
+      "console_scripts": {}
+    },
+    {
+      "name": "jaco2_moveit_demos",
+      "build_type": "ament_python",
+      "package_path": "jaco2_moveit_demos",
+      "is_internal": true,
+      "declared_dependencies": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257",
+        "geometry_msgs",
+        "moveit",
+        "python3-pytest",
+        "rclpy",
+        "setuptools"
+      ],
+      "observed_source_dependencies": [
+        "ament_index_python",
+        "geometry_msgs",
+        "launch",
+        "launch_ros",
+        "moveit",
+        "moveit_configs_utils",
+        "moveit_msgs",
+        "rclpy",
+        "shape_msgs"
+      ],
+      "console_scripts": {
+        "moveit_py": "jaco2_moveit_demos.moveit_interface:main",
+        "moveit_planning": "jaco2_moveit_demos.moveit_planning:main"
+      }
+    },
+    {
+      "name": "jaco2_moveit_task_constructor",
+      "build_type": "ament_python",
+      "package_path": "jaco2_moveit_task_constructor",
+      "is_internal": true,
+      "declared_dependencies": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257",
+        "geometry_msgs",
+        "math",
+        "moveit",
+        "moveit_msgs",
+        "python3-pytest",
+        "rclcpp",
+        "rclpy",
+        "setuptools",
+        "std_msgs",
+        "time"
+      ],
+      "observed_source_dependencies": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_index_python",
+        "ament_pep257",
+        "geometry_msgs",
+        "jaco2_utils",
+        "launch",
+        "launch_ros",
+        "moveit",
+        "moveit_configs_utils",
+        "moveit_msgs",
+        "rclcpp",
+        "rclpy",
+        "shape_msgs",
+        "std_msgs"
+      ],
+      "console_scripts": {
+        "planner": "jaco2_moveit_task_constructor.planner:main",
+        "pickplace": "jaco2_moveit_task_constructor.pickplace:main",
+        "scene_publisher": "jaco2_moveit_task_constructor.scene_publisher:main"
+      }
+    },
+    {
+      "name": "jaco2_servo",
+      "build_type": "ament_python",
+      "package_path": "jaco2_servo",
+      "is_internal": true,
+      "declared_dependencies": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257",
+        "control_msgs",
+        "geometry_msgs",
+        "joy",
+        "moveit_msgs",
+        "moveit_servo",
+        "pygame",
+        "python3-pytest",
+        "rclpy",
+        "setuptools"
+      ],
+      "observed_source_dependencies": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_index_python",
+        "ament_pep257",
+        "control_msgs",
+        "geometry_msgs",
+        "launch",
+        "launch_param_builder",
+        "launch_ros",
+        "moveit_configs_utils",
+        "moveit_msgs",
+        "pygame",
+        "rclpy",
+        "select",
+        "sensor_msgs",
+        "std_srvs",
+        "termios",
+        "tty"
+      ],
+      "console_scripts": {
+        "key_teleop": "jaco2_servo.keyboard_teleop:main",
+        "cmd_switch": "jaco2_servo.servo_cmd_switch:main",
+        "joy_teleop": "jaco2_servo.joystick_teleop:main"
+      }
+    },
+    {
+      "name": "jaco2_sim_devkit",
+      "build_type": "ament_cmake",
+      "package_path": "jaco2_sim_devkit",
+      "is_internal": true,
+      "declared_dependencies": [
+        "ament_cmake",
+        "ament_lint_auto",
+        "ament_lint_common",
+        "ament_python",
+        "jaco2_bringup",
+        "jaco2_controller",
+        "jaco2_description",
+        "jaco2_gazebo",
+        "jaco2_jaco_arm_ikfast_plugin",
+        "jaco2_moveit_config",
+        "jaco2_moveit_demos",
+        "jaco2_moveit_task_constructor",
+        "jaco2_servo",
+        "jaco2_utils"
+      ],
+      "observed_source_dependencies": [],
+      "console_scripts": {}
+    },
+    {
+      "name": "jaco2_utils",
+      "build_type": "ament_python",
+      "package_path": "jaco2_utils",
+      "is_internal": true,
+      "declared_dependencies": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257",
+        "python3-pytest",
+        "setuptools"
+      ],
+      "observed_source_dependencies": [
+        "ament_copyright",
+        "ament_flake8",
+        "ament_pep257",
+        "matplotlib",
+        "numpy",
+        "scipy"
+      ],
+      "console_scripts": {
+        "jaco2_workspace": "jaco2_utils.workspace:main"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source_package": "jaco2_bringup",
+      "target_package": "ament_cmake",
+      "dependency_type": "buildtool_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_bringup/package.xml",
+      "line_number": 10
+    },
+    {
+      "source_package": "jaco2_bringup",
+      "target_package": "ament_lint_auto",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_bringup/package.xml",
+      "line_number": 12
+    },
+    {
+      "source_package": "jaco2_bringup",
+      "target_package": "ament_lint_common",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_bringup/package.xml",
+      "line_number": 13
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "controller_manager",
+      "dependency_type": "build_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_controller/package.xml",
+      "line_number": 17
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "jaco2_description",
+      "dependency_type": "build_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_controller/package.xml",
+      "line_number": 18
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "ament_python",
+      "dependency_type": "buildtool_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_controller/package.xml",
+      "line_number": 10
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "controller_manager",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_controller/package.xml",
+      "line_number": 20
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "jaco2_description",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_controller/package.xml",
+      "line_number": 21
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "joint_state_publisher_gui",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_controller/package.xml",
+      "line_number": 22
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "ament_copyright",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_controller/package.xml",
+      "line_number": 12
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "ament_flake8",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_controller/package.xml",
+      "line_number": 13
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "ament_pep257",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_controller/package.xml",
+      "line_number": 14
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "python3-pytest",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_controller/package.xml",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "setuptools",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_controller/setup.py",
+      "line_number": null
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "rclpy",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_controller/jaco2_controller/jsp_gui_controller.py",
+      "line_number": 3
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "sensor_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_controller/jaco2_controller/jsp_gui_controller.py",
+      "line_number": 5
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "trajectory_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_controller/jaco2_controller/jsp_gui_controller.py",
+      "line_number": 6
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "ament_index_python",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_controller/launch/controller.launch.py",
+      "line_number": 2
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "launch",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_controller/launch/controller.launch.py",
+      "line_number": 4
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "launch_ros",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_controller/launch/controller.launch.py",
+      "line_number": 9
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "ament_copyright",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_controller/test/test_copyright.py",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "ament_flake8",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_controller/test/test_flake8.py",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "ament_pep257",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_controller/test/test_pep257.py",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "xacro",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_description/package.xml",
+      "line_number": 16
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "jaco2_utlis",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_description/package.xml",
+      "line_number": 17
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "tf2_ros",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_description/package.xml",
+      "line_number": 18
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "geometry_msgs",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_description/package.xml",
+      "line_number": 19
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "rclpy",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_description/package.xml",
+      "line_number": 20
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "ament_cmake",
+      "dependency_type": "buildtool_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_description/package.xml",
+      "line_number": 10
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "ament_cmake_python",
+      "dependency_type": "buildtool_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_description/package.xml",
+      "line_number": 11
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "python3",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_description/package.xml",
+      "line_number": 22
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "ament_lint_auto",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_description/package.xml",
+      "line_number": 13
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "ament_lint_common",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_description/package.xml",
+      "line_number": 14
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "ament_index_python",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_description/launch/display.launch.py",
+      "line_number": 2
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "launch",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_description/launch/display.launch.py",
+      "line_number": 3
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "launch_ros",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_description/launch/display.launch.py",
+      "line_number": 6
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "rclpy",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_description/scripts/track_end_effector.py",
+      "line_number": 3
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "cv2",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_description/scripts/track_end_effector.py",
+      "line_number": 3
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "numpy",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_description/scripts/track_end_effector.py",
+      "line_number": 5
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "tf2_ros",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_description/scripts/track_end_effector.py",
+      "line_number": 7
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "geometry_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_description/scripts/track_end_effector.py",
+      "line_number": 9
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "jaco2_utils",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_description/scripts/track_end_effector.py",
+      "line_number": 10
+    },
+    {
+      "source_package": "jaco2_gazebo",
+      "target_package": "ament_cmake",
+      "dependency_type": "buildtool_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_gazebo/package.xml",
+      "line_number": 10
+    },
+    {
+      "source_package": "jaco2_gazebo",
+      "target_package": "ament_lint_auto",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_gazebo/package.xml",
+      "line_number": 12
+    },
+    {
+      "source_package": "jaco2_gazebo",
+      "target_package": "ament_lint_common",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_gazebo/package.xml",
+      "line_number": 13
+    },
+    {
+      "source_package": "jaco2_gazebo",
+      "target_package": "ament_index_python",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_gazebo/launch/gazebo_world.launch.py",
+      "line_number": 2
+    },
+    {
+      "source_package": "jaco2_gazebo",
+      "target_package": "launch",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_gazebo/launch/gazebo_world.launch.py",
+      "line_number": 4
+    },
+    {
+      "source_package": "jaco2_gazebo",
+      "target_package": "launch_ros",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_gazebo/launch/gazebo_world.launch.py",
+      "line_number": 9
+    },
+    {
+      "source_package": "jaco2_gazebo",
+      "target_package": "rclpy",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_gazebo/scripts/depth_image_remap.py",
+      "line_number": 3
+    },
+    {
+      "source_package": "jaco2_gazebo",
+      "target_package": "sensor_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_gazebo/scripts/depth_image_remap.py",
+      "line_number": 6
+    },
+    {
+      "source_package": "jaco2_gazebo",
+      "target_package": "std_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_gazebo/scripts/depth_image_remap.py",
+      "line_number": 7
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "tf2_kdl",
+      "dependency_type": "build_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/package.xml",
+      "line_number": 13
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "liblapack-dev",
+      "dependency_type": "build_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/package.xml",
+      "line_number": 14
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "tf2_eigen",
+      "dependency_type": "build_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/package.xml",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "rclcpp",
+      "dependency_type": "build_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/package.xml",
+      "line_number": 16
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "moveit_core",
+      "dependency_type": "build_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/package.xml",
+      "line_number": 17
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "pluginlib",
+      "dependency_type": "build_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/package.xml",
+      "line_number": 18
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "ament_cmake",
+      "dependency_type": "buildtool_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/package.xml",
+      "line_number": 8
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "liblapack-dev",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/package.xml",
+      "line_number": 19
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "rclcpp",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/package.xml",
+      "line_number": 20
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "moveit_core",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/package.xml",
+      "line_number": 21
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "pluginlib",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/package.xml",
+      "line_number": 22
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "rclcpp",
+      "dependency_type": "source_include",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/src/jaco2_jaco_arm_ikfast_moveit_plugin.cpp",
+      "line_number": 44
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "moveit",
+      "dependency_type": "source_include",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/src/jaco2_jaco_arm_ikfast_moveit_plugin.cpp",
+      "line_number": 45
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "Eigen",
+      "dependency_type": "source_include",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/src/jaco2_jaco_arm_ikfast_moveit_plugin.cpp",
+      "line_number": 47
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "tf2_kdl",
+      "dependency_type": "source_include",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/src/jaco2_jaco_arm_ikfast_moveit_plugin.cpp",
+      "line_number": 48
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "tf2_eigen",
+      "dependency_type": "source_include",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/src/jaco2_jaco_arm_ikfast_moveit_plugin.cpp",
+      "line_number": 49
+    },
+    {
+      "source_package": "jaco2_jaco_arm_ikfast_plugin",
+      "target_package": "pluginlib",
+      "dependency_type": "source_include",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_jaco_arm_ikfast_plugin/src/jaco2_jaco_arm_ikfast_moveit_plugin.cpp",
+      "line_number": 1420
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "octomap",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 48
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "ament_cmake",
+      "dependency_type": "buildtool_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 19
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "moveit_ros_move_group",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 21
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "moveit_kinematics",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 22
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "moveit_planners",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 23
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "moveit_simple_controller_manager",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 24
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "joint_state_publisher",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 25
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "joint_state_publisher_gui",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 26
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "tf2_ros",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 27
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "xacro",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 28
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "controller_manager",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 24
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "jaco2_description",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 34
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "moveit_configs_utils",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 35
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "moveit_ros_move_group",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 21
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "moveit_ros_visualization",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 37
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "moveit_ros_warehouse",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 38
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "moveit_setup_assistant",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 39
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "robot_state_publisher",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 40
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "rviz2",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 41
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "rviz_common",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 42
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "rviz_default_plugins",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 43
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "tf2_ros",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 27
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "warehouse_ros_mongo",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 45
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "xacro",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_config/package.xml",
+      "line_number": 28
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "launch",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_config/launch/jaco2_move_group.launch.py",
+      "line_number": 4
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "moveit_configs_utils",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_config/launch/jaco2_move_group.launch.py",
+      "line_number": 5
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "launch_ros",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_config/launch/jaco2_move_group.launch.py",
+      "line_number": 6
+    },
+    {
+      "source_package": "jaco2_moveit_config",
+      "target_package": "ament_index_python",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_config/launch/jaco2_move_group.launch.py",
+      "line_number": 9
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "moveit",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_demos/package.xml",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "rclpy",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_demos/package.xml",
+      "line_number": 16
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "geometry_msgs",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_demos/package.xml",
+      "line_number": 17
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "ament_copyright",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_demos/package.xml",
+      "line_number": 10
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "ament_flake8",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_demos/package.xml",
+      "line_number": 11
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "ament_pep257",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_demos/package.xml",
+      "line_number": 12
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "python3-pytest",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_demos/package.xml",
+      "line_number": 13
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "setuptools",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_demos/setup.py",
+      "line_number": null
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "rclpy",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_demos/jaco2_moveit_demos/moveit_interface.py",
+      "line_number": 3
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "geometry_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_demos/jaco2_moveit_demos/moveit_interface.py",
+      "line_number": 8
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "moveit",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_demos/jaco2_moveit_demos/moveit_interface.py",
+      "line_number": 9
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "moveit_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_demos/jaco2_moveit_demos/moveit_planning.py",
+      "line_number": 11
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "shape_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_demos/jaco2_moveit_demos/moveit_planning.py",
+      "line_number": 12
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "ament_index_python",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_demos/launch/moveit_py.launch.py",
+      "line_number": 4
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "launch",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_demos/launch/moveit_py.launch.py",
+      "line_number": 5
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "launch_ros",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_demos/launch/moveit_py.launch.py",
+      "line_number": 6
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "moveit_configs_utils",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_moveit_demos/launch/moveit_py.launch.py",
+      "line_number": 9
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "rclpy",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "moveit",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 16
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "geometry_msgs",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 17
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "std_msgs",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 18
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "rclcpp",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 19
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "time",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 20
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "math",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 21
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "moveit_msgs",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 22
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "ament_copyright",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 10
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "ament_flake8",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 11
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "ament_pep257",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 12
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "python3-pytest",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_moveit_task_constructor/package.xml",
+      "line_number": 13
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "setuptools",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/setup.py",
+      "line_number": null
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "rclcpp",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/pickplace.py",
+      "line_number": 3
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "moveit",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/pickplace.py",
+      "line_number": 4
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "geometry_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/pickplace.py",
+      "line_number": 5
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "moveit_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/pickplace.py",
+      "line_number": 6
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "rclpy",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/pickplace.py",
+      "line_number": 7
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "shape_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/pickplace.py",
+      "line_number": 8
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "jaco2_utils",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/pickplace.py",
+      "line_number": 9
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "std_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/planner.py",
+      "line_number": 5
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "launch",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/launch/move_group.launch.py",
+      "line_number": 3
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "launch_ros",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/launch/move_group.launch.py",
+      "line_number": 4
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "ament_index_python",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/launch/move_group.launch.py",
+      "line_number": 6
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "moveit_configs_utils",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_moveit_task_constructor/launch/move_group.launch.py",
+      "line_number": 8
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "ament_copyright",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/test/test_copyright.py",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "ament_flake8",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/test/test_flake8.py",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "ament_pep257",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_moveit_task_constructor/test/test_pep257.py",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "rclpy",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_servo/package.xml",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "control_msgs",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_servo/package.xml",
+      "line_number": 16
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "moveit_msgs",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_servo/package.xml",
+      "line_number": 17
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "geometry_msgs",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_servo/package.xml",
+      "line_number": 18
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "moveit_servo",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_servo/package.xml",
+      "line_number": 19
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "pygame",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_servo/package.xml",
+      "line_number": 20
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "joy",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_servo/package.xml",
+      "line_number": 21
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "ament_copyright",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_servo/package.xml",
+      "line_number": 10
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "ament_flake8",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_servo/package.xml",
+      "line_number": 11
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "ament_pep257",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_servo/package.xml",
+      "line_number": 12
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "python3-pytest",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_servo/package.xml",
+      "line_number": 13
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "setuptools",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/setup.py",
+      "line_number": null
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "rclpy",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+      "line_number": 3
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "sensor_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+      "line_number": 5
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "control_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+      "line_number": 6
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "geometry_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+      "line_number": 7
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "std_srvs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+      "line_number": 8
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "moveit_msgs",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+      "line_number": 9
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "pygame",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/jaco2_servo/keyboard_teleop.py",
+      "line_number": 3
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "select",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_servo/jaco2_servo/servo_cmd_switch.py",
+      "line_number": 4
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "termios",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_servo/jaco2_servo/servo_cmd_switch.py",
+      "line_number": 5
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "tty",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_servo/jaco2_servo/servo_cmd_switch.py",
+      "line_number": 6
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "launch",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/launch/joystick_teleop.launch.py",
+      "line_number": 4
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "launch_ros",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/launch/joystick_teleop.launch.py",
+      "line_number": 5
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "ament_index_python",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/launch/joystick_teleop.launch.py",
+      "line_number": 6
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "launch_param_builder",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_servo/launch/joystick_teleop.launch.py",
+      "line_number": 7
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "moveit_configs_utils",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_servo/launch/joystick_teleop.launch.py",
+      "line_number": 8
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "ament_copyright",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/test/test_copyright.py",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "ament_flake8",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/test/test_flake8.py",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "ament_pep257",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_servo/test/test_pep257.py",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "jaco2_description",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 16
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "jaco2_controller",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 17
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "jaco2_moveit_config",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 18
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "jaco2_moveit_demos",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 19
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "jaco2_servo",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 20
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "jaco2_utils",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 21
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "jaco2_moveit_task_constructor",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 22
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "jaco2_gazebo",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 23
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "jaco2_bringup",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 24
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "jaco2_jaco_arm_ikfast_plugin",
+      "dependency_type": "depend",
+      "origin": "declared_manifest",
+      "is_target_internal": true,
+      "resolution_category": "resolved_internal_package",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 25
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "ament_cmake",
+      "dependency_type": "buildtool_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 10
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "ament_python",
+      "dependency_type": "buildtool_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 11
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "ament_lint_auto",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 13
+    },
+    {
+      "source_package": "jaco2_sim_devkit",
+      "target_package": "ament_lint_common",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_sim_devkit/package.xml",
+      "line_number": 14
+    },
+    {
+      "source_package": "jaco2_utils",
+      "target_package": "ament_copyright",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_utils/package.xml",
+      "line_number": 10
+    },
+    {
+      "source_package": "jaco2_utils",
+      "target_package": "ament_flake8",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_utils/package.xml",
+      "line_number": 11
+    },
+    {
+      "source_package": "jaco2_utils",
+      "target_package": "ament_pep257",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_utils/package.xml",
+      "line_number": 12
+    },
+    {
+      "source_package": "jaco2_utils",
+      "target_package": "python3-pytest",
+      "dependency_type": "test_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "manifest_declared_external",
+      "source_file": "jaco2_utils/package.xml",
+      "line_number": 13
+    },
+    {
+      "source_package": "jaco2_utils",
+      "target_package": "setuptools",
+      "dependency_type": "exec_depend",
+      "origin": "declared_manifest",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_utils/setup.py",
+      "line_number": null
+    },
+    {
+      "source_package": "jaco2_utils",
+      "target_package": "numpy",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_utils/jaco2_utils/workspace.py",
+      "line_number": 3
+    },
+    {
+      "source_package": "jaco2_utils",
+      "target_package": "matplotlib",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_utils/jaco2_utils/workspace.py",
+      "line_number": 4
+    },
+    {
+      "source_package": "jaco2_utils",
+      "target_package": "scipy",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "unresolved_external_library",
+      "source_file": "jaco2_utils/jaco2_utils/workspace.py",
+      "line_number": 5
+    },
+    {
+      "source_package": "jaco2_utils",
+      "target_package": "ament_copyright",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_utils/test/test_copyright.py",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_utils",
+      "target_package": "ament_flake8",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_utils/test/test_flake8.py",
+      "line_number": 15
+    },
+    {
+      "source_package": "jaco2_utils",
+      "target_package": "ament_pep257",
+      "dependency_type": "source_import",
+      "origin": "observed_source",
+      "is_target_internal": false,
+      "resolution_category": "resolved_ros_package",
+      "source_file": "jaco2_utils/test/test_pep257.py",
+      "line_number": 15
+    }
+  ],
+  "internal_packages": [
+    "jaco2_bringup",
+    "jaco2_controller",
+    "jaco2_description",
+    "jaco2_gazebo",
+    "jaco2_jaco_arm_ikfast_plugin",
+    "jaco2_moveit_config",
+    "jaco2_moveit_demos",
+    "jaco2_moveit_task_constructor",
+    "jaco2_servo",
+    "jaco2_sim_devkit",
+    "jaco2_utils"
+  ],
+  "external_packages": [
+    "ament_cmake",
+    "ament_cmake_python",
+    "ament_copyright",
+    "ament_flake8",
+    "ament_index_python",
+    "ament_lint_auto",
+    "ament_lint_common",
+    "ament_pep257",
+    "ament_python",
+    "control_msgs",
+    "controller_manager",
+    "geometry_msgs",
+    "jaco2_utlis",
+    "joint_state_publisher",
+    "joint_state_publisher_gui",
+    "joy",
+    "launch",
+    "launch_ros",
+    "liblapack-dev",
+    "math",
+    "moveit",
+    "moveit_configs_utils",
+    "moveit_core",
+    "moveit_kinematics",
+    "moveit_msgs",
+    "moveit_planners",
+    "moveit_ros_move_group",
+    "moveit_ros_visualization",
+    "moveit_ros_warehouse",
+    "moveit_servo",
+    "moveit_setup_assistant",
+    "moveit_simple_controller_manager",
+    "octomap",
+    "pluginlib",
+    "pygame",
+    "python3",
+    "python3-pytest",
+    "rclcpp",
+    "rclpy",
+    "robot_state_publisher",
+    "rviz2",
+    "rviz_common",
+    "rviz_default_plugins",
+    "sensor_msgs",
+    "setuptools",
+    "shape_msgs",
+    "std_msgs",
+    "std_srvs",
+    "tf2_eigen",
+    "tf2_kdl",
+    "tf2_ros",
+    "time",
+    "trajectory_msgs",
+    "warehouse_ros_mongo",
+    "xacro"
+  ],
+  "undeclared_source_dependencies": [
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "sensor_msgs",
+      "dependency_type": "source_import",
+      "file": "jaco2_controller/jaco2_controller/jsp_gui_controller.py",
+      "line": 5
+    },
+    {
+      "source_package": "jaco2_controller",
+      "target_package": "trajectory_msgs",
+      "dependency_type": "source_import",
+      "file": "jaco2_controller/jaco2_controller/jsp_gui_controller.py",
+      "line": 6
+    },
+    {
+      "source_package": "jaco2_description",
+      "target_package": "jaco2_utils",
+      "dependency_type": "source_import",
+      "file": "jaco2_description/scripts/track_end_effector.py",
+      "line": 10
+    },
+    {
+      "source_package": "jaco2_gazebo",
+      "target_package": "sensor_msgs",
+      "dependency_type": "source_import",
+      "file": "jaco2_gazebo/scripts/depth_image_remap.py",
+      "line": 6
+    },
+    {
+      "source_package": "jaco2_gazebo",
+      "target_package": "std_msgs",
+      "dependency_type": "source_import",
+      "file": "jaco2_gazebo/scripts/depth_image_remap.py",
+      "line": 7
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "moveit_msgs",
+      "dependency_type": "source_import",
+      "file": "jaco2_moveit_demos/jaco2_moveit_demos/moveit_planning.py",
+      "line": 11
+    },
+    {
+      "source_package": "jaco2_moveit_demos",
+      "target_package": "shape_msgs",
+      "dependency_type": "source_import",
+      "file": "jaco2_moveit_demos/jaco2_moveit_demos/moveit_planning.py",
+      "line": 12
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "shape_msgs",
+      "dependency_type": "source_import",
+      "file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/pickplace.py",
+      "line": 8
+    },
+    {
+      "source_package": "jaco2_moveit_task_constructor",
+      "target_package": "jaco2_utils",
+      "dependency_type": "source_import",
+      "file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/pickplace.py",
+      "line": 9
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "sensor_msgs",
+      "dependency_type": "source_import",
+      "file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+      "line": 5
+    },
+    {
+      "source_package": "jaco2_servo",
+      "target_package": "std_srvs",
+      "dependency_type": "source_import",
+      "file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+      "line": 8
+    }
+  ],
+  "_provenance": {
+    "repository_name": "jaco2_sim_devkit",
+    "repository_url": "https://github.com/VibhuSharma19/jaco2_sim_devkit",
+    "commit_hash": "993a6e3de05e50fec4ce40c65a5b1d3a9d8ca9cc",
+    "branch": "main",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:38.968676+00:00"
+  }
+}

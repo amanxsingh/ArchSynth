@@ -321,7 +321,7 @@ def parse_cpp_file(
         for m in standalone_pat.finditer(clean_content):
             base_cls = m.group(1) or m.group(2)
             nname = m.group(3)
-            if nname in existing_node_names:
+            if not nname or not nname.strip("_") or nname in existing_node_names:
                 continue
             existing_node_names.add(nname)
             lno = clean_content[:m.start()].count('\n') + 1

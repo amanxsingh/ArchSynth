@@ -779,18 +779,26 @@ class InterfaceExtractor:
                 )
                 declarations.append(decl)
 
-            # 2. Subscribers: create_subscription<MsgType>("topic_name", qos, callback)
+            # 2. Subscribers: create_subscription<MsgType>("topic_name", qos, callback) or (node, "topic_name", ...)
             sub_pattern = re.compile(
-                r'\b(?:(?:this|node)->(?:template\s+)?)?create_subscription\s*<\s*([^>]+)\s*>\s*\(\s*([^,\)]+)',
+                r'\b(?:(?:this|node)->(?:template\s+)?)?create_subscription\s*<\s*([^>]+)\s*>\s*\(([^;]+)\)',
                 re.DOTALL
             )
             for m in sub_pattern.finditer(clean_content):
                 raw_type = m.group(1).strip()
-                raw_name = m.group(2).strip()
+                args_str = m.group(2)
+                raw_args = [a.strip() for a in args_str.split(",")]
+                if raw_args and raw_args[0] in ("node", "this", "*this", "shared_from_this()") and len(raw_args) > 1:
+                    raw_name = raw_args[1]
+                elif raw_args:
+                    raw_name = raw_args[0]
+                else:
+                    continue
+                if not raw_name or "shared_from_this" in raw_name or "get_node_base_interface" in raw_name:
+                    continue
                 line = clean_content[:m.start()].count("\n") + 1
                 stmt_end = clean_content.find(";", m.start())
                 line_end = clean_content[:stmt_end].count("\n") + 1 if stmt_end != -1 else line
-                args_str = clean_content[m.start():stmt_end] if stmt_end != -1 else clean_content[m.start():m.start() + 200]
                 q_rel, q_dur, q_hist, q_depth = parse_cpp_qos(args_str)
                 if q_rel is None:
                     q_rel = "reliable"
@@ -1019,7 +1027,7 @@ class InterfaceExtractor:
                 )
                 declarations.append(decl)
 
-            # 4. Service Clients: create_client<SrvType>("service_name")
+            # 4. Service Clients: create_client<SrvType>("service_name") or (node, "service_name", ...)
             client_pattern = re.compile(
                 r'\b(?:(?:this|node)->(?:template\s+)?)?create_client\s*<\s*([^>]+)\s*>\s*\(([^;]+)\)',
                 re.DOTALL
@@ -1027,7 +1035,15 @@ class InterfaceExtractor:
             for m in client_pattern.finditer(clean_content):
                 raw_type = m.group(1).strip()
                 args_str = m.group(2)
-                raw_name = args_str.split(",")[0].strip()
+                raw_args = [a.strip() for a in args_str.split(",")]
+                if raw_args and raw_args[0] in ("node", "this", "*this", "shared_from_this()") and len(raw_args) > 1:
+                    raw_name = raw_args[1]
+                elif raw_args:
+                    raw_name = raw_args[0]
+                else:
+                    continue
+                if not raw_name or "shared_from_this" in raw_name or "get_node_base_interface" in raw_name:
+                    continue
                 line = clean_content[:m.start()].count("\n") + 1
                 norm_name, is_dyn, dyn_tmpl, dyn_pfx, dyn_unres = self._resolve_cpp_name(raw_name, params, node=node)
                 norm_type = self._resolve_cpp_type(raw_type, aliases, "srv")
@@ -1078,7 +1094,7 @@ class InterfaceExtractor:
                 args_str = m.group(2)
                 name_m = re.search(r'"([^"]+)"', args_str)
                 raw_name = name_m.group(1) if name_m else args_str.split(",")[0].strip()
-                if not raw_name or raw_name == "unnamed":
+                if not raw_name or raw_name == "unnamed" or "get_node_base_interface" in raw_name or "shared_from_this" in raw_name:
                     continue
                 line = clean_content[:m.start()].count("\n") + 1
                 norm_name, is_dyn, dyn_tmpl, dyn_pfx, dyn_unres = self._resolve_cpp_name(raw_name, params, node=node)
@@ -1116,29 +1132,32 @@ class InterfaceExtractor:
                 )
                 declarations.append(decl)
 
-            # 6. TF Broadcasters: tf2_ros::TransformBroadcaster
+            # 6. TF Broadcasters: tf2_ros::TransformBroadcaster / nav2::create_transform_broadcaster / StaticTransformBroadcaster
             tf_broadcaster_pat = re.compile(
-                r'\b(?:std::make_unique<)?tf2_ros::TransformBroadcaster(?:>)?\s*\(([^)]*)\)',
+                r'(?:\b(?:std::make_unique<)?(?:tf2_ros|nav2)::(?:Static)?TransformBroadcaster(?:>)?\s*\(([^)]*)\)'
+                r'|\bnav2::create_(?:static_)?transform_broadcaster\s*\(([^)]*)\))',
                 re.DOTALL
             )
             for m in tf_broadcaster_pat.finditer(clean_content):
+                matched_text = m.group(0).lower()
+                tf_topic = "/tf_static" if "static" in matched_text else "/tf"
                 line = clean_content[:m.start()].count("\n") + 1
                 stmt_end = clean_content.find(";", m.start())
                 line_end = clean_content[:stmt_end].count("\n") + 1 if stmt_end != -1 else line
-                decl_key = ("tf_broadcaster", "/tf", rel_file, line)
+                decl_key = ("tf_broadcaster", tf_topic, rel_file, line)
                 if decl_key in seen_keys:
                     continue
                 seen_keys.add(decl_key)
 
                 decl = InterfaceDeclaration(
-                    declaration_id=f"{node.id}::tf_broadcaster::/tf#L{line}",
+                    declaration_id=f"{node.id}::tf_broadcaster::{tf_topic}#L{line}",
                     owner_node_id=node.id,
                     interface_type=CommunicationType.TF_BROADCASTER,
-                    name_expression="/tf",
+                    name_expression=tf_topic,
                     message_type="tf2_msgs/msg/TFMessage",
                     direction="out",
                     qos_reliability="reliable",
-                    qos_durability="volatile",
+                    qos_durability="transient_local" if tf_topic == "/tf_static" else "volatile",
                     source_file=rel_file,
                     line_start=line,
                     line_end=line_end,
@@ -1155,15 +1174,15 @@ class InterfaceExtractor:
                             evidence_type=EvidenceType.TF_INTERFACE,
                             source="cpp_interface_extractor",
                             confidence=1.0,
-                            explanation=f"TF2 TransformBroadcaster broadcasting transform frames on /tf"
+                            explanation=f"TF2 TransformBroadcaster broadcasting transform frames on {tf_topic}"
                         )
                     ]
                 )
                 declarations.append(decl)
 
-            # 7. TF Listeners: tf2_ros::TransformListener
+            # 7. TF Listeners: tf2_ros::TransformListener / nav2::TransformListener
             tf_listener_pat = re.compile(
-                r'\b(?:std::make_unique<)?tf2_ros::TransformListener(?:>)?\s*\(([^)]*)\)',
+                r'\b(?:std::make_unique<)?(?:tf2_ros|nav2)::TransformListener(?:>)?\s*\(([^)]*)\)',
                 re.DOTALL
             )
             for m in tf_listener_pat.finditer(clean_content):

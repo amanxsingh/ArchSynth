@@ -1,0 +1,3526 @@
+{
+  "provenance": null,
+  "plugins": [
+    {
+      "plugin_name": "nav2_amcl::DifferentialMotionModel",
+      "class_type": "nav2_amcl::DifferentialMotionModel",
+      "base_class_type": "nav2_amcl::MotionModel",
+      "package_name": "nav2_amcl",
+      "manifest_file": "nav2_amcl/plugins.xml",
+      "library_path": null,
+      "description": "This is a diff plugin.",
+      "plugin_category": "nav2_amcl_MotionModel",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_amcl/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_amcl::DifferentialMotionModel' extending base class 'nav2_amcl::MotionModel'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_amcl::OmniMotionModel",
+      "class_type": "nav2_amcl::OmniMotionModel",
+      "base_class_type": "nav2_amcl::MotionModel",
+      "package_name": "nav2_amcl",
+      "manifest_file": "nav2_amcl/plugins.xml",
+      "library_path": null,
+      "description": "This is a omni plugin.",
+      "plugin_category": "nav2_amcl_MotionModel",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_amcl/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_amcl::OmniMotionModel' extending base class 'nav2_amcl::MotionModel'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_behaviors::Spin",
+      "class_type": "nav2_behaviors::Spin",
+      "base_class_type": "nav2_core::Behavior",
+      "package_name": "nav2_behaviors",
+      "manifest_file": "nav2_behaviors/behavior_plugin.xml",
+      "library_path": "nav2_spin_behavior",
+      "description": null,
+      "plugin_category": "recovery_behavior",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_behaviors/behavior_plugin.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_behaviors::Spin' extending base class 'nav2_core::Behavior'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_behaviors::BackUp",
+      "class_type": "nav2_behaviors::BackUp",
+      "base_class_type": "nav2_core::Behavior",
+      "package_name": "nav2_behaviors",
+      "manifest_file": "nav2_behaviors/behavior_plugin.xml",
+      "library_path": "nav2_back_up_behavior",
+      "description": null,
+      "plugin_category": "recovery_behavior",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_behaviors/behavior_plugin.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_behaviors::BackUp' extending base class 'nav2_core::Behavior'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_behaviors::DriveOnHeading",
+      "class_type": "nav2_behaviors::DriveOnHeading<>",
+      "base_class_type": "nav2_core::Behavior",
+      "package_name": "nav2_behaviors",
+      "manifest_file": "nav2_behaviors/behavior_plugin.xml",
+      "library_path": "nav2_drive_on_heading_behavior",
+      "description": null,
+      "plugin_category": "recovery_behavior",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_behaviors/behavior_plugin.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_behaviors::DriveOnHeading<>' extending base class 'nav2_core::Behavior'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_behaviors::Wait",
+      "class_type": "nav2_behaviors::Wait",
+      "base_class_type": "nav2_core::Behavior",
+      "package_name": "nav2_behaviors",
+      "manifest_file": "nav2_behaviors/behavior_plugin.xml",
+      "library_path": "nav2_wait_behavior",
+      "description": null,
+      "plugin_category": "recovery_behavior",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_behaviors/behavior_plugin.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_behaviors::Wait' extending base class 'nav2_core::Behavior'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_behaviors::AssistedTeleop",
+      "class_type": "nav2_behaviors::AssistedTeleop",
+      "base_class_type": "nav2_core::Behavior",
+      "package_name": "nav2_behaviors",
+      "manifest_file": "nav2_behaviors/behavior_plugin.xml",
+      "library_path": "nav2_assisted_teleop_behavior",
+      "description": null,
+      "plugin_category": "recovery_behavior",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_behaviors/behavior_plugin.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_behaviors::AssistedTeleop' extending base class 'nav2_core::Behavior'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_bt_navigator::NavigateToPoseNavigator",
+      "class_type": "nav2_bt_navigator::NavigateToPoseNavigator",
+      "base_class_type": "nav2_core::NavigatorBase",
+      "package_name": "nav2_bt_navigator",
+      "manifest_file": "nav2_bt_navigator/navigator_plugins.xml",
+      "library_path": "nav2_navigate_to_pose_navigator",
+      "description": "Navigate to Pose Navigator",
+      "plugin_category": "navigator",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_bt_navigator/navigator_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_bt_navigator::NavigateToPoseNavigator' extending base class 'nav2_core::NavigatorBase'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_bt_navigator::NavigateThroughPosesNavigator",
+      "class_type": "nav2_bt_navigator::NavigateThroughPosesNavigator",
+      "base_class_type": "nav2_core::NavigatorBase",
+      "package_name": "nav2_bt_navigator",
+      "manifest_file": "nav2_bt_navigator/navigator_plugins.xml",
+      "library_path": "nav2_navigate_through_poses",
+      "description": "Navigate through Poses Navigator",
+      "plugin_category": "navigator",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_bt_navigator/navigator_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_bt_navigator::NavigateThroughPosesNavigator' extending base class 'nav2_core::NavigatorBase'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_constrained_smoother/ConstrainedSmoother",
+      "class_type": "nav2_constrained_smoother::ConstrainedSmoother",
+      "base_class_type": "nav2_core::Smoother",
+      "package_name": "nav2_constrained_smoother",
+      "manifest_file": "nav2_constrained_smoother/nav2_constrained_smoother.xml",
+      "library_path": "nav2_constrained_smoother",
+      "description": "Increases smoothness and distance from obstacles of a path using Ceres solver optimization",
+      "plugin_category": "smoother",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_constrained_smoother/nav2_constrained_smoother.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_constrained_smoother::ConstrainedSmoother' extending base class 'nav2_core::Smoother'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_controller::SimpleProgressChecker",
+      "class_type": "nav2_controller::SimpleProgressChecker",
+      "base_class_type": "nav2_core::ProgressChecker",
+      "package_name": "nav2_controller",
+      "manifest_file": "nav2_controller/plugins.xml",
+      "library_path": "simple_progress_checker",
+      "description": "Checks if distance between current and previous pose is above a threshold",
+      "plugin_category": "progress_checker",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_controller/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_controller::SimpleProgressChecker' extending base class 'nav2_core::ProgressChecker'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_controller::PoseProgressChecker",
+      "class_type": "nav2_controller::PoseProgressChecker",
+      "base_class_type": "nav2_core::ProgressChecker",
+      "package_name": "nav2_controller",
+      "manifest_file": "nav2_controller/plugins.xml",
+      "library_path": "pose_progress_checker",
+      "description": "Checks if distance and angle between current and previous pose is above a threshold",
+      "plugin_category": "progress_checker",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_controller/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_controller::PoseProgressChecker' extending base class 'nav2_core::ProgressChecker'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_controller::SimpleGoalChecker",
+      "class_type": "nav2_controller::SimpleGoalChecker",
+      "base_class_type": "nav2_core::GoalChecker",
+      "package_name": "nav2_controller",
+      "manifest_file": "nav2_controller/plugins.xml",
+      "library_path": "simple_goal_checker",
+      "description": "Checks if current pose is within goal window for x,y and yaw",
+      "plugin_category": "goal_checker",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_controller/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_controller::SimpleGoalChecker' extending base class 'nav2_core::GoalChecker'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_controller::StoppedGoalChecker",
+      "class_type": "nav2_controller::StoppedGoalChecker",
+      "base_class_type": "nav2_core::GoalChecker",
+      "package_name": "nav2_controller",
+      "manifest_file": "nav2_controller/plugins.xml",
+      "library_path": "stopped_goal_checker",
+      "description": "Checks linear and angular velocity after stopping",
+      "plugin_category": "goal_checker",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_controller/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_controller::StoppedGoalChecker' extending base class 'nav2_core::GoalChecker'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_controller::PositionGoalChecker",
+      "class_type": "nav2_controller::PositionGoalChecker",
+      "base_class_type": "nav2_core::GoalChecker",
+      "package_name": "nav2_controller",
+      "manifest_file": "nav2_controller/plugins.xml",
+      "library_path": "position_goal_checker",
+      "description": "Goal checker that only checks XY position and ignores orientation",
+      "plugin_category": "goal_checker",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_controller/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_controller::PositionGoalChecker' extending base class 'nav2_core::GoalChecker'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_controller::AdaptiveToleranceGoalChecker",
+      "class_type": "nav2_controller::AdaptiveToleranceGoalChecker",
+      "base_class_type": "nav2_core::GoalChecker",
+      "package_name": "nav2_controller",
+      "manifest_file": "nav2_controller/plugins.xml",
+      "library_path": "adaptive_tolerance_goal_checker",
+      "description": "Goal checker with two tolerance tiers: accepts tight tolerance immediately, or loose tolerance when the robot stops making progress toward the goal",
+      "plugin_category": "goal_checker",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_controller/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_controller::AdaptiveToleranceGoalChecker' extending base class 'nav2_core::GoalChecker'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_controller::AxisGoalChecker",
+      "class_type": "nav2_controller::AxisGoalChecker",
+      "base_class_type": "nav2_core::GoalChecker",
+      "package_name": "nav2_controller",
+      "manifest_file": "nav2_controller/plugins.xml",
+      "library_path": "axis_goal_checker",
+      "description": "Goal checker that checks progress along the axis defined by the last 2 poses of the path",
+      "plugin_category": "goal_checker",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_controller/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_controller::AxisGoalChecker' extending base class 'nav2_core::GoalChecker'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_controller::FeasiblePathHandler",
+      "class_type": "nav2_controller::FeasiblePathHandler",
+      "base_class_type": "nav2_core::PathHandler",
+      "package_name": "nav2_controller",
+      "manifest_file": "nav2_controller/plugins.xml",
+      "library_path": "feasible_path_handler",
+      "description": "Prunes the global plan around the robot and transforms the remaining portion into the odom frame for local control",
+      "plugin_category": "nav2_core_PathHandler",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_controller/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_controller::FeasiblePathHandler' extending base class 'nav2_core::PathHandler'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::InflationLayer",
+      "class_type": "nav2_costmap_2d::InflationLayer",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "layers",
+      "description": "OpenMP-accelerated inflation layer using Felzenszwalb-Huttenlocher distance transform for improved performance.",
+      "plugin_category": "costmap_layer",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::InflationLayer' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::LegacyInflationLayer",
+      "class_type": "nav2_costmap_2d::LegacyInflationLayer",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "layers",
+      "description": "Legacy inflation layer using traditional CellData-based algorithm (original Navigation2 implementation).",
+      "plugin_category": "costmap_layer",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::LegacyInflationLayer' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::AsymmetricInflationLayer",
+      "class_type": "nav2_costmap_2d::AsymmetricInflationLayer",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "layers",
+      "description": "OpenMP-accelerated inflation layer creating an asymmetric costmap based on the global path.",
+      "plugin_category": "costmap_layer",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::AsymmetricInflationLayer' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::ObstacleLayer",
+      "class_type": "nav2_costmap_2d::ObstacleLayer",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "layers",
+      "description": "Listens to laser scan and point cloud messages and marks and clears grid cells.",
+      "plugin_category": "costmap_layer",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::ObstacleLayer' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::StaticLayer",
+      "class_type": "nav2_costmap_2d::StaticLayer",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "layers",
+      "description": "Listens to OccupancyGrid messages and copies them in, like from map_server.",
+      "plugin_category": "costmap_layer",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::StaticLayer' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::VoxelLayer",
+      "class_type": "nav2_costmap_2d::VoxelLayer",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "layers",
+      "description": "Similar to obstacle costmap, but uses 3D voxel grid to store data.",
+      "plugin_category": "costmap_layer",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::VoxelLayer' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::RangeSensorLayer",
+      "class_type": "nav2_costmap_2d::RangeSensorLayer",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "layers",
+      "description": "A range-sensor (sonar, IR) based obstacle layer for costmap_2d",
+      "plugin_category": "costmap_layer",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::RangeSensorLayer' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::DenoiseLayer",
+      "class_type": "nav2_costmap_2d::DenoiseLayer",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "layers",
+      "description": "Filters noise-induced freestanding obstacles or small obstacles groups",
+      "plugin_category": "costmap_layer",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::DenoiseLayer' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::PluginContainerLayer",
+      "class_type": "nav2_costmap_2d::PluginContainerLayer",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "layers",
+      "description": "Plugin to group different layers within the same costmap",
+      "plugin_category": "costmap_layer",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::PluginContainerLayer' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::KeepoutFilter",
+      "class_type": "nav2_costmap_2d::KeepoutFilter",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "filters",
+      "description": "Prevents the robot from appearing in keepout zones marked on map.",
+      "plugin_category": "costmap_layer",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::KeepoutFilter' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::SpeedFilter",
+      "class_type": "nav2_costmap_2d::SpeedFilter",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "filters",
+      "description": "Restricts maximum speed of robot in speed-limit zones marked on map.",
+      "plugin_category": "costmap_layer",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::SpeedFilter' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::BinaryFilter",
+      "class_type": "nav2_costmap_2d::BinaryFilter",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "filters",
+      "description": "Binary flip filter.",
+      "plugin_category": "costmap_layer",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::BinaryFilter' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::ZoneParameterFilter",
+      "class_type": "nav2_costmap_2d::ZoneParameterFilter",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/costmap_plugins.xml",
+      "library_path": "filters",
+      "description": "Applies a configured set of ROS parameters based on the mask value at the robot's pose.",
+      "plugin_category": "costmap_layer",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/costmap_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::ZoneParameterFilter' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_graceful_controller::GracefulController",
+      "class_type": "nav2_graceful_controller::GracefulController",
+      "base_class_type": "nav2_core::Controller",
+      "package_name": "nav2_graceful_controller",
+      "manifest_file": "nav2_graceful_controller/graceful_controller_plugin.xml",
+      "library_path": "nav2_graceful_controller",
+      "description": "Graceful controller for Nav2",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_graceful_controller/graceful_controller_plugin.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_graceful_controller::GracefulController' extending base class 'nav2_core::Controller'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::critics::ObstaclesCritic",
+      "class_type": "mppi::critics::ObstaclesCritic",
+      "base_class_type": "mppi::critics::CriticFunction",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/critics.xml",
+      "library_path": "mppi_critics",
+      "description": "mppi critic for obstacle avoidance",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::critics::ObstaclesCritic' extending base class 'mppi::critics::CriticFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::critics::CostCritic",
+      "class_type": "mppi::critics::CostCritic",
+      "base_class_type": "mppi::critics::CriticFunction",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/critics.xml",
+      "library_path": "mppi_critics",
+      "description": "mppi critic for obstacle avoidance using costmap score",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::critics::CostCritic' extending base class 'mppi::critics::CriticFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::critics::GoalCritic",
+      "class_type": "mppi::critics::GoalCritic",
+      "base_class_type": "mppi::critics::CriticFunction",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/critics.xml",
+      "library_path": "mppi_critics",
+      "description": "mppi critic for driving towards the goal",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::critics::GoalCritic' extending base class 'mppi::critics::CriticFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::critics::GoalAngleCritic",
+      "class_type": "mppi::critics::GoalAngleCritic",
+      "base_class_type": "mppi::critics::CriticFunction",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/critics.xml",
+      "library_path": "mppi_critics",
+      "description": "mppi critic for achieving the goal heading angle",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::critics::GoalAngleCritic' extending base class 'mppi::critics::CriticFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::critics::PathAlignCritic",
+      "class_type": "mppi::critics::PathAlignCritic",
+      "base_class_type": "mppi::critics::CriticFunction",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/critics.xml",
+      "library_path": "mppi_critics",
+      "description": "mppi critic for aligning to path",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::critics::PathAlignCritic' extending base class 'mppi::critics::CriticFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::critics::PathAngleCritic",
+      "class_type": "mppi::critics::PathAngleCritic",
+      "base_class_type": "mppi::critics::CriticFunction",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/critics.xml",
+      "library_path": "mppi_critics",
+      "description": "mppi critic for tracking the path in the correct heading",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::critics::PathAngleCritic' extending base class 'mppi::critics::CriticFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::critics::PathFollowCritic",
+      "class_type": "mppi::critics::PathFollowCritic",
+      "base_class_type": "mppi::critics::CriticFunction",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/critics.xml",
+      "library_path": "mppi_critics",
+      "description": "mppi critic for driving towards the goal that is furthest among trajectories nearest path points",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::critics::PathFollowCritic' extending base class 'mppi::critics::CriticFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::critics::PreferForwardCritic",
+      "class_type": "mppi::critics::PreferForwardCritic",
+      "base_class_type": "mppi::critics::CriticFunction",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/critics.xml",
+      "library_path": "mppi_critics",
+      "description": null,
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::critics::PreferForwardCritic' extending base class 'mppi::critics::CriticFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::critics::TwirlingCritic",
+      "class_type": "mppi::critics::TwirlingCritic",
+      "base_class_type": "mppi::critics::CriticFunction",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/critics.xml",
+      "library_path": "mppi_critics",
+      "description": "mppi critic for preventing twirling behavior when using omnidirectional models",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::critics::TwirlingCritic' extending base class 'mppi::critics::CriticFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::critics::ConstraintCritic",
+      "class_type": "mppi::critics::ConstraintCritic",
+      "base_class_type": "mppi::critics::CriticFunction",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/critics.xml",
+      "library_path": "mppi_critics",
+      "description": "mppi critic for incentivizing moving within kinematic and dynamic bounds",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::critics::ConstraintCritic' extending base class 'mppi::critics::CriticFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::critics::VelocityDeadbandCritic",
+      "class_type": "mppi::critics::VelocityDeadbandCritic",
+      "base_class_type": "mppi::critics::CriticFunction",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/critics.xml",
+      "library_path": "mppi_critics",
+      "description": "mppi critic for restricting command velocities in deadband range",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::critics::VelocityDeadbandCritic' extending base class 'mppi::critics::CriticFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::AckermannMotionModel",
+      "class_type": "mppi::AckermannMotionModel",
+      "base_class_type": "mppi::MotionModel",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/motion_models.xml",
+      "library_path": "mppi_motion_models",
+      "description": "Ackermann steering motion model. Enforces a minimum turning radius constraint.\n        Parameters (under the plugin namespace):\n          min_turning_r (float, default 0.2): minimum turning radius in metres.",
+      "plugin_category": "mppi_MotionModel",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/motion_models.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::AckermannMotionModel' extending base class 'mppi::MotionModel'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::DiffDriveMotionModel",
+      "class_type": "mppi::DiffDriveMotionModel",
+      "base_class_type": "mppi::MotionModel",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/motion_models.xml",
+      "library_path": "mppi_motion_models",
+      "description": "Differential drive motion model. Non-holonomic, no additional kinematic constraints\n        beyond the standard velocity and acceleration limits.",
+      "plugin_category": "mppi_MotionModel",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/motion_models.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::DiffDriveMotionModel' extending base class 'mppi::MotionModel'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::OmniMotionModel",
+      "class_type": "mppi::OmniMotionModel",
+      "base_class_type": "mppi::MotionModel",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/motion_models.xml",
+      "library_path": "mppi_motion_models",
+      "description": "Omnidirectional motion model. Holonomic \u2014 supports independent vx, vy, and wz control.\n        This is the default model when no plugin is explicitly configured.",
+      "plugin_category": "mppi_MotionModel",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/motion_models.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::OmniMotionModel' extending base class 'mppi::MotionModel'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_mppi_controller::MPPIController",
+      "class_type": "nav2_mppi_controller::MPPIController",
+      "base_class_type": "nav2_core::Controller",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/mppic.xml",
+      "library_path": "mppi_controller",
+      "description": "MPPI Controller for Nav2",
+      "plugin_category": "controller",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/mppic.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_mppi_controller::MPPIController' extending base class 'nav2_core::Controller'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "mppi::DefaultOptimalTrajectoryValidator",
+      "class_type": "mppi::OptimalTrajectoryValidator",
+      "base_class_type": "mppi::OptimalTrajectoryValidator",
+      "package_name": "nav2_mppi_controller",
+      "manifest_file": "nav2_mppi_controller/trajectory_validators.xml",
+      "library_path": "mppi_trajectory_validators",
+      "description": "Default trajectory validator for MPPI controller",
+      "plugin_category": "mppi_OptimalTrajectoryValidator",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_mppi_controller/trajectory_validators.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'mppi::OptimalTrajectoryValidator' extending base class 'mppi::OptimalTrajectoryValidator'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_navfn_planner::NavfnPlanner",
+      "class_type": "nav2_navfn_planner::NavfnPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_navfn_planner",
+      "manifest_file": "nav2_navfn_planner/global_planner_plugin.xml",
+      "library_path": null,
+      "description": null,
+      "plugin_category": "global_planner",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_navfn_planner/global_planner_plugin.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_navfn_planner::NavfnPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController",
+      "class_type": "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController",
+      "base_class_type": "nav2_core::Controller",
+      "package_name": "nav2_regulated_pure_pursuit_controller",
+      "manifest_file": "nav2_regulated_pure_pursuit_controller/nav2_regulated_pure_pursuit_controller.xml",
+      "library_path": "nav2_regulated_pure_pursuit_controller",
+      "description": "nav2_regulated_pure_pursuit_controller",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_regulated_pure_pursuit_controller/nav2_regulated_pure_pursuit_controller.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController' extending base class 'nav2_core::Controller'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_rotation_shim_controller::RotationShimController",
+      "class_type": "nav2_rotation_shim_controller::RotationShimController",
+      "base_class_type": "nav2_core::Controller",
+      "package_name": "nav2_rotation_shim_controller",
+      "manifest_file": "nav2_rotation_shim_controller/nav2_rotation_shim_controller.xml",
+      "library_path": "nav2_rotation_shim_controller",
+      "description": "nav2_rotation_shim_controller",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_rotation_shim_controller/nav2_rotation_shim_controller.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_rotation_shim_controller::RotationShimController' extending base class 'nav2_core::Controller'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::DistanceScorer",
+      "class_type": "nav2_route::DistanceScorer",
+      "base_class_type": "nav2_route::EdgeCostFunction",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "edge_scorers",
+      "description": "Cost function for penalizing edge distance proportionally to potential speed limits",
+      "plugin_category": "route_plugin",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::DistanceScorer' extending base class 'nav2_route::EdgeCostFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::DynamicEdgesScorer",
+      "class_type": "nav2_route::DynamicEdgesScorer",
+      "base_class_type": "nav2_route::EdgeCostFunction",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "edge_scorers",
+      "description": "Cost function for rejecting edge that are closed due to non-traversability or setting remote dynamic costs (as opposed to static costs in the metadata from the Penalty Scorer)",
+      "plugin_category": "route_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::DynamicEdgesScorer' extending base class 'nav2_route::EdgeCostFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::PenaltyScorer",
+      "class_type": "nav2_route::PenaltyScorer",
+      "base_class_type": "nav2_route::EdgeCostFunction",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "edge_scorers",
+      "description": "Cost function for adding a cost based on metadata stored in the navigation graph",
+      "plugin_category": "route_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::PenaltyScorer' extending base class 'nav2_route::EdgeCostFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::CostmapScorer",
+      "class_type": "nav2_route::CostmapScorer",
+      "base_class_type": "nav2_route::EdgeCostFunction",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "edge_scorers",
+      "description": "Cost function for adding a cost based on the costmap values in the edge",
+      "plugin_category": "route_plugin",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::CostmapScorer' extending base class 'nav2_route::EdgeCostFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::SemanticScorer",
+      "class_type": "nav2_route::SemanticScorer",
+      "base_class_type": "nav2_route::EdgeCostFunction",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "edge_scorers",
+      "description": "Cost function for adding costs to edges based on arbitrary semantic data",
+      "plugin_category": "route_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::SemanticScorer' extending base class 'nav2_route::EdgeCostFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::TimeScorer",
+      "class_type": "nav2_route::TimeScorer",
+      "base_class_type": "nav2_route::EdgeCostFunction",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "edge_scorers",
+      "description": "Cost function for adding costs to edges time to complete the edge based on previous runs and/or estimation with absolute speed limits.",
+      "plugin_category": "route_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::TimeScorer' extending base class 'nav2_route::EdgeCostFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::GoalOrientationScorer",
+      "class_type": "nav2_route::GoalOrientationScorer",
+      "base_class_type": "nav2_route::EdgeCostFunction",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "edge_scorers",
+      "description": "Cost function for checking if the orientation of route matches orientation of the goal",
+      "plugin_category": "route_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::GoalOrientationScorer' extending base class 'nav2_route::EdgeCostFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::StartPoseOrientationScorer",
+      "class_type": "nav2_route::StartPoseOrientationScorer",
+      "base_class_type": "nav2_route::EdgeCostFunction",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "edge_scorers",
+      "description": "Cost function for checking if the orientation of robot matches with the orientation of the edge",
+      "plugin_category": "route_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::StartPoseOrientationScorer' extending base class 'nav2_route::EdgeCostFunction'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::AdjustSpeedLimit",
+      "class_type": "nav2_route::AdjustSpeedLimit",
+      "base_class_type": "nav2_route::RouteOperation",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "route_operations",
+      "description": "Route tracking operation to adjust speed limit based on graph metadata",
+      "plugin_category": "route_plugin",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::AdjustSpeedLimit' extending base class 'nav2_route::RouteOperation'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::ReroutingService",
+      "class_type": "nav2_route::ReroutingService",
+      "base_class_type": "nav2_route::RouteOperation",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "route_operations",
+      "description": "Exposes a route operation to replan upon external service request",
+      "plugin_category": "route_plugin",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::ReroutingService' extending base class 'nav2_route::RouteOperation'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::TriggerEvent",
+      "class_type": "nav2_route::TriggerEvent",
+      "base_class_type": "nav2_route::RouteOperation",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "route_operations",
+      "description": "Route operation templated by service types to call arbitrary services on node or edge events",
+      "plugin_category": "route_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::TriggerEvent' extending base class 'nav2_route::RouteOperation'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::GeoJsonGraphFileLoader",
+      "class_type": "nav2_route::GeoJsonGraphFileLoader",
+      "base_class_type": "nav2_route::GraphFileLoader",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "graph_file_loaders",
+      "description": "Parse the geojson graph file into the graph data type",
+      "plugin_category": "route_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::GeoJsonGraphFileLoader' extending base class 'nav2_route::GraphFileLoader'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::GeoJsonGraphFileSaver",
+      "class_type": "nav2_route::GeoJsonGraphFileSaver",
+      "base_class_type": "nav2_route::GraphFileSaver",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "graph_file_savers",
+      "description": "Save a route graph to a geojson graph file",
+      "plugin_category": "route_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::GeoJsonGraphFileSaver' extending base class 'nav2_route::GraphFileSaver'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::CollisionMonitor",
+      "class_type": "nav2_route::CollisionMonitor",
+      "base_class_type": "nav2_route::RouteOperation",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "route_operations",
+      "description": "Route operation to periodically check a costmap for localized viability of the route",
+      "plugin_category": "route_plugin",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::CollisionMonitor' extending base class 'nav2_route::RouteOperation'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_route::TimeMarker",
+      "class_type": "nav2_route::TimeMarker",
+      "base_class_type": "nav2_route::RouteOperation",
+      "package_name": "nav2_route",
+      "manifest_file": "nav2_route/plugins.xml",
+      "library_path": "route_operations",
+      "description": "Route operation to add actual times of traversal to edge's metadata for use in later more accurate planning by the TimeScorer",
+      "plugin_category": "route_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_route/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_route::TimeMarker' extending base class 'nav2_route::RouteOperation'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_rviz_plugins/GoalTool",
+      "class_type": "nav2_rviz_plugins::GoalTool",
+      "base_class_type": "rviz_common::Tool",
+      "package_name": "nav2_rviz_plugins",
+      "manifest_file": "nav2_rviz_plugins/plugins_description.xml",
+      "library_path": null,
+      "description": "A tool used to specify the navigation goal pose.",
+      "plugin_category": "rviz_common_Tool",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_rviz_plugins/plugins_description.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_rviz_plugins::GoalTool' extending base class 'rviz_common::Tool'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_rviz_plugins/Navigation 2",
+      "class_type": "nav2_rviz_plugins::Nav2Panel",
+      "base_class_type": "rviz_common::Panel",
+      "package_name": "nav2_rviz_plugins",
+      "manifest_file": "nav2_rviz_plugins/plugins_description.xml",
+      "library_path": null,
+      "description": "The Nav2 rviz panel.",
+      "plugin_category": "rviz_common_Panel",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_rviz_plugins/plugins_description.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_rviz_plugins::Nav2Panel' extending base class 'rviz_common::Panel'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_rviz_plugins/Selector",
+      "class_type": "nav2_rviz_plugins::Selector",
+      "base_class_type": "rviz_common::Panel",
+      "package_name": "nav2_rviz_plugins",
+      "manifest_file": "nav2_rviz_plugins/plugins_description.xml",
+      "library_path": null,
+      "description": "The Nav2 rviz panel for selecting planners and controllers.",
+      "plugin_category": "rviz_common_Panel",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_rviz_plugins/plugins_description.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_rviz_plugins::Selector' extending base class 'rviz_common::Panel'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_rviz_plugins/Docking",
+      "class_type": "nav2_rviz_plugins::DockingPanel",
+      "base_class_type": "rviz_common::Panel",
+      "package_name": "nav2_rviz_plugins",
+      "manifest_file": "nav2_rviz_plugins/plugins_description.xml",
+      "library_path": null,
+      "description": "The Nav2 rviz panel for dock and undock actions.",
+      "plugin_category": "rviz_common_Panel",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_rviz_plugins/plugins_description.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_rviz_plugins::DockingPanel' extending base class 'rviz_common::Panel'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_rviz_plugins/CostmapCostTool",
+      "class_type": "nav2_rviz_plugins::CostmapCostTool",
+      "base_class_type": "rviz_common::Tool",
+      "package_name": "nav2_rviz_plugins",
+      "manifest_file": "nav2_rviz_plugins/plugins_description.xml",
+      "library_path": null,
+      "description": "A Nav2 tool for getting the cost of point in costmap.",
+      "plugin_category": "rviz_common_Tool",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_rviz_plugins/plugins_description.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_rviz_plugins::CostmapCostTool' extending base class 'rviz_common::Tool'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_rviz_plugins/ParticleCloud",
+      "class_type": "nav2_rviz_plugins::ParticleCloudDisplay",
+      "base_class_type": "rviz_common::Display",
+      "package_name": "nav2_rviz_plugins",
+      "manifest_file": "nav2_rviz_plugins/plugins_description.xml",
+      "library_path": null,
+      "description": "The Particle Cloud rviz display.",
+      "plugin_category": "rviz_common_Display",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_rviz_plugins/plugins_description.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_rviz_plugins::ParticleCloudDisplay' extending base class 'rviz_common::Display'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_rviz_plugins/Route Tool",
+      "class_type": "nav2_rviz_plugins::RouteTool",
+      "base_class_type": "rviz_common::Panel",
+      "package_name": "nav2_rviz_plugins",
+      "manifest_file": "nav2_rviz_plugins/plugins_description.xml",
+      "library_path": null,
+      "description": "A tool used to create route graphs.",
+      "plugin_category": "rviz_common_Panel",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_rviz_plugins/plugins_description.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_rviz_plugins::RouteTool' extending base class 'rviz_common::Panel'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_smac_planner::SmacPlanner2D",
+      "class_type": "nav2_smac_planner::SmacPlanner2D",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_smac_planner",
+      "manifest_file": "nav2_smac_planner/smac_plugin_2d.xml",
+      "library_path": null,
+      "description": "2D A* SMAC Planner",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_smac_planner/smac_plugin_2d.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_smac_planner::SmacPlanner2D' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_smac_planner::SmacPlannerHybrid",
+      "class_type": "nav2_smac_planner::SmacPlannerHybrid",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_smac_planner",
+      "manifest_file": "nav2_smac_planner/smac_plugin_hybrid.xml",
+      "library_path": null,
+      "description": "Hybrid-A* SMAC planner",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_smac_planner/smac_plugin_hybrid.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_smac_planner::SmacPlannerHybrid' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_smac_planner::SmacPlannerLattice",
+      "class_type": "nav2_smac_planner::SmacPlannerLattice",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_smac_planner",
+      "manifest_file": "nav2_smac_planner/smac_plugin_lattice.xml",
+      "library_path": null,
+      "description": "State Lattice SMAC planner",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_smac_planner/smac_plugin_lattice.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_smac_planner::SmacPlannerLattice' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_smoother::SimpleSmoother",
+      "class_type": "nav2_smoother::SimpleSmoother",
+      "base_class_type": "nav2_core::Smoother",
+      "package_name": "nav2_smoother",
+      "manifest_file": "nav2_smoother/plugins.xml",
+      "library_path": "simple_smoother",
+      "description": "Does a simple smoothing process with collision checking",
+      "plugin_category": "smoother",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_smoother/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_smoother::SimpleSmoother' extending base class 'nav2_core::Smoother'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_smoother::SavitzkyGolaySmoother",
+      "class_type": "nav2_smoother::SavitzkyGolaySmoother",
+      "base_class_type": "nav2_core::Smoother",
+      "package_name": "nav2_smoother",
+      "manifest_file": "nav2_smoother/plugins.xml",
+      "library_path": "savitzky_golay_smoother",
+      "description": "Does Savitzky-Golay smoothing",
+      "plugin_category": "smoother",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_smoother/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_smoother::SavitzkyGolaySmoother' extending base class 'nav2_core::Smoother'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_theta_star_planner::ThetaStarPlanner",
+      "class_type": "nav2_theta_star_planner::ThetaStarPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_theta_star_planner",
+      "manifest_file": "nav2_theta_star_planner/theta_star_planner.xml",
+      "library_path": null,
+      "description": "An implementation of the Theta* Algorithm",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_theta_star_planner/theta_star_planner.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_theta_star_planner::ThetaStarPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_waypoint_follower::WaitAtWaypoint",
+      "class_type": "nav2_waypoint_follower::WaitAtWaypoint",
+      "base_class_type": "nav2_core::WaypointTaskExecutor",
+      "package_name": "nav2_waypoint_follower",
+      "manifest_file": "nav2_waypoint_follower/plugins.xml",
+      "library_path": "wait_at_waypoint",
+      "description": "Let's robot sleep for a specified amount of time at waypoint arrival",
+      "plugin_category": "waypoint_task_executor",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_waypoint_follower/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_waypoint_follower::WaitAtWaypoint' extending base class 'nav2_core::WaypointTaskExecutor'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_waypoint_follower::PhotoAtWaypoint",
+      "class_type": "nav2_waypoint_follower::PhotoAtWaypoint",
+      "base_class_type": "nav2_core::WaypointTaskExecutor",
+      "package_name": "nav2_waypoint_follower",
+      "manifest_file": "nav2_waypoint_follower/plugins.xml",
+      "library_path": "photo_at_waypoint",
+      "description": "Run-time plugin that takes photos at waypoint arrivals when using waypoint follower node.\n        Saves the taken photos to specified directory.",
+      "plugin_category": "waypoint_task_executor",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_waypoint_follower/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_waypoint_follower::PhotoAtWaypoint' extending base class 'nav2_core::WaypointTaskExecutor'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_waypoint_follower::InputAtWaypoint",
+      "class_type": "nav2_waypoint_follower::InputAtWaypoint",
+      "base_class_type": "nav2_core::WaypointTaskExecutor",
+      "package_name": "nav2_waypoint_follower",
+      "manifest_file": "nav2_waypoint_follower/plugins.xml",
+      "library_path": "input_at_waypoint",
+      "description": "Let's robot wait for input at waypoint arrival",
+      "plugin_category": "waypoint_task_executor",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_waypoint_follower/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_waypoint_follower::InputAtWaypoint' extending base class 'nav2_core::WaypointTaskExecutor'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::UnknownErrorController",
+      "class_type": "nav2_system_tests::UnknownErrorController",
+      "base_class_type": "nav2_core::Controller",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+      "library_path": null,
+      "description": "This local planner produces the general exception.",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::UnknownErrorController' extending base class 'nav2_core::Controller'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::TFErrorController",
+      "class_type": "nav2_system_tests::TFErrorController",
+      "base_class_type": "nav2_core::Controller",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+      "library_path": null,
+      "description": "This local planner produces a tf exception.",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::TFErrorController' extending base class 'nav2_core::Controller'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::FailedToMakeProgressErrorController",
+      "class_type": "nav2_system_tests::FailedToMakeProgressErrorController",
+      "base_class_type": "nav2_core::Controller",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+      "library_path": null,
+      "description": "This local planner produces a failed to make progress exception.",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::FailedToMakeProgressErrorController' extending base class 'nav2_core::Controller'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::PatienceExceededErrorController",
+      "class_type": "nav2_system_tests::PatienceExceededErrorController",
+      "base_class_type": "nav2_core::Controller",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+      "library_path": null,
+      "description": "This local planner produces a start patience exceeded exception.",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::PatienceExceededErrorController' extending base class 'nav2_core::Controller'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::InvalidPathErrorController",
+      "class_type": "nav2_system_tests::InvalidPathErrorController",
+      "base_class_type": "nav2_core::Controller",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+      "library_path": null,
+      "description": "This local planner produces an invalid path exception.",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::InvalidPathErrorController' extending base class 'nav2_core::Controller'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::NoValidControlErrorController",
+      "class_type": "nav2_system_tests::NoValidControlErrorController",
+      "base_class_type": "nav2_core::Controller",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+      "library_path": null,
+      "description": "This local planner produces a no valid control exception.",
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/controller_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::NoValidControlErrorController' extending base class 'nav2_core::Controller'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::UnknownErrorPlanner",
+      "class_type": "nav2_system_tests::UnknownErrorPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+      "library_path": null,
+      "description": "This global planner produces a goal a timeout exception.",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::UnknownErrorPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::StartOccupiedErrorPlanner",
+      "class_type": "nav2_system_tests::StartOccupiedErrorPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+      "library_path": null,
+      "description": "This global planner produces a start occupied exception.",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::StartOccupiedErrorPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::GoalOccupiedErrorPlanner",
+      "class_type": "nav2_system_tests::GoalOccupiedErrorPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+      "library_path": null,
+      "description": "This global planner produces a goal occupied exception.",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::GoalOccupiedErrorPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::StartOutsideMapErrorPlanner",
+      "class_type": "nav2_system_tests::StartOutsideMapErrorPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+      "library_path": null,
+      "description": "This global planner produces a start outside map bounds exception.",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::StartOutsideMapErrorPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::GoalOutsideMapErrorPlanner",
+      "class_type": "nav2_system_tests::GoalOutsideMapErrorPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+      "library_path": null,
+      "description": "This global planner produces a goal outside map bounds exception.",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::GoalOutsideMapErrorPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::NoValidPathErrorPlanner",
+      "class_type": "nav2_system_tests::NoValidPathErrorPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+      "library_path": null,
+      "description": "This global planner produces a no valid path exception.",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::NoValidPathErrorPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::TimedOutErrorPlanner",
+      "class_type": "nav2_system_tests::TimedOutErrorPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+      "library_path": null,
+      "description": "This global planner produces a timed out exception.",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::TimedOutErrorPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::TFErrorPlanner",
+      "class_type": "nav2_system_tests::TFErrorPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+      "library_path": null,
+      "description": "This global planner produces a planner tf error exception.",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::TFErrorPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::NoViapointsGivenErrorPlanner",
+      "class_type": "nav2_system_tests::NoViapointsGivenErrorPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+      "library_path": null,
+      "description": "This global planner produces a no via points exception.",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::NoViapointsGivenErrorPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::CancelledPlanner",
+      "class_type": "nav2_system_tests::CancelledPlanner",
+      "base_class_type": "nav2_core::GlobalPlanner",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+      "library_path": null,
+      "description": "This global planner produces a cancelled exception.",
+      "plugin_category": "global_planner",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/planner_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::CancelledPlanner' extending base class 'nav2_core::GlobalPlanner'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::UnknownErrorSmoother",
+      "class_type": "nav2_system_tests::UnknownErrorSmoother",
+      "base_class_type": "nav2_core::Smoother",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/smoother_plugins.xml",
+      "library_path": null,
+      "description": "This smoother produces a unknown exception.",
+      "plugin_category": "smoother",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/smoother_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::UnknownErrorSmoother' extending base class 'nav2_core::Smoother'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::TimeOutErrorSmoother",
+      "class_type": "nav2_system_tests::TimeOutErrorSmoother",
+      "base_class_type": "nav2_core::Smoother",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/smoother_plugins.xml",
+      "library_path": null,
+      "description": "This smoother produces a TimedOut exception.",
+      "plugin_category": "smoother",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/smoother_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::TimeOutErrorSmoother' extending base class 'nav2_core::Smoother'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::SmoothedPathInCollision",
+      "class_type": "nav2_system_tests::SmoothedPathInCollision",
+      "base_class_type": "nav2_core::Smoother",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/smoother_plugins.xml",
+      "library_path": null,
+      "description": "This smoother produces a path in collision exception.",
+      "plugin_category": "smoother",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/smoother_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::SmoothedPathInCollision' extending base class 'nav2_core::Smoother'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::FailedToSmoothPath",
+      "class_type": "nav2_system_tests::FailedToSmoothPath",
+      "base_class_type": "nav2_core::Smoother",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/smoother_plugins.xml",
+      "library_path": null,
+      "description": "This smoother produces a failed to smooth exception.",
+      "plugin_category": "smoother",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/smoother_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::FailedToSmoothPath' extending base class 'nav2_core::Smoother'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_system_tests::InvalidPath",
+      "class_type": "nav2_system_tests::InvalidPath",
+      "base_class_type": "nav2_core::Smoother",
+      "package_name": "nav2_system_tests",
+      "manifest_file": "nav2_system_tests/src/error_codes/smoother_plugins.xml",
+      "library_path": null,
+      "description": "This smoother produces an invalid path exception.",
+      "plugin_category": "smoother",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_system_tests/src/error_codes/smoother_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_system_tests::InvalidPath' extending base class 'nav2_core::Smoother'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "DummySmoother",
+      "class_type": "DummySmoother",
+      "base_class_type": "nav2_core::Smoother",
+      "package_name": "nav2_smoother",
+      "manifest_file": "nav2_smoother/test/plugins_test.xml",
+      "library_path": "dummy_smoother",
+      "description": "Dummy smoother for testing",
+      "plugin_category": "smoother",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_smoother/test/plugins_test.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'DummySmoother' extending base class 'nav2_core::Smoother'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_core::DWBLocalPlanner",
+      "class_type": "dwb_core::DWBLocalPlanner",
+      "base_class_type": "nav2_core::Controller",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_core/local_planner_plugin.xml",
+      "library_path": "dwb_core",
+      "description": null,
+      "plugin_category": "controller",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_core/local_planner_plugin.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_core::DWBLocalPlanner' extending base class 'nav2_core::Controller'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_critics::PreferForwardCritic",
+      "class_type": "dwb_critics::PreferForwardCritic",
+      "base_class_type": "dwb_core::TrajectoryCritic",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+      "library_path": "dwb_critics",
+      "description": "Penalize trajectories with move backwards and/or turn too much",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_critics::PreferForwardCritic' extending base class 'dwb_core::TrajectoryCritic'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_critics::GoalDistCritic",
+      "class_type": "dwb_critics::GoalDistCritic",
+      "base_class_type": "dwb_core::TrajectoryCritic",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+      "library_path": "dwb_critics",
+      "description": "Scores trajectories based on how far along the global path they end up.",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_critics::GoalDistCritic' extending base class 'dwb_core::TrajectoryCritic'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_critics::PathAlignCritic",
+      "class_type": "dwb_critics::PathAlignCritic",
+      "base_class_type": "dwb_core::TrajectoryCritic",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+      "library_path": "dwb_critics",
+      "description": "Scores trajectories based on how far from the global path the front of the robot ends up.",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_critics::PathAlignCritic' extending base class 'dwb_core::TrajectoryCritic'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_critics::GoalAlignCritic",
+      "class_type": "dwb_critics::GoalAlignCritic",
+      "base_class_type": "dwb_core::TrajectoryCritic",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+      "library_path": "dwb_critics",
+      "description": "Scores trajectories based on whether the robot ends up pointing toward the eventual goal",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_critics::GoalAlignCritic' extending base class 'dwb_core::TrajectoryCritic'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_critics::PathDistCritic",
+      "class_type": "dwb_critics::PathDistCritic",
+      "base_class_type": "dwb_core::TrajectoryCritic",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+      "library_path": "dwb_critics",
+      "description": "Scores trajectories based on how far from the global path they end up.",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_critics::PathDistCritic' extending base class 'dwb_core::TrajectoryCritic'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_critics::OscillationCritic",
+      "class_type": "dwb_critics::OscillationCritic",
+      "base_class_type": "dwb_core::TrajectoryCritic",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+      "library_path": "dwb_critics",
+      "description": "Checks to see whether the sign of the commanded velocity flips frequently",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_critics::OscillationCritic' extending base class 'dwb_core::TrajectoryCritic'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_critics::RotateToGoalCritic",
+      "class_type": "dwb_critics::RotateToGoalCritic",
+      "base_class_type": "dwb_core::TrajectoryCritic",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+      "library_path": "dwb_critics",
+      "description": "Forces the commanded trajectories to only be rotations if within a certain distance window",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_critics::RotateToGoalCritic' extending base class 'dwb_core::TrajectoryCritic'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_critics::BaseObstacleCritic",
+      "class_type": "dwb_critics::BaseObstacleCritic",
+      "base_class_type": "dwb_core::TrajectoryCritic",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+      "library_path": "dwb_critics",
+      "description": "Uses costmap 2d to assign negative costs if a circular robot\n                   would collide at any point of the trajectory.",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_critics::BaseObstacleCritic' extending base class 'dwb_core::TrajectoryCritic'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_critics::ObstacleFootprintCritic",
+      "class_type": "dwb_critics::ObstacleFootprintCritic",
+      "base_class_type": "dwb_core::TrajectoryCritic",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+      "library_path": "dwb_critics",
+      "description": "Uses costmap 2d to assign negative costs if robot footprint is in obstacle\n                   on any point of the trajectory.",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_critics::ObstacleFootprintCritic' extending base class 'dwb_core::TrajectoryCritic'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_critics::TwirlingCritic",
+      "class_type": "dwb_critics::TwirlingCritic",
+      "base_class_type": "dwb_core::TrajectoryCritic",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+      "library_path": "dwb_critics",
+      "description": "Penalize trajectories with rotational velocities",
+      "plugin_category": "trajectory_critic",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_critics/default_critics.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_critics::TwirlingCritic' extending base class 'dwb_core::TrajectoryCritic'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_plugins::SimpleGoalChecker",
+      "class_type": "dwb_plugins::SimpleGoalChecker",
+      "base_class_type": "nav2_core::GoalChecker",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_plugins/plugins.xml",
+      "library_path": "simple_goal_checker",
+      "description": null,
+      "plugin_category": "goal_checker",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_plugins/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_plugins::SimpleGoalChecker' extending base class 'nav2_core::GoalChecker'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_plugins::StandardTrajectoryGenerator",
+      "class_type": "dwb_plugins::StandardTrajectoryGenerator",
+      "base_class_type": "dwb_core::TrajectoryGenerator",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_plugins/plugins.xml",
+      "library_path": "standard_traj_generator",
+      "description": null,
+      "plugin_category": "dwb_core_TrajectoryGenerator",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_plugins/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_plugins::StandardTrajectoryGenerator' extending base class 'dwb_core::TrajectoryGenerator'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_plugins::LimitedAccelGenerator",
+      "class_type": "dwb_plugins::LimitedAccelGenerator",
+      "base_class_type": "dwb_core::TrajectoryGenerator",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_plugins/plugins.xml",
+      "library_path": "standard_traj_generator",
+      "description": null,
+      "plugin_category": "dwb_core_TrajectoryGenerator",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_plugins/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_plugins::LimitedAccelGenerator' extending base class 'dwb_core::TrajectoryGenerator'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "dwb_plugins::StoppedGoalChecker",
+      "class_type": "dwb_plugins::StoppedGoalChecker",
+      "base_class_type": "nav2_core::GoalChecker",
+      "package_name": "nav2_dwb_controller",
+      "manifest_file": "nav2_dwb_controller/dwb_plugins/plugins.xml",
+      "library_path": "stopped_goal_checker",
+      "description": null,
+      "plugin_category": "goal_checker",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_dwb_controller/dwb_plugins/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'dwb_plugins::StoppedGoalChecker' extending base class 'nav2_core::GoalChecker'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "opennav_docking::SimpleChargingDock",
+      "class_type": "opennav_docking::SimpleChargingDock",
+      "base_class_type": "opennav_docking_core::ChargingDock",
+      "package_name": "nav2_docking",
+      "manifest_file": "nav2_docking/opennav_docking/plugins.xml",
+      "library_path": "simple_charging_dock",
+      "description": "A simple charging dock plugin.",
+      "plugin_category": "dock_plugin",
+      "status": "selected",
+      "evidence": [
+        {
+          "file": "nav2_docking/opennav_docking/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'opennav_docking::SimpleChargingDock' extending base class 'opennav_docking_core::ChargingDock'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "opennav_docking::SimpleNonChargingDock",
+      "class_type": "opennav_docking::SimpleNonChargingDock",
+      "base_class_type": "opennav_docking_core::ChargingDock",
+      "package_name": "nav2_docking",
+      "manifest_file": "nav2_docking/opennav_docking/plugins.xml",
+      "library_path": "simple_non_charging_dock",
+      "description": "A simple non-charging dock plugin.",
+      "plugin_category": "dock_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_docking/opennav_docking/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'opennav_docking::SimpleNonChargingDock' extending base class 'opennav_docking_core::ChargingDock'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "opennav_docking::TestFailureDock",
+      "class_type": "opennav_docking::TestFailureDock",
+      "base_class_type": "opennav_docking_core::ChargingDock",
+      "package_name": "nav2_docking",
+      "manifest_file": "nav2_docking/opennav_docking/plugins.xml",
+      "library_path": "test_dock",
+      "description": "Test dock plugin for failures in unit testing.",
+      "plugin_category": "dock_plugin",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_docking/opennav_docking/plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'opennav_docking::TestFailureDock' extending base class 'opennav_docking_core::ChargingDock'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "nav2_costmap_2d::OrderLayer",
+      "class_type": "nav2_costmap_2d::OrderLayer",
+      "base_class_type": "nav2_costmap_2d::Layer",
+      "package_name": "nav2_costmap_2d",
+      "manifest_file": "nav2_costmap_2d/test/regression/order_layer.xml",
+      "library_path": "order_layer",
+      "description": "Plugin checking order of activate() and updateBounds()/updateCosts() calls",
+      "plugin_category": "costmap_layer",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "nav2_costmap_2d/test/regression/order_layer.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'nav2_costmap_2d::OrderLayer' extending base class 'nav2_costmap_2d::Layer'"
+        }
+      ]
+    }
+  ],
+  "categories": {
+    "nav2_amcl_MotionModel": [
+      "nav2_amcl::DifferentialMotionModel",
+      "nav2_amcl::OmniMotionModel"
+    ],
+    "recovery_behavior": [
+      "nav2_behaviors::Spin",
+      "nav2_behaviors::BackUp",
+      "nav2_behaviors::DriveOnHeading",
+      "nav2_behaviors::Wait",
+      "nav2_behaviors::AssistedTeleop"
+    ],
+    "navigator": [
+      "nav2_bt_navigator::NavigateToPoseNavigator",
+      "nav2_bt_navigator::NavigateThroughPosesNavigator"
+    ],
+    "smoother": [
+      "nav2_constrained_smoother/ConstrainedSmoother",
+      "nav2_smoother::SimpleSmoother",
+      "nav2_smoother::SavitzkyGolaySmoother",
+      "nav2_system_tests::UnknownErrorSmoother",
+      "nav2_system_tests::TimeOutErrorSmoother",
+      "nav2_system_tests::SmoothedPathInCollision",
+      "nav2_system_tests::FailedToSmoothPath",
+      "nav2_system_tests::InvalidPath",
+      "DummySmoother"
+    ],
+    "progress_checker": [
+      "nav2_controller::SimpleProgressChecker",
+      "nav2_controller::PoseProgressChecker"
+    ],
+    "goal_checker": [
+      "nav2_controller::SimpleGoalChecker",
+      "nav2_controller::StoppedGoalChecker",
+      "nav2_controller::PositionGoalChecker",
+      "nav2_controller::AdaptiveToleranceGoalChecker",
+      "nav2_controller::AxisGoalChecker",
+      "dwb_plugins::SimpleGoalChecker",
+      "dwb_plugins::StoppedGoalChecker"
+    ],
+    "nav2_core_PathHandler": [
+      "nav2_controller::FeasiblePathHandler"
+    ],
+    "costmap_layer": [
+      "nav2_costmap_2d::InflationLayer",
+      "nav2_costmap_2d::LegacyInflationLayer",
+      "nav2_costmap_2d::AsymmetricInflationLayer",
+      "nav2_costmap_2d::ObstacleLayer",
+      "nav2_costmap_2d::StaticLayer",
+      "nav2_costmap_2d::VoxelLayer",
+      "nav2_costmap_2d::RangeSensorLayer",
+      "nav2_costmap_2d::DenoiseLayer",
+      "nav2_costmap_2d::PluginContainerLayer",
+      "nav2_costmap_2d::KeepoutFilter",
+      "nav2_costmap_2d::SpeedFilter",
+      "nav2_costmap_2d::BinaryFilter",
+      "nav2_costmap_2d::ZoneParameterFilter",
+      "nav2_costmap_2d::OrderLayer"
+    ],
+    "controller": [
+      "nav2_graceful_controller::GracefulController",
+      "nav2_mppi_controller::MPPIController",
+      "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController",
+      "nav2_rotation_shim_controller::RotationShimController",
+      "nav2_system_tests::UnknownErrorController",
+      "nav2_system_tests::TFErrorController",
+      "nav2_system_tests::FailedToMakeProgressErrorController",
+      "nav2_system_tests::PatienceExceededErrorController",
+      "nav2_system_tests::InvalidPathErrorController",
+      "nav2_system_tests::NoValidControlErrorController",
+      "dwb_core::DWBLocalPlanner"
+    ],
+    "trajectory_critic": [
+      "mppi::critics::ObstaclesCritic",
+      "mppi::critics::CostCritic",
+      "mppi::critics::GoalCritic",
+      "mppi::critics::GoalAngleCritic",
+      "mppi::critics::PathAlignCritic",
+      "mppi::critics::PathAngleCritic",
+      "mppi::critics::PathFollowCritic",
+      "mppi::critics::PreferForwardCritic",
+      "mppi::critics::TwirlingCritic",
+      "mppi::critics::ConstraintCritic",
+      "mppi::critics::VelocityDeadbandCritic",
+      "dwb_critics::PreferForwardCritic",
+      "dwb_critics::GoalDistCritic",
+      "dwb_critics::PathAlignCritic",
+      "dwb_critics::GoalAlignCritic",
+      "dwb_critics::PathDistCritic",
+      "dwb_critics::OscillationCritic",
+      "dwb_critics::RotateToGoalCritic",
+      "dwb_critics::BaseObstacleCritic",
+      "dwb_critics::ObstacleFootprintCritic",
+      "dwb_critics::TwirlingCritic"
+    ],
+    "mppi_MotionModel": [
+      "mppi::AckermannMotionModel",
+      "mppi::DiffDriveMotionModel",
+      "mppi::OmniMotionModel"
+    ],
+    "mppi_OptimalTrajectoryValidator": [
+      "mppi::DefaultOptimalTrajectoryValidator"
+    ],
+    "global_planner": [
+      "nav2_navfn_planner::NavfnPlanner",
+      "nav2_smac_planner::SmacPlanner2D",
+      "nav2_smac_planner::SmacPlannerHybrid",
+      "nav2_smac_planner::SmacPlannerLattice",
+      "nav2_theta_star_planner::ThetaStarPlanner",
+      "nav2_system_tests::UnknownErrorPlanner",
+      "nav2_system_tests::StartOccupiedErrorPlanner",
+      "nav2_system_tests::GoalOccupiedErrorPlanner",
+      "nav2_system_tests::StartOutsideMapErrorPlanner",
+      "nav2_system_tests::GoalOutsideMapErrorPlanner",
+      "nav2_system_tests::NoValidPathErrorPlanner",
+      "nav2_system_tests::TimedOutErrorPlanner",
+      "nav2_system_tests::TFErrorPlanner",
+      "nav2_system_tests::NoViapointsGivenErrorPlanner",
+      "nav2_system_tests::CancelledPlanner"
+    ],
+    "route_plugin": [
+      "nav2_route::DistanceScorer",
+      "nav2_route::DynamicEdgesScorer",
+      "nav2_route::PenaltyScorer",
+      "nav2_route::CostmapScorer",
+      "nav2_route::SemanticScorer",
+      "nav2_route::TimeScorer",
+      "nav2_route::GoalOrientationScorer",
+      "nav2_route::StartPoseOrientationScorer",
+      "nav2_route::AdjustSpeedLimit",
+      "nav2_route::ReroutingService",
+      "nav2_route::TriggerEvent",
+      "nav2_route::GeoJsonGraphFileLoader",
+      "nav2_route::GeoJsonGraphFileSaver",
+      "nav2_route::CollisionMonitor",
+      "nav2_route::TimeMarker"
+    ],
+    "rviz_common_Tool": [
+      "nav2_rviz_plugins/GoalTool",
+      "nav2_rviz_plugins/CostmapCostTool"
+    ],
+    "rviz_common_Panel": [
+      "nav2_rviz_plugins/Navigation 2",
+      "nav2_rviz_plugins/Selector",
+      "nav2_rviz_plugins/Docking",
+      "nav2_rviz_plugins/Route Tool"
+    ],
+    "rviz_common_Display": [
+      "nav2_rviz_plugins/ParticleCloud"
+    ],
+    "waypoint_task_executor": [
+      "nav2_waypoint_follower::WaitAtWaypoint",
+      "nav2_waypoint_follower::PhotoAtWaypoint",
+      "nav2_waypoint_follower::InputAtWaypoint"
+    ],
+    "dwb_core_TrajectoryGenerator": [
+      "dwb_plugins::StandardTrajectoryGenerator",
+      "dwb_plugins::LimitedAccelGenerator"
+    ],
+    "dock_plugin": [
+      "opennav_docking::SimpleChargingDock",
+      "opennav_docking::SimpleNonChargingDock",
+      "opennav_docking::TestFailureDock"
+    ]
+  },
+  "server_configurations": [
+    {
+      "server_node_name": "bt_navigator",
+      "plugin_slot": "navigate_to_pose",
+      "plugin_names": [
+        "navigate_to_pose"
+      ],
+      "plugin_types": [
+        "nav2_bt_navigator::NavigateToPoseNavigator"
+      ],
+      "selected_plugin": "nav2_bt_navigator::NavigateToPoseNavigator",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "bt_navigator",
+      "plugin_slot": "navigate_through_poses",
+      "plugin_names": [
+        "navigate_through_poses"
+      ],
+      "plugin_types": [
+        "nav2_bt_navigator::NavigateThroughPosesNavigator"
+      ],
+      "selected_plugin": "nav2_bt_navigator::NavigateThroughPosesNavigator",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "controller_server",
+      "plugin_slot": "progress_checker",
+      "plugin_names": [
+        "progress_checker"
+      ],
+      "plugin_types": [
+        "nav2_controller::SimpleProgressChecker"
+      ],
+      "selected_plugin": "nav2_controller::SimpleProgressChecker",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "controller_server",
+      "plugin_slot": "general_goal_checker",
+      "plugin_names": [
+        "general_goal_checker"
+      ],
+      "plugin_types": [
+        "nav2_controller::SimpleGoalChecker"
+      ],
+      "selected_plugin": "nav2_controller::SimpleGoalChecker",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "controller_server",
+      "plugin_slot": "PathHandler",
+      "plugin_names": [
+        "PathHandler"
+      ],
+      "plugin_types": [
+        "nav2_controller::FeasiblePathHandler"
+      ],
+      "selected_plugin": "nav2_controller::FeasiblePathHandler",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "controller_server",
+      "plugin_slot": "FollowPath",
+      "plugin_names": [
+        "FollowPath"
+      ],
+      "plugin_types": [
+        "nav2_mppi_controller::MPPIController"
+      ],
+      "selected_plugin": "nav2_mppi_controller::MPPIController",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "controller_server",
+      "plugin_slot": "diff_drive",
+      "plugin_names": [
+        "diff_drive"
+      ],
+      "plugin_types": [
+        "mppi::DiffDriveMotionModel"
+      ],
+      "selected_plugin": "mppi::DiffDriveMotionModel",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "controller_server",
+      "plugin_slot": "TrajectoryValidator",
+      "plugin_names": [
+        "TrajectoryValidator"
+      ],
+      "plugin_types": [
+        "mppi::DefaultOptimalTrajectoryValidator"
+      ],
+      "selected_plugin": "mppi::DefaultOptimalTrajectoryValidator",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "local_costmap",
+      "plugin_slot": "keepout_filter",
+      "plugin_names": [
+        "keepout_filter"
+      ],
+      "plugin_types": [
+        "nav2_costmap_2d::KeepoutFilter"
+      ],
+      "selected_plugin": "nav2_costmap_2d::KeepoutFilter",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "local_costmap",
+      "plugin_slot": "inflation_layer",
+      "plugin_names": [
+        "inflation_layer"
+      ],
+      "plugin_types": [
+        "nav2_costmap_2d::InflationLayer"
+      ],
+      "selected_plugin": "nav2_costmap_2d::InflationLayer",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "local_costmap",
+      "plugin_slot": "voxel_layer",
+      "plugin_names": [
+        "voxel_layer"
+      ],
+      "plugin_types": [
+        "nav2_costmap_2d::VoxelLayer"
+      ],
+      "selected_plugin": "nav2_costmap_2d::VoxelLayer",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "local_costmap",
+      "plugin_slot": "static_layer",
+      "plugin_names": [
+        "static_layer"
+      ],
+      "plugin_types": [
+        "nav2_costmap_2d::StaticLayer"
+      ],
+      "selected_plugin": "nav2_costmap_2d::StaticLayer",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "global_costmap",
+      "plugin_slot": "keepout_filter",
+      "plugin_names": [
+        "keepout_filter"
+      ],
+      "plugin_types": [
+        "nav2_costmap_2d::KeepoutFilter"
+      ],
+      "selected_plugin": "nav2_costmap_2d::KeepoutFilter",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "global_costmap",
+      "plugin_slot": "speed_filter",
+      "plugin_names": [
+        "speed_filter"
+      ],
+      "plugin_types": [
+        "nav2_costmap_2d::SpeedFilter"
+      ],
+      "selected_plugin": "nav2_costmap_2d::SpeedFilter",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "global_costmap",
+      "plugin_slot": "obstacle_layer",
+      "plugin_names": [
+        "obstacle_layer"
+      ],
+      "plugin_types": [
+        "nav2_costmap_2d::ObstacleLayer"
+      ],
+      "selected_plugin": "nav2_costmap_2d::ObstacleLayer",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "global_costmap",
+      "plugin_slot": "static_layer",
+      "plugin_names": [
+        "static_layer"
+      ],
+      "plugin_types": [
+        "nav2_costmap_2d::StaticLayer"
+      ],
+      "selected_plugin": "nav2_costmap_2d::StaticLayer",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "global_costmap",
+      "plugin_slot": "inflation_layer",
+      "plugin_names": [
+        "inflation_layer"
+      ],
+      "plugin_types": [
+        "nav2_costmap_2d::InflationLayer"
+      ],
+      "selected_plugin": "nav2_costmap_2d::InflationLayer",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "planner_server",
+      "plugin_slot": "GridBased",
+      "plugin_names": [
+        "GridBased"
+      ],
+      "plugin_types": [
+        "nav2_navfn_planner::NavfnPlanner"
+      ],
+      "selected_plugin": "nav2_navfn_planner::NavfnPlanner",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "smoother_server",
+      "plugin_slot": "simple_smoother",
+      "plugin_names": [
+        "simple_smoother"
+      ],
+      "plugin_types": [
+        "nav2_smoother::SimpleSmoother"
+      ],
+      "selected_plugin": "nav2_smoother::SimpleSmoother",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "smoother_server",
+      "plugin_slot": "route_smoother",
+      "plugin_names": [
+        "route_smoother"
+      ],
+      "plugin_types": [
+        "nav2_smoother::SimpleSmoother"
+      ],
+      "selected_plugin": "nav2_smoother::SimpleSmoother",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "behavior_server",
+      "plugin_slot": "spin",
+      "plugin_names": [
+        "spin"
+      ],
+      "plugin_types": [
+        "nav2_behaviors::Spin"
+      ],
+      "selected_plugin": "nav2_behaviors::Spin",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "behavior_server",
+      "plugin_slot": "backup",
+      "plugin_names": [
+        "backup"
+      ],
+      "plugin_types": [
+        "nav2_behaviors::BackUp"
+      ],
+      "selected_plugin": "nav2_behaviors::BackUp",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "behavior_server",
+      "plugin_slot": "drive_on_heading",
+      "plugin_names": [
+        "drive_on_heading"
+      ],
+      "plugin_types": [
+        "nav2_behaviors::DriveOnHeading"
+      ],
+      "selected_plugin": "nav2_behaviors::DriveOnHeading",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "behavior_server",
+      "plugin_slot": "wait",
+      "plugin_names": [
+        "wait"
+      ],
+      "plugin_types": [
+        "nav2_behaviors::Wait"
+      ],
+      "selected_plugin": "nav2_behaviors::Wait",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "behavior_server",
+      "plugin_slot": "assisted_teleop",
+      "plugin_names": [
+        "assisted_teleop"
+      ],
+      "plugin_types": [
+        "nav2_behaviors::AssistedTeleop"
+      ],
+      "selected_plugin": "nav2_behaviors::AssistedTeleop",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "waypoint_follower",
+      "plugin_slot": "wait_at_waypoint",
+      "plugin_names": [
+        "wait_at_waypoint"
+      ],
+      "plugin_types": [
+        "nav2_waypoint_follower::WaitAtWaypoint"
+      ],
+      "selected_plugin": "nav2_waypoint_follower::WaitAtWaypoint",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "route_server",
+      "plugin_slot": "ReroutingService",
+      "plugin_names": [
+        "ReroutingService"
+      ],
+      "plugin_types": [
+        "nav2_route::ReroutingService"
+      ],
+      "selected_plugin": "nav2_route::ReroutingService",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "route_server",
+      "plugin_slot": "AdjustSpeedLimit",
+      "plugin_names": [
+        "AdjustSpeedLimit"
+      ],
+      "plugin_types": [
+        "nav2_route::AdjustSpeedLimit"
+      ],
+      "selected_plugin": "nav2_route::AdjustSpeedLimit",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "route_server",
+      "plugin_slot": "CollisionMonitor",
+      "plugin_names": [
+        "CollisionMonitor"
+      ],
+      "plugin_types": [
+        "nav2_route::CollisionMonitor"
+      ],
+      "selected_plugin": "nav2_route::CollisionMonitor",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "route_server",
+      "plugin_slot": "DistanceScorer",
+      "plugin_names": [
+        "DistanceScorer"
+      ],
+      "plugin_types": [
+        "nav2_route::DistanceScorer"
+      ],
+      "selected_plugin": "nav2_route::DistanceScorer",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "route_server",
+      "plugin_slot": "CostmapScorer",
+      "plugin_names": [
+        "CostmapScorer"
+      ],
+      "plugin_types": [
+        "nav2_route::CostmapScorer"
+      ],
+      "selected_plugin": "nav2_route::CostmapScorer",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    },
+    {
+      "server_node_name": "docking_server",
+      "plugin_slot": "simple_charging_dock",
+      "plugin_names": [
+        "simple_charging_dock"
+      ],
+      "plugin_types": [
+        "opennav_docking::SimpleChargingDock"
+      ],
+      "selected_plugin": "opennav_docking::SimpleChargingDock",
+      "parameter_file": "nav2_bringup/params/nav2_params.yaml"
+    }
+  ],
+  "status_counts": {
+    "registered": 0,
+    "available": 95,
+    "configured": 0,
+    "selected": 28,
+    "runtime_loaded": 0,
+    "unknown": 0
+  },
+  "mermaid_diagram": "classDiagram\n    direction TB\n    class nav2_core_GlobalPlanner {\n        <<interface>>\n        +createPlan()\n    }\n    class nav2_core_Controller {\n        <<interface>>\n        +computeVelocityCommands()\n    }\n    class nav2_costmap_2d_Layer {\n        <<interface>>\n        +updateBounds()\n        +updateCosts()\n    }\n    class nav2_core_Smoother {\n        <<interface>>\n        +smooth()\n    }\n    class nav2_core_Behavior {\n        <<interface>>\n        +onRun()\n        +onCycleUpdate()\n    }\n\n    class nav2_behaviors_Spin {\n        <<SELECTED>>\n        package: nav2_behaviors\n    }\n    nav2_core_Behavior <|-- nav2_behaviors_Spin\n    class nav2_behaviors_BackUp {\n        <<SELECTED>>\n        package: nav2_behaviors\n    }\n    nav2_core_Behavior <|-- nav2_behaviors_BackUp\n    class nav2_behaviors_DriveOnHeading__ {\n        <<SELECTED>>\n        package: nav2_behaviors\n    }\n    nav2_core_Behavior <|-- nav2_behaviors_DriveOnHeading__\n    class nav2_behaviors_Wait {\n        <<SELECTED>>\n        package: nav2_behaviors\n    }\n    nav2_core_Behavior <|-- nav2_behaviors_Wait\n    class nav2_behaviors_AssistedTeleop {\n        <<SELECTED>>\n        package: nav2_behaviors\n    }\n    nav2_core_Behavior <|-- nav2_behaviors_AssistedTeleop\n    class nav2_bt_navigator_NavigateToPoseNavigator {\n        <<SELECTED>>\n        package: nav2_bt_navigator\n    }\n    class nav2_bt_navigator_NavigateThroughPosesNavigator {\n        <<SELECTED>>\n        package: nav2_bt_navigator\n    }\n    class nav2_controller_SimpleProgressChecker {\n        <<SELECTED>>\n        package: nav2_controller\n    }\n    class nav2_controller_SimpleGoalChecker {\n        <<SELECTED>>\n        package: nav2_controller\n    }\n    class nav2_controller_FeasiblePathHandler {\n        <<SELECTED>>\n        package: nav2_controller\n    }\n    class nav2_costmap_2d_InflationLayer {\n        <<SELECTED>>\n        package: nav2_costmap_2d\n    }\n    nav2_costmap_2d_Layer <|-- nav2_costmap_2d_InflationLayer\n    class nav2_costmap_2d_ObstacleLayer {\n        <<SELECTED>>\n        package: nav2_costmap_2d\n    }\n    nav2_costmap_2d_Layer <|-- nav2_costmap_2d_ObstacleLayer\n    class nav2_costmap_2d_StaticLayer {\n        <<SELECTED>>\n        package: nav2_costmap_2d\n    }\n    nav2_costmap_2d_Layer <|-- nav2_costmap_2d_StaticLayer\n    class nav2_costmap_2d_VoxelLayer {\n        <<SELECTED>>\n        package: nav2_costmap_2d\n    }\n    nav2_costmap_2d_Layer <|-- nav2_costmap_2d_VoxelLayer\n    class nav2_costmap_2d_KeepoutFilter {\n        <<SELECTED>>\n        package: nav2_costmap_2d\n    }\n    nav2_costmap_2d_Layer <|-- nav2_costmap_2d_KeepoutFilter\n    class nav2_costmap_2d_SpeedFilter {\n        <<SELECTED>>\n        package: nav2_costmap_2d\n    }\n    nav2_costmap_2d_Layer <|-- nav2_costmap_2d_SpeedFilter\n    class mppi_DiffDriveMotionModel {\n        <<SELECTED>>\n        package: nav2_mppi_controller\n    }\n    class nav2_mppi_controller_MPPIController {\n        <<SELECTED>>\n        package: nav2_mppi_controller\n    }\n    nav2_core_Controller <|-- nav2_mppi_controller_MPPIController\n    class mppi_OptimalTrajectoryValidator {\n        <<SELECTED>>\n        package: nav2_mppi_controller\n    }\n    class nav2_navfn_planner_NavfnPlanner {\n        <<SELECTED>>\n        package: nav2_navfn_planner\n    }\n    nav2_core_GlobalPlanner <|-- nav2_navfn_planner_NavfnPlanner\n    class nav2_route_DistanceScorer {\n        <<SELECTED>>\n        package: nav2_route\n    }\n    class nav2_route_CostmapScorer {\n        <<SELECTED>>\n        package: nav2_route\n    }\n    class nav2_route_AdjustSpeedLimit {\n        <<SELECTED>>\n        package: nav2_route\n    }\n    class nav2_route_ReroutingService {\n        <<SELECTED>>\n        package: nav2_route\n    }\n    class nav2_route_CollisionMonitor {\n        <<SELECTED>>\n        package: nav2_route\n    }\n    class nav2_smoother_SimpleSmoother {\n        <<SELECTED>>\n        package: nav2_smoother\n    }\n    nav2_core_Smoother <|-- nav2_smoother_SimpleSmoother\n    class nav2_waypoint_follower_WaitAtWaypoint {\n        <<SELECTED>>\n        package: nav2_waypoint_follower\n    }\n    class opennav_docking_SimpleChargingDock {\n        <<SELECTED>>\n        package: nav2_docking\n    }",
+  "_provenance": {
+    "repository_name": "Navigation2",
+    "repository_url": "https://github.com/ros-planning/navigation2",
+    "commit_hash": "6dbf4549ae1914188916b06dcc19dd3a8115d0a5",
+    "branch": "main",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:13:39.670374+00:00"
+  }
+}

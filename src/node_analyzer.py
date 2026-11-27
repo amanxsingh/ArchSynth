@@ -13,6 +13,7 @@ Phase 1 Improvements:
 
 import ast
 import os
+import re
 import logging
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Set
@@ -654,10 +655,15 @@ def run_node_analysis(repo_path: Path, output_path: Path) -> List[ROS2Node]:
             else:
                 res_status = ResolutionStatus.UNRESOLVED
 
+            resolved_cpp_node_name = cnode.node_name
+            if not resolved_cpp_node_name and cnode.class_name:
+                short_cls = cnode.class_name.split("::")[-1]
+                resolved_cpp_node_name = re.sub(r'(?<=[a-z0-9])([A-Z])', r'_\1', short_cls).lower()
+
             raw_cpp_nodes.append(ROS2Node(
                 id="",  # will be assigned uniquely below
-                name=cnode.node_name,
-                fully_qualified_name=f"{cnode.namespace}/{cnode.node_name}".replace('//', '/') if cnode.namespace and cnode.node_name else (cnode.node_name or ""),
+                name=resolved_cpp_node_name,
+                fully_qualified_name=f"{cnode.namespace}/{resolved_cpp_node_name}".replace('//', '/') if cnode.namespace and resolved_cpp_node_name else (resolved_cpp_node_name or ""),
                 class_name=cnode.fully_qualified_class,
                 source_file=cnode.source_file,
                 package_name=pkg_name,

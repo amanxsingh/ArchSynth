@@ -1,0 +1,207 @@
+{
+  "provenance": null,
+  "subsystems": [
+    {
+      "name": "trajectory_control",
+      "description": "Production subsystem responsible for trajectory control capabilities.",
+      "nodes": [
+        "controller_manager::ControllerManager"
+      ],
+      "launch_files": [],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 13.0,
+      "cohesion_status": "N/A",
+      "coupling_internal": 0.0,
+      "coupling_external": 13.0,
+      "incoming_dependencies": 12,
+      "outgoing_dependencies": 1,
+      "interface_density": 13.0,
+      "boundary_interfaces": [],
+      "justification": "Grouped 1 node(s) from package(s) controller_manager based on package boundary, functional role, and 0 internal / 13 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "controller_manager/src/controller_manager.cpp",
+          "line_start": 65,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node controller_manager::ControllerManager assigned to subsystem trajectory_control via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "validation_test_infrastructure",
+      "description": "System integration test harnesses, mock nodes, and verification testers.",
+      "nodes": [
+        "controller_manager::TestControllerClient",
+        "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict",
+        "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list",
+        "controller_manager::TestNode#test__test_ros2_control_node_launch",
+        "controller_manager::TestNode#test__test_test_utils"
+      ],
+      "launch_files": [],
+      "external_interfaces": [],
+      "architectural_role": "test_harness",
+      "is_test_infrastructure": true,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 0.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 0.0,
+      "coupling_external": 0.0,
+      "incoming_dependencies": 0,
+      "outgoing_dependencies": 0,
+      "interface_density": 0.0,
+      "boundary_interfaces": [],
+      "justification": null,
+      "subsystem_evidence": []
+    }
+  ],
+  "unassigned_nodes": [],
+  "cohesion_coupling_metrics": {
+    "trajectory_control": {
+      "cohesion": 0.0,
+      "coupling": 13.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 13.0,
+      "interface_density": 13.0
+    },
+    "validation_test_infrastructure": {
+      "cohesion": 0.0,
+      "coupling": 0.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 0.0,
+      "interface_density": 0.0
+    }
+  },
+  "clustering_method": "multi_criteria_evidence_affinity_clustering",
+  "node_assignments": {
+    "controller_manager::ControllerManager": {
+      "primary_subsystem": "trajectory_control",
+      "package": "controller_manager",
+      "role": "control",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'trajectory_control' via package 'controller_manager' and role 'control'"
+    },
+    "controller_manager::TestControllerClient": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "controller_manager",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'controller_manager' and role 'test'"
+    },
+    "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "controller_manager",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'controller_manager' and role 'test'"
+    },
+    "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "controller_manager",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'controller_manager' and role 'test'"
+    },
+    "controller_manager::TestNode#test__test_ros2_control_node_launch": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "controller_manager",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'controller_manager' and role 'test'"
+    },
+    "controller_manager::TestNode#test__test_test_utils": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "controller_manager",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'controller_manager' and role 'test'"
+    }
+  },
+  "reference_comparison": {
+    "subsystem_metrics": {
+      "perception_costmaps": {
+        "reference_node_count": 5,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "localization_state_estimation": {
+        "reference_node_count": 5,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "navigation_orchestration": {
+        "reference_node_count": 3,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "global_planning": {
+        "reference_node_count": 1,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "trajectory_control": {
+        "reference_node_count": 3,
+        "recovered_node_count": 1,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "recovery_behaviors": {
+        "reference_node_count": 2,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "system_supervision": {
+        "reference_node_count": 1,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "client_autonomy_api": {
+        "reference_node_count": 1,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    },
+    "mean_jaccard_similarity": 0.0,
+    "reference_subsystem_count": 9,
+    "recovered_subsystem_count": 2
+  },
+  "_provenance": {
+    "repository_name": "ros2_control",
+    "repository_url": "https://github.com/ros-controls/ros2_control",
+    "commit_hash": "4052b56d53bdcb562653935255d118f203398b22",
+    "branch": "master",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:13:14.960683+00:00"
+  }
+}

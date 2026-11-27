@@ -1,0 +1,68 @@
+[
+  {
+    "node_id": "controller_manager::TestNode#test__test_ros2_control_node_launch",
+    "class_name": "TestNode",
+    "package_name": "controller_manager",
+    "source_file": "controller_manager/test/test_ros2_control_node_launch.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "controller_manager::TestNode#test__test_test_utils",
+    "class_name": "TestNode",
+    "package_name": "controller_manager",
+    "source_file": "controller_manager/test/test_test_utils.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict",
+    "class_name": "TestControllerSpawner",
+    "package_name": "controller_manager",
+    "source_file": "controller_manager/test/test_launch_utils/test_launch_utils_integration_dict.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list",
+    "class_name": "TestControllerSpawner",
+    "package_name": "controller_manager",
+    "source_file": "controller_manager/test/test_launch_utils/test_launch_utils_integration_list.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "controller_manager::TestControllerClient",
+    "class_name": "TestControllerClient",
+    "package_name": "controller_manager",
+    "source_file": "controller_manager/test/test_launch_utils/test_launch_utils_integration_load.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "controller_manager::ControllerManager",
+    "class_name": "controller_manager::ControllerManager",
+    "package_name": "controller_manager",
+    "source_file": "controller_manager/src/controller_manager.cpp",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "provenance": null,
+  "plugins": [
+    {
+      "plugin_name": "slam_toolbox::SlamToolboxPlugin",
+      "class_type": "slam_toolbox::SlamToolboxPlugin",
+      "base_class_type": "rviz_common::Panel",
+      "package_name": "rviz_plugins.xml",
+      "manifest_file": "rviz_plugins.xml",
+      "library_path": null,
+      "description": "Panel to assist in Mapping and SLAM with the slam_toolbox",
+      "plugin_category": "rviz_common_Panel",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "rviz_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'slam_toolbox::SlamToolboxPlugin' extending base class 'rviz_common::Panel'"
+        }
+      ]
+    },
+    {
+      "plugin_name": "solver_plugins::CeresSolver",
+      "class_type": "solver_plugins::CeresSolver",
+      "base_class_type": "karto::ScanSolver",
+      "package_name": "solver_plugins.xml",
+      "manifest_file": "solver_plugins.xml",
+      "library_path": null,
+      "description": "Ceres Optimizer for Slam Toolbox",
+      "plugin_category": "karto_ScanSolver",
+      "status": "available",
+      "evidence": [
+        {
+          "file": "solver_plugins.xml",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "package_manifest",
+          "source": "plugin_analyzer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Declared plugin 'solver_plugins::CeresSolver' extending base class 'karto::ScanSolver'"
+        }
+      ]
+    }
+  ],
+  "categories": {
+    "rviz_common_Panel": [
+      "slam_toolbox::SlamToolboxPlugin"
+    ],
+    "karto_ScanSolver": [
+      "solver_plugins::CeresSolver"
+    ]
+  },
+  "server_configurations": [],
+  "status_counts": {
+    "registered": 0,
+    "available": 2,
+    "configured": 0,
+    "selected": 0,
+    "runtime_loaded": 0,
+    "unknown": 0
+  },
+  "mermaid_diagram": "classDiagram\n    direction TB\n    class rviz_common_Panel {\n        <<interface>>\n    }\n    class slam_toolbox_SlamToolboxPlugin {\n        package: rviz_plugins.xml\n    }\n    rviz_common_Panel <|-- slam_toolbox_SlamToolboxPlugin\n    class karto_ScanSolver {\n        <<interface>>\n    }\n    class solver_plugins_CeresSolver {\n        package: solver_plugins.xml\n    }\n    karto_ScanSolver <|-- solver_plugins_CeresSolver",
+  "_provenance": {
+    "repository_name": "slam_toolbox",
+    "repository_url": "https://github.com/SteveMacenski/slam_toolbox",
+    "commit_hash": "eee0cd5e4a161bb10f8334b5420c93876b31ca99",
+    "branch": "ros2",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:58.749763+00:00"
+  }
+}

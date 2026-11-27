@@ -1,0 +1,55 @@
+flowchart LR
+    %% ArchSynth Recovered ROS2 Communication Graph
+    classDef nodeClass fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef clientClass fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
+    nav2_collision_monitor_FakeCMSource -->|"clock (Clock)"| nav2_collision_monitor_MetricsCatcher
+    nav2_collision_monitor_FakeCMSource -->|"local_costmap/costmap (Costmap)"| nav2_collision_monitor_MetricsCatcher
+    nav2_simple_commander_BasicNavigator -->|"initialpose (PoseWithCovarianceStamped)"| nav2_amcl_AmclNode
+    nav2_simple_commander_BasicNavigator -->|"initialpose (PoseWithCovarianceStamped)"| nav2_loopback_sim_LoopbackSimulator
+    nav2_system_tests_NavTester_src__costmap_filters__tester_node -->|"initialpose (PoseWithCovarianceStamped)"| nav2_amcl_AmclNode
+    nav2_system_tests_NavTester_src__costmap_filters__tester_node -->|"initialpose (PoseWithCovarianceStamped)"| nav2_loopback_sim_LoopbackSimulator
+    nav2_system_tests_RouteTester -->|"initialpose (PoseWithCovarianceStamped)"| nav2_amcl_AmclNode
+    nav2_system_tests_RouteTester -->|"initialpose (PoseWithCovarianceStamped)"| nav2_loopback_sim_LoopbackSimulator
+    nav2_system_tests_NavTester_src__system__nav_through_poses_tester_error_msg_node -->|"initialpose (PoseWithCovarianceStamped)"| nav2_amcl_AmclNode
+    nav2_system_tests_NavTester_src__system__nav_through_poses_tester_error_msg_node -->|"initialpose (PoseWithCovarianceStamped)"| nav2_loopback_sim_LoopbackSimulator
+    nav2_system_tests_NavTester_src__system__nav_through_poses_tester_node -->|"initialpose (PoseWithCovarianceStamped)"| nav2_amcl_AmclNode
+    nav2_system_tests_NavTester_src__system__nav_through_poses_tester_node -->|"initialpose (PoseWithCovarianceStamped)"| nav2_loopback_sim_LoopbackSimulator
+    nav2_system_tests_NavTester_src__system__nav_to_pose_tester_node -->|"initialpose (PoseWithCovarianceStamped)"| nav2_amcl_AmclNode
+    nav2_system_tests_NavTester_src__system__nav_to_pose_tester_node -->|"initialpose (PoseWithCovarianceStamped)"| nav2_loopback_sim_LoopbackSimulator
+    nav2_system_tests_NavTester_src__system_failure__tester_node -->|"initialpose (PoseWithCovarianceStamped)"| nav2_amcl_AmclNode
+    nav2_system_tests_NavTester_src__system_failure__tester_node -->|"initialpose (PoseWithCovarianceStamped)"| nav2_loopback_sim_LoopbackSimulator
+    nav2_system_tests_WaypointFollowerTest -->|"initialpose (PoseWithCovarianceStamped)"| nav2_amcl_AmclNode
+    nav2_system_tests_WaypointFollowerTest -->|"initialpose (PoseWithCovarianceStamped)"| nav2_loopback_sim_LoopbackSimulator
+    nav2_amcl_AmclNode -->|"amcl_pose (PoseWithCovarianceStamped)"| nav2_simple_commander_BasicNavigator
+    nav2_amcl_AmclNode -->|"amcl_pose (PoseWithCovarianceStamped)"| nav2_system_tests_NavTester_src__costmap_filters__tester_node
+    nav2_amcl_AmclNode -->|"amcl_pose (PoseWithCovarianceStamped)"| nav2_system_tests_RouteTester
+    nav2_amcl_AmclNode -->|"amcl_pose (PoseWithCovarianceStamped)"| nav2_system_tests_NavTester_src__system__nav_through_poses_tester_error_msg_node
+    nav2_amcl_AmclNode -->|"amcl_pose (PoseWithCovarianceStamped)"| nav2_system_tests_NavTester_src__system__nav_through_poses_tester_node
+    nav2_amcl_AmclNode -->|"amcl_pose (PoseWithCovarianceStamped)"| nav2_system_tests_NavTester_src__system__nav_to_pose_tester_node
+    nav2_amcl_AmclNode -->|"amcl_pose (PoseWithCovarianceStamped)"| nav2_system_tests_NavTester_src__system_failure__tester_node
+    nav2_amcl_AmclNode -->|"amcl_pose (PoseWithCovarianceStamped)"| nav2_system_tests_WaypointFollowerTest
+    nav2_collision_monitor_CollisionMonitor -->|"cmd_vel (TwistStamped)"| opennav_docking_TestDockingServer
+    nav2_collision_monitor_CollisionMonitor -->|"cmd_vel (TwistStamped)"| opennav_following_TestObjectPosePublisher
+    nav2_collision_monitor_CollisionMonitor -->|"cmd_vel (TwistStamped)"| opennav_following_TestFollowingServer
+    nav2_collision_monitor_CollisionMonitor -->|"cmd_vel (TwistStamped)"| nav2_loopback_sim_LoopbackSimulator
+    nav2_collision_monitor_CollisionMonitor -->|"cmd_vel (TwistStamped)"| nav2_velocity_smoother_VelocitySmoother
+    nav2_controller_ControllerServer -->|"cmd_vel (TwistStamped)"| opennav_docking_TestDockingServer
+    nav2_controller_ControllerServer -->|"cmd_vel (TwistStamped)"| opennav_following_TestObjectPosePublisher
+    nav2_controller_ControllerServer -->|"cmd_vel (TwistStamped)"| opennav_following_TestFollowingServer
+    nav2_controller_ControllerServer -->|"cmd_vel (TwistStamped)"| nav2_loopback_sim_LoopbackSimulator
+    nav2_controller_ControllerServer -->|"cmd_vel (TwistStamped)"| nav2_velocity_smoother_VelocitySmoother
+    opennav_docking_DockingServer -->|"cmd_vel (TwistStamped)"| opennav_docking_TestDockingServer
+    opennav_docking_DockingServer -->|"cmd_vel (TwistStamped)"| opennav_following_TestObjectPosePublisher
+    opennav_docking_DockingServer -->|"cmd_vel (TwistStamped)"| opennav_following_TestFollowingServer
+    opennav_docking_DockingServer -->|"cmd_vel (TwistStamped)"| nav2_loopback_sim_LoopbackSimulator
+    opennav_docking_DockingServer -->|"cmd_vel (TwistStamped)"| nav2_velocity_smoother_VelocitySmoother
+    opennav_following_FollowingServer -->|"cmd_vel (TwistStamped)"| opennav_docking_TestDockingServer
+    opennav_following_FollowingServer -->|"cmd_vel (TwistStamped)"| opennav_following_TestObjectPosePublisher
+    opennav_following_FollowingServer -->|"cmd_vel (TwistStamped)"| opennav_following_TestFollowingServer
+    opennav_following_FollowingServer -->|"cmd_vel (TwistStamped)"| nav2_loopback_sim_LoopbackSimulator
+    opennav_following_FollowingServer -->|"cmd_vel (TwistStamped)"| nav2_velocity_smoother_VelocitySmoother
+    nav2_costmap_2d_Costmap2dCloud -->|"voxel_marked_cloud (PointCloud2)"| nav2_system_tests_NavTester_src__costmap_filters__tester_node
+    nav2_costmap_2d_Costmap2dCloud -->|"voxel_unknown_cloud (PointCloud2)"| nav2_system_tests_NavTester_src__costmap_filters__tester_node
+    nav2_costmap_2d_PathPublisher -->|"plan (Path)"| nav2_system_tests_NavTester_src__costmap_filters__tester_node
+    nav2_costmap_2d_OdomPublisher -->|"plan (Path)"| nav2_system_tests_NavTester_src__costmap_filters__tester_node
+    %% Capped at 50 edges for visual clarity

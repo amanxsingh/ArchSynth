@@ -1,0 +1,147 @@
+[
+  {
+    "node_id": "jaco2_controller::JSPGUIController",
+    "class_name": "JSPGUIController",
+    "package_name": "jaco2_controller",
+    "source_file": "jaco2_controller/jaco2_controller/jsp_gui_controller.py",
+    "mapping_status": "resolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [
+      "jaco2_controller/launch/jsp_gui_control.launch.py::jsp_controller#L39[ns=|prof=default|parent=root]"
+    ],
+    "launch_files": [
+      "jaco2_controller/launch/jsp_gui_control.launch.py"
+    ],
+    "deployment_profiles": [
+      "default"
+    ]
+  },
+  {
+    "node_id": "jaco2_description::TrackEndEffector",
+    "class_name": "TrackEndEffector",
+    "package_name": "jaco2_description",
+    "source_file": "jaco2_description/scripts/track_end_effector.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "jaco2_gazebo::DepthImageRemap",
+    "class_name": "DepthImageRemap",
+    "package_name": "jaco2_gazebo",
+    "source_file": "jaco2_gazebo/scripts/depth_image_remap.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "jaco2_moveit_demos::MoveitInterface",
+    "class_name": "MoveitInterface",
+    "package_name": "jaco2_moveit_demos",
+    "source_file": "jaco2_moveit_demos/jaco2_moveit_demos/moveit_interface.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "jaco2_moveit_demos::MoveitPlanning",
+    "class_name": "MoveitPlanning",
+    "package_name": "jaco2_moveit_demos",
+    "source_file": "jaco2_moveit_demos/jaco2_moveit_demos/moveit_planning.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "jaco2_moveit_task_constructor::MtcPickplace",
+    "class_name": "MtcPickplace",
+    "package_name": "jaco2_moveit_task_constructor",
+    "source_file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/pickplace.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "jaco2_moveit_task_constructor::MtcCartesian",
+    "class_name": "MtcCartesian",
+    "package_name": "jaco2_moveit_task_constructor",
+    "source_file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/planner.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  },
+  {
+    "node_id": "jaco2_moveit_task_constructor::ScenePublisher",
+    "class_name": "ScenePublisher",
+    "package_name": "jaco2_moveit_task_constructor",
+    "source_file": "jaco2_moveit_task_constructor/jaco2_moveit_task_constructor/scene_publisher.py",
+    "mapping_status": "resolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [
+      "jaco2_moveit_task_constructor/launch/run.launch.py::scene_publisher#L28[ns=|prof=default|parent=root]"
+    ],
+    "launch_files": [
+      "jaco2_moveit_task_constructor/launch/run.launch.py"
+    ],
+    "deployment_profiles": [
+      "default"
+    ]
+  },
+  {
+    "node_id": "jaco2_servo::Xbox360Teleop",
+    "class_name": "Xbox360Teleop",
+    "package_name": "jaco2_servo",
+    "source_file": "jaco2_servo/jaco2_servo/joystick_teleop.py",
+    "mapping_status": "resolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [
+      "jaco2_servo/launch/joystick_teleop.launch.py::joy_teleop#L48[ns=|prof=default|parent=root]"
+    ],
+    "launch_files": [
+      "jaco2_servo/launch/joystick_teleop.launch.py"
+    ],
+    "deployment_profiles": [
+      "default"
+    ]
+  },
+  {
+    "node_id": "jaco2_servo::KeyboardServo",
+    "class_name": "KeyboardServo",
+    "package_name": "jaco2_servo",
+    "source_file": "jaco2_servo/jaco2_servo/keyboard_teleop.py",
+    "mapping_status": "resolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [
+      "jaco2_servo/launch/keyboard_teleop.launch.py::key_teleop#L48[ns=|prof=default|parent=root]"
+    ],
+    "launch_files": [
+      "jaco2_servo/launch/keyboard_teleop.launch.py"
+    ],
+    "deployment_profiles": [
+      "default"
+    ]
+  },
+  {
+    "node_id": "jaco2_servo::CommandSwitch",
+    "class_name": "CommandSwitch",
+    "package_name": "jaco2_servo",
+    "source_file": "jaco2_servo/jaco2_servo/servo_cmd_switch.py",
+    "mapping_status": "unresolved",
+    "candidate_node_ids": [],
+    "runtime_instances": [],
+    "launch_files": [],
+    "deployment_profiles": []
+  }
+]

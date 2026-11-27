@@ -1,0 +1,48 @@
+[
+  {
+    "instance_id": "joint_limits/test/joint_limits_rosparam.launch.py::joint_limits_rosparam_test#L32[ns=|prof=default|parent=root]",
+    "node_id": null,
+    "candidate_node_ids": [],
+    "mapping_status": "unresolved",
+    "node_name": "joint_limits_rosparam_test",
+    "package": "joint_limits",
+    "executable": "joint_limits_rosparam_test",
+    "plugin_class": null,
+    "launch_file": "joint_limits/test/joint_limits_rosparam.launch.py",
+    "line_number": 32,
+    "parent_inclusion_id": null,
+    "namespace": "",
+    "remappings": {},
+    "parameters": [
+      "D:/Web Dev/archy/case_studies/ros2_control/joint_limits/test/joint_limits_rosparam.yaml"
+    ],
+    "arguments": [],
+    "is_composable": false,
+    "container_name": null,
+    "condition": null,
+    "deployment_profile": "default",
+    "launch_arguments": {},
+    "evidence": [
+      {
+        "file": "joint_limits/test/joint_limits_rosparam.launch.py",
+        "line_start": 32,
+        "line_end": 37,
+        "evidence_type": "launch_node",
+        "source": "launch_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Standalone Node declared in launch: pkg='joint_limits', exec='joint_limits_rosparam_test', name='joint_limits_rosparam_test'"
+      }
+    ],
+    "repository_name": "joint_limits",
+    "action_type": "Node",
+    "is_lifecycle": false,
+    "parameter_files": [
+      "D:/Web Dev/archy/case_studies/ros2_control/joint_limits/test/joint_limits_rosparam.yaml"
+    ],
+    "inline_parameters": {},
+    "lifecycle_info": null,
+    "resolution_status": "resolved"
+  }
+]

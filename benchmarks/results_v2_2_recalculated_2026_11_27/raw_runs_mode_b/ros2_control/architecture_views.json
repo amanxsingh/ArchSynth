@@ -1,0 +1,892 @@
+{
+  "provenance": null,
+  "standards_alignment": "ISO/IEC/IEEE 42010",
+  "views": {
+    "system_context": {
+      "view_id": "system_context",
+      "name": "System Context View",
+      "description": "System boundary for ros2_control derived from 6 source nodes, unmatched external-peer interfaces, and 1 external launch packages.",
+      "architectural_concerns": [
+        "System boundaries",
+        "External interfaces",
+        "Operational environment"
+      ],
+      "target_stakeholders": [
+        "System Architects",
+        "Robotics Integrators",
+        "Application Engineers"
+      ],
+      "entities": [
+        {
+          "name": "ros2_control Core Nodes",
+          "type": "software_system"
+        },
+        {
+          "name": "External ROS 2 Callers / Clients",
+          "type": "external_actor"
+        },
+        {
+          "name": "External Publishers / Sensors",
+          "type": "external_source"
+        },
+        {
+          "name": "External Targets (joint_limits)",
+          "type": "external_target"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "External ROS 2 Callers / Clients",
+          "target": "ros2_control Core Nodes",
+          "type": "service_or_action_call"
+        },
+        {
+          "source": "External Publishers / Sensors",
+          "target": "ros2_control Core Nodes",
+          "type": "topic_subscription"
+        },
+        {
+          "source": "ros2_control Core Nodes",
+          "target": "External Targets (joint_limits)",
+          "type": "topic_or_service_output"
+        }
+      ],
+      "mermaid_diagram": "flowchart TD\n    subgraph SystemBoundary [\"ros2_control System Boundary (6 source nodes)\"]\n        SystemCore[\"ros2_control Core Nodes\"]\n    end\n    ClientApp[\"External ROS 2 Callers / Clients\"]\n    ClientApp -->|\"~/cleanup_controller, ~/configure_controller, ~/list_controller_types, ~/list_controllers\"| SystemCore\n    ExtSources[\"External Publishers / Sensors\"]\n    ExtSources -->|\"robot_description\"| SystemCore\n    ExtTargets[\"External Targets (joint_limits)\"]\n    SystemCore -->|\"/joint_states, ~/activity\"| ExtTargets\n"
+    },
+    "package_dependency": {
+      "view_id": "package_dependency",
+      "name": "Package Dependency View",
+      "description": "Directed package dependency graph across 11 repository packages and 54 external dependencies (package.xml, setup.py, and resolved source dependencies).",
+      "architectural_concerns": [
+        "Package coupling",
+        "Build layering",
+        "Modular reusability"
+      ],
+      "target_stakeholders": [
+        "Software Maintainers",
+        "Build Engineers",
+        "Component Developers"
+      ],
+      "entities": [
+        {
+          "name": "controller_interface",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "controller_manager",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "controller_manager_msgs",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "hardware_interface",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "hardware_interface_testing",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "joint_limits",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "ros2_control",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "ros2_control_test_assets",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "ros2controlcli",
+          "type": "internal_package",
+          "build_type": "ament_python"
+        },
+        {
+          "name": "rqt_controller_manager",
+          "type": "internal_package",
+          "build_type": "ament_python"
+        },
+        {
+          "name": "transmission_interface",
+          "type": "internal_package",
+          "build_type": "ament_cmake"
+        },
+        {
+          "name": "ros2_control_cmake",
+          "type": "external_ros_package"
+        },
+        {
+          "name": "test_controller_with_interfaces",
+          "type": "external_ros_package"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "controller_interface",
+          "target": "hardware_interface",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "controller_interface",
+          "target": "ros2_control_cmake",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "controller_interface",
+          "target": "hardware_interface",
+          "type": "build_export_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "controller_interface",
+          "target": "hardware_interface",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "controller_interface",
+          "target": "joint_limits",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "controller_manager",
+          "target": "controller_interface",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "controller_manager",
+          "target": "controller_manager_msgs",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "controller_manager",
+          "target": "hardware_interface",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "controller_manager",
+          "target": "ros2_control_cmake",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "controller_manager",
+          "target": "hardware_interface_testing",
+          "type": "test_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "controller_manager",
+          "target": "ros2_control_test_assets",
+          "type": "test_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "controller_manager",
+          "target": "controller_manager_msgs",
+          "type": "source_import",
+          "origin": "observed_source"
+        },
+        {
+          "source": "controller_manager",
+          "target": "controller_interface",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "controller_manager",
+          "target": "controller_manager_msgs",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "controller_manager",
+          "target": "hardware_interface",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "controller_manager",
+          "target": "ros2_control_test_assets",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "controller_manager",
+          "target": "test_controller_with_interfaces",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "hardware_interface",
+          "target": "joint_limits",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "hardware_interface",
+          "target": "ros2_control_cmake",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "hardware_interface",
+          "target": "ros2_control_test_assets",
+          "type": "test_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "hardware_interface",
+          "target": "joint_limits",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "hardware_interface",
+          "target": "ros2_control_test_assets",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "hardware_interface_testing",
+          "target": "hardware_interface",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "hardware_interface_testing",
+          "target": "ros2_control_test_assets",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "hardware_interface_testing",
+          "target": "ros2_control_cmake",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "hardware_interface_testing",
+          "target": "hardware_interface",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "hardware_interface_testing",
+          "target": "ros2_control_test_assets",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "joint_limits",
+          "target": "ros2_control_cmake",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2_control",
+          "target": "controller_interface",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2_control",
+          "target": "controller_manager",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2_control",
+          "target": "controller_manager_msgs",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2_control",
+          "target": "hardware_interface",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2_control",
+          "target": "joint_limits",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2_control",
+          "target": "ros2_control_test_assets",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2_control",
+          "target": "ros2controlcli",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2_control",
+          "target": "transmission_interface",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2_control_test_assets",
+          "target": "ros2_control_cmake",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2controlcli",
+          "target": "controller_manager",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2controlcli",
+          "target": "controller_manager_msgs",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "ros2controlcli",
+          "target": "controller_manager",
+          "type": "source_import",
+          "origin": "observed_source"
+        },
+        {
+          "source": "ros2controlcli",
+          "target": "controller_manager_msgs",
+          "type": "source_import",
+          "origin": "observed_source"
+        },
+        {
+          "source": "rqt_controller_manager",
+          "target": "controller_manager",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "rqt_controller_manager",
+          "target": "controller_manager_msgs",
+          "type": "exec_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "rqt_controller_manager",
+          "target": "controller_manager",
+          "type": "source_import",
+          "origin": "observed_source"
+        },
+        {
+          "source": "rqt_controller_manager",
+          "target": "controller_manager_msgs",
+          "type": "source_import",
+          "origin": "observed_source"
+        },
+        {
+          "source": "transmission_interface",
+          "target": "hardware_interface",
+          "type": "depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "transmission_interface",
+          "target": "ros2_control_cmake",
+          "type": "build_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "transmission_interface",
+          "target": "ros2_control_test_assets",
+          "type": "test_depend",
+          "origin": "declared_manifest"
+        },
+        {
+          "source": "transmission_interface",
+          "target": "hardware_interface",
+          "type": "source_include",
+          "origin": "observed_source"
+        },
+        {
+          "source": "transmission_interface",
+          "target": "ros2_control_test_assets",
+          "type": "source_include",
+          "origin": "observed_source"
+        }
+      ],
+      "mermaid_diagram": "flowchart TD\n    controller_interface[\"controller_interface (ament_cmake)\"]\n    controller_manager[\"controller_manager (ament_cmake)\"]\n    controller_manager_msgs[\"controller_manager_msgs (ament_cmake)\"]\n    hardware_interface[\"hardware_interface (ament_cmake)\"]\n    hardware_interface_testing[\"hardware_interface_testing (ament_cmake)\"]\n    joint_limits[\"joint_limits (ament_cmake)\"]\n    ros2_control[\"ros2_control (ament_cmake)\"]\n    ros2_control_test_assets[\"ros2_control_test_assets (ament_cmake)\"]\n    ros2controlcli[\"ros2controlcli (ament_python)\"]\n    rqt_controller_manager[\"rqt_controller_manager (ament_python)\"]\n    transmission_interface[\"transmission_interface (ament_cmake)\"]\n    controller_interface -->|\"build_depend\"| hardware_interface\n    ros2_control_cmake[\"ros2_control_cmake (external)\"]\n    controller_interface -->|\"build_depend\"| ros2_control_cmake\n    controller_interface -->|\"build_export_depend\"| hardware_interface\n    controller_interface -.->|\"source_include\"| hardware_interface\n    controller_interface -.->|\"source_include\"| joint_limits\n    controller_manager -->|\"depend\"| controller_interface\n    controller_manager -->|\"depend\"| controller_manager_msgs\n    controller_manager -->|\"depend\"| hardware_interface\n    controller_manager -->|\"build_depend\"| ros2_control_cmake\n    controller_manager -->|\"test_depend\"| hardware_interface_testing\n    controller_manager -->|\"test_depend\"| ros2_control_test_assets\n    controller_manager -.->|\"source_import\"| controller_manager_msgs\n    controller_manager -.->|\"source_include\"| controller_interface\n    controller_manager -.->|\"source_include\"| controller_manager_msgs\n    controller_manager -.->|\"source_include\"| hardware_interface\n    controller_manager -.->|\"source_include\"| ros2_control_test_assets\n    test_controller_with_interfaces[\"test_controller_with_interfaces (external)\"]\n    controller_manager -.->|\"source_include\"| test_controller_with_interfaces\n    hardware_interface -->|\"depend\"| joint_limits\n    hardware_interface -->|\"build_depend\"| ros2_control_cmake\n    hardware_interface -->|\"test_depend\"| ros2_control_test_assets\n    hardware_interface -.->|\"source_include\"| joint_limits\n    hardware_interface -.->|\"source_include\"| ros2_control_test_assets\n    hardware_interface_testing -->|\"depend\"| hardware_interface\n    hardware_interface_testing -->|\"depend\"| ros2_control_test_assets\n    hardware_interface_testing -->|\"build_depend\"| ros2_control_cmake\n    hardware_interface_testing -.->|\"source_include\"| hardware_interface\n    hardware_interface_testing -.->|\"source_include\"| ros2_control_test_assets\n    joint_limits -->|\"build_depend\"| ros2_control_cmake\n    ros2_control -->|\"exec_depend\"| controller_interface\n    ros2_control -->|\"exec_depend\"| controller_manager\n    ros2_control -->|\"exec_depend\"| controller_manager_msgs\n    ros2_control -->|\"exec_depend\"| hardware_interface\n    ros2_control -->|\"exec_depend\"| joint_limits\n    ros2_control -->|\"exec_depend\"| ros2_control_test_assets\n    ros2_control -->|\"exec_depend\"| ros2controlcli\n    ros2_control -->|\"exec_depend\"| transmission_interface\n    ros2_control_test_assets -->|\"build_depend\"| ros2_control_cmake\n    ros2controlcli -->|\"depend\"| controller_manager\n    ros2controlcli -->|\"depend\"| controller_manager_msgs\n    ros2controlcli -.->|\"source_import\"| controller_manager\n    ros2controlcli -.->|\"source_import\"| controller_manager_msgs\n    rqt_controller_manager -->|\"exec_depend\"| controller_manager\n    rqt_controller_manager -->|\"exec_depend\"| controller_manager_msgs\n    rqt_controller_manager -.->|\"source_import\"| controller_manager\n    rqt_controller_manager -.->|\"source_import\"| controller_manager_msgs\n    transmission_interface -->|\"depend\"| hardware_interface\n    transmission_interface -->|\"build_depend\"| ros2_control_cmake\n    transmission_interface -->|\"test_depend\"| ros2_control_test_assets\n    transmission_interface -.->|\"source_include\"| hardware_interface\n    transmission_interface -.->|\"source_include\"| ros2_control_test_assets"
+    },
+    "subsystem_component": {
+      "view_id": "subsystem_component",
+      "name": "Subsystem / Component View",
+      "description": "Recovered functional software subsystems, metrics, and inter-subsystem communication edges for ros2_control.",
+      "architectural_concerns": [
+        "Functional decomposition",
+        "Subsystem cohesion",
+        "Coupling minimization"
+      ],
+      "target_stakeholders": [
+        "Lead Architects",
+        "Functional Leads",
+        "Domain Engineers"
+      ],
+      "entities": [
+        {
+          "name": "trajectory_control",
+          "type": "production_subsystem",
+          "node_count": 1
+        },
+        {
+          "name": "validation_test_infrastructure",
+          "type": "test_harness",
+          "node_count": 5
+        }
+      ],
+      "relationships": [],
+      "mermaid_diagram": "flowchart TB\n    subgraph ProductionSubsystems [\"ros2_control Production Stack\"]\n        subgraph trajectory_control [\"Trajectory Control (Cohesion=N/A)\"]\n            trajectory_control_ControllerManager[\"ControllerManager\"]\n        end\n    end\n    subgraph TestInfra [\"Validation Test Infrastructure\"]\n        Harnesses[\"5 Test Harnesses & Mocks\"]\n    end"
+    },
+    "runtime_deployment": {
+      "view_id": "runtime_deployment",
+      "name": "Runtime Deployment View",
+      "description": "Static launch-declared deployment topology for ros2_control (0 containers, 1 launch instances). Note: OS process hosting is inferred from launch declarations, not runtime-observed.",
+      "architectural_concerns": [
+        "Process allocation",
+        "IPC vs Intra-process communication",
+        "Deployment efficiency"
+      ],
+      "target_stakeholders": [
+        "Deployment Engineers",
+        "Embedded Systems Leads",
+        "Performance Engineers"
+      ],
+      "entities": [
+        {
+          "name": "joint_limits_rosparam_test",
+          "package": "joint_limits",
+          "type": "launch_executable",
+          "launch_file": "joint_limits/test/joint_limits_rosparam.launch.py"
+        }
+      ],
+      "relationships": [],
+      "mermaid_diagram": "flowchart TD\n    subgraph StaticLaunchDeployment [\"Static Launch-Declared Deployment - ros2_control\"]\n        proc_joint_limits_joint_limits_rosparam_test[\"Launch Executable: joint_limits_rosparam_test [joint_limits]\"]\n    end"
+    },
+    "communication_topology": {
+      "view_id": "communication_topology",
+      "name": "Communication View",
+      "description": "Recovered interaction topology displaying topics, services, and actions for ros2_control.",
+      "architectural_concerns": [
+        "Dataflow",
+        "Message passing latency",
+        "Interface compatibility"
+      ],
+      "target_stakeholders": [
+        "Integration Engineers",
+        "Safety Engineers",
+        "Robotics Developers"
+      ],
+      "entities": [
+        {
+          "name": "controller_manager",
+          "type": "node"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "controller_manager",
+          "target": "~/activity",
+          "type": "publisher"
+        }
+      ],
+      "mermaid_diagram": "flowchart LR\n    node_controller_manager[\"controller_manager\"]\n    node_controller_manager -->|\"~/activity\"| topic_~_activity[\"~/activity\"]"
+    },
+    "lifecycle_architecture": {
+      "view_id": "lifecycle_architecture",
+      "name": "Lifecycle View",
+      "description": "No ROS 2 lifecycle nodes, lifecycle managers, or lifecycle configurations were detected in ros2_control. System-specific lifecycle diagram omitted.",
+      "architectural_concerns": [
+        "Deterministic startup",
+        "State consistency",
+        "Fault isolation"
+      ],
+      "target_stakeholders": [
+        "System Engineers",
+        "Safety Certification Authorities",
+        "Operations"
+      ],
+      "entities": [],
+      "relationships": [],
+      "mermaid_diagram": "flowchart TD\n    NoLifecycle[\"No ROS 2 lifecycle managers or lifecycle nodes detected in ros2_control\"]\n"
+    },
+    "plugin_architecture": {
+      "view_id": "plugin_architecture",
+      "name": "Plugin Architecture View",
+      "description": "Pluginlib extensibility patterns and implementations recovered for ros2_control.",
+      "architectural_concerns": [
+        "Extensibility",
+        "Algorithm swappability",
+        "Runtime polymorphism"
+      ],
+      "target_stakeholders": [
+        "Algorithm Developers",
+        "Extension Authors",
+        "Software Architects"
+      ],
+      "entities": [
+        {
+          "name": "hardware_interface::SystemInterface",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "mock_components::GenericSystem",
+          "package": "hardware_interface",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "joint_limits::JointLimiterInterface<trajectory_msgs::msg::JointTrajectoryPoint>",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "JointTrajectoryPointSaturationLimiter",
+          "package": "joint_limits",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "joint_limits::JointLimiterInterface<joint_limits::JointControlInterfacesData>",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "JointInterfacesSaturationLimiter",
+          "package": "joint_limits",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "JointInterfacesSoftLimiter",
+          "package": "joint_limits",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "rqt_gui_py::Plugin",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "rqt_controller_manager.controller_manager.ControllerManager",
+          "package": "rqt_controller_manager",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "transmission_interface::TransmissionLoader",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "transmission_interface::SimpleTransmissionLoader",
+          "package": "transmission_interface",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "transmission_interface::FourBarLinkageTransmissionLoader",
+          "package": "transmission_interface",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "transmission_interface::DifferentialTransmissionLoader",
+          "package": "transmission_interface",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "hardware_interface::ActuatorInterface",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "TestActuator",
+          "package": "hardware_interface_testing",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "TestActuatorExclusiveInterfaces",
+          "package": "hardware_interface_testing",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "hardware_interface::SensorInterface",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "TestSensor",
+          "package": "hardware_interface_testing",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "TestSystem",
+          "package": "hardware_interface_testing",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "TestUninitializableActuator",
+          "package": "hardware_interface_testing",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "TestUninitializableSensor",
+          "package": "hardware_interface_testing",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "TestUninitializableSystem",
+          "package": "hardware_interface_testing",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "test_hardware_components::TestSingleJointActuator",
+          "package": "hardware_interface",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "test_hardware_components::TestForceTorqueSensor",
+          "package": "hardware_interface",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "test_hardware_components::TestIMUSensor",
+          "package": "hardware_interface",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "test_hardware_components::TestTwoJointSystem",
+          "package": "hardware_interface",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "test_hardware_components::TestSystemCommandModes",
+          "package": "hardware_interface",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "controller_interface::ChainableControllerInterface",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "test_chainable_controller::TestChainableController",
+          "package": "controller_manager",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "controller_interface::ControllerInterface",
+          "type": "plugin_base_class"
+        },
+        {
+          "name": "test_controller::TestController",
+          "package": "controller_manager",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "test_controller_failed_activate::TestControllerFailedActivate",
+          "package": "controller_manager",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "test_controller_failed_init::TestControllerFailedInit",
+          "package": "controller_manager",
+          "type": "plugin_implementation"
+        },
+        {
+          "name": "test_controller_with_interfaces::TestControllerWithInterfaces",
+          "package": "controller_manager",
+          "type": "plugin_implementation"
+        }
+      ],
+      "relationships": [
+        {
+          "source": "hardware_interface::SystemInterface",
+          "target": "mock_components::GenericSystem",
+          "type": "implements"
+        },
+        {
+          "source": "joint_limits::JointLimiterInterface<trajectory_msgs::msg::JointTrajectoryPoint>",
+          "target": "JointTrajectoryPointSaturationLimiter",
+          "type": "implements"
+        },
+        {
+          "source": "joint_limits::JointLimiterInterface<joint_limits::JointControlInterfacesData>",
+          "target": "JointInterfacesSaturationLimiter",
+          "type": "implements"
+        },
+        {
+          "source": "joint_limits::JointLimiterInterface<joint_limits::JointControlInterfacesData>",
+          "target": "JointInterfacesSoftLimiter",
+          "type": "implements"
+        },
+        {
+          "source": "rqt_gui_py::Plugin",
+          "target": "rqt_controller_manager.controller_manager.ControllerManager",
+          "type": "implements"
+        },
+        {
+          "source": "transmission_interface::TransmissionLoader",
+          "target": "transmission_interface::SimpleTransmissionLoader",
+          "type": "implements"
+        },
+        {
+          "source": "transmission_interface::TransmissionLoader",
+          "target": "transmission_interface::FourBarLinkageTransmissionLoader",
+          "type": "implements"
+        },
+        {
+          "source": "transmission_interface::TransmissionLoader",
+          "target": "transmission_interface::DifferentialTransmissionLoader",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::ActuatorInterface",
+          "target": "TestActuator",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::ActuatorInterface",
+          "target": "TestActuatorExclusiveInterfaces",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::SensorInterface",
+          "target": "TestSensor",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::SystemInterface",
+          "target": "TestSystem",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::ActuatorInterface",
+          "target": "TestUninitializableActuator",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::SensorInterface",
+          "target": "TestUninitializableSensor",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::SystemInterface",
+          "target": "TestUninitializableSystem",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::ActuatorInterface",
+          "target": "test_hardware_components::TestSingleJointActuator",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::SensorInterface",
+          "target": "test_hardware_components::TestForceTorqueSensor",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::SensorInterface",
+          "target": "test_hardware_components::TestIMUSensor",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::SystemInterface",
+          "target": "test_hardware_components::TestTwoJointSystem",
+          "type": "implements"
+        },
+        {
+          "source": "hardware_interface::SystemInterface",
+          "target": "test_hardware_components::TestSystemCommandModes",
+          "type": "implements"
+        },
+        {
+          "source": "controller_interface::ChainableControllerInterface",
+          "target": "test_chainable_controller::TestChainableController",
+          "type": "implements"
+        },
+        {
+          "source": "controller_interface::ControllerInterface",
+          "target": "test_controller::TestController",
+          "type": "implements"
+        },
+        {
+          "source": "controller_interface::ControllerInterface",
+          "target": "test_controller_failed_activate::TestControllerFailedActivate",
+          "type": "implements"
+        },
+        {
+          "source": "controller_interface::ControllerInterface",
+          "target": "test_controller_failed_init::TestControllerFailedInit",
+          "type": "implements"
+        },
+        {
+          "source": "controller_interface::ControllerInterface",
+          "target": "test_controller_with_interfaces::TestControllerWithInterfaces",
+          "type": "implements"
+        }
+      ],
+      "mermaid_diagram": "classDiagram\n    direction TB\n    class hardware_interface_SystemInterface {\n        <<interface>>\n    }\n    class mock_components_GenericSystem {\n        package: hardware_interface\n    }\n    hardware_interface_SystemInterface <|-- mock_components_GenericSystem\n    class joint_limits_JointLimiterInterface_trajectory_msgs_msg_JointTrajectoryPoint_ {\n        <<interface>>\n    }\n    class JointTrajectoryPointSaturationLimiter {\n        package: joint_limits\n    }\n    joint_limits_JointLimiterInterface_trajectory_msgs_msg_JointTrajectoryPoint_ <|-- JointTrajectoryPointSaturationLimiter\n    class joint_limits_JointLimiterInterface_joint_limits_JointControlInterfacesData_ {\n        <<interface>>\n    }\n    class JointInterfacesSaturationLimiter {\n        package: joint_limits\n    }\n    joint_limits_JointLimiterInterface_joint_limits_JointControlInterfacesData_ <|-- JointInterfacesSaturationLimiter\n    class JointInterfacesSoftLimiter {\n        package: joint_limits\n    }\n    joint_limits_JointLimiterInterface_joint_limits_JointControlInterfacesData_ <|-- JointInterfacesSoftLimiter\n    class rqt_gui_py_Plugin {\n        <<interface>>\n    }\n    class rqt_controller_manager.controller_manager.ControllerManager {\n        package: rqt_controller_manager\n    }\n    rqt_gui_py_Plugin <|-- rqt_controller_manager.controller_manager.ControllerManager\n    class transmission_interface_TransmissionLoader {\n        <<interface>>\n    }\n    class transmission_interface_SimpleTransmissionLoader {\n        package: transmission_interface\n    }\n    transmission_interface_TransmissionLoader <|-- transmission_interface_SimpleTransmissionLoader\n    class transmission_interface_FourBarLinkageTransmissionLoader {\n        package: transmission_interface\n    }\n    transmission_interface_TransmissionLoader <|-- transmission_interface_FourBarLinkageTransmissionLoader\n    class transmission_interface_DifferentialTransmissionLoader {\n        package: transmission_interface\n    }\n    transmission_interface_TransmissionLoader <|-- transmission_interface_DifferentialTransmissionLoader\n    class hardware_interface_ActuatorInterface {\n        <<interface>>\n    }\n    class TestActuator {\n        package: hardware_interface_testing\n    }\n    hardware_interface_ActuatorInterface <|-- TestActuator\n    class TestActuatorExclusiveInterfaces {\n        package: hardware_interface_testing\n    }\n    hardware_interface_ActuatorInterface <|-- TestActuatorExclusiveInterfaces\n    class hardware_interface_SensorInterface {\n        <<interface>>\n    }\n    class TestSensor {\n        package: hardware_interface_testing\n    }\n    hardware_interface_SensorInterface <|-- TestSensor\n    class TestSystem {\n        package: hardware_interface_testing\n    }\n    hardware_interface_SystemInterface <|-- TestSystem\n    class TestUninitializableActuator {\n        package: hardware_interface_testing\n    }\n    hardware_interface_ActuatorInterface <|-- TestUninitializableActuator\n    class TestUninitializableSensor {\n        package: hardware_interface_testing\n    }\n    hardware_interface_SensorInterface <|-- TestUninitializableSensor\n    class TestUninitializableSystem {\n        package: hardware_interface_testing\n    }\n    hardware_interface_SystemInterface <|-- TestUninitializableSystem\n    class test_hardware_components_TestSingleJointActuator {\n        package: hardware_interface\n    }\n    hardware_interface_ActuatorInterface <|-- test_hardware_components_TestSingleJointActuator\n    class test_hardware_components_TestForceTorqueSensor {\n        package: hardware_interface\n    }\n    hardware_interface_SensorInterface <|-- test_hardware_components_TestForceTorqueSensor\n    class test_hardware_components_TestIMUSensor {\n        package: hardware_interface\n    }\n    hardware_interface_SensorInterface <|-- test_hardware_components_TestIMUSensor\n    class test_hardware_components_TestTwoJointSystem {\n        package: hardware_interface\n    }\n    hardware_interface_SystemInterface <|-- test_hardware_components_TestTwoJointSystem\n    class test_hardware_components_TestSystemCommandModes {\n        package: hardware_interface\n    }\n    hardware_interface_SystemInterface <|-- test_hardware_components_TestSystemCommandModes\n    class controller_interface_ChainableControllerInterface {\n        <<interface>>\n    }\n    class test_chainable_controller_TestChainableController {\n        package: controller_manager\n    }\n    controller_interface_ChainableControllerInterface <|-- test_chainable_controller_TestChainableController\n    class controller_interface_ControllerInterface {\n        <<interface>>\n    }\n    class test_controller_TestController {\n        package: controller_manager\n    }\n    controller_interface_ControllerInterface <|-- test_controller_TestController\n    class test_controller_failed_activate_TestControllerFailedActivate {\n        package: controller_manager\n    }\n    controller_interface_ControllerInterface <|-- test_controller_failed_activate_TestControllerFailedActivate\n    class test_controller_failed_init_TestControllerFailedInit {\n        package: controller_manager\n    }\n    controller_interface_ControllerInterface <|-- test_controller_failed_init_TestControllerFailedInit\n    class test_controller_with_interfaces_TestControllerWithInterfaces {\n        package: controller_manager\n    }\n    controller_interface_ControllerInterface <|-- test_controller_with_interfaces_TestControllerWithInterfaces"
+    },
+    "behavior_tree_orchestration": {
+      "view_id": "behavior_tree_orchestration",
+      "name": "Behavior Tree View",
+      "description": "Behavior Tree navigation orchestration is not utilized in ros2_control.",
+      "architectural_concerns": [
+        "Autonomous mission execution",
+        "Reactive recovery",
+        "Blackboard dataflow"
+      ],
+      "target_stakeholders": [
+        "Autonomy Engineers",
+        "Behavior Designers",
+        "Test Engineers"
+      ],
+      "entities": [],
+      "relationships": [],
+      "mermaid_diagram": "flowchart TD\n    NoBT[\"No Behavior Tree definitions declared in ros2_control\"]\n"
+    }
+  },
+  "summary": {
+    "total_views": 8,
+    "standards_alignment": "ISO/IEC/IEEE 42010",
+    "view_ids": [
+      "system_context",
+      "package_dependency",
+      "subsystem_component",
+      "runtime_deployment",
+      "communication_topology",
+      "lifecycle_architecture",
+      "plugin_architecture",
+      "behavior_tree_orchestration"
+    ],
+    "subsystem_count": 2,
+    "managed_node_count": 0,
+    "plugin_count": 25,
+    "behavior_trees_count": 0
+  },
+  "_provenance": {
+    "repository_name": "ros2_control",
+    "repository_url": "https://github.com/ros-controls/ros2_control",
+    "commit_hash": "4052b56d53bdcb562653935255d118f203398b22",
+    "branch": "master",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:13:15.561026+00:00"
+  }
+}

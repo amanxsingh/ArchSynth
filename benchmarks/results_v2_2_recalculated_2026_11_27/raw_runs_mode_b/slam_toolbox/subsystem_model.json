@@ -1,0 +1,427 @@
+{
+  "provenance": null,
+  "subsystems": [
+    {
+      "name": "localization_state_estimation",
+      "description": "Production subsystem responsible for localization state estimation capabilities.",
+      "nodes": [
+        "slam_toolbox::LocalizationSlamToolbox",
+        "slam_toolbox::MapAndLocalizationSlamToolbox"
+      ],
+      "launch_files": [
+        "launch/lifelong_launch.py",
+        "launch/localization_launch.py",
+        "launch/merge_maps_kinematic_launch.py",
+        "launch/offline_launch.py",
+        "launch/online_async_decentralized_multirobot_launch.py",
+        "launch/online_async_launch.py",
+        "launch/online_sync_launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 43.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 0.0,
+      "coupling_external": 43.0,
+      "incoming_dependencies": 27,
+      "outgoing_dependencies": 16,
+      "interface_density": 21.5,
+      "boundary_interfaces": [],
+      "justification": "Grouped 2 node(s) from package(s) slam_toolbox based on package boundary, functional role, and 0 internal / 43 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "src/slam_toolbox_localization.cpp",
+          "line_start": 29,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node slam_toolbox::LocalizationSlamToolbox assigned to subsystem localization_state_estimation via multi-criteria clustering"
+        },
+        {
+          "file": "src/experimental/slam_toolbox_map_and_localization.cpp",
+          "line_start": 27,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node slam_toolbox::MapAndLocalizationSlamToolbox assigned to subsystem localization_state_estimation via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "pkg_slam_toolbox",
+      "description": "Production subsystem responsible for pkg slam toolbox capabilities.",
+      "nodes": [
+        "slam_toolbox::AsynchronousSlamToolbox",
+        "slam_toolbox::DecentralizedMultiRobotSlamToolbox",
+        "slam_toolbox::LifelongSlamToolbox",
+        "slam_toolbox::SlamToolbox",
+        "slam_toolbox::SynchronousSlamToolbox"
+      ],
+      "launch_files": [
+        "launch/lifelong_launch.py",
+        "launch/localization_launch.py",
+        "launch/merge_maps_kinematic_launch.py",
+        "launch/offline_launch.py",
+        "launch/online_async_decentralized_multirobot_launch.py",
+        "launch/online_async_launch.py",
+        "launch/online_sync_launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 107.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 17.0,
+      "coupling_external": 90.0,
+      "incoming_dependencies": 66,
+      "outgoing_dependencies": 41,
+      "interface_density": 19.6,
+      "boundary_interfaces": [
+        "service::slam_toolbox/clear_changes",
+        "service::slam_toolbox/clear_queue",
+        "service::slam_toolbox/deserialize_map",
+        "service::slam_toolbox/manual_loop_closure",
+        "service::slam_toolbox/pause_new_measurements",
+        "service::slam_toolbox/save_map",
+        "service::slam_toolbox/serialize_map",
+        "service::slam_toolbox/toggle_interactive_mode",
+        "topic::map"
+      ],
+      "justification": "Grouped 5 node(s) from package(s) slam_toolbox based on package boundary, functional role, and 0 internal / 90 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "src/experimental/slam_toolbox_lifelong.cpp",
+          "line_start": 28,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node slam_toolbox::LifelongSlamToolbox assigned to subsystem pkg_slam_toolbox via multi-criteria clustering"
+        },
+        {
+          "file": "src/slam_toolbox_common.cpp",
+          "line_start": 68,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node slam_toolbox::SlamToolbox assigned to subsystem pkg_slam_toolbox via multi-criteria clustering"
+        },
+        {
+          "file": "src/slam_toolbox_async.cpp",
+          "line_start": 29,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node slam_toolbox::AsynchronousSlamToolbox assigned to subsystem pkg_slam_toolbox via multi-criteria clustering"
+        },
+        {
+          "file": "src/slam_toolbox_decentralized_multirobot.cpp",
+          "line_start": 28,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node slam_toolbox::DecentralizedMultiRobotSlamToolbox assigned to subsystem pkg_slam_toolbox via multi-criteria clustering"
+        },
+        {
+          "file": "src/slam_toolbox_sync.cpp",
+          "line_start": 30,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node slam_toolbox::SynchronousSlamToolbox assigned to subsystem pkg_slam_toolbox via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "visualization_operator_ui",
+      "description": "Production subsystem responsible for visualization operator ui capabilities.",
+      "nodes": [
+        "slam_toolbox::MergeMapsKinematic",
+        "slam_toolbox::Slamtoolboxplugin",
+        "slam_toolbox::Slamtoolboxstateupdatenode"
+      ],
+      "launch_files": [
+        "launch/lifelong_launch.py",
+        "launch/localization_launch.py",
+        "launch/merge_maps_kinematic_launch.py",
+        "launch/offline_launch.py",
+        "launch/online_async_decentralized_multirobot_launch.py",
+        "launch/online_async_launch.py",
+        "launch/online_sync_launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.333,
+      "inter_coupling_score": 23.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 17.0,
+      "coupling_external": 6.0,
+      "incoming_dependencies": 2,
+      "outgoing_dependencies": 21,
+      "interface_density": 9.333,
+      "boundary_interfaces": [
+        "service::slam_toolbox/clear_changes",
+        "service::slam_toolbox/clear_queue",
+        "service::slam_toolbox/deserialize_map",
+        "service::slam_toolbox/manual_loop_closure",
+        "service::slam_toolbox/pause_new_measurements",
+        "service::slam_toolbox/save_map",
+        "service::slam_toolbox/serialize_map",
+        "service::slam_toolbox/toggle_interactive_mode",
+        "topic::map"
+      ],
+      "justification": "Grouped 3 node(s) from package(s) slam_toolbox based on package boundary, functional role, and 2 internal / 6 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "src/merge_maps_kinematic.cpp",
+          "line_start": 52,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node slam_toolbox::MergeMapsKinematic assigned to subsystem visualization_operator_ui via multi-criteria clustering"
+        },
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 48,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node slam_toolbox::Slamtoolboxplugin assigned to subsystem visualization_operator_ui via multi-criteria clustering"
+        },
+        {
+          "file": "rviz_plugin/slam_toolbox_rviz_plugin.cpp",
+          "line_start": 580,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node slam_toolbox::Slamtoolboxstateupdatenode assigned to subsystem visualization_operator_ui via multi-criteria clustering"
+        }
+      ]
+    }
+  ],
+  "unassigned_nodes": [],
+  "cohesion_coupling_metrics": {
+    "localization_state_estimation": {
+      "cohesion": 0.0,
+      "coupling": 43.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 43.0,
+      "interface_density": 21.5
+    },
+    "pkg_slam_toolbox": {
+      "cohesion": 0.0,
+      "coupling": 107.0,
+      "coupling_internal": 17.0,
+      "coupling_external": 90.0,
+      "interface_density": 19.6
+    },
+    "visualization_operator_ui": {
+      "cohesion": 0.333,
+      "coupling": 23.0,
+      "coupling_internal": 17.0,
+      "coupling_external": 6.0,
+      "interface_density": 9.333
+    }
+  },
+  "clustering_method": "multi_criteria_evidence_affinity_clustering",
+  "node_assignments": {
+    "slam_toolbox::LocalizationSlamToolbox": {
+      "primary_subsystem": "localization_state_estimation",
+      "package": "slam_toolbox",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'localization_state_estimation' via package 'slam_toolbox' and role 'unknown'"
+    },
+    "slam_toolbox::MapAndLocalizationSlamToolbox": {
+      "primary_subsystem": "localization_state_estimation",
+      "package": "slam_toolbox",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'localization_state_estimation' via package 'slam_toolbox' and role 'unknown'"
+    },
+    "slam_toolbox::AsynchronousSlamToolbox": {
+      "primary_subsystem": "pkg_slam_toolbox",
+      "package": "slam_toolbox",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_slam_toolbox' via package 'slam_toolbox' and role 'unknown'"
+    },
+    "slam_toolbox::DecentralizedMultiRobotSlamToolbox": {
+      "primary_subsystem": "pkg_slam_toolbox",
+      "package": "slam_toolbox",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_slam_toolbox' via package 'slam_toolbox' and role 'unknown'"
+    },
+    "slam_toolbox::LifelongSlamToolbox": {
+      "primary_subsystem": "pkg_slam_toolbox",
+      "package": "slam_toolbox",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_slam_toolbox' via package 'slam_toolbox' and role 'unknown'"
+    },
+    "slam_toolbox::SlamToolbox": {
+      "primary_subsystem": "pkg_slam_toolbox",
+      "package": "slam_toolbox",
+      "role": "unknown",
+      "alternative_subsystems": [
+        "visualization_operator_ui"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'pkg_slam_toolbox' via package 'slam_toolbox' and role 'unknown'; shares cross-boundary edges with ['visualization_operator_ui']"
+    },
+    "slam_toolbox::SynchronousSlamToolbox": {
+      "primary_subsystem": "pkg_slam_toolbox",
+      "package": "slam_toolbox",
+      "role": "unknown",
+      "alternative_subsystems": [
+        "visualization_operator_ui"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'pkg_slam_toolbox' via package 'slam_toolbox' and role 'unknown'; shares cross-boundary edges with ['visualization_operator_ui']"
+    },
+    "slam_toolbox::MergeMapsKinematic": {
+      "primary_subsystem": "visualization_operator_ui",
+      "package": "slam_toolbox",
+      "role": "unknown",
+      "alternative_subsystems": [
+        "pkg_slam_toolbox"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'visualization_operator_ui' via package 'slam_toolbox' and role 'unknown'; shares cross-boundary edges with ['pkg_slam_toolbox']"
+    },
+    "slam_toolbox::Slamtoolboxplugin": {
+      "primary_subsystem": "visualization_operator_ui",
+      "package": "slam_toolbox",
+      "role": "unknown",
+      "alternative_subsystems": [
+        "pkg_slam_toolbox"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'visualization_operator_ui' via package 'slam_toolbox' and role 'unknown'; shares cross-boundary edges with ['pkg_slam_toolbox']"
+    },
+    "slam_toolbox::Slamtoolboxstateupdatenode": {
+      "primary_subsystem": "visualization_operator_ui",
+      "package": "slam_toolbox",
+      "role": "unknown",
+      "alternative_subsystems": [
+        "pkg_slam_toolbox"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'visualization_operator_ui' via package 'slam_toolbox' and role 'unknown'; shares cross-boundary edges with ['pkg_slam_toolbox']"
+    }
+  },
+  "reference_comparison": {
+    "subsystem_metrics": {
+      "perception_costmaps": {
+        "reference_node_count": 5,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "localization_state_estimation": {
+        "reference_node_count": 5,
+        "recovered_node_count": 2,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "navigation_orchestration": {
+        "reference_node_count": 3,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "global_planning": {
+        "reference_node_count": 1,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "trajectory_control": {
+        "reference_node_count": 3,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "recovery_behaviors": {
+        "reference_node_count": 2,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "system_supervision": {
+        "reference_node_count": 1,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "client_autonomy_api": {
+        "reference_node_count": 1,
+        "recovered_node_count": 0,
+        "jaccard_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      }
+    },
+    "mean_jaccard_similarity": 0.0,
+    "reference_subsystem_count": 9,
+    "recovered_subsystem_count": 3
+  },
+  "_provenance": {
+    "repository_name": "slam_toolbox",
+    "repository_url": "https://github.com/SteveMacenski/slam_toolbox",
+    "commit_hash": "eee0cd5e4a161bb10f8334b5420c93876b31ca99",
+    "branch": "ros2",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:12:58.669584+00:00"
+  }
+}

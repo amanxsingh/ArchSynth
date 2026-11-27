@@ -1,0 +1,1542 @@
+{
+  "provenance": null,
+  "subsystems": [
+    {
+      "name": "localization_state_estimation",
+      "description": "Production subsystem responsible for localization state estimation capabilities.",
+      "nodes": [
+        "nav2_amcl::AmclNode",
+        "nav2_loopback_sim::LoopbackSimulator",
+        "nav2_map_server::CostmapFilterInfoServer",
+        "nav2_map_server::MapSaver",
+        "nav2_map_server::MapServer"
+      ],
+      "launch_files": [
+        "nav2_bringup/launch/keepout_zone_launch.py",
+        "nav2_bringup/launch/localization_launch.py",
+        "nav2_bringup/launch/slam_launch.py",
+        "nav2_bringup/launch/speed_zone_launch.py",
+        "nav2_bringup/launch/tb3_loopback_simulation_launch.py",
+        "nav2_bringup/launch/tb4_loopback_simulation_launch.py",
+        "nav2_costmap_2d/test/test_launch_files/costmap_map_server.launch.py",
+        "nav2_loopback_sim/launch/loopback_simulation.launch.py",
+        "nav2_map_server/launch/map_saver_server.launch.py",
+        "nav2_map_server/launch/vector_object_server.launch.py",
+        "nav2_map_server/test/test_launch_files/map_saver_node.launch.py",
+        "nav2_map_server/test/test_launch_files/map_server_node.launch.py",
+        "nav2_rviz_plugins/launch/route_tool.launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.05,
+      "inter_coupling_score": 43.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 31.0,
+      "coupling_external": 12.0,
+      "incoming_dependencies": 30,
+      "outgoing_dependencies": 13,
+      "interface_density": 3.8,
+      "boundary_interfaces": [
+        "topic::amcl_pose",
+        "topic::cmd_vel",
+        "topic::initialpose",
+        "topic::map",
+        "topic::map_topic_"
+      ],
+      "justification": "Grouped 5 node(s) from package(s) nav2_amcl, nav2_loopback_sim, nav2_map_server based on package boundary, functional role, and 1 internal / 12 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "nav2_loopback_sim/src/loopback_simulator.cpp",
+          "line_start": 59,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_loopback_sim::LoopbackSimulator assigned to subsystem localization_state_estimation via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_map_server/src/map_server/map_server.cpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_map_server::MapServer assigned to subsystem localization_state_estimation via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_map_server/src/map_saver/map_saver.cpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_map_server::MapSaver assigned to subsystem localization_state_estimation via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_amcl/src/amcl_node.cpp",
+          "line_start": 59,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_amcl::AmclNode assigned to subsystem localization_state_estimation via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_map_server/src/costmap_filter_info/costmap_filter_info_server.cpp",
+          "line_start": 28,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_map_server::CostmapFilterInfoServer assigned to subsystem localization_state_estimation via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "perception_costmaps",
+      "description": "Production subsystem responsible for perception costmaps capabilities.",
+      "nodes": [
+        "nav2_collision_monitor::CollisionDetector",
+        "nav2_collision_monitor::CollisionMonitor",
+        "nav2_costmap_2d::Costmap2DROS",
+        "nav2_costmap_2d::Costmap2dCloud",
+        "nav2_costmap_2d::Costmap2dMarker",
+        "nav2_map_server::VectorObjectServer",
+        "nav2_util::BaseFootprintPublisher"
+      ],
+      "launch_files": [
+        "nav2_bringup/launch/keepout_zone_launch.py",
+        "nav2_bringup/launch/localization_launch.py",
+        "nav2_bringup/launch/navigation_launch.py",
+        "nav2_bringup/launch/slam_launch.py",
+        "nav2_bringup/launch/speed_zone_launch.py",
+        "nav2_bringup/launch/tb3_loopback_simulation_launch.py",
+        "nav2_bringup/launch/tb4_loopback_simulation_launch.py",
+        "nav2_collision_monitor/launch/collision_detector_node.launch.py",
+        "nav2_collision_monitor/launch/collision_monitor_node.launch.py",
+        "nav2_costmap_2d/test/test_launch_files/costmap_map_server.launch.py",
+        "nav2_map_server/launch/map_saver_server.launch.py",
+        "nav2_map_server/launch/vector_object_server.launch.py",
+        "nav2_map_server/test/test_launch_files/map_saver_node.launch.py",
+        "nav2_map_server/test/test_launch_files/map_server_node.launch.py",
+        "nav2_rviz_plugins/launch/route_tool.launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 26.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 10.0,
+      "coupling_external": 16.0,
+      "incoming_dependencies": 10,
+      "outgoing_dependencies": 16,
+      "interface_density": 3.0,
+      "boundary_interfaces": [
+        "service::collision_monitor/toggle",
+        "topic::cmd_vel",
+        "topic::cmd_vel_smoothed",
+        "topic::map_topic_",
+        "topic::voxel_marked_cloud",
+        "topic::voxel_unknown_cloud"
+      ],
+      "justification": "Grouped 7 node(s) from package(s) nav2_collision_monitor, nav2_costmap_2d, nav2_map_server, nav2_util based on package boundary, functional role, and 0 internal / 16 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "nav2_costmap_2d/src/costmap_2d_cloud.cpp",
+          "line_start": 217,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_costmap_2d::Costmap2dCloud assigned to subsystem perception_costmaps via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_collision_monitor/src/collision_detector_node.cpp",
+          "line_start": 50,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_collision_monitor::CollisionDetector assigned to subsystem perception_costmaps via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_map_server/src/vo_server/vector_object_server.cpp",
+          "line_start": 39,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_map_server::VectorObjectServer assigned to subsystem perception_costmaps via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_costmap_2d/src/costmap_2d_ros.cpp",
+          "line_start": 75,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_costmap_2d::Costmap2DROS assigned to subsystem perception_costmaps via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_util/src/base_footprint_publisher.hpp",
+          "line_start": 100,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_util::BaseFootprintPublisher assigned to subsystem perception_costmaps via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_costmap_2d/src/costmap_2d_markers.cpp",
+          "line_start": 152,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_costmap_2d::Costmap2dMarker assigned to subsystem perception_costmaps via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_collision_monitor/src/collision_monitor_node.cpp",
+          "line_start": 54,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_collision_monitor::CollisionMonitor assigned to subsystem perception_costmaps via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "navigation_orchestration",
+      "description": "Production subsystem responsible for navigation orchestration capabilities.",
+      "nodes": [
+        "nav2_bt_navigator::BtNavigator",
+        "nav2_route::RouteServer",
+        "nav2_waypoint_follower::WaypointFollower"
+      ],
+      "launch_files": [
+        "nav2_bringup/launch/navigation_launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 15.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 7.0,
+      "coupling_external": 8.0,
+      "incoming_dependencies": 12,
+      "outgoing_dependencies": 3,
+      "interface_density": 3.333,
+      "boundary_interfaces": [
+        "action::navigate_through_poses",
+        "action::navigate_to_pose"
+      ],
+      "justification": "Grouped 3 node(s) from package(s) nav2_bt_navigator, nav2_route, nav2_waypoint_follower based on package boundary, functional role, and 0 internal / 8 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "nav2_waypoint_follower/src/waypoint_follower.cpp",
+          "line_start": 67,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_waypoint_follower::WaypointFollower assigned to subsystem navigation_orchestration via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_bt_navigator/src/bt_navigator.cpp",
+          "line_start": 38,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_bt_navigator::BtNavigator assigned to subsystem navigation_orchestration via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_route/src/route_server.cpp",
+          "line_start": 54,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_route::RouteServer assigned to subsystem navigation_orchestration via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "trajectory_control",
+      "description": "Production subsystem responsible for trajectory control capabilities.",
+      "nodes": [
+        "nav2_controller::ControllerServer",
+        "nav2_smoother::SmootherServer",
+        "nav2_velocity_smoother::VelocitySmoother",
+        "opennav_docking::DockingServer",
+        "opennav_following::FollowingServer"
+      ],
+      "launch_files": [
+        "nav2_bringup/launch/navigation_launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.15,
+      "inter_coupling_score": 25.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 14.0,
+      "coupling_external": 11.0,
+      "incoming_dependencies": 8,
+      "outgoing_dependencies": 17,
+      "interface_density": 3.2,
+      "boundary_interfaces": [
+        "topic::cmd_vel",
+        "topic::cmd_vel_smoothed"
+      ],
+      "justification": "Grouped 5 node(s) from package(s) nav2_controller, nav2_smoother, nav2_velocity_smoother, opennav_docking, opennav_following based on package boundary, functional role, and 3 internal / 11 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "nav2_docking/opennav_docking/src/docking_server.cpp",
+          "line_start": 46,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node opennav_docking::DockingServer assigned to subsystem trajectory_control via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_velocity_smoother/src/velocity_smoother.cpp",
+          "line_start": 41,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_velocity_smoother::VelocitySmoother assigned to subsystem trajectory_control via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_smoother/src/nav2_smoother.cpp",
+          "line_start": 46,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_smoother::SmootherServer assigned to subsystem trajectory_control via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_controller/src/controller_server.cpp",
+          "line_start": 52,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_controller::ControllerServer assigned to subsystem trajectory_control via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_following/opennav_following/src/following_server.cpp",
+          "line_start": 45,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node opennav_following::FollowingServer assigned to subsystem trajectory_control via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "global_planning",
+      "description": "Production subsystem responsible for global planning capabilities.",
+      "nodes": [
+        "nav2_planner::PlannerServer"
+      ],
+      "launch_files": [
+        "nav2_bringup/launch/navigation_launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 3.0,
+      "cohesion_status": "N/A",
+      "coupling_internal": 1.0,
+      "coupling_external": 2.0,
+      "incoming_dependencies": 2,
+      "outgoing_dependencies": 1,
+      "interface_density": 3.0,
+      "boundary_interfaces": [
+        "topic::plan"
+      ],
+      "justification": "Grouped 1 node(s) from package(s) nav2_planner based on package boundary, functional role, and 0 internal / 2 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "nav2_planner/src/planner_server.cpp",
+          "line_start": 52,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_planner::PlannerServer assigned to subsystem global_planning via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "recovery_behaviors",
+      "description": "Production subsystem responsible for recovery behaviors capabilities.",
+      "nodes": [
+        "nav2_behaviors::behavior_server::BehaviorServer"
+      ],
+      "launch_files": [
+        "nav2_bringup/launch/navigation_launch.py",
+        "nav2_system_tests/src/behaviors/backup/test_backup_behavior.launch.py",
+        "nav2_system_tests/src/behaviors/drive_on_heading/test_drive_on_heading_behavior.launch.py",
+        "nav2_system_tests/src/behaviors/spin/test_spin_behavior.launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 0.0,
+      "cohesion_status": "N/A",
+      "coupling_internal": 0.0,
+      "coupling_external": 0.0,
+      "incoming_dependencies": 0,
+      "outgoing_dependencies": 0,
+      "interface_density": 0.0,
+      "boundary_interfaces": [],
+      "justification": "Grouped 1 node(s) from package(s) nav2_behaviors based on package boundary, functional role, and 0 internal / 0 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "nav2_behaviors/src/behavior_server.cpp",
+          "line_start": 37,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_behaviors::behavior_server::BehaviorServer assigned to subsystem recovery_behaviors via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "visualization_operator_ui",
+      "description": "Production subsystem responsible for visualization operator ui capabilities.",
+      "nodes": [
+        "nav2_rviz_plugins::Nav2RvizDockingPanelNode",
+        "nav2_rviz_plugins::Nav2RvizSelectorNode"
+      ],
+      "launch_files": [],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 10.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 0.0,
+      "coupling_external": 10.0,
+      "incoming_dependencies": 3,
+      "outgoing_dependencies": 7,
+      "interface_density": 5.0,
+      "boundary_interfaces": [],
+      "justification": "Grouped 2 node(s) from package(s) nav2_rviz_plugins based on package boundary, functional role, and 0 internal / 10 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "nav2_rviz_plugins/src/selector.cpp",
+          "line_start": 26,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_rviz_plugins::Nav2RvizSelectorNode assigned to subsystem visualization_operator_ui via multi-criteria clustering"
+        },
+        {
+          "file": "nav2_rviz_plugins/src/docking_panel.cpp",
+          "line_start": 172,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_rviz_plugins::Nav2RvizDockingPanelNode assigned to subsystem visualization_operator_ui via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "pkg_nav2_util",
+      "description": "Production subsystem responsible for pkg nav2 util capabilities.",
+      "nodes": [
+        "nav2_util::LifecycleBringupClient"
+      ],
+      "launch_files": [],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 0.0,
+      "cohesion_status": "N/A",
+      "coupling_internal": 0.0,
+      "coupling_external": 0.0,
+      "incoming_dependencies": 0,
+      "outgoing_dependencies": 0,
+      "interface_density": 0.0,
+      "boundary_interfaces": [],
+      "justification": "Grouped 1 node(s) from package(s) nav2_util based on package boundary, functional role, and 0 internal / 0 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "nav2_util/src/lifecycle_bringup_commandline.cpp",
+          "line_start": 90,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_util::LifecycleBringupClient assigned to subsystem pkg_nav2_util via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "system_supervision",
+      "description": "Production subsystem responsible for system supervision capabilities.",
+      "nodes": [
+        "nav2_lifecycle_manager::LifecycleManager"
+      ],
+      "launch_files": [
+        "nav2_bringup/launch/keepout_zone_launch.py",
+        "nav2_bringup/launch/localization_launch.py",
+        "nav2_bringup/launch/navigation_launch.py",
+        "nav2_bringup/launch/slam_launch.py",
+        "nav2_bringup/launch/speed_zone_launch.py",
+        "nav2_bringup/launch/tb3_loopback_simulation_launch.py",
+        "nav2_bringup/launch/tb4_loopback_simulation_launch.py",
+        "nav2_collision_monitor/launch/collision_detector_node.launch.py",
+        "nav2_collision_monitor/launch/collision_monitor_node.launch.py",
+        "nav2_map_server/launch/map_saver_server.launch.py",
+        "nav2_map_server/launch/vector_object_server.launch.py",
+        "nav2_rviz_plugins/launch/route_tool.launch.py",
+        "nav2_system_tests/src/behaviors/backup/test_backup_behavior.launch.py",
+        "nav2_system_tests/src/behaviors/drive_on_heading/test_drive_on_heading_behavior.launch.py",
+        "nav2_system_tests/src/behaviors/spin/test_spin_behavior.launch.py",
+        "nav2_system_tests/src/gps_navigation/dual_ekf_navsat.launch.py"
+      ],
+      "external_interfaces": [],
+      "architectural_role": "production_subsystem",
+      "is_test_infrastructure": false,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 3.0,
+      "cohesion_status": "N/A",
+      "coupling_internal": 0.0,
+      "coupling_external": 3.0,
+      "incoming_dependencies": 2,
+      "outgoing_dependencies": 1,
+      "interface_density": 3.0,
+      "boundary_interfaces": [],
+      "justification": "Grouped 1 node(s) from package(s) nav2_lifecycle_manager based on package boundary, functional role, and 0 internal / 3 external interface links.",
+      "subsystem_evidence": [
+        {
+          "file": "nav2_lifecycle_manager/src/lifecycle_manager.cpp",
+          "line_start": 62,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Node nav2_lifecycle_manager::LifecycleManager assigned to subsystem system_supervision via multi-criteria clustering"
+        }
+      ]
+    },
+    {
+      "name": "client_autonomy_api",
+      "description": "Client-side autonomy application APIs and mission control nodes.",
+      "nodes": [
+        "nav2_simple_commander::BasicNavigator",
+        "nav2_simple_commander::RouteExample"
+      ],
+      "launch_files": [],
+      "external_interfaces": [],
+      "architectural_role": "client_interface",
+      "is_test_infrastructure": false,
+      "is_client_application": true,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 34.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 7.0,
+      "coupling_external": 27.0,
+      "incoming_dependencies": 1,
+      "outgoing_dependencies": 33,
+      "interface_density": 16.0,
+      "boundary_interfaces": [
+        "action::navigate_through_poses",
+        "action::navigate_to_pose",
+        "service::collision_monitor/toggle",
+        "topic::amcl_pose",
+        "topic::initialpose"
+      ],
+      "justification": "Client-side autonomy API nodes separated from core server stack.",
+      "subsystem_evidence": [
+        {
+          "file": "nav2_simple_commander/nav2_simple_commander/robot_navigator.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Client application interface"
+        },
+        {
+          "file": "nav2_simple_commander/nav2_simple_commander/example_route.py",
+          "line_start": 1,
+          "line_end": null,
+          "evidence_type": "node_definition",
+          "source": "subsystem_synthesizer",
+          "confidence": 1.0,
+          "claim_type": null,
+          "confidence_rationale": null,
+          "explanation": "Client application interface"
+        }
+      ]
+    },
+    {
+      "name": "validation_test_infrastructure",
+      "description": "System integration test harnesses, mock nodes, and verification testers.",
+      "nodes": [
+        "nav2_behavior_tree::FibonacciActionServer",
+        "nav2_behavior_tree::RecoveryDummy",
+        "nav2_behavior_tree::TestActionServer",
+        "nav2_behavior_tree::TestService",
+        "nav2_collision_monitor::FakeCMSource",
+        "nav2_collision_monitor::MetricsCatcher",
+        "nav2_collision_monitor::TestNode",
+        "nav2_controller::TestLifecycleNode",
+        "nav2_costmap_2d::BinaryStateSubscriber",
+        "nav2_costmap_2d::CostmapRosLifecycleNode",
+        "nav2_costmap_2d::InfoPublisher",
+        "nav2_costmap_2d::MaskPublisher",
+        "nav2_costmap_2d::OdomPublisher",
+        "nav2_costmap_2d::PathPublisher",
+        "nav2_costmap_2d::SecondTargetNode",
+        "nav2_costmap_2d::SpeedLimitSubscriber",
+        "nav2_costmap_2d::StateEventSubscriber",
+        "nav2_costmap_2d::TargetNode",
+        "nav2_costmap_2d::TestCollisionChecker",
+        "nav2_costmap_2d::TestLifecycleNode",
+        "nav2_lifecycle_manager::LifecycleNodeTest",
+        "nav2_lifecycle_manager::TestLifecycleNode",
+        "nav2_map_server::TestPublisher",
+        "nav2_ros_common::ActionTestNode",
+        "nav2_ros_common::FibonacciServerNode",
+        "nav2_ros_common::LifecycleTransitionTestNode",
+        "nav2_ros_common::MyNodeType",
+        "nav2_system_tests::BackupTest",
+        "nav2_system_tests::DriveTest",
+        "nav2_system_tests::DummyController",
+        "nav2_system_tests::DummyPlanner",
+        "nav2_system_tests::GpsWaypointFollowerTest",
+        "nav2_system_tests::NavTester#src__costmap_filters__tester_node",
+        "nav2_system_tests::NavTester#src__system__nav_through_poses_tester_error_msg_node",
+        "nav2_system_tests::NavTester#src__system__nav_through_poses_tester_node",
+        "nav2_system_tests::NavTester#src__system__nav_to_pose_tester_node",
+        "nav2_system_tests::NavTester#src__system_failure__tester_node",
+        "nav2_system_tests::PlannerTester",
+        "nav2_system_tests::RouteTester",
+        "nav2_system_tests::SpinTest",
+        "nav2_system_tests::WaypointFollowerTest",
+        "nav2_util::DummyNode",
+        "opennav_docking::DummyNavigationServer",
+        "opennav_docking::TestCollisionChecker",
+        "opennav_docking::TestDockingServer",
+        "opennav_following::TestFollowingServer",
+        "opennav_following::TestObjectPosePublisher"
+      ],
+      "launch_files": [],
+      "external_interfaces": [],
+      "architectural_role": "test_harness",
+      "is_test_infrastructure": true,
+      "is_client_application": false,
+      "intra_cohesion_score": 0.0,
+      "inter_coupling_score": 0.0,
+      "cohesion_status": "computed",
+      "coupling_internal": 0.0,
+      "coupling_external": 0.0,
+      "incoming_dependencies": 0,
+      "outgoing_dependencies": 0,
+      "interface_density": 0.0,
+      "boundary_interfaces": [],
+      "justification": null,
+      "subsystem_evidence": []
+    }
+  ],
+  "unassigned_nodes": [],
+  "cohesion_coupling_metrics": {
+    "localization_state_estimation": {
+      "cohesion": 0.05,
+      "coupling": 43.0,
+      "coupling_internal": 31.0,
+      "coupling_external": 12.0,
+      "interface_density": 3.8
+    },
+    "perception_costmaps": {
+      "cohesion": 0.0,
+      "coupling": 26.0,
+      "coupling_internal": 10.0,
+      "coupling_external": 16.0,
+      "interface_density": 3.0
+    },
+    "navigation_orchestration": {
+      "cohesion": 0.0,
+      "coupling": 15.0,
+      "coupling_internal": 7.0,
+      "coupling_external": 8.0,
+      "interface_density": 3.333
+    },
+    "trajectory_control": {
+      "cohesion": 0.15,
+      "coupling": 25.0,
+      "coupling_internal": 14.0,
+      "coupling_external": 11.0,
+      "interface_density": 3.2
+    },
+    "global_planning": {
+      "cohesion": 0.0,
+      "coupling": 3.0,
+      "coupling_internal": 1.0,
+      "coupling_external": 2.0,
+      "interface_density": 3.0
+    },
+    "recovery_behaviors": {
+      "cohesion": 0.0,
+      "coupling": 0.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 0.0,
+      "interface_density": 0.0
+    },
+    "visualization_operator_ui": {
+      "cohesion": 0.0,
+      "coupling": 10.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 10.0,
+      "interface_density": 5.0
+    },
+    "pkg_nav2_util": {
+      "cohesion": 0.0,
+      "coupling": 0.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 0.0,
+      "interface_density": 0.0
+    },
+    "system_supervision": {
+      "cohesion": 0.0,
+      "coupling": 3.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 3.0,
+      "interface_density": 3.0
+    },
+    "client_autonomy_api": {
+      "cohesion": 0.0,
+      "coupling": 34.0,
+      "coupling_internal": 7.0,
+      "coupling_external": 27.0,
+      "interface_density": 16.0
+    },
+    "validation_test_infrastructure": {
+      "cohesion": 0.0,
+      "coupling": 0.0,
+      "coupling_internal": 0.0,
+      "coupling_external": 0.0,
+      "interface_density": 0.0
+    }
+  },
+  "clustering_method": "multi_criteria_evidence_affinity_clustering",
+  "node_assignments": {
+    "nav2_amcl::AmclNode": {
+      "primary_subsystem": "localization_state_estimation",
+      "package": "nav2_amcl",
+      "role": "localization",
+      "alternative_subsystems": [
+        "client_autonomy_api",
+        "perception_costmaps"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'localization_state_estimation' via package 'nav2_amcl' and role 'localization'; shares cross-boundary edges with ['client_autonomy_api', 'perception_costmaps']"
+    },
+    "nav2_loopback_sim::LoopbackSimulator": {
+      "primary_subsystem": "localization_state_estimation",
+      "package": "nav2_loopback_sim",
+      "role": "unknown",
+      "alternative_subsystems": [
+        "client_autonomy_api",
+        "perception_costmaps",
+        "trajectory_control"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'localization_state_estimation' via package 'nav2_loopback_sim' and role 'unknown'; shares cross-boundary edges with ['client_autonomy_api', 'perception_costmaps', 'trajectory_control']"
+    },
+    "nav2_map_server::CostmapFilterInfoServer": {
+      "primary_subsystem": "localization_state_estimation",
+      "package": "nav2_map_server",
+      "role": "infrastructure",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'localization_state_estimation' via package 'nav2_map_server' and role 'infrastructure'"
+    },
+    "nav2_map_server::MapSaver": {
+      "primary_subsystem": "localization_state_estimation",
+      "package": "nav2_map_server",
+      "role": "infrastructure",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'localization_state_estimation' via package 'nav2_map_server' and role 'infrastructure'"
+    },
+    "nav2_map_server::MapServer": {
+      "primary_subsystem": "localization_state_estimation",
+      "package": "nav2_map_server",
+      "role": "infrastructure",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'localization_state_estimation' via package 'nav2_map_server' and role 'infrastructure'"
+    },
+    "nav2_collision_monitor::CollisionDetector": {
+      "primary_subsystem": "perception_costmaps",
+      "package": "nav2_collision_monitor",
+      "role": "infrastructure",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'perception_costmaps' via package 'nav2_collision_monitor' and role 'infrastructure'"
+    },
+    "nav2_collision_monitor::CollisionMonitor": {
+      "primary_subsystem": "perception_costmaps",
+      "package": "nav2_collision_monitor",
+      "role": "infrastructure",
+      "alternative_subsystems": [
+        "client_autonomy_api",
+        "localization_state_estimation",
+        "trajectory_control"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'perception_costmaps' via package 'nav2_collision_monitor' and role 'infrastructure'; shares cross-boundary edges with ['client_autonomy_api', 'localization_state_estimation', 'trajectory_control']"
+    },
+    "nav2_costmap_2d::Costmap2DROS": {
+      "primary_subsystem": "perception_costmaps",
+      "package": "nav2_costmap_2d",
+      "role": "infrastructure",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'perception_costmaps' via package 'nav2_costmap_2d' and role 'infrastructure'"
+    },
+    "nav2_costmap_2d::Costmap2dCloud": {
+      "primary_subsystem": "perception_costmaps",
+      "package": "nav2_costmap_2d",
+      "role": "infrastructure",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'perception_costmaps' via package 'nav2_costmap_2d' and role 'infrastructure'"
+    },
+    "nav2_costmap_2d::Costmap2dMarker": {
+      "primary_subsystem": "perception_costmaps",
+      "package": "nav2_costmap_2d",
+      "role": "infrastructure",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'perception_costmaps' via package 'nav2_costmap_2d' and role 'infrastructure'"
+    },
+    "nav2_map_server::VectorObjectServer": {
+      "primary_subsystem": "perception_costmaps",
+      "package": "nav2_map_server",
+      "role": "infrastructure",
+      "alternative_subsystems": [
+        "localization_state_estimation"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'perception_costmaps' via package 'nav2_map_server' and role 'infrastructure'; shares cross-boundary edges with ['localization_state_estimation']"
+    },
+    "nav2_util::BaseFootprintPublisher": {
+      "primary_subsystem": "perception_costmaps",
+      "package": "nav2_util",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'perception_costmaps' via package 'nav2_util' and role 'unknown'"
+    },
+    "nav2_bt_navigator::BtNavigator": {
+      "primary_subsystem": "navigation_orchestration",
+      "package": "nav2_bt_navigator",
+      "role": "behavior",
+      "alternative_subsystems": [
+        "client_autonomy_api"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'navigation_orchestration' via package 'nav2_bt_navigator' and role 'behavior'; shares cross-boundary edges with ['client_autonomy_api']"
+    },
+    "nav2_route::RouteServer": {
+      "primary_subsystem": "navigation_orchestration",
+      "package": "nav2_route",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'navigation_orchestration' via package 'nav2_route' and role 'unknown'"
+    },
+    "nav2_waypoint_follower::WaypointFollower": {
+      "primary_subsystem": "navigation_orchestration",
+      "package": "nav2_waypoint_follower",
+      "role": "infrastructure",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'navigation_orchestration' via package 'nav2_waypoint_follower' and role 'infrastructure'"
+    },
+    "nav2_controller::ControllerServer": {
+      "primary_subsystem": "trajectory_control",
+      "package": "nav2_controller",
+      "role": "control",
+      "alternative_subsystems": [
+        "localization_state_estimation"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'trajectory_control' via package 'nav2_controller' and role 'control'; shares cross-boundary edges with ['localization_state_estimation']"
+    },
+    "nav2_smoother::SmootherServer": {
+      "primary_subsystem": "trajectory_control",
+      "package": "nav2_smoother",
+      "role": "infrastructure",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'trajectory_control' via package 'nav2_smoother' and role 'infrastructure'"
+    },
+    "nav2_velocity_smoother::VelocitySmoother": {
+      "primary_subsystem": "trajectory_control",
+      "package": "nav2_velocity_smoother",
+      "role": "infrastructure",
+      "alternative_subsystems": [
+        "perception_costmaps"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'trajectory_control' via package 'nav2_velocity_smoother' and role 'infrastructure'; shares cross-boundary edges with ['perception_costmaps']"
+    },
+    "opennav_docking::DockingServer": {
+      "primary_subsystem": "trajectory_control",
+      "package": "opennav_docking",
+      "role": "unknown",
+      "alternative_subsystems": [
+        "localization_state_estimation"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'trajectory_control' via package 'opennav_docking' and role 'unknown'; shares cross-boundary edges with ['localization_state_estimation']"
+    },
+    "opennav_following::FollowingServer": {
+      "primary_subsystem": "trajectory_control",
+      "package": "opennav_following",
+      "role": "unknown",
+      "alternative_subsystems": [
+        "localization_state_estimation"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'trajectory_control' via package 'opennav_following' and role 'unknown'; shares cross-boundary edges with ['localization_state_estimation']"
+    },
+    "nav2_planner::PlannerServer": {
+      "primary_subsystem": "global_planning",
+      "package": "nav2_planner",
+      "role": "planning",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'global_planning' via package 'nav2_planner' and role 'planning'"
+    },
+    "nav2_behaviors::behavior_server::BehaviorServer": {
+      "primary_subsystem": "recovery_behaviors",
+      "package": "nav2_behaviors",
+      "role": "behavior",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'recovery_behaviors' via package 'nav2_behaviors' and role 'behavior'"
+    },
+    "nav2_rviz_plugins::Nav2RvizDockingPanelNode": {
+      "primary_subsystem": "visualization_operator_ui",
+      "package": "nav2_rviz_plugins",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'visualization_operator_ui' via package 'nav2_rviz_plugins' and role 'unknown'"
+    },
+    "nav2_rviz_plugins::Nav2RvizSelectorNode": {
+      "primary_subsystem": "visualization_operator_ui",
+      "package": "nav2_rviz_plugins",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'visualization_operator_ui' via package 'nav2_rviz_plugins' and role 'unknown'"
+    },
+    "nav2_util::LifecycleBringupClient": {
+      "primary_subsystem": "pkg_nav2_util",
+      "package": "nav2_util",
+      "role": "unknown",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'pkg_nav2_util' via package 'nav2_util' and role 'unknown'"
+    },
+    "nav2_lifecycle_manager::LifecycleManager": {
+      "primary_subsystem": "system_supervision",
+      "package": "nav2_lifecycle_manager",
+      "role": "infrastructure",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'system_supervision' via package 'nav2_lifecycle_manager' and role 'infrastructure'"
+    },
+    "nav2_simple_commander::BasicNavigator": {
+      "primary_subsystem": "client_autonomy_api",
+      "package": "nav2_simple_commander",
+      "role": "client",
+      "alternative_subsystems": [
+        "localization_state_estimation",
+        "navigation_orchestration",
+        "perception_costmaps"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'client_autonomy_api' via package 'nav2_simple_commander' and role 'client'; shares cross-boundary edges with ['localization_state_estimation', 'navigation_orchestration', 'perception_costmaps']"
+    },
+    "nav2_simple_commander::RouteExample": {
+      "primary_subsystem": "client_autonomy_api",
+      "package": "nav2_simple_commander",
+      "role": "client",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'client_autonomy_api' via package 'nav2_simple_commander' and role 'client'"
+    },
+    "nav2_behavior_tree::FibonacciActionServer": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_behavior_tree",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_behavior_tree' and role 'test'"
+    },
+    "nav2_behavior_tree::RecoveryDummy": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_behavior_tree",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_behavior_tree' and role 'test'"
+    },
+    "nav2_behavior_tree::TestActionServer": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_behavior_tree",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_behavior_tree' and role 'test'"
+    },
+    "nav2_behavior_tree::TestService": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_behavior_tree",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_behavior_tree' and role 'test'"
+    },
+    "nav2_collision_monitor::FakeCMSource": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_collision_monitor",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_collision_monitor' and role 'test'"
+    },
+    "nav2_collision_monitor::MetricsCatcher": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_collision_monitor",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_collision_monitor' and role 'test'"
+    },
+    "nav2_collision_monitor::TestNode": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_collision_monitor",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_collision_monitor' and role 'test'"
+    },
+    "nav2_controller::TestLifecycleNode": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_controller",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_controller' and role 'test'"
+    },
+    "nav2_costmap_2d::BinaryStateSubscriber": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_costmap_2d::CostmapRosLifecycleNode": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_costmap_2d::InfoPublisher": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_costmap_2d::MaskPublisher": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_costmap_2d::OdomPublisher": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_costmap_2d::PathPublisher": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_costmap_2d::SecondTargetNode": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_costmap_2d::SpeedLimitSubscriber": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_costmap_2d::StateEventSubscriber": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_costmap_2d::TargetNode": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_costmap_2d::TestCollisionChecker": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_costmap_2d::TestLifecycleNode": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_costmap_2d",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_costmap_2d' and role 'test'"
+    },
+    "nav2_lifecycle_manager::LifecycleNodeTest": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_lifecycle_manager",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_lifecycle_manager' and role 'test'"
+    },
+    "nav2_lifecycle_manager::TestLifecycleNode": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_lifecycle_manager",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_lifecycle_manager' and role 'test'"
+    },
+    "nav2_map_server::TestPublisher": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_map_server",
+      "role": "test",
+      "alternative_subsystems": [
+        "localization_state_estimation"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_map_server' and role 'test'; shares cross-boundary edges with ['localization_state_estimation']"
+    },
+    "nav2_ros_common::ActionTestNode": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_ros_common",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_ros_common' and role 'test'"
+    },
+    "nav2_ros_common::FibonacciServerNode": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_ros_common",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_ros_common' and role 'test'"
+    },
+    "nav2_ros_common::LifecycleTransitionTestNode": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_ros_common",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_ros_common' and role 'test'"
+    },
+    "nav2_ros_common::MyNodeType": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_ros_common",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_ros_common' and role 'test'"
+    },
+    "nav2_system_tests::BackupTest": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'"
+    },
+    "nav2_system_tests::DriveTest": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'"
+    },
+    "nav2_system_tests::DummyController": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'"
+    },
+    "nav2_system_tests::DummyPlanner": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'"
+    },
+    "nav2_system_tests::GpsWaypointFollowerTest": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'"
+    },
+    "nav2_system_tests::NavTester#src__costmap_filters__tester_node": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [
+        "global_planning",
+        "localization_state_estimation",
+        "navigation_orchestration",
+        "perception_costmaps"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'; shares cross-boundary edges with ['global_planning', 'localization_state_estimation', 'navigation_orchestration', 'perception_costmaps']"
+    },
+    "nav2_system_tests::NavTester#src__system__nav_through_poses_tester_error_msg_node": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [
+        "localization_state_estimation",
+        "navigation_orchestration"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'; shares cross-boundary edges with ['localization_state_estimation', 'navigation_orchestration']"
+    },
+    "nav2_system_tests::NavTester#src__system__nav_through_poses_tester_node": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [
+        "localization_state_estimation",
+        "navigation_orchestration"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'; shares cross-boundary edges with ['localization_state_estimation', 'navigation_orchestration']"
+    },
+    "nav2_system_tests::NavTester#src__system__nav_to_pose_tester_node": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [
+        "localization_state_estimation",
+        "navigation_orchestration"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'; shares cross-boundary edges with ['localization_state_estimation', 'navigation_orchestration']"
+    },
+    "nav2_system_tests::NavTester#src__system_failure__tester_node": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [
+        "localization_state_estimation",
+        "navigation_orchestration"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'; shares cross-boundary edges with ['localization_state_estimation', 'navigation_orchestration']"
+    },
+    "nav2_system_tests::PlannerTester": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [
+        "localization_state_estimation"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'; shares cross-boundary edges with ['localization_state_estimation']"
+    },
+    "nav2_system_tests::RouteTester": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [
+        "localization_state_estimation"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'; shares cross-boundary edges with ['localization_state_estimation']"
+    },
+    "nav2_system_tests::SpinTest": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'"
+    },
+    "nav2_system_tests::WaypointFollowerTest": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_system_tests",
+      "role": "test",
+      "alternative_subsystems": [
+        "localization_state_estimation"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_system_tests' and role 'test'; shares cross-boundary edges with ['localization_state_estimation']"
+    },
+    "nav2_util::DummyNode": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "nav2_util",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'nav2_util' and role 'test'"
+    },
+    "opennav_docking::DummyNavigationServer": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "opennav_docking",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'opennav_docking' and role 'test'"
+    },
+    "opennav_docking::TestCollisionChecker": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "opennav_docking",
+      "role": "test",
+      "alternative_subsystems": [],
+      "uncertainty": "unambiguous",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'opennav_docking' and role 'test'"
+    },
+    "opennav_docking::TestDockingServer": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "opennav_docking",
+      "role": "test",
+      "alternative_subsystems": [
+        "client_autonomy_api",
+        "perception_costmaps",
+        "trajectory_control"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'opennav_docking' and role 'test'; shares cross-boundary edges with ['client_autonomy_api', 'perception_costmaps', 'trajectory_control']"
+    },
+    "opennav_following::TestFollowingServer": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "opennav_following",
+      "role": "test",
+      "alternative_subsystems": [
+        "perception_costmaps",
+        "trajectory_control"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'opennav_following' and role 'test'; shares cross-boundary edges with ['perception_costmaps', 'trajectory_control']"
+    },
+    "opennav_following::TestObjectPosePublisher": {
+      "primary_subsystem": "validation_test_infrastructure",
+      "package": "opennav_following",
+      "role": "test",
+      "alternative_subsystems": [
+        "perception_costmaps",
+        "trajectory_control"
+      ],
+      "uncertainty": "multi_subsystem_affinity",
+      "justification": "Assigned to 'validation_test_infrastructure' via package 'opennav_following' and role 'test'; shares cross-boundary edges with ['perception_costmaps', 'trajectory_control']"
+    }
+  },
+  "reference_comparison": {
+    "subsystem_metrics": {
+      "perception_costmaps": {
+        "reference_node_count": 5,
+        "recovered_node_count": 7,
+        "jaccard_similarity": 0.333,
+        "precision": 0.429,
+        "recall": 0.6
+      },
+      "localization_state_estimation": {
+        "reference_node_count": 5,
+        "recovered_node_count": 5,
+        "jaccard_similarity": 0.667,
+        "precision": 0.8,
+        "recall": 0.8
+      },
+      "navigation_orchestration": {
+        "reference_node_count": 3,
+        "recovered_node_count": 3,
+        "jaccard_similarity": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "global_planning": {
+        "reference_node_count": 1,
+        "recovered_node_count": 1,
+        "jaccard_similarity": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "trajectory_control": {
+        "reference_node_count": 3,
+        "recovered_node_count": 5,
+        "jaccard_similarity": 0.6,
+        "precision": 0.6,
+        "recall": 1.0
+      },
+      "recovery_behaviors": {
+        "reference_node_count": 2,
+        "recovered_node_count": 1,
+        "jaccard_similarity": 0.5,
+        "precision": 1.0,
+        "recall": 0.5
+      },
+      "system_supervision": {
+        "reference_node_count": 1,
+        "recovered_node_count": 1,
+        "jaccard_similarity": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "client_autonomy_api": {
+        "reference_node_count": 1,
+        "recovered_node_count": 2,
+        "jaccard_similarity": 0.5,
+        "precision": 0.5,
+        "recall": 1.0
+      }
+    },
+    "mean_jaccard_similarity": 0.7,
+    "reference_subsystem_count": 9,
+    "recovered_subsystem_count": 11
+  },
+  "_provenance": {
+    "repository_name": "Navigation2",
+    "repository_url": "https://github.com/ros-planning/navigation2",
+    "commit_hash": "6dbf4549ae1914188916b06dcc19dd3a8115d0a5",
+    "branch": "main",
+    "archsynth_version": "2.0",
+    "artifact_schema_version": "1.0",
+    "analysis_timestamp": "2026-11-27T08:13:39.256147+00:00"
+  }
+}

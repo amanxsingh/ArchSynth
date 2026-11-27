@@ -1,0 +1,54 @@
+[
+  {
+    "repo_id": "jaco2_sim_devkit",
+    "configuration": "Baseline E-LLM: Full ArchSynth Mode B (skip_llm=False, Gemini)",
+    "status": "executed",
+    "node_f1": 1.0,
+    "topic_f1": 1.0,
+    "service_f1": 1.0,
+    "action_f1": 1.0,
+    "evidence_coverage": 1.0,
+    "unsupported_entity_rate": 0.0,
+    "time_s": 19.645,
+    "reason": "Live Gemini synthesis with Pydantic schema validation"
+  },
+  {
+    "repo_id": "slam_toolbox",
+    "configuration": "Baseline E-LLM: Full ArchSynth Mode B (skip_llm=False, Gemini)",
+    "status": "executed",
+    "node_f1": 1.0,
+    "topic_f1": 1.0,
+    "service_f1": 1.0,
+    "action_f1": 1.0,
+    "evidence_coverage": 1.0,
+    "unsupported_entity_rate": 0.0,
+    "time_s": 16.424,
+    "reason": "Live Gemini synthesis with Pydantic schema validation"
+  },
+  {
+    "repo_id": "ros2_control",
+    "configuration": "Baseline E-LLM: Full ArchSynth Mode B (skip_llm=False, Gemini)",
+    "status": "executed",
+    "node_f1": 1.0,
+    "topic_f1": 1.0,
+    "service_f1": 1.0,
+    "action_f1": 1.0,
+    "evidence_coverage": 1.0,
+    "unsupported_entity_rate": 0.0,
+    "time_s": 17.563,
+    "reason": "Live Gemini synthesis with Pydantic schema validation"
+  },
+  {
+    "repo_id": "nav2",
+    "configuration": "Baseline E-LLM: Full ArchSynth Mode B (skip_llm=False, Gemini)",
+    "status": "executed",
+    "node_f1": 0.6341,
+    "topic_f1": 0.3636,
+    "service_f1": 0.375,
+    "action_f1": 0.8387,
+    "evidence_coverage": 1.0,
+    "unsupported_entity_rate": 0.0,
+    "time_s": 28.559,
+    "reason": "Live Gemini synthesis with Pydantic schema validation"
+  }
+]

@@ -1,0 +1,33 @@
+repo_id,configuration,status,node_f1,topic_f1,service_f1,action_f1,evidence_coverage,time_s,reason
+nav2,Baseline A: Static Regex-only,executed,0.0,0.1322,0.0,0.0,0.0,0.596,
+nav2,Baseline B: Multi-language AST (Phase 1),executed,0.6341,0.0,0.0,0.0,1.0,3.799,
+nav2,Baseline C: Static + Launch (Phase 1+2),executed,0.3662,0.0,0.0,0.0,1.0,6.585,
+nav2,Baseline D: Static + Launch + Comm (Phase 1-3),executed,0.6341,0.3636,0.375,0.8387,1.0,8.269,
+nav2,Baseline E: Full ArchSynth Mode A (skip_llm=True),executed,0.6341,0.3636,0.375,0.8387,1.0,16.197,
+nav2,LLM-only,unavailable,N/A,N/A,N/A,N/A,N/A,N/A,google-generativeai and ollama Python packages are not installed in the active environment
+nav2,Static + LLM,unavailable,N/A,N/A,N/A,N/A,N/A,N/A,google-generativeai and ollama Python packages are not installed in the active environment
+nav2,"Baseline E-LLM: Full ArchSynth Mode B (skip_llm=False, Gemini)",executed,0.6341,0.3636,0.375,0.8387,1.0,28.559,Live Gemini synthesis with Pydantic schema validation
+slam_toolbox,Baseline A: Static Regex-only,executed,0.0,0.6429,0.0,1.0,0.0,0.046,
+slam_toolbox,Baseline B: Multi-language AST (Phase 1),executed,1.0,0.0,0.0,1.0,1.0,0.686,
+slam_toolbox,Baseline C: Static + Launch (Phase 1+2),executed,1.0,0.0,0.0,1.0,1.0,1.042,
+slam_toolbox,Baseline D: Static + Launch + Comm (Phase 1-3),executed,1.0,1.0,1.0,1.0,1.0,1.249,
+slam_toolbox,Baseline E: Full ArchSynth Mode A (skip_llm=True),executed,1.0,1.0,1.0,1.0,1.0,3.712,
+slam_toolbox,LLM-only,unavailable,N/A,N/A,N/A,N/A,N/A,N/A,google-generativeai and ollama Python packages are not installed in the active environment
+slam_toolbox,Static + LLM,unavailable,N/A,N/A,N/A,N/A,N/A,N/A,google-generativeai and ollama Python packages are not installed in the active environment
+slam_toolbox,"Baseline E-LLM: Full ArchSynth Mode B (skip_llm=False, Gemini)",executed,1.0,1.0,1.0,1.0,1.0,16.424,Live Gemini synthesis with Pydantic schema validation
+ros2_control,Baseline A: Static Regex-only,executed,0.0,0.8,0.0,1.0,0.0,0.087,
+ros2_control,Baseline B: Multi-language AST (Phase 1),executed,1.0,0.0,0.0,1.0,1.0,0.658,
+ros2_control,Baseline C: Static + Launch (Phase 1+2),executed,0.6667,0.0,0.0,1.0,1.0,1.024,
+ros2_control,Baseline D: Static + Launch + Comm (Phase 1-3),executed,1.0,1.0,1.0,1.0,1.0,1.228,
+ros2_control,Baseline E: Full ArchSynth Mode A (skip_llm=True),executed,1.0,1.0,1.0,1.0,1.0,5.855,
+ros2_control,LLM-only,unavailable,N/A,N/A,N/A,N/A,N/A,N/A,google-generativeai and ollama Python packages are not installed in the active environment
+ros2_control,Static + LLM,unavailable,N/A,N/A,N/A,N/A,N/A,N/A,google-generativeai and ollama Python packages are not installed in the active environment
+ros2_control,"Baseline E-LLM: Full ArchSynth Mode B (skip_llm=False, Gemini)",executed,1.0,1.0,1.0,1.0,1.0,17.563,Live Gemini synthesis with Pydantic schema validation
+jaco2_sim_devkit,Baseline A: Static Regex-only,executed,0.1,1.0,0.0,0.0,0.0,0.039,
+jaco2_sim_devkit,Baseline B: Multi-language AST (Phase 1),executed,1.0,0.0,0.0,0.0,1.0,0.195,
+jaco2_sim_devkit,Baseline C: Static + Launch (Phase 1+2),executed,0.5946,0.0,0.0,0.0,1.0,0.698,
+jaco2_sim_devkit,Baseline D: Static + Launch + Comm (Phase 1-3),executed,1.0,1.0,1.0,1.0,1.0,0.806,
+jaco2_sim_devkit,Baseline E: Full ArchSynth Mode A (skip_llm=True),executed,1.0,1.0,1.0,1.0,1.0,2.03,
+jaco2_sim_devkit,LLM-only,unavailable,N/A,N/A,N/A,N/A,N/A,N/A,google-generativeai and ollama Python packages are not installed in the active environment
+jaco2_sim_devkit,Static + LLM,unavailable,N/A,N/A,N/A,N/A,N/A,N/A,google-generativeai and ollama Python packages are not installed in the active environment
+jaco2_sim_devkit,"Baseline E-LLM: Full ArchSynth Mode B (skip_llm=False, Gemini)",executed,1.0,1.0,1.0,1.0,1.0,19.645,Live Gemini synthesis with Pydantic schema validation

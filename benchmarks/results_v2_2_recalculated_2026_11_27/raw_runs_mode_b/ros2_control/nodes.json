@@ -1,0 +1,1180 @@
+[
+  {
+    "id": "controller_manager::TestNode#test__test_ros2_control_node_launch",
+    "name": "test_node",
+    "fully_qualified_name": "test_node",
+    "class_name": "TestNode",
+    "source_file": "controller_manager/test/test_ros2_control_node_launch.py",
+    "package_name": "controller_manager",
+    "namespace": "",
+    "entity_type": "test_node",
+    "node_category": "test",
+    "classification_label": null,
+    "resolution_status": "resolved",
+    "source_language": "python",
+    "is_test": true,
+    "is_lifecycle": false,
+    "is_abstract": false,
+    "base_class": null,
+    "executable": null,
+    "component_registered": false,
+    "component_name": null,
+    "publishers": [],
+    "subscribers": [],
+    "services": [],
+    "actions": [],
+    "interface_declarations": [],
+    "parameters": [],
+    "remappings": {},
+    "docstring": "Functional ROS 2 node instantiated via rclpy.create_node('test_node')",
+    "composition": null,
+    "evidence": [
+      {
+        "file": "controller_manager/test/test_ros2_control_node_launch.py",
+        "line_start": 104,
+        "line_end": 104,
+        "evidence_type": "node_definition",
+        "source": "python_ast_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Python ROS2 node class 'TestNode'"
+      }
+    ],
+    "validation_status": "supported"
+  },
+  {
+    "id": "controller_manager::TestNode#test__test_test_utils",
+    "name": "test_node",
+    "fully_qualified_name": "test_node",
+    "class_name": "TestNode",
+    "source_file": "controller_manager/test/test_test_utils.py",
+    "package_name": "controller_manager",
+    "namespace": "",
+    "entity_type": "test_node",
+    "node_category": "test",
+    "classification_label": null,
+    "resolution_status": "resolved",
+    "source_language": "python",
+    "is_test": true,
+    "is_lifecycle": false,
+    "is_abstract": false,
+    "base_class": null,
+    "executable": null,
+    "component_registered": false,
+    "component_name": null,
+    "publishers": [
+      {
+        "name": "/joint_states",
+        "message_type": "sensor_msgs/msg/JointState",
+        "message_category": "unknown",
+        "qos_profile": null,
+        "evidence": [
+          {
+            "file": "controller_manager/test/test_test_utils.py",
+            "line_start": 65,
+            "line_end": 65,
+            "evidence_type": "publisher_creation",
+            "source": "python_ast_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Publisher created for topic '/joint_states' with type 'sensor_msgs/msg/JointState'"
+          }
+        ]
+      }
+    ],
+    "subscribers": [],
+    "services": [],
+    "actions": [],
+    "interface_declarations": [
+      {
+        "declaration_id": "controller_manager::TestNode#test__test_test_utils::publisher::/joint_states#L65",
+        "owner_node_id": "controller_manager::TestNode#test__test_test_utils",
+        "interface_type": "publisher",
+        "name_expression": "/joint_states",
+        "message_type": "sensor_msgs/msg/JointState",
+        "direction": "out",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/test/test_test_utils.py",
+        "line_start": 65,
+        "line_end": 65,
+        "discovery_method": "python_ast_publisher",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/test/test_test_utils.py",
+            "line_start": 65,
+            "line_end": 65,
+            "evidence_type": "publisher_creation",
+            "source": "python_ast_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "Publisher created for topic '/joint_states' with type 'sensor_msgs/msg/JointState'"
+          }
+        ],
+        "repository_name": null,
+        "owning_class": null,
+        "owning_component": null,
+        "inheritance_path": [],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      }
+    ],
+    "parameters": [],
+    "remappings": {},
+    "docstring": "Functional ROS 2 node instantiated via rclpy.create_node('test_node')",
+    "composition": null,
+    "evidence": [
+      {
+        "file": "controller_manager/test/test_test_utils.py",
+        "line_start": 53,
+        "line_end": 53,
+        "evidence_type": "node_definition",
+        "source": "python_ast_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Python ROS2 node class 'TestNode'"
+      }
+    ],
+    "validation_status": "supported"
+  },
+  {
+    "id": "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_dict",
+    "name": "test_controller_spawner",
+    "fully_qualified_name": "test_controller_spawner",
+    "class_name": "TestControllerSpawner",
+    "source_file": "controller_manager/test/test_launch_utils/test_launch_utils_integration_dict.py",
+    "package_name": "controller_manager",
+    "namespace": "",
+    "entity_type": "test_node",
+    "node_category": "test",
+    "classification_label": null,
+    "resolution_status": "resolved",
+    "source_language": "python",
+    "is_test": true,
+    "is_lifecycle": false,
+    "is_abstract": false,
+    "base_class": null,
+    "executable": null,
+    "component_registered": false,
+    "component_name": null,
+    "publishers": [],
+    "subscribers": [],
+    "services": [],
+    "actions": [],
+    "interface_declarations": [],
+    "parameters": [],
+    "remappings": {},
+    "docstring": "Functional ROS 2 node instantiated via rclpy.create_node('test_controller_spawner')",
+    "composition": null,
+    "evidence": [
+      {
+        "file": "controller_manager/test/test_launch_utils/test_launch_utils_integration_dict.py",
+        "line_start": 103,
+        "line_end": 103,
+        "evidence_type": "node_definition",
+        "source": "python_ast_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Python ROS2 node class 'TestControllerSpawner'"
+      }
+    ],
+    "validation_status": "supported"
+  },
+  {
+    "id": "controller_manager::TestControllerSpawner#test__test_launch_utils__test_launch_utils_integration_list",
+    "name": "test_controller_spawner",
+    "fully_qualified_name": "test_controller_spawner",
+    "class_name": "TestControllerSpawner",
+    "source_file": "controller_manager/test/test_launch_utils/test_launch_utils_integration_list.py",
+    "package_name": "controller_manager",
+    "namespace": "",
+    "entity_type": "test_node",
+    "node_category": "test",
+    "classification_label": null,
+    "resolution_status": "resolved",
+    "source_language": "python",
+    "is_test": true,
+    "is_lifecycle": false,
+    "is_abstract": false,
+    "base_class": null,
+    "executable": null,
+    "component_registered": false,
+    "component_name": null,
+    "publishers": [],
+    "subscribers": [],
+    "services": [],
+    "actions": [],
+    "interface_declarations": [],
+    "parameters": [],
+    "remappings": {},
+    "docstring": "Functional ROS 2 node instantiated via rclpy.create_node('test_controller_spawner')",
+    "composition": null,
+    "evidence": [
+      {
+        "file": "controller_manager/test/test_launch_utils/test_launch_utils_integration_list.py",
+        "line_start": 96,
+        "line_end": 96,
+        "evidence_type": "node_definition",
+        "source": "python_ast_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Python ROS2 node class 'TestControllerSpawner'"
+      }
+    ],
+    "validation_status": "supported"
+  },
+  {
+    "id": "controller_manager::TestControllerClient",
+    "name": "test_controller_client",
+    "fully_qualified_name": "test_controller_client",
+    "class_name": "TestControllerClient",
+    "source_file": "controller_manager/test/test_launch_utils/test_launch_utils_integration_load.py",
+    "package_name": "controller_manager",
+    "namespace": "",
+    "entity_type": "test_node",
+    "node_category": "test",
+    "classification_label": null,
+    "resolution_status": "resolved",
+    "source_language": "python",
+    "is_test": true,
+    "is_lifecycle": false,
+    "is_abstract": false,
+    "base_class": null,
+    "executable": null,
+    "component_registered": false,
+    "component_name": null,
+    "publishers": [],
+    "subscribers": [],
+    "services": [],
+    "actions": [],
+    "interface_declarations": [],
+    "parameters": [],
+    "remappings": {},
+    "docstring": "Functional ROS 2 node instantiated via rclpy.create_node('test_controller_client')",
+    "composition": null,
+    "evidence": [
+      {
+        "file": "controller_manager/test/test_launch_utils/test_launch_utils_integration_load.py",
+        "line_start": 90,
+        "line_end": 90,
+        "evidence_type": "node_definition",
+        "source": "python_ast_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Python ROS2 node class 'TestControllerClient'"
+      }
+    ],
+    "validation_status": "supported"
+  },
+  {
+    "id": "controller_manager::ControllerManager",
+    "name": "controller_manager",
+    "fully_qualified_name": "controller_manager/controller_manager",
+    "class_name": "controller_manager::ControllerManager",
+    "source_file": "controller_manager/src/controller_manager.cpp",
+    "package_name": "controller_manager",
+    "namespace": "controller_manager",
+    "entity_type": "ros_node",
+    "node_category": "control",
+    "classification_label": null,
+    "resolution_status": "unresolved",
+    "source_language": "cpp",
+    "is_test": false,
+    "is_lifecycle": false,
+    "is_abstract": false,
+    "base_class": "rclcpp::Node",
+    "executable": null,
+    "component_registered": false,
+    "component_name": null,
+    "publishers": [
+      {
+        "name": "~/activity",
+        "message_type": "controller_manager_msgs/msg/ControllerManagerActivity",
+        "message_category": "unknown",
+        "qos_profile": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 657,
+            "line_end": 658,
+            "evidence_type": "publisher_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_publisher for topic '~/activity' with type 'controller_manager_msgs/msg/ControllerManagerActivity'"
+          }
+        ]
+      }
+    ],
+    "subscribers": [
+      {
+        "name": "robot_description",
+        "message_type": "std_msgs/msg/String",
+        "message_category": "unknown",
+        "qos_profile": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 754,
+            "line_end": 756,
+            "evidence_type": "subscriber_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_subscription for topic 'robot_description' with type 'std_msgs/msg/String'"
+          }
+        ]
+      }
+    ],
+    "services": [
+      {
+        "name": "~/list_controllers",
+        "service_type": "controller_manager_msgs/srv/ListControllers",
+        "role": "server",
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1170,
+            "line_end": 1172,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/list_controllers' with type 'controller_manager_msgs/srv/ListControllers'"
+          }
+        ]
+      },
+      {
+        "name": "~/list_controller_types",
+        "service_type": "controller_manager_msgs/srv/ListControllerTypes",
+        "role": "server",
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1174,
+            "line_end": 1177,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/list_controller_types' with type 'controller_manager_msgs/srv/ListControllerTypes'"
+          }
+        ]
+      },
+      {
+        "name": "~/load_controller",
+        "service_type": "controller_manager_msgs/srv/LoadController",
+        "role": "server",
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1178,
+            "line_end": 1180,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/load_controller' with type 'controller_manager_msgs/srv/LoadController'"
+          }
+        ]
+      },
+      {
+        "name": "~/configure_controller",
+        "service_type": "controller_manager_msgs/srv/ConfigureController",
+        "role": "server",
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1181,
+            "line_end": 1184,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/configure_controller' with type 'controller_manager_msgs/srv/ConfigureController'"
+          }
+        ]
+      },
+      {
+        "name": "~/reload_controller_libraries",
+        "service_type": "controller_manager_msgs/srv/ReloadControllerLibraries",
+        "role": "server",
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1186,
+            "line_end": 1189,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/reload_controller_libraries' with type 'controller_manager_msgs/srv/ReloadControllerLibraries'"
+          }
+        ]
+      },
+      {
+        "name": "~/switch_controller",
+        "service_type": "controller_manager_msgs/srv/SwitchController",
+        "role": "server",
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1190,
+            "line_end": 1193,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/switch_controller' with type 'controller_manager_msgs/srv/SwitchController'"
+          }
+        ]
+      },
+      {
+        "name": "~/unload_controller",
+        "service_type": "controller_manager_msgs/srv/UnloadController",
+        "role": "server",
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1194,
+            "line_end": 1197,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/unload_controller' with type 'controller_manager_msgs/srv/UnloadController'"
+          }
+        ]
+      },
+      {
+        "name": "~/cleanup_controller",
+        "service_type": "controller_manager_msgs/srv/CleanupController",
+        "role": "server",
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1198,
+            "line_end": 1201,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/cleanup_controller' with type 'controller_manager_msgs/srv/CleanupController'"
+          }
+        ]
+      },
+      {
+        "name": "~/list_hardware_components",
+        "service_type": "controller_manager_msgs/srv/ListHardwareComponents",
+        "role": "server",
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1203,
+            "line_end": 1206,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/list_hardware_components' with type 'controller_manager_msgs/srv/ListHardwareComponents'"
+          }
+        ]
+      },
+      {
+        "name": "~/list_hardware_interfaces",
+        "service_type": "controller_manager_msgs/srv/ListHardwareInterfaces",
+        "role": "server",
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1208,
+            "line_end": 1211,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/list_hardware_interfaces' with type 'controller_manager_msgs/srv/ListHardwareInterfaces'"
+          }
+        ]
+      },
+      {
+        "name": "~/set_hardware_component_state",
+        "service_type": "controller_manager_msgs/srv/SetHardwareComponentState",
+        "role": "server",
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1213,
+            "line_end": 1216,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/set_hardware_component_state' with type 'controller_manager_msgs/srv/SetHardwareComponentState'"
+          }
+        ]
+      }
+    ],
+    "actions": [],
+    "interface_declarations": [
+      {
+        "declaration_id": "controller_manager::ControllerManager::publisher::~/activity#L657",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "publisher",
+        "name_expression": "~/activity",
+        "message_type": "controller_manager_msgs/msg/ControllerManagerActivity",
+        "direction": "out",
+        "qos_reliability": "reliable",
+        "qos_durability": "transient_local",
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 657,
+        "line_end": 658,
+        "discovery_method": "cpp_create_publisher",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 657,
+            "line_end": 658,
+            "evidence_type": "publisher_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_publisher for topic '~/activity' with type 'controller_manager_msgs/msg/ControllerManagerActivity'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": "keep_last",
+        "qos_depth": 1,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": "\"~/activity\" -> ~/activity",
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::subscriber::robot_description#L754",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "subscriber",
+        "name_expression": "robot_description",
+        "message_type": "std_msgs/msg/String",
+        "direction": "in",
+        "qos_reliability": "reliable",
+        "qos_durability": "transient_local",
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 754,
+        "line_end": 756,
+        "discovery_method": "cpp_create_subscription",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 754,
+            "line_end": 756,
+            "evidence_type": "subscriber_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_subscription for topic 'robot_description' with type 'std_msgs/msg/String'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": "keep_last",
+        "qos_depth": 1,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": "\"robot_description\" -> robot_description",
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::service_server::~/list_controllers#L1170",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "service_server",
+        "name_expression": "~/list_controllers",
+        "message_type": "controller_manager_msgs/srv/ListControllers",
+        "direction": "in",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 1170,
+        "line_end": 1172,
+        "discovery_method": "cpp_create_service",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1170,
+            "line_end": 1172,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/list_controllers' with type 'controller_manager_msgs/srv/ListControllers'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::service_server::~/list_controller_types#L1174",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "service_server",
+        "name_expression": "~/list_controller_types",
+        "message_type": "controller_manager_msgs/srv/ListControllerTypes",
+        "direction": "in",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 1174,
+        "line_end": 1177,
+        "discovery_method": "cpp_create_service",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1174,
+            "line_end": 1177,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/list_controller_types' with type 'controller_manager_msgs/srv/ListControllerTypes'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::service_server::~/load_controller#L1178",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "service_server",
+        "name_expression": "~/load_controller",
+        "message_type": "controller_manager_msgs/srv/LoadController",
+        "direction": "in",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 1178,
+        "line_end": 1180,
+        "discovery_method": "cpp_create_service",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1178,
+            "line_end": 1180,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/load_controller' with type 'controller_manager_msgs/srv/LoadController'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::service_server::~/configure_controller#L1181",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "service_server",
+        "name_expression": "~/configure_controller",
+        "message_type": "controller_manager_msgs/srv/ConfigureController",
+        "direction": "in",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 1181,
+        "line_end": 1184,
+        "discovery_method": "cpp_create_service",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1181,
+            "line_end": 1184,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/configure_controller' with type 'controller_manager_msgs/srv/ConfigureController'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::service_server::~/reload_controller_libraries#L1186",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "service_server",
+        "name_expression": "~/reload_controller_libraries",
+        "message_type": "controller_manager_msgs/srv/ReloadControllerLibraries",
+        "direction": "in",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 1186,
+        "line_end": 1189,
+        "discovery_method": "cpp_create_service",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1186,
+            "line_end": 1189,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/reload_controller_libraries' with type 'controller_manager_msgs/srv/ReloadControllerLibraries'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::service_server::~/switch_controller#L1190",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "service_server",
+        "name_expression": "~/switch_controller",
+        "message_type": "controller_manager_msgs/srv/SwitchController",
+        "direction": "in",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 1190,
+        "line_end": 1193,
+        "discovery_method": "cpp_create_service",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1190,
+            "line_end": 1193,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/switch_controller' with type 'controller_manager_msgs/srv/SwitchController'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::service_server::~/unload_controller#L1194",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "service_server",
+        "name_expression": "~/unload_controller",
+        "message_type": "controller_manager_msgs/srv/UnloadController",
+        "direction": "in",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 1194,
+        "line_end": 1197,
+        "discovery_method": "cpp_create_service",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1194,
+            "line_end": 1197,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/unload_controller' with type 'controller_manager_msgs/srv/UnloadController'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::service_server::~/cleanup_controller#L1198",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "service_server",
+        "name_expression": "~/cleanup_controller",
+        "message_type": "controller_manager_msgs/srv/CleanupController",
+        "direction": "in",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 1198,
+        "line_end": 1201,
+        "discovery_method": "cpp_create_service",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1198,
+            "line_end": 1201,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/cleanup_controller' with type 'controller_manager_msgs/srv/CleanupController'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::service_server::~/list_hardware_components#L1203",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "service_server",
+        "name_expression": "~/list_hardware_components",
+        "message_type": "controller_manager_msgs/srv/ListHardwareComponents",
+        "direction": "in",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 1203,
+        "line_end": 1206,
+        "discovery_method": "cpp_create_service",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1203,
+            "line_end": 1206,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/list_hardware_components' with type 'controller_manager_msgs/srv/ListHardwareComponents'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::service_server::~/list_hardware_interfaces#L1208",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "service_server",
+        "name_expression": "~/list_hardware_interfaces",
+        "message_type": "controller_manager_msgs/srv/ListHardwareInterfaces",
+        "direction": "in",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 1208,
+        "line_end": 1211,
+        "discovery_method": "cpp_create_service",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1208,
+            "line_end": 1211,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/list_hardware_interfaces' with type 'controller_manager_msgs/srv/ListHardwareInterfaces'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      },
+      {
+        "declaration_id": "controller_manager::ControllerManager::service_server::~/set_hardware_component_state#L1213",
+        "owner_node_id": "controller_manager::ControllerManager",
+        "interface_type": "service_server",
+        "name_expression": "~/set_hardware_component_state",
+        "message_type": "controller_manager_msgs/srv/SetHardwareComponentState",
+        "direction": "in",
+        "qos_reliability": null,
+        "qos_durability": null,
+        "source_file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 1213,
+        "line_end": 1216,
+        "discovery_method": "cpp_create_service",
+        "resolution_status": "resolved",
+        "is_action_protocol_child": false,
+        "parent_action_name": null,
+        "evidence": [
+          {
+            "file": "controller_manager/src/controller_manager.cpp",
+            "line_start": 1213,
+            "line_end": 1216,
+            "evidence_type": "service_creation",
+            "source": "cpp_interface_extractor",
+            "confidence": 1.0,
+            "claim_type": null,
+            "confidence_rationale": null,
+            "explanation": "C++ create_service for service '~/set_hardware_component_state' with type 'controller_manager_msgs/srv/SetHardwareComponentState'"
+          }
+        ],
+        "repository_name": "controller_manager",
+        "owning_class": "controller_manager::ControllerManager",
+        "owning_component": null,
+        "inheritance_path": [
+          "ControllerManager"
+        ],
+        "resolved_name": null,
+        "qos_history": null,
+        "qos_depth": null,
+        "qos_compatibility": null,
+        "lifecycle_phase": null,
+        "parameter_provenance": null,
+        "is_dynamic": false,
+        "dynamic_template": null,
+        "dynamic_prefix": null,
+        "dynamic_unresolved_part": null
+      }
+    ],
+    "parameters": [],
+    "remappings": {},
+    "docstring": null,
+    "composition": null,
+    "evidence": [
+      {
+        "file": "controller_manager/include/controller_manager/controller_manager.hpp",
+        "line_start": 65,
+        "line_end": null,
+        "evidence_type": "node_definition",
+        "source": "cpp_ast_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "C++ class 'controller_manager::ControllerManager' inheriting from 'rclcpp::Node'"
+      },
+      {
+        "file": "controller_manager/src/controller_manager.cpp",
+        "line_start": 531,
+        "line_end": null,
+        "evidence_type": "node_definition",
+        "source": "cpp_ast_analyzer",
+        "confidence": 1.0,
+        "claim_type": null,
+        "confidence_rationale": null,
+        "explanation": "Constructor implementation with node name ''"
+      }
+    ],
+    "validation_status": "supported"
+  }
+]
